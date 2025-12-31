@@ -1,0 +1,29 @@
+.dashboard1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+  margin: 0px 30px;
+  position: relative;
+  top: -34px;
+}
+
+.dash-card {
+  background: linear-gradient(135deg, #1f4068);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 1px #00f2fe;
+  text-align: center;
+  transition: transform 0.1s;
+}
+
+.dash-card h2 {
+  margin-bottom: 10px;
+  font-size:24px;
+}
+
+.dash-card p {
+  font-size: 20px;
+  font-weight: bold;
+}

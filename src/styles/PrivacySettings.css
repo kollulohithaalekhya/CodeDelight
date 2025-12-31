@@ -1,0 +1,6 @@
+.privacy-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  max-width: 420px;
+}

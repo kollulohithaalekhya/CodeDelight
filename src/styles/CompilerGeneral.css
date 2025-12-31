@@ -1,0 +1,160 @@
+.compiler-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #2c3e50;
+  color: white;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-left label{
+  background-color: #2c3e50;
+}
+
+#topbar select {
+  background-color: #4a6c8e;
+  color: white;
+  border: 1px solid #5a7d9e;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#topbar button {
+  background: linear-gradient(135deg, #00b894, #019875);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 24px;
+  color: #019875;
+}
+
+#main-container {
+  flex: 1;
+  display: flex;
+}
+
+#editor-pane {
+  width: 65%;
+}
+
+#right-pane {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #1e1e1e; */
+}
+
+/* Input Area */
+#input-area {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  margin-bottom: 5px;
+  border-radius: 6px;
+}
+
+/* Output Area */
+#output-area {
+  padding: 10px;
+  font-family: monospace;
+  overflow-y: auto;
+  font-size: 14px;
+  height: 50%;
+  border-radius: 6px;
+}
+
+/* Textareas */
+textarea {
+  flex: 1;
+  resize: none;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  font-family: monospace;
+}
+
+/* Output lines */
+.output-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+}
+
+.output-line-number {
+  text-align: right;
+  color: #777;
+}
+
+/* Placeholder */
+.output-placeholder {
+  color: #888;
+}
+
+/* ====== Dark Mode ====== */
+#input-area.dark,
+#output-area.dark {
+  background: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
+  
+}
+
+label {
+  background-color: #4a6c8e;
+}
+
+#input-area.dark textarea.textarea-dark,
+#output-area.dark textarea.textarea-dark {
+  background: #2d2d2d;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+#output-area.dark .output-line-number {
+  color: #888;
+}
+
+/* ====== Light Mode ====== */
+#input-area.light,
+#output-area.light {
+  background: #f9f9f9;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+#input-area.light textarea.textarea-light,
+#output-area.light textarea.textarea-light {
+  background: #fff;
+  color: #222;
+  border: 1px solid #aaa;
+}
+
+#output-area.light .output-line-number {
+  color: #555;
+}
+

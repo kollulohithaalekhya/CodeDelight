@@ -1,0 +1,28 @@
+/* .card1 {
+   This class is styled within the main profilesidebar.css, but if you want to be
+     more granular, you can move specific styles here. I'll leave it in the main
+     file for now as it's part of the overall layout. 
+} */
+
+.profile-photo {
+  width: 130px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 70px;
+  left: 45%;
+  border: 1px solid #16848a39;
+}
+
+.back-rectangle {
+  width: 100%;
+  /* background: linear-gradient(90deg, #102944, #0b1d1e); */
+}
+
+.back-rect-photo {
+  width: 98%;
+  height: 170px;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 40px;
+}

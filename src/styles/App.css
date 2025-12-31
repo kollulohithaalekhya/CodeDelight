@@ -1,0 +1,66 @@
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center; /* centers text in left div */
+  }
+  .hero .left {
+    width: 100%;
+  }
+  .hero-btn {
+    display: block;       /* ensures it’s a block element */
+    margin: 20px auto 0;  /* top spacing + center horizontally */
+  }
+  .hero .right {
+    margin-top: 20px; /* spacing between text and image */
+  }
+}
+.menu_toggle{
+  display: none;
+}
+@media (max-width: 1395px) {
+  .nav_bar,
+  .search_bar,
+  .action_bar {
+    display: none;
+  }
+
+  .menu_toggle {
+    display: block;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu_toggle .parent {
+    position: relative;
+  }
+
+  /* Mobile menu now controlled entirely by React state, no hover */
+  .mobile_nav {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0a1d3a, #102944);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 220px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 242, 254, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1001;
+  }
+
+  .mobile_nav .nav-item {
+    padding: 12px 0;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease;
+    font-size: 1.05rem;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .mobile_nav .nav-item:hover {
+    color: #00f2fe;
+  }
+}

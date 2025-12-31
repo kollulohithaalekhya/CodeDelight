@@ -1,0 +1,34 @@
+.settings-section {
+  padding: 24px;
+}
+
+.settings-section h2 {
+  margin-bottom: 20px;
+}
+
+.appearance-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  max-width: 400px;
+}
+
+.appearance-item span {
+  font-weight: 500;
+}
+
+.appearance-item select,
+.appearance-item input[type="range"] {
+  margin-left: 12px;
+}
+
+[data-theme="dark"] {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+[data-theme="light"] {
+  background-color: #ffffff;
+  color: #000000;
+}

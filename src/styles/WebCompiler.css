@@ -1,0 +1,123 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.webcompiler-container {
+  background: #2c2c2c;
+  color: #00f2fe;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 10px;
+  gap: 10px;
+}
+
+.editors-section {
+  display: flex;
+  height: 400px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.editor-card {
+  flex: 1 1 30%;
+  background: #1f1f1f;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-card label {
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: #00f2fe;
+  padding: 8px 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #00f2fe;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.output-section {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.output-section label {
+  background: #000;
+  color: #00f2fe;
+  font-weight: 600;
+  padding: 8px 12px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+iframe {
+  width: 100%;
+  flex: 1;
+  border: none;
+  background: #fff;
+}
+
+
+
+/* Monaco Suggestions Box */
+.monaco-editor .suggest-widget {
+  max-width: 420px !important;
+  min-width: 260px !important;
+  width: auto !important;
+  background-color: #1e1e1e !important;
+}
+
+/* Suggestion rows */
+.monaco-editor .suggest-widget .monaco-list-row {
+  padding-right: 8px !important;
+  white-space: nowrap !important;
+}
+
+/* Prevent extra horizontal space */
+.monaco-editor .suggest-widget .monaco-list {
+  overflow-x: hidden !important;
+}
+
+/* Description text */
+.monaco-editor .suggest-widget .details-label {
+  max-width: 220px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Scrollbar adjustment */
+.monaco-editor .suggest-widget .monaco-scrollable-element {
+  padding-right: 6px !important;
+}
+
+
+
+@media (max-width: 1024px) {
+  .editors-section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .editor-card label {
+    font-size: 13px;
+  }
+
+  .output-section {
+    min-height: 300px;
+  }
+}

@@ -1,0 +1,12 @@
+.security-btn {
+  display: block;
+  margin-bottom: 12px;
+  padding: 10px;
+  width: 220px;
+  cursor: pointer;
+}
+
+.security-btn.danger {
+  background-color: #e53935;
+  color: white;
+}

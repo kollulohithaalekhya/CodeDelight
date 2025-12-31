@@ -1,0 +1,44 @@
+.profile-main {
+  /* This makes all child elements stack vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin :0 -30px;
+  padding: 20px;
+  background-color: #0b1d38;
+  flex-grow: 1;
+  /* max-width: 700px; */ /* You have correctly removed this */
+}
+
+.profile-main .heading h1 {
+  color: #00f2fe;
+  padding-left: 30px;
+  padding-top: 10px;
+  font-family: Figtree;
+  font-size: 24px;
+  text-align: left;
+  margin-left: 12px;
+  letter-spacing: 1px;
+}
+
+.submissions-heatmap-container {
+  /* background-color: #172740; */
+  background: linear-gradient(135deg, #1f4068, #162447);
+  border: 1px solid #2e435e;
+  /* border-radius: 8px; */
+  margin: 0px 38px;
+  /* width: 100%;  */
+  padding: 20px;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 1px 3px #00f2fe;
+}
+
+.submissions-heatmap-container h2 {
+  color: #c9d1d9;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #2e435e;
+  padding-bottom: 10px;
+}

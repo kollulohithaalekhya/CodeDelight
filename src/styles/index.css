@@ -1,0 +1,20 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  background: linear-gradient(145deg, #0a1d3a, #102944);
+  padding: 0 4%;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

@@ -1,0 +1,23 @@
+.action_bar {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.action_container,
+.action_container1 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.icon_coin {
+  width: 30px;
+  height: 30px;
+}
+.action_name {
+  color: white;
+}
+.action_name1 {
+  color: #FFD700;
+  font-weight: 600;
+}

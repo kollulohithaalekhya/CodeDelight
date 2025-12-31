@@ -1,0 +1,15 @@
+/* ProfileContainer.css */
+/* .profile-content-wrapper {
+  display: flex;
+  align-items: flex-start; 
+  width: 100%;
+  flex-wrap: wrap;
+} */
+.profile-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 2700px;
+  margin: 0 auto;
+  gap: 24px;
+}

@@ -1,0 +1,48 @@
+.interests,.Upcoming-updates {
+  margin-top: 20px;
+  background: #0a1d3a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  border: 2px solid #00f2fe;
+}
+
+.interests h2, .Upcoming-updates h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #00f2fe;
+}
+
+.interests p, .Upcoming-updates p{
+  font-size: 15px;
+}
+
+
+.waiting-wrapper {
+  width: 100%;
+  border: 2px solid #00f2fe;
+  min-height: 69.4vh; /* covers full visible area */
+  display: flex;
+  margin-top: 20px;
+  background: #0a1d3a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+  color: white;
+  text-align: center;
+}
+
+.waiting-wrapper h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.waiting-wrapper p {
+  font-size: 16px;
+  opacity: 0.85;
+}

@@ -1,0 +1,32 @@
+.coins {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #00f2fe;
+  background-color: #0a1d3a;
+}
+
+.how-many-coins {
+  display: flex;
+  align-items: center;
+}
+
+.coins h1 {
+  font-family:Orbiton;
+  font-size:60px;
+  color: #00f2fe;
+  margin-left: 15px;
+}
+
+.tot-coins {
+  width: 130px;
+  height: 140px;
+  position: relative;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .coins {
+    justify-content: center;
+  }
+}
