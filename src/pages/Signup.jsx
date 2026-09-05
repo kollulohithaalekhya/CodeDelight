@@ -46,6 +46,7 @@ function Signup() {
   };
 
   return(
+    <div className="auth-page signup-page">
     <div className="main-container">
       <div className="image-container">
         <lottie-player
@@ -99,6 +100,7 @@ function Signup() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

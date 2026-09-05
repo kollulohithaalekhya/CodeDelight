@@ -45,7 +45,7 @@ const Inorder = () => {
   const allFilled = dropped.every((val) => val !== "");
 
   return (
-    <div className="container">
+    <div className="container traversal-container">
       <h2>Drag nodes from the tree to form Inorder Traversal</h2>
 
       {/* Tree display */}

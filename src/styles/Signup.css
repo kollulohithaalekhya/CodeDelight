@@ -6,21 +6,20 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-body {
-  
-   /* background-color:rgba(31, 64, 104,0.9); */
-   background-color: rgb(10, 20, 40);
+.signup-page {
+  background: linear-gradient(135deg, #061829, #0b1e3d);
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  overflow-y: auto;
 }
 
-.main-container {
+.signup-page .main-container {
   display: flex;
   width: 900px;
+  max-width: 100%;
   height: 600px;
  
    /* background-image: linear-gradient(rgba(24, 219, 245, 0.521),#1f4068); */
@@ -136,9 +135,9 @@ form h2 {
   margin-right: 8px;
 }
 
-.image-container {
+.signup-page .image-container {
   flex: 1;
-  background: #f9f9f9;
+  background: linear-gradient(160deg, #0d2a4a, #1f4068);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,9 +151,10 @@ form h2 {
 
 
 @media (max-width: 768px) {
-  .main-container {
+  .signup-page .main-container {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
+    height: auto;
     margin: 20px auto;
   }
 
@@ -208,7 +208,7 @@ form h2 {
     display: none;
   }
 }
-.main-container {
+.signup-page .main-container {
   backdrop-filter: blur(8px);
   /* background-color: rgba(255, 255, 255, 0.08);*/
   border: 1px solid rgba(255, 255, 255, 0.1);

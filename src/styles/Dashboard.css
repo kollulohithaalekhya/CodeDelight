@@ -198,3 +198,55 @@
 .dashboard-chart, .dashboard-progress, .dashboard-leaderboard-chart{
   background: linear-gradient(145deg, #0a1d3a, #102e55);
 }
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+/* Stacked charts on narrower screens */
+@media (max-width: 1024px) {
+  .dashboard-charts-row {
+    flex-direction: column;
+  }
+}
+
+/* Below the sidebar breakpoint the left sidebar (.rectangle) becomes
+   full-width, so the dashboard column must stack instead of sitting in a
+   nowrap flex row that pushes content off-screen. */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .dashboard-dark {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .info-card {
+    min-width: 0;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .dashboard-charts-row {
+    padding: 0 16px 16px 16px;
+  }
+
+  .progress-charts {
+    flex-direction: column !important;
+  }
+
+  .dashboard-progress,
+  .dashboard-leaderboard-chart {
+    margin: 12px;
+    padding: 18px;
+  }
+}

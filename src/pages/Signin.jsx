@@ -24,9 +24,10 @@ function Signin() {
   };
 
   return (
-    <div className="main-container">
-      <div className="form-container">
-        <form onSubmit={handleSignin}>
+    <div className="auth-page signin-page">
+      <div className="main-container">
+        <div className="form-container">
+          <form onSubmit={handleSignin}>
           <h2>Login</h2>
 
           <label>Email Address</label>
@@ -88,6 +89,7 @@ function Signin() {
           loop
           autoplay
         ></lottie-player>
+      </div>
       </div>
     </div>
   );

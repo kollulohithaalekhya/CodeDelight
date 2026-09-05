@@ -45,7 +45,7 @@ const Preorder = () => {
   const allFilled = dropped.every((val) => val !== "");
 
   return (
-    <div className="container">
+    <div className="container traversal-container">
       <h2>Drag nodes from the tree to form Preorder Traversal</h2>
 
       <div className="tree-display">

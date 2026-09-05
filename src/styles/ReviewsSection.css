@@ -90,3 +90,38 @@
 .scroll-button:hover {
   color: #007bff;
 }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 992px) {
+  .reviews-section {
+    padding: 80px 16px 85px;
+  }
+  .reviews-heading {
+    font-size: 2.25rem;
+    margin-bottom: 45px;
+  }
+  .carousel-wrapper {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-section {
+    padding: 60px 12px 65px;
+  }
+  .reviews-heading {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+  .carousel-wrapper {
+    padding: 0 8px;
+  }
+  .review-card {
+    flex: 0 0 82vw;
+    max-width: 82vw;
+    padding: 20px;
+  }
+  .review-text {
+    font-size: 1rem;
+  }
+}

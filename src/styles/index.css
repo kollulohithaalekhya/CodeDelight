@@ -4,6 +4,88 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ============================================================
+   GLOBAL LAYOUT FOUNDATION
+   Keeps the app constrained to the viewport on every route and
+   prevents horizontal overflow / off-centre shifting caused by
+   per-page global body rules leaking across the bundle.
+   ============================================================ */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Neutralise per-page `body { display:flex; padding:… }` rules that leak
+   across the global bundle. `html body` wins on specificity regardless of
+   import order, so every route gets a clean, full-bleed body. Pages that
+   need centred content do it with their own page wrapper instead. */
+html body {
+  display: block;
+  padding: 0;
+}
+
+/* Media should never force horizontal overflow */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+/* Traversal game pages centre their content via a page wrapper instead of
+   the old global `body { display:flex }` centring (which now lives only on
+   pages that opt in). Two-class selector keeps specificity above the generic
+   `.container` rules shared with the levels pages. */
+.container.traversal-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 20px;
+}
+
+/* Traversal tree/drop-zone responsiveness (source files have no media
+   queries, so the fixed 60px gaps overflow small screens). */
+@media (max-width: 600px) {
+  .traversal-container h2 {
+    font-size: 1.35rem;
+  }
+  .traversal-container .level {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .traversal-container .tree-node {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+  .traversal-container .drop-zone {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+    margin: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .traversal-container .level {
+    gap: 16px;
+  }
+  .traversal-container .tree-node,
+  .traversal-container .drop-zone {
+    width: 42px;
+    height: 42px;
+  }
+}
 .head {
   display: flex;
   justify-content: space-between;
