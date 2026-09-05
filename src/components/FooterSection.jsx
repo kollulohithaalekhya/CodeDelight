@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/footerSection.css";
+import "../styles/FooterSection.css";
 
 const Footer = () => {
   const quickLinks = ["Home", "Courses", "Compilers", "Funzone", "Profile"];
