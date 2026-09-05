@@ -18,6 +18,8 @@ import Dashboard from "./components/Dashboard";
 import NotFound from "./pages/NotFound"; 
 import CodeCompiler from "./pages/CompilerGeneral"
 import WebCompiler from "./pages/WebCompiler"
+import Quiz from "./pages/Quiz";
+
 function App() {
   return (
     <Router>
@@ -38,6 +40,7 @@ function App() {
         <Route path="/compiler/web-compiler" element={<WebCompiler />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/Quiz" element={<Quiz/>}/>
         <Route path="*" element={<NotFound />} />
         {/*  testing git */}
       </Routes>
