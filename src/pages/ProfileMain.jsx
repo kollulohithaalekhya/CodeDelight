@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../styles/ProfileMain.css";
 
 import ProfileImage from "../components/ProfileImage";
@@ -8,15 +9,21 @@ import SubmissionsHeatMap from "../components/SubmissionsHeatMap";
 
 function ProfileMain() {
   return (
-    <div className="profile-main">
+    <main className="profile-main">
+
       <div className="heading">
         <h1>PROFILE</h1>
       </div>
+
       <ProfileImage />
+
       <ProfileStats />
+
       <SubmissionsHeatMap />
+
       <ProfileAchievements />
-    </div>
+
+    </main>
   );
 }
 

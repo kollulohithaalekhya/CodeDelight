@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/ProfileHeader.css";
+
 // import logo from "../assets/logo3.png";
 
 const ProfileHeader = () => {
@@ -8,8 +9,12 @@ const ProfileHeader = () => {
       <div className="logo_container">
         <a href="#">
           <div className="logo">
-            <img src="/images/logo.png" alt="Logo" height="60px" className="Logo-demo"/>
-
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              height="60px"
+              className="Logo-demo"
+            />
           </div>
         </a>
       </div>
@@ -27,6 +32,7 @@ const ProfileHeader = () => {
             className="fa-solid fa-circle-user fa-xl"
             style={{ color: "white" }}
           ></i>
+
           <a
             href="../html/profile.html"
             style={{
@@ -42,36 +48,51 @@ const ProfileHeader = () => {
       </div>
 
       <div className="menu_toggle">
-        <div className="parent" style={{ position: "relative" }}>
+        <div className="parent">
           <span className="material-symbols-outlined">menu</span>
-          <div className="mobile_nav" style={{ position: "absolute" }}>
+
+          <div className="mobile_nav">
             <div
               className="nav-item"
-              onClick={() => (window.location.href = "../html/profile.html")}
+              onClick={() =>
+                (window.location.href = "../html/profile.html")
+              }
             >
               Dashboard
             </div>
+
             <div
               className="nav-item"
-              onClick={() => (window.location.href = "../html/homepage.html")}
+              onClick={() =>
+                (window.location.href = "../html/homepage.html")
+              }
             >
               Home
             </div>
+
             <div
               className="nav-item"
-              onClick={() => (window.location.href = "../html/scourses.html")}
+              onClick={() =>
+                (window.location.href = "../html/scourses.html")
+              }
             >
               Courses
             </div>
+
             <div
               className="nav-item"
-              onClick={() => (window.location.href = "../html/scompiler.html")}
+              onClick={() =>
+                (window.location.href = "../html/scompiler.html")
+              }
             >
               Compilers
             </div>
+
             <div
               className="nav-item"
-              onClick={() => (window.location.href = "../html/sfunzone.html")}
+              onClick={() =>
+                (window.location.href = "../html/sfunzone.html")
+              }
             >
               Fun Zone
             </div>

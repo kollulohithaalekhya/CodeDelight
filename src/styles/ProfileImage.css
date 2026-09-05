@@ -1,28 +1,272 @@
-/* .card1 {
-   This class is styled within the main profilesidebar.css, but if you want to be
-     more granular, you can move specific styles here. I'll leave it in the main
-     file for now as it's part of the overall layout. 
-} */
+/* =========================================================
+   PROFILE IMAGE CARD
+   ========================================================= */
 
-.profile-photo {
-  width: 130px;
-  height: 120px;
-  border-radius: 50%;
-  position: relative;
-  bottom: 70px;
-  left: 45%;
-  border: 1px solid #16848a39;
+.card1 {
+    width: 100%;
+
+    position: relative;
+
+    padding-bottom: 55px;
+}
+
+
+/* =========================================================
+   BANNER
+   ========================================================= */
+
+.photo {
+    width: 100%;
+
+    position: relative;
 }
 
 .back-rectangle {
-  width: 100%;
-  /* background: linear-gradient(90deg, #102944, #0b1d1e); */
+    width: 100%;
+
+    position: relative;
+
+    padding: 0 10px;
 }
 
 .back-rect-photo {
-  width: 98%;
-  height: 170px;
-  overflow: hidden;
-  margin: 10px;
-  border-radius: 40px;
+    display: block;
+
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 40px;
+
+    overflow: hidden;
+
+    margin: 10px 0 0;
+
+    box-shadow:
+        0 4px 15px rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+}
+
+
+/* =========================================================
+   PROFILE IMAGE WRAPPER
+   ========================================================= */
+
+.profile-image-wrapper {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.profile-photo {
+    display: block;
+
+    width: 130px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #132743;
+
+    background: #132743;
+
+    box-shadow:
+        0 5px 18px rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1440px) {
+    .back-rect-photo {
+        height: 190px;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 130px;
+    }
+
+    .card1 {
+        padding-bottom: 60px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .back-rect-photo {
+        height: 165px;
+
+        border-radius: 32px;
+    }
+
+    .profile-photo {
+        width: 125px;
+        height: 115px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .card1 {
+        padding-bottom: 52px;
+    }
+
+    .back-rectangle {
+        padding: 0 8px;
+    }
+
+    .back-rect-photo {
+        height: 150px;
+
+        border-radius: 28px;
+    }
+
+    .profile-photo {
+        width: 115px;
+        height: 105px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .card1 {
+        padding-bottom: 48px;
+    }
+
+    .back-rectangle {
+        padding: 0 6px;
+    }
+
+    .back-rect-photo {
+        height: 135px;
+
+        margin-top: 8px;
+
+        border-radius: 24px;
+    }
+
+    .profile-photo {
+        width: 105px;
+        height: 95px;
+
+        border-width: 2px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .card1 {
+        padding-bottom: 45px;
+    }
+
+    .back-rectangle {
+        padding: 0 5px;
+    }
+
+    .back-rect-photo {
+        height: 120px;
+
+        border-radius: 20px;
+    }
+
+    .profile-photo {
+        width: 95px;
+        height: 88px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+    .card1 {
+        padding-bottom: 40px;
+    }
+
+    .back-rectangle {
+        padding: 0 4px;
+    }
+
+    .back-rect-photo {
+        height: 105px;
+
+        border-radius: 17px;
+    }
+
+    .profile-photo {
+        width: 85px;
+        height: 78px;
+    }
+}
+
+
+/* =========================================================
+   320PX
+   ========================================================= */
+
+@media (max-width: 320px) {
+    .card1 {
+        padding-bottom: 37px;
+    }
+
+    .back-rect-photo {
+        height: 95px;
+
+        border-radius: 15px;
+    }
+
+    .profile-photo {
+        width: 78px;
+        height: 72px;
+    }
 }

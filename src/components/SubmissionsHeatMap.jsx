@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/SubmissionsHeatMap.css";
 import HeatMap from "@uiw/react-heat-map";
 
@@ -23,24 +23,63 @@ const submissionsData = [
 ];
 
 const SubmissionsHeatMap = () => {
+  const wrapperRef = useRef(null);
+
+  const [heatMapWidth, setHeatMapWidth] = useState(700);
+
   const today = new Date();
+
   const startDate = new Date(
     today.getFullYear(),
     today.getMonth() - 9,
     today.getDate()
   );
 
+  useEffect(() => {
+    const updateWidth = () => {
+      if (!wrapperRef.current) return;
+
+      const width = wrapperRef.current.clientWidth;
+
+      if (width > 0) {
+        setHeatMapWidth(Math.max(300, width));
+      }
+    };
+
+    updateWidth();
+
+    const resizeObserver = new ResizeObserver(updateWidth);
+
+    if (wrapperRef.current) {
+      resizeObserver.observe(wrapperRef.current);
+    }
+
+    window.addEventListener("resize", updateWidth);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateWidth);
+    };
+  }, []);
+
   return (
     <div className="submissions-heatmap-container">
+
       <h2>Submissions Heat Map</h2>
-      <div className="heatmap-wrapper">
+
+      <div
+        className="heatmap-wrapper"
+        ref={wrapperRef}
+      >
         <HeatMap
           className="my-heatmap"
           value={submissionsData}
           startDate={startDate}
+          width={heatMapWidth}
           rectSize={18}
         />
       </div>
+
     </div>
   );
 };

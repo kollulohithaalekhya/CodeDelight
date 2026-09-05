@@ -4,6 +4,7 @@ import "../styles/ProfileImage.css";
 const ProfileImage = () => {
   return (
     <div className="card1">
+
       <div className="photo">
         <div className="back-rectangle">
           <img
@@ -13,13 +14,15 @@ const ProfileImage = () => {
           />
         </div>
       </div>
-      <div>
+
+      <div className="profile-image-wrapper">
         <img
           src="/images/Profile2.png"
           className="profile-photo"
           alt="User Profile"
         />
       </div>
+
     </div>
   );
 };

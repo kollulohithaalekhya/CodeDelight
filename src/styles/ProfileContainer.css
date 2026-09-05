@@ -1,15 +1,465 @@
-/* ProfileContainer.css */
-/* .profile-content-wrapper {
-  display: flex;
-  align-items: flex-start; 
-  width: 100%;
-  flex-wrap: wrap;
-} */
+/* =========================================================
+   PROFILE CONTAINER
+   ========================================================= */
+
 .profile-content-wrapper {
   display: flex;
+
   align-items: flex-start;
+
   width: 100%;
   max-width: 2700px;
+
   margin: 0 auto;
+
   gap: 24px;
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+   ========================================================= */
+
+.profile-content-wrapper > .rectangle {
+  flex: 0 0 300px;
+
+  width: 300px;
+  min-width: 300px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN PROFILE
+   ========================================================= */
+
+.profile-content-wrapper > .profile-main {
+  flex: 1 1 auto;
+
+  width: auto;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RIGHT SIDEBAR
+   DESKTOP
+   ========================================================= */
+
+.right-sidebar-panel {
+  flex: 0 0 350px;
+
+  width: 350px;
+  min-width: 350px;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  z-index: 500;
+}
+
+
+/* Right sidebar content */
+
+.right-sidebar-content {
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.right-sidebar-content .profile-sidebar-right {
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RIGHT SIDEBAR ARROW
+   Hidden above 1130px
+   ========================================================= */
+
+.right-sidebar-toggle {
+  display: none;
+
+  position: absolute;
+
+  top: 25px;
+  left: -34px;
+
+  width: 34px;
+  height: 52px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 10px 0 0 10px;
+
+  background: #179dba;
+
+  color: white;
+
+  cursor: pointer;
+
+  z-index: 2000;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    -3px 3px 12px rgba(0, 0, 0, 0.25);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.right-sidebar-toggle:hover {
+  background: #00f2fe;
+
+  color: #132743;
+}
+
+.right-sidebar-toggle .material-symbols-outlined {
+  font-size: 26px;
+}
+
+
+/* =========================================================
+   BELOW 1130px
+   RIGHT SIDEBAR BECOMES AN ANCHORED POPUP
+   ========================================================= */
+
+@media screen and (max-width: 1129px) {
+
+  /*
+     Keep the main profile and left sidebar in the
+     normal document flow.
+  */
+
+  .profile-content-wrapper {
+    display: flex;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+    position: relative;
+
+    gap: 24px;
+  }
+
+
+  /* =======================================================
+     LEFT SIDEBAR
+     ======================================================= */
+
+  .profile-content-wrapper > .rectangle {
+    flex: 0 0 300px;
+
+    width: 300px;
+    min-width: 300px;
+  }
+
+
+  /* =======================================================
+     MAIN PROFILE
+     ======================================================= */
+
+  .profile-content-wrapper > .profile-main {
+    flex: 1 1 auto;
+
+    width: auto;
+
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     RIGHT SIDEBAR
+     
+     IMPORTANT:
+     NOT FIXED.
+     NOT STICKY.
+
+     It is attached to the profile-content-wrapper.
+     Therefore it cannot continue over the footer.
+     ======================================================= */
+
+  .right-sidebar-panel {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 350px;
+
+    min-width: 350px;
+
+    /*
+       The panel follows the profile content wrapper.
+       It will stop before the footer.
+    */
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    background: #132743;
+
+    z-index: 1000;
+
+    overflow: visible;
+
+    /*
+       CLOSED:
+       only 34px remains visible.
+    */
+
+    transform: translateX(calc(100% - 34px));
+
+    transition:
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    box-shadow:
+      -8px 0 30px rgba(0, 0, 0, 0.30);
+  }
+
+
+  /* =======================================================
+     OPEN
+     ======================================================= */
+
+  .right-sidebar-panel.right-sidebar-open {
+    transform: translateX(0);
+  }
+
+
+  /* =======================================================
+     CLOSED
+     ======================================================= */
+
+  .right-sidebar-panel.right-sidebar-collapsed {
+    transform: translateX(calc(100% - 34px));
+  }
+
+
+  /* =======================================================
+     CONTENT INSIDE RIGHT SIDEBAR
+     ======================================================= */
+
+  .right-sidebar-content {
+
+    width: 350px;
+
+    min-width: 350px;
+
+    height: 100%;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+  }
+
+
+  .right-sidebar-content .profile-sidebar-right {
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     ARROW
+     ======================================================= */
+
+  .right-sidebar-toggle {
+
+    display: flex;
+
+    position: absolute;
+
+    top: 25px;
+
+    left: -34px;
+
+    width: 34px;
+
+    height: 52px;
+  }
+}
+
+
+/* =========================================================
+   900px AND BELOW
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .profile-content-wrapper {
+    gap: 15px;
+  }
+
+
+  .profile-content-wrapper > .rectangle {
+
+    flex: 0 0 280px;
+
+    width: 280px;
+
+    min-width: 280px;
+  }
+
+
+  .right-sidebar-panel {
+
+    width: 330px;
+
+    min-width: 330px;
+  }
+
+
+  .right-sidebar-content {
+
+    width: 330px;
+
+    min-width: 330px;
+  }
+}
+
+
+/* =========================================================
+   768px AND BELOW
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .profile-content-wrapper {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    position: relative;
+  }
+
+
+  /* LEFT SIDEBAR */
+
+  .profile-content-wrapper > .rectangle {
+
+    width: 100%;
+
+    min-width: 0;
+
+    max-width: 100%;
+
+    flex: none;
+  }
+
+
+  /* MAIN PROFILE */
+
+  .profile-content-wrapper > .profile-main {
+
+    width: 100%;
+
+    min-width: 0;
+
+    flex: none;
+  }
+
+
+  /* RIGHT SIDEBAR */
+
+  .right-sidebar-panel {
+
+    width: min(330px, 88vw);
+
+    min-width: 0;
+
+    top: 0;
+
+    right: 0;
+
+    height: 100%;
+  }
+
+
+  .right-sidebar-content {
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 12px;
+  }
+
+
+  .right-sidebar-panel.right-sidebar-collapsed {
+
+    transform: translateX(calc(100% - 34px));
+  }
+
+
+  .right-sidebar-toggle {
+
+    top: 20px;
+
+    left: -34px;
+
+    width: 34px;
+
+    height: 50px;
+  }
+}
+
+
+/* =========================================================
+   480px AND BELOW
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .right-sidebar-panel {
+
+    width: 85vw;
+  }
+
+
+  .right-sidebar-content {
+
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   360px AND BELOW
+   ========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .right-sidebar-panel {
+
+    width: 90vw;
+  }
 }

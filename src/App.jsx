@@ -16,6 +16,7 @@ import DSALevels from "./pages/DSALevels";
 // import SignUp from "./pages/SignUp";
 import Dashboard from "./components/Dashboard";
 import NotFound from "./pages/NotFound"; 
+import Profile from "./pages/ProfileContainer.jsx";
 import CodeCompiler from "./pages/CompilerGeneral"
 import WebCompiler from "./pages/WebCompiler"
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path="/web-compiler" element={<WebCompiler />} />
         {/* <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} /> */}
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound />} />
         {/*  testing git */}
       </Routes>
