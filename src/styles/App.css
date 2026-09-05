@@ -14,9 +14,23 @@
     margin-top: 20px; /* spacing between text and image */
   }
 }
-.menu_toggle{
+
+.menu_toggle {
   display: none;
 }
+
+.menu_toggle_parent {
+  position: relative;
+}
+
+.menu_toggle_icon {
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+
 @media (max-width: 1395px) {
   .nav_bar,
   .search_bar,
@@ -30,11 +44,7 @@
     z-index: 1000;
   }
 
-  .menu_toggle .parent {
-    position: relative;
-  }
-
-  /* Mobile menu now controlled entirely by React state, no hover */
+  /* Mobile menu is controlled entirely by React state, not hover */
   .mobile_nav {
     display: flex;
     flex-direction: column;
@@ -58,6 +68,10 @@
     font-size: 1.05rem;
     text-align: left;
     cursor: pointer;
+  }
+
+  .mobile_nav .nav-item:last-child {
+    border-bottom: none;
   }
 
   .mobile_nav .nav-item:hover {

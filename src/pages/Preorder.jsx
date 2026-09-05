@@ -45,6 +45,7 @@ const Preorder = () => {
   const allFilled = dropped.every((val) => val !== "");
 
   return (
+    <div className="traversal-page">
     <div className="container traversal-container">
       <h2>Drag nodes from the tree to form Preorder Traversal</h2>
 
@@ -117,6 +118,7 @@ const Preorder = () => {
       <div className="score">
         Coins: <span id="coins">{coins}</span> 🪙
       </div>
+    </div>
     </div>
   );
 };

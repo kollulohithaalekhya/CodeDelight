@@ -1,30 +1,35 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+/* Web compiler (HTML + CSS + JS + live output).
+   Scoped to .webcompiler-* — the file used to open with a global `*` reset
+   that reset font-family across every route. */
 
 .webcompiler-container {
   background: #2c2c2c;
   color: #00f2fe;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
   padding: 10px;
   gap: 10px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .editors-section {
   display: flex;
   height: 400px;
   gap: 10px;
-  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
 }
 
+/* min-width:0 is what stops Monaco from forcing the row wider than the
+   viewport: without it each flex item refuses to shrink below its content. */
 .editor-card {
-  flex: 1 1 30%;
+  flex: 1 1 0;
+  min-width: 0;
   background: #1f1f1f;
   border-radius: 6px;
   overflow: hidden;
@@ -42,6 +47,16 @@
   border-bottom: 1px solid #00f2fe;
   font-size: 14px;
   gap: 8px;
+  flex: 0 0 auto;
+}
+
+/* Gives Monaco a definite box to fill inside the flex column. */
+.editor-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .output-section {
@@ -51,6 +66,8 @@
   display: flex;
   flex-direction: column;
   min-height: 400px;
+  width: 100%;
+  min-width: 0;
 }
 
 .output-section label {
@@ -71,9 +88,7 @@
   background: #fff;
 }
 
-
-
-/* Monaco Suggestions Box */
+/* Monaco suggestion widget */
 .monaco-editor .suggest-widget {
   max-width: 420px !important;
   min-width: 260px !important;
@@ -81,31 +96,29 @@
   background-color: #1e1e1e !important;
 }
 
-/* Suggestion rows */
 .monaco-editor .suggest-widget .monaco-list-row {
   padding-right: 8px !important;
   white-space: nowrap !important;
 }
 
-/* Prevent extra horizontal space */
 .monaco-editor .suggest-widget .monaco-list {
   overflow-x: hidden !important;
 }
 
-/* Description text */
 .monaco-editor .suggest-widget .details-label {
   max-width: 220px !important;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Scrollbar adjustment */
 .monaco-editor .suggest-widget .monaco-scrollable-element {
   padding-right: 6px !important;
 }
 
-
-
+/* Below ~1024px three side-by-side editors get too narrow to type in, so the
+   row becomes a column with each editor given a real height (not just a
+   min-height on an auto-height parent, which is what collapsed the layout at
+   851px and 958px). */
 @media (max-width: 1024px) {
   .editors-section {
     flex-direction: column;
@@ -113,13 +126,23 @@
   }
 
   .editor-card {
-    min-height: 240px;
+    flex: 0 0 auto;
+    height: 260px;
+  }
+
+  .output-section {
+    min-height: 340px;
   }
 }
 
 @media (max-width: 600px) {
+  .webcompiler-container {
+    padding: 8px;
+    gap: 8px;
+  }
+
   .editor-card {
-    min-height: 200px;
+    height: 220px;
   }
 
   .editor-card label {
@@ -127,6 +150,6 @@
   }
 
   .output-section {
-    min-height: 300px;
+    min-height: 280px;
   }
 }

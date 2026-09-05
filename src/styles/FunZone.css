@@ -1,0 +1,140 @@
+/* Fun Zone, ported from the original funzone.css. Scoped under
+   .funzone-container so nothing leaks into the other routes. */
+
+.funzone-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #0b1c2d;
+  color: white;
+}
+
+.funzone-title {
+  font-size: 3rem;
+  color: #00e5ff;
+}
+
+.funzone-subtitle {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.coin-counter {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  background-color: #112233;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 2px solid #00e5ff;
+}
+
+.funzone-message {
+  margin: 18px auto 0;
+  max-width: 420px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.funzone-message.ok {
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid #00e5ff;
+  color: #cffafe;
+}
+
+.funzone-message.error {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid #f87171;
+  color: #fecaca;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.game-card {
+  background: linear-gradient(135deg, #112233, #0e1a2a);
+  border: 3px solid #00e5ff;
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.game-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.game-card p {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+.game-card button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background-color: #00e5ff;
+  color: #0b1c2d;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.game-card button:hover {
+  background-color: #00c3ff;
+  transform: scale(1.05);
+}
+
+.game-icon {
+  font-size: 2.5rem;
+  color: #00e5ff;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1000px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .funzone-title {
+    font-size: 2rem;
+  }
+  .funzone-subtitle {
+    font-size: 1rem;
+  }
+  .game-grid {
+    gap: 16px;
+    padding: 0;
+  }
+  .game-card {
+    padding: 22px 16px;
+    min-height: 260px;
+  }
+  .game-card h2 {
+    font-size: 1.15rem;
+  }
+  .game-card p {
+    font-size: 0.85rem;
+  }
+}

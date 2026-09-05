@@ -45,6 +45,7 @@ const Inorder = () => {
   const allFilled = dropped.every((val) => val !== "");
 
   return (
+    <div className="traversal-page">
     <div className="container traversal-container">
       <h2>Drag nodes from the tree to form Inorder Traversal</h2>
 
@@ -121,6 +122,7 @@ const Inorder = () => {
       <div className="score">
         Coins: <span id="coins">{coins}</span> 🪙
       </div>
+    </div>
     </div>
   );
 };

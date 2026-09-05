@@ -1,0 +1,3115 @@
+{
+  "html": {
+    "1": {
+      "title": "Level 1 Quiz",
+      "questions": [
+        {
+          "question": "What does HTML stand for?",
+          "options": [
+            "Hyperlinks and Text Markup Language",
+            "Home Tool Markup Language",
+            "Hyper Text Markup Language",
+            "Hyper Tool Markup Language"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Who is the inventor of HTML?",
+          "options": [
+            "Tim Berners-Lee",
+            "Bill Gates",
+            "Brendan Eich",
+            "Dennis Ritchie"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Choose the correct HTML element for the largest heading:",
+          "options": [
+            "<h6>",
+            "<h1>",
+            "<heading>",
+            "<head>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the correct HTML element for inserting a line break?",
+          "options": [
+            "<break>",
+            "<br>",
+            "<lb>",
+            "<newline>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which HTML tag is used to display an image?",
+          "options": [
+            "<pic>",
+            "<img>",
+            "<src>",
+            "<image>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the correct HTML for creating a hyperlink?",
+          "options": [
+            "<a>http://example.com</a>",
+            "<link href='http://example.com'>",
+            "<a href='http://example.com'>Link</a>",
+            "<url>http://example.com</url>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag is used to create a list with bullets?",
+          "options": [
+            "<ol>",
+            "<list>",
+            "<ul>",
+            "<li>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the correct HTML element to define emphasized text?",
+          "options": [
+            "<i>",
+            "<bold>",
+            "<em>",
+            "<strong>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which HTML element defines the title of a document?",
+          "options": [
+            "<meta>",
+            "<title>",
+            "<head>",
+            "<header>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Where does the <title> tag belong?",
+          "options": [
+            "Inside the <body>",
+            "After <html>",
+            "Inside the <head>",
+            "Before <html>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag is used to define a table row?",
+          "options": [
+            "<tr>",
+            "<row>",
+            "<td>",
+            "<table>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How can you make text bold in HTML?",
+          "options": [
+            "<strong>",
+            "<bld>",
+            "<text bold>",
+            "<bold>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which attribute is used to provide alternative text for an image?",
+          "options": [
+            "title",
+            "alt",
+            "src",
+            "href"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you create a checkbox in HTML?",
+          "options": [
+            "<input type='checkbox'>",
+            "<check>",
+            "<checkbox>",
+            "<input checkbox>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How do you create a numbered list?",
+          "options": [
+            "<ol>",
+            "<ul>",
+            "<dl>",
+            "<list>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which HTML tag is used to define an internal style sheet?",
+          "options": [
+            "<style>",
+            "<css>",
+            "<script>",
+            "<link>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which tag is used to define a cell in a table?",
+          "options": [
+            "<th>",
+            "<tr>",
+            "<td>",
+            "<table>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which attribute is used to open a link in a new tab?",
+          "options": [
+            "target='_self'",
+            "target='_blank'",
+            "new='true'",
+            "open='tab'"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tag is used for inserting a comment in HTML?",
+          "options": [
+            "<comment>",
+            "// this is a comment",
+            "<!-- This is a comment -->",
+            "# This is a comment"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag represents a section of navigation links?",
+          "options": [
+            "<nav>",
+            "<section>",
+            "<menu>",
+            "<navigate>"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "2": {
+      "title": "Level 2 Quiz",
+      "questions": [
+        {
+          "question": "Which tag is used to define a table row?",
+          "options": [
+            "<td>",
+            "<tr>",
+            "<th>",
+            "<table>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the correct HTML tag for inserting a line break?",
+          "options": [
+            "<break>",
+            "<br>",
+            "<lb>",
+            "<newline>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tag is used to define an unordered list?",
+          "options": [
+            "<ol>",
+            "<ul>",
+            "<list>",
+            "<li>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How can you open a link in a new tab?",
+          "options": [
+            "target='_blank'",
+            "href='_new'",
+            "open='_tab'",
+            "newwindow='true'"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which tag is used to define a table header?",
+          "options": [
+            "<thead>",
+            "<th>",
+            "<header>",
+            "<td>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the <em> tag do?",
+          "options": [
+            "Highlights text",
+            "Italicizes text",
+            "Emphasizes text",
+            "Boldens text"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag defines a caption for a table?",
+          "options": [
+            "<label>",
+            "<caption>",
+            "<head>",
+            "<title>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following is a semantic HTML element?",
+          "options": [
+            "<div>",
+            "<span>",
+            "<section>",
+            "<b>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the default method for submitting an HTML form?",
+          "options": [
+            "get",
+            "post",
+            "submit",
+            "send"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which input type is used for selecting files?",
+          "options": [
+            "file",
+            "upload",
+            "choose",
+            "select"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How do you make a text input field required?",
+          "options": [
+            "required",
+            "mandatory",
+            "mustfill",
+            "necessary"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which tag defines a dropdown list?",
+          "options": [
+            "<select>",
+            "<dropdown>",
+            "<input type='list'>",
+            "<list>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does the <iframe> tag do?",
+          "options": [
+            "Adds images",
+            "Embeds a page",
+            "Plays video",
+            "Displays footer"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tag defines preformatted text?",
+          "options": [
+            "<pre>",
+            "<code>",
+            "<format>",
+            "<p>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does the autofocus attribute do?",
+          "options": [
+            "Adds bold",
+            "Sets focus on load",
+            "Centers text",
+            "Inserts image"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which input type is used for picking a date?",
+          "options": [
+            "date",
+            "calendar",
+            "datetime",
+            "time"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which tag is used to group form elements?",
+          "options": [
+            "<group>",
+            "<fieldset>",
+            "<formgroup>",
+            "<bundle>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the <label> tag do?",
+          "options": [
+            "Submits form",
+            "Creates text field",
+            "Defines caption for input",
+            "Adds styling"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag defines the document's body content?",
+          "options": [
+            "<main>",
+            "<content>",
+            "<body>",
+            "<page>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What attribute is used to define an image’s tooltip text?",
+          "options": [
+            "title",
+            "alt",
+            "tooltip",
+            "hover"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    "3": {
+      "title": "Level 3 Quiz",
+      "questions": [
+        {
+          "question": "Which HTML element is used to declare metadata about an HTML document?",
+          "options": [
+            "<meta>",
+            "<head>",
+            "<data>",
+            "<link>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the purpose of the 'contenteditable' attribute in HTML?",
+          "options": [
+            "Makes the content hidden",
+            "Allows editing of the content in the browser",
+            "Links to an external file",
+            "Specifies the charset"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tag is used to define a client-side image-map?",
+          "options": [
+            "<map>",
+            "<area>",
+            "<imgmap>",
+            "<imagemap>"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "In HTML5, which attribute is used with <audio> to start playing automatically?",
+          "options": [
+            "play",
+            "autoplay",
+            "start",
+            "auto"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the correct HTML element for playing video files?",
+          "options": [
+            "<media>",
+            "<movie>",
+            "<video>",
+            "vvid>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the purpose of the 'sandbox' attribute in <iframe>?",
+          "options": [
+            "Applies a background image",
+            "Allows fullscreen",
+            "Adds extra security restrictions",
+            "Adds a frame border"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which attribute is used to specify a short hint describing the expected value of an input field?",
+          "options": [
+            "label",
+            "title",
+            "alt",
+            "placeholder"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What does the 'async' attribute in <script> tag do?",
+          "options": [
+            "Delays script execution",
+            "Downloads the script in parallel and executes as soon as it's ready",
+            "Executes script after HTML parsing",
+            "Blocks the page until the script loads"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the use of the 'novalidate' attribute in forms?",
+          "options": [
+            "To skip form submission",
+            "To disable auto-complete",
+            "To skip built-in validation",
+            "To skip required fields"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tag is used to define a definition in a definition list?",
+          "options": [
+            "<dl>",
+            "<dt>",
+            "<dd>",
+            "<li>"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the correct HTML element to define important text?",
+          "options": [
+            "<b>",
+            "<strong>",
+            "<em>",
+            "<mark>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which attribute of <form> specifies where to send the form-data when submitted?",
+          "options": [
+            "action",
+            "method",
+            "submit",
+            "href"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which input type defines a slider control?",
+          "options": [
+            "input type='range'",
+            "input type='slider'",
+            "input type='scale'",
+            "input type='scroll'"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the purpose of the <progress> tag in HTML5?",
+          "options": [
+            "To display a bar chart",
+            "To show a completion progress bar",
+            "To create animation",
+            "To indicate file size"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the 'defer' attribute in <script> do?",
+          "options": [
+            "Executes script after page load",
+            "Executes immediately after loading",
+            "Defers execution until HTML is fully parsed",
+            "Runs script only on reload"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which element is used to embed custom non-visible data into HTML?",
+          "options": [
+            "<meta>",
+            "<data>",
+            "<embed>",
+            "<script>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the correct element to group multiple options inside a <select> tag?",
+          "options": [
+            "<selectgroup>",
+            "<optgroup>",
+            "<options>",
+            "<group>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which tag represents a scalar measurement within a known range?",
+          "options": [
+            "<range>",
+            "<meter>",
+            "<progress>",
+            "<scale>"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which HTML attribute prevents the user from modifying the value of the input field?",
+          "options": [
+            "readonly",
+            "disable",
+            "static",
+            "freeze"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does the 'spellcheck' attribute do?",
+          "options": [
+            "Highlights text",
+            "Enables or disables spell checking",
+            "Checks grammar",
+            "Fixes typos automatically"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+  "css": {
+    "1": {
+      "title": "Level 1 Quiz",
+      "questions": [
+        {
+          "question": "What does CSS stand for?",
+          "options": [
+            "Creative Style Sheets",
+            "Computer Style Sheets",
+            "Cascading Style Sheets",
+            "Colorful Style Sheets"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which HTML tag is used to link an external CSS file?",
+          "options": [
+            "<script>",
+            "<style>",
+            "<css>",
+            "<link>"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Where in an HTML document is the correct place to refer to an external CSS file?",
+          "options": [
+            "In the body",
+            "At the end",
+            "In the head",
+            "After the HTML"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which property is used to change the text color in CSS?",
+          "options": [
+            "font-color",
+            "text-color",
+            "color",
+            "text-style"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you make text bold in CSS?",
+          "options": [
+            "font-style: bold;",
+            "text-weight: bold;",
+            "font-weight: bold;",
+            "style: bold;"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which property controls the size of text?",
+          "options": [
+            "font-size",
+            "text-size",
+            "size",
+            "text-style"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does 'px' stand for in CSS?",
+          "options": [
+            "points",
+            "pixels",
+            "parts",
+            "percent"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you select an element with the id 'main'?",
+          "options": [
+            "#main",
+            ".main",
+            "*main",
+            "main"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "How do you select elements with class 'title'?",
+          "options": [
+            ".title",
+            "#title",
+            "*title",
+            "$title"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which CSS property is used for background color?",
+          "options": [
+            "color",
+            "background",
+            "bgcolor",
+            "background-color"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "How do you center text in CSS?",
+          "options": [
+            "text-align: center;",
+            "text-center: true;",
+            "text-style: center;",
+            "text-align: middle;"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which property adds space inside the border of an element?",
+          "options": [
+            "padding",
+            "margin",
+            "border",
+            "spacing"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which property adds space outside the border?",
+          "options": [
+            "padding",
+            "margin",
+            "border-spacing",
+            "spacing"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you make a list without bullets?",
+          "options": [
+            "list-type: none;",
+            "text-style: none;",
+            "list-style: none;",
+            "bullet: none;"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which is the correct CSS syntax?",
+          "options": [
+            "{body:color=black;}",
+            "body:color=black;",
+            "body {color: black;}",
+            "{body;color:black;}"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you add a comment in CSS?",
+          "options": [
+            "// this is a comment",
+            "/* this is a comment */",
+            "<!-- this is a comment -->",
+            "# this is a comment"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which property is used to round the corners of an element?",
+          "options": [
+            "border-radius",
+            "corner",
+            "radius",
+            "curve"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which value makes an element invisible but keeps its space?",
+          "options": [
+            "display: none;",
+            "visibility: hidden;",
+            "opacity: 0;",
+            "hidden: true;"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What unit is used for percentage-based widths?",
+          "options": [
+            "px",
+            "em",
+            "%",
+            "rem"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which CSS property changes the font type?",
+          "options": [
+            "font-weight",
+            "font-style",
+            "font-family",
+            "font-type"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "2": {
+      "title": "Level 2 Quiz",
+      "questions": [
+        {
+          "question": "Which CSS property controls the text size?",
+          "options": [
+            "font-size",
+            "text-style",
+            "text-size",
+            "font-style"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which property is used to change the background color?",
+          "options": [
+            "bgcolor",
+            "color",
+            "background-color",
+            "background"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which property is used to make text bold?",
+          "options": [
+            "font-style",
+            "font-weight",
+            "text-style",
+            "bold"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does z-index control?",
+          "options": [
+            "Zoom level",
+            "Element stacking order",
+            "Font size",
+            "Opacity"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the default position of an HTML element?",
+          "options": [
+            "absolute",
+            "fixed",
+            "static",
+            "relative"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How can you select an element with id='demo'?",
+          "options": [
+            ".demo",
+            "*demo",
+            "#demo",
+            "$demo"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you apply styles to all <p> elements?",
+          "options": [
+            "#p",
+            ".p",
+            "*p",
+            "p"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which property is used to control spacing between lines?",
+          "options": [
+            "spacing",
+            "line-spacing",
+            "line-height",
+            "text-spacing"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you center text in CSS?",
+          "options": [
+            "text-align: center;",
+            "align: center;",
+            "text-center: true;",
+            "center-text: yes;"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which property is used to change the font of an element?",
+          "options": [
+            "font",
+            "font-family",
+            "font-style",
+            "font-weight"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which value makes an element invisible but still takes up space?",
+          "options": [
+            "display: none",
+            "visibility: hidden",
+            "opacity: 0",
+            "none of the above"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you make a box model include padding and border in its total width?",
+          "options": [
+            "box-sizing: content-box",
+            "box-sizing: border-box",
+            "box-size: border",
+            "box: full"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you add a shadow to text?",
+          "options": [
+            "text-style",
+            "font-shadow",
+            "text-shadow",
+            "shadow-text"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the correct syntax for a CSS comment?",
+          "options": [
+            "// comment",
+            "# comment",
+            "/* comment */",
+            "<!-- comment -->"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which property sets the space between letters?",
+          "options": [
+            "letter-spacing",
+            "word-spacing",
+            "text-spacing",
+            "font-spacing"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What pseudo-class targets the first child?",
+          "options": [
+            ":first-child",
+            ":first",
+            ":child-first",
+            "::first"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which property changes the color of text?",
+          "options": [
+            "text-color",
+            "color",
+            "font-color",
+            "text-style"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you apply a style only when hovering over an element?",
+          "options": [
+            "element:active",
+            "element:visited",
+            "element:hover",
+            "element:focus"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What property adds space inside the border of an element?",
+          "options": [
+            "margin",
+            "padding",
+            "border-spacing",
+            "gap"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which value of position fixes an element in the same place on screen?",
+          "options": [
+            "relative",
+            "absolute",
+            "sticky",
+            "fixed"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    "3": {
+      "title": "Level 3 Quiz",
+      "questions": [
+        {
+          "question": "Which CSS property is used to specify how a block-level element is displayed?",
+          "options": [
+            "display",
+            "position",
+            "visibility",
+            "overflow"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What value of the position property will position the element relative to the browser window?",
+          "options": [
+            "relative",
+            "fixed",
+            "absolute",
+            "static"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which pseudo-class selects the last child element?",
+          "options": [
+            ":last",
+            ":last-child",
+            ":nth-last-child",
+            ":end"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the z-index property control?",
+          "options": [
+            "Font size",
+            "Layer order",
+            "Background opacity",
+            "Line spacing"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following units is relative to the viewport height?",
+          "options": [
+            "em",
+            "vh",
+            "vw",
+            "%"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which value of the overflow property clips the content and hides the rest?",
+          "options": [
+            "visible",
+            "hidden",
+            "scroll",
+            "auto"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which CSS feature allows using a variable name for a value?",
+          "options": [
+            "Custom properties",
+            "Preprocessor",
+            "Functions",
+            "Hooks"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which shorthand property sets margin values?",
+          "options": [
+            "spacing",
+            "box-model",
+            "margin",
+            "edge"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which media feature is used to apply styles for dark mode?",
+          "options": [
+            "color-mode",
+            "prefers-color-scheme",
+            "theme",
+            "dark-mode"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the initial value of z-index?",
+          "options": [
+            "1",
+            "0",
+            "auto",
+            "none"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which property is used to animate transitions in CSS?",
+          "options": [
+            "animation",
+            "transition",
+            "transform",
+            "change"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which CSS method places an element exactly where you want it?",
+          "options": [
+            "float",
+            "flex",
+            "absolute positioning",
+            "static"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the correct order of box model layers from inside out?",
+          "options": [
+            "content > padding > margin > border",
+            "margin > padding > border > content",
+            "content > padding > border > margin",
+            "padding > content > margin > border"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of these is not a valid display value?",
+          "options": [
+            "inline-block",
+            "block",
+            "none",
+            "box"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "How do you apply styles only when printing?",
+          "options": [
+            "@media printer",
+            "@media screen",
+            "@media print",
+            "@media only"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which CSS unit is based on the width of the 0 character?",
+          "options": [
+            "em",
+            "ex",
+            "ch",
+            "rem"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following defines a grid container?",
+          "options": [
+            "display: flex",
+            "display: grid",
+            "display: block",
+            "display: inline"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the effect of visibility: hidden;?",
+          "options": [
+            "Element is removed",
+            "Element is hidden but takes space",
+            "Element is blurred",
+            "Element becomes inline"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you define a CSS variable?",
+          "options": [
+            "var-name",
+            "--name",
+            "define --name",
+            "@name"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which property helps to apply multiple background images?",
+          "options": [
+            "background-layer",
+            "background-images",
+            "background",
+            "bg-stack"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "js": {
+    "1": {
+      "title": "Level 1 Quiz",
+      "questions": [
+        {
+          "question": "What keyword is used to declare a variable in JavaScript?",
+          "options": [
+            "var",
+            "let",
+            "const",
+            "All of the above"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What does JS stand for?",
+          "options": [
+            "Java Source",
+            "Just Style",
+            "JavaScript",
+            "Java Setup"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following is a comparison operator?",
+          "options": [
+            "+",
+            "==",
+            "=",
+            "&&"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What will 5 > 3 && 2 < 4 return?",
+          "options": [
+            "true",
+            "false",
+            "NaN",
+            "Error"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which loop runs at least once even if the condition is false?",
+          "options": [
+            "for",
+            "while",
+            "do-while",
+            "foreach"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you define a function in JavaScript?",
+          "options": [
+            "function = myFunc() {}",
+            "define function myFunc()",
+            "function myFunc() {}",
+            "func myFunc()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you access a property from an object?",
+          "options": [
+            "object.property",
+            "object(property)",
+            "object->property",
+            "object[property]"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which keyword is used to return a value from a function?",
+          "options": [
+            "output",
+            "return",
+            "result",
+            "function"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you access the first element of an array arr?",
+          "options": [
+            "arr(1)",
+            "arr.0",
+            "arr[0]",
+            "arr{0}"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which method adds an element to the end of an array?",
+          "options": [
+            "shift()",
+            "pop()",
+            "push()",
+            "unshift()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What does str.length return?",
+          "options": [
+            "Number of words",
+            "Number of vowels",
+            "Length of string",
+            "Nothing"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which event occurs when a user clicks on an HTML element?",
+          "options": [
+            "onchange",
+            "onmouseover",
+            "onclick",
+            "onmouseclick"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which object is used to work with dates and time?",
+          "options": [
+            "Timer",
+            "Clock",
+            "Date",
+            "Time"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is hoisting in JavaScript?",
+          "options": [
+            "Lifting elements in HTML",
+            "Moving functions and variables to the top",
+            "Deleting variables",
+            "Skipping undefined values"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following handles asynchronous operations?",
+          "options": [
+            "setInterval",
+            "prompt()",
+            "Promise",
+            "alert()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Closures allow a function to access variables from...",
+          "options": [
+            "The HTML file",
+            "A different JS file",
+            "Its outer function",
+            "Local storage"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which keyword declares a block-scoped variable?",
+          "options": [
+            "var",
+            "let",
+            "function",
+            "const"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the syntax for an arrow function?",
+          "options": [
+            "() => {}",
+            "function => {}",
+            "-> () {}",
+            "() -> {}"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does DOM stand for?",
+          "options": [
+            "Document Object Model",
+            "Data Object Method",
+            "Display Output Model",
+            "Document Output Module"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method selects an element by ID?",
+          "options": [
+            "getElementByTag()",
+            "queryElement()",
+            "getElementById()",
+            "selectId()"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "2": {
+      "title": "Level 2 Quiz",
+      "questions": [
+        {
+          "question": "What is the output of typeof null?",
+          "options": [
+            "'null'",
+            "'object'",
+            "'undefined'",
+            "'number'"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which method is used to convert a JSON string into a JavaScript object?",
+          "options": [
+            "JSON.stringify()",
+            "JSON.parse()",
+            "JSON.toObject()",
+            "parse.JSON()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which symbol is used for strict equality comparison?",
+          "options": [
+            "=",
+            "==",
+            "===",
+            "!=="
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which array method creates a new array with only the elements that pass a test?",
+          "options": [
+            "forEach()",
+            "map()",
+            "filter()",
+            "reduce()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following is not a JavaScript data type?",
+          "options": [
+            "string",
+            "boolean",
+            "float",
+            "undefined"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What will be the result of '2' + 2 in JavaScript?",
+          "options": [
+            "4",
+            "22",
+            "'4'",
+            "'2' + 2"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which keyword is used to prevent variable re-declaration?",
+          "options": [
+            "var",
+            "const",
+            "let",
+            "static"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the spread operator (...) do in JavaScript?",
+          "options": [
+            "Merges arrays or objects",
+            "Hides properties",
+            "Multiplies values",
+            "None of the above"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which function is used to delay execution of code?",
+          "options": [
+            "setTimeout()",
+            "delay()",
+            "sleep()",
+            "pause()"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What will be the result of typeof NaN?",
+          "options": [
+            "'NaN'",
+            "'undefined'",
+            "'number'",
+            "'object'"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which method adds new elements to the beginning of an array?",
+          "options": [
+            "push()",
+            "shift()",
+            "unshift()",
+            "concat()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is a closure in JavaScript?",
+          "options": [
+            "Function inside a class",
+            "Function with private variables",
+            "Function accessing outer scope",
+            "None"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How do you write an arrow function with one parameter?",
+          "options": [
+            "x => {}",
+            "(x) => {}",
+            "function(x) => {}",
+            "Both a and b"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which keyword is used to define a class in JavaScript?",
+          "options": [
+            "object",
+            "function",
+            "class",
+            "constructor"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What does the 'this' keyword refer to in a regular function?",
+          "options": [
+            "Global object",
+            "Function itself",
+            "Parent scope",
+            "Undefined"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method calls a function for every array element and returns a new array?",
+          "options": [
+            "map()",
+            "filter()",
+            "reduce()",
+            "forEach()"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What will '5' - 2 return in JavaScript?",
+          "options": [
+            "3",
+            "52",
+            "NaN",
+            "undefined"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method is used to combine two or more arrays?",
+          "options": [
+            "push()",
+            "merge()",
+            "concat()",
+            "join()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following is NOT a valid loop in JavaScript?",
+          "options": [
+            "for",
+            "while",
+            "foreach",
+            "loop"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which object in JavaScript lets you work with dates and times?",
+          "options": [
+            "Clock",
+            "Time",
+            "Date",
+            "Moment"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "3": {
+      "title": "Level 3 Quiz",
+      "questions": [
+        {
+          "question": "What is the output of: console.log([] + []);",
+          "options": [
+            "[]",
+            "'[object Object][object Object]'",
+            "''",
+            "NaN"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following will NOT create a new object?",
+          "options": [
+            "Object.create({})",
+            "{}",
+            "new Object()",
+            "Object.assign()"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What is the output of: typeof function(){}?",
+          "options": [
+            "'object'",
+            "'function'",
+            "'undefined'",
+            "'method'"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the result of: '5' - - '2'?",
+          "options": [
+            "3",
+            "7",
+            "'52'",
+            "NaN"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which concept allows functions to remember their lexical scope?",
+          "options": [
+            "Encapsulation",
+            "Closure",
+            "Hoisting",
+            "Prototyping"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What will be the result of: typeof NaN === 'number'?",
+          "options": [
+            "true",
+            "false",
+            "undefined",
+            "NaN"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method can be used to flatten a nested array?",
+          "options": [
+            "map()",
+            "reduce()",
+            "flat()",
+            "join()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "How can you make an object immutable?",
+          "options": [
+            "Object.seal()",
+            "Object.freeze()",
+            "Object.preventExtensions()",
+            "delete object"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What will the following return: [...new Set([1,2,2,3])]",
+          "options": [
+            "[1,2,3]",
+            "[1,2,2,3]",
+            "[1,3]",
+            "Set {1,2,3}"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the output of: console.log(typeof null)?",
+          "options": [
+            "'null'",
+            "'object'",
+            "'undefined'",
+            "'NaN'"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which method is used to bind 'this' permanently to a function?",
+          "options": [
+            "call()",
+            "bind()",
+            "apply()",
+            "setThis()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which statement is true about arrow functions?",
+          "options": [
+            "They have their own 'this'",
+            "They are hoisted",
+            "They inherit 'this' from parent scope",
+            "They are constructors"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What does the optional chaining operator (?.) do?",
+          "options": [
+            "Checks type",
+            "Throws error on null",
+            "Safely accesses nested properties",
+            "Creates a deep clone"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the output of: '10' == 10 && '10' === 10?",
+          "options": [
+            "true",
+            "false",
+            "TypeError",
+            "undefined"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How can you detect if a variable is not a number (NaN)?",
+          "options": [
+            "typeof",
+            "Number.isNaN()",
+            "isNaN()",
+            "isNumber()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which built-in method executes a reducer function on each array element?",
+          "options": [
+            "map()",
+            "reduce()",
+            "forEach()",
+            "filter()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following can be used to deep clone an object?",
+          "options": [
+            "Object.assign()",
+            "JSON.stringify() + JSON.parse()",
+            "spread operator",
+            "slice()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the output of: 0.1 + 0.2 === 0.3?",
+          "options": [
+            "true",
+            "false",
+            "undefined",
+            "TypeError"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which property defines the prototype chain of an object?",
+          "options": [
+            "prototype",
+            "_proto_",
+            "constructor",
+            "Object.getPrototype()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How can you defer script execution until the document is fully parsed?",
+          "options": [
+            "Use async",
+            "Place script at top",
+            "Use defer",
+            "Use await"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+  "dsa": {
+    "1": {
+      "title": "Arrays",
+      "questions": [
+        {
+          "question": "What is the index of the first element in an array?",
+          "options": [
+            "-1",
+            "0",
+            "1",
+            "Depends on the language"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following best describes an array?",
+          "options": [
+            "A dynamic data structure",
+            "A collection of data values of different types",
+            "A collection of data items of the same type stored at contiguous memory locations",
+            "A type of file"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the time complexity of accessing an element in an array by index?",
+          "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n log n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "How do you find the length of an array in Python?",
+          "options": [
+            "length(arr)",
+            "count(arr)",
+            "size(arr)",
+            "len(arr)"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which of the following is a disadvantage of arrays?",
+          "options": [
+            "Fixed size",
+            "Random access",
+            "Efficient indexing",
+            "Storing elements of the same type"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What will be the result of this JavaScript code?\nlet arr = [1, 2, 3];\narr.push(4);\nconsole.log(arr.length);",
+          "options": [
+            "3",
+            "4",
+            "1",
+            "Error"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What will be the output of this C code?\nint arr[] = {10, 20, 30, 40};\nprintf(\"%d\", arr[2]);",
+          "options": [
+            "10",
+            "20",
+            "30",
+            "Error"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What will be the output of this Python code?\narr = [5, 10, 15]\nprint(arr[-1])",
+          "options": [
+            "5",
+            "10",
+            "15",
+            "Error"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "In C, what happens if you access arr[10] when the array has only 5 elements?",
+          "options": [
+            "Returns 0",
+            "Returns garbage value or causes a crash",
+            "Raises a runtime error",
+            "Automatically resizes the array"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which method removes the last element of an array in JavaScript?",
+          "options": [
+            "remove()",
+            "pop()",
+            "shift()",
+            "delete()"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "2": {
+      "title": "Strings",
+      "questions": [
+        {
+          "question": "What is the output of this Python code?\ns = 'hello'\nprint(s[1])",
+          "options": [
+            "h",
+            "e",
+            "l",
+            "o"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which method in JavaScript returns the length of a string?",
+          "options": [
+            "size()",
+            "count()",
+            "length",
+            "len()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which operator is used to concatenate two strings in Java?",
+          "options": [
+            "+",
+            "*",
+            "&",
+            "."
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What does the `toUpperCase()` method do in JavaScript?",
+          "options": [
+            "Converts string to uppercase",
+            "Removes all whitespaces",
+            "Converts string to lowercase",
+            "Reverses the string"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the index of the last character in a string of length `n`?",
+          "options": [
+            "n",
+            "n+1",
+            "n-1",
+            "0"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which method is used to get a part of a string in Python?",
+          "options": [
+            "cut()",
+            "slice()",
+            "substring()",
+            "strip()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the output of this JavaScript code?\nlet str = 'code';\nconsole.log(str.charAt(2));",
+          "options": [
+            "c",
+            "o",
+            "d",
+            "e"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "In C, which library function is used to find the length of a string?",
+          "options": [
+            "strlen()",
+            "size()",
+            "count()",
+            "length()"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which function in Python removes whitespace from both ends of a string?",
+          "options": [
+            "strip()",
+            "trim()",
+            "remove()",
+            "cut()"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method is used in Java to compare two strings for equality?",
+          "options": [
+            "compare()",
+            "==",
+            "equals()",
+            "match()"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "3": {
+      "title": "Level 3 Quiz",
+      "questions": [
+        {
+          "question": "What is a linked list?",
+          "options": [
+            "A collection of elements stored in contiguous memory locations",
+            "A linear data structure with fixed size",
+            "A linear data structure where each element points to the next",
+            "A tree-based data structure"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following is not a type of linked list?",
+          "options": [
+            "Singly Linked List",
+            "Doubly Linked List",
+            "Circular Linked List",
+            "Ternary Linked List"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What does each node in a singly linked list contain?",
+          "options": [
+            "Data only",
+            "Pointer only",
+            "Data and two pointers",
+            "Data and one pointer"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What is the time complexity of inserting an element at the beginning of a singly linked list?",
+          "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the time complexity of accessing the nth element in a singly linked list?",
+          "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which pointer in a doubly linked list helps in backward traversal?",
+          "options": [
+            "Next",
+            "Prev",
+            "Head",
+            "Tail"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which condition indicates the end of a singly linked list?",
+          "options": [
+            "Node is NULL",
+            "Node's data is 0",
+            "Next pointer is NULL",
+            "Head is NULL"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What happens when you insert into an empty linked list?",
+          "options": [
+            "A node is created and becomes the head",
+            "An error occurs",
+            "A node is appended at the end",
+            "The list is automatically sorted"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which of the following operations is easier in a linked list than in an array?",
+          "options": [
+            "Accessing the ith element",
+            "Deleting a node from the middle",
+            "Binary search",
+            "Finding the maximum element"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is a circular linked list?",
+          "options": [
+            "A list where each node points to itself",
+            "A list where the last node points to the first node",
+            "A list that uses an array",
+            "A list with only one node"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "4": {
+      "title": "Level 4 Quiz",
+      "questions": [
+        {
+          "question": "What is the basic principle of a stack?",
+          "options": [
+            "First In First Out (FIFO)",
+            "Last In First Out (LIFO)",
+            "Last In First Served",
+            "Random Access"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which operation removes the top element of a stack?",
+          "options": [
+            "Pop",
+            "Push",
+            "Shift",
+            "Delete"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which method retrieves the top element of a stack without removing it?",
+          "options": [
+            "Top()",
+            "Peek()",
+            "Show()",
+            "Head()"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the time complexity of push and pop operations in a stack?",
+          "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which data structure is used for backtracking, like undo in text editors?",
+          "options": [
+            "Queue",
+            "Array",
+            "Stack",
+            "Hash Table"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the basic principle of a queue?",
+          "options": [
+            "Last In First Out (LIFO)",
+            "First In First Out (FIFO)",
+            "Random In Random Out",
+            "Sorted Access"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which operation inserts an element in a queue?",
+          "options": [
+            "Insert()",
+            "Push()",
+            "Enqueue()",
+            "Append()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the operation that removes an element from the front of a queue?",
+          "options": [
+            "Pop()",
+            "Delete()",
+            "Dequeue()",
+            "RemoveFirst()"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which type of queue allows insertion and deletion from both ends?",
+          "options": [
+            "Circular Queue",
+            "Linear Queue",
+            "Deque",
+            "Priority Queue"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the time complexity of enqueue and dequeue operations in a simple queue?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "5": {
+      "title": "Level 5 Quiz",
+      "questions": [
+        {
+          "question": "Which of the following sorting algorithms has the best average-case time complexity?",
+          "options": [
+            "Bubble Sort",
+            "Selection Sort",
+            "Merge Sort",
+            "Insertion Sort"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What is the average time complexity of Quick Sort?",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(log n)",
+            "O(n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which sorting algorithm is considered the fastest in practice for most cases?",
+          "options": [
+            "Quick Sort",
+            "Bubble Sort",
+            "Heap Sort",
+            "Radix Sort"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which sorting algorithm is stable?",
+          "options": [
+            "Quick Sort",
+            "Heap Sort",
+            "Merge Sort",
+            "Selection Sort"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following sorting algorithms is not comparison-based?",
+          "options": [
+            "Merge Sort",
+            "Quick Sort",
+            "Counting Sort",
+            "Bubble Sort"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "In Bubble Sort, how many passes are required to sort an array of n elements (worst case)?",
+          "options": [
+            "n",
+            "n-1",
+            "log n",
+            "n^2"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the worst-case time complexity of Merge Sort?",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(n)",
+            "O(log n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which sorting algorithm uses a binary heap structure internally?",
+          "options": [
+            "Quick Sort",
+            "Heap Sort",
+            "Selection Sort",
+            "Insertion Sort"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which sorting algorithm divides the list into smaller sublists and merges them after sorting?",
+          "options": [
+            "Merge Sort",
+            "Heap Sort",
+            "Quick Sort",
+            "Selection Sort"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which sorting algorithm performs the best when the array is nearly sorted?",
+          "options": [
+            "Bubble Sort",
+            "Insertion Sort",
+            "Merge Sort",
+            "Heap Sort"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "6": {
+      "title": "Searching",
+      "questions": [
+        {
+          "question": "What is the worst-case time complexity of linear search?",
+          "options": [
+            "O(log n)",
+            "O(n)",
+            "O(1)",
+            "O(n log n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which searching algorithm requires the array to be sorted?",
+          "options": [
+            "Linear Search",
+            "Binary Search",
+            "Hash Search",
+            "Jump Search"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the best-case time complexity of binary search?",
+          "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n^2)"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which of the following is NOT a searching algorithm?",
+          "options": [
+            "Linear Search",
+            "Quick Sort",
+            "Binary Search",
+            "Jump Search"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "In binary search, how is the search space reduced?",
+          "options": [
+            "By removing the last element",
+            "By removing the first element",
+            "By dividing the array into three parts",
+            "By halving the search space at each step"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "What is the time complexity of binary search in the worst case?",
+          "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n^2)"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following searches is best suited for small datasets?",
+          "options": [
+            "Binary Search",
+            "Hashing",
+            "Linear Search",
+            "Exponential Search"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which data structure is ideal for fast searching using keys?",
+          "options": [
+            "Array",
+            "Stack",
+            "Hash Table",
+            "Queue"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What condition must be true for binary search to work?",
+          "options": [
+            "Array must be unsorted",
+            "Array must be sorted",
+            "Array must have only positive integers",
+            "Array must have unique elements"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which search algorithm jumps ahead by fixed steps and then performs linear search?",
+          "options": [
+            "Binary Search",
+            "Jump Search",
+            "Linear Search",
+            "Ternary Search"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "7": {
+      "title": "Trees",
+      "questions": [
+        {
+          "question": "What is a binary tree?",
+          "options": [
+            "A tree with at most two children per node",
+            "A tree with exactly two children per node",
+            "A tree with nodes having binary values",
+            "A tree with only leaf nodes"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the maximum number of nodes at level 'l' in a binary tree?",
+          "options": [
+            "2^l",
+            "2^(l-1)",
+            "l",
+            "l^2"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "In a Binary Search Tree (BST), where are values smaller than the root stored?",
+          "options": [
+            "Right subtree",
+            "Left subtree",
+            "Both sides",
+            "In the leaves only"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the time complexity of searching in a balanced BST?",
+          "options": [
+            "O(n)",
+            "O(n^2)",
+            "O(log n)",
+            "O(1)"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which tree traversal method visits nodes in the order: left, root, right?",
+          "options": [
+            "Preorder",
+            "Postorder",
+            "Inorder",
+            "Level Order"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which data structure is used in Level Order Traversal of a binary tree?",
+          "options": [
+            "Stack",
+            "Queue",
+            "Array",
+            "Linked List"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the height of a tree with a single node?",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "-1"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is a leaf node in a tree?",
+          "options": [
+            "A node with no children",
+            "A node with two children",
+            "The root node",
+            "A node with only one child"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which traversal method is used for copying a tree?",
+          "options": [
+            "Inorder",
+            "Preorder",
+            "Postorder",
+            "Level Order"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which property is true for all nodes in a Binary Search Tree?",
+          "options": [
+            "All children are greater than the parent",
+            "Left child < Parent < Right child",
+            "Parent < Left child < Right child",
+            "All nodes have equal values"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "8": {
+      "title": "Graphs",
+      "questions": [
+        {
+          "question": "What is a graph in data structures?",
+          "options": [
+            "A linear data structure",
+            "A hierarchical structure",
+            "A non-linear structure consisting of nodes and edges",
+            "A sorted tree structure"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What are the components of a graph?",
+          "options": [
+            "Nodes and Arrays",
+            "Vertices and Edges",
+            "Stacks and Queues",
+            "Heaps and Trees"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What type of graph has no cycles?",
+          "options": [
+            "Undirected graph",
+            "Directed graph",
+            "Cyclic graph",
+            "Acyclic graph"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which of the following data structures is used in Breadth-First Search (BFS)?",
+          "options": [
+            "Stack",
+            "Queue",
+            "Priority Queue",
+            "Array"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which algorithm is used to find the shortest path in a weighted graph with non-negative weights?",
+          "options": [
+            "Prim’s Algorithm",
+            "Kruskal’s Algorithm",
+            "Dijkstra’s Algorithm",
+            "DFS"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following is used to represent a sparse graph efficiently?",
+          "options": [
+            "Adjacency Matrix",
+            "Adjacency List",
+            "2D Array",
+            "Hash Table"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "In a complete graph with 'n' vertices, how many edges are there?",
+          "options": [
+            "n",
+            "n-1",
+            "n(n-1)/2",
+            "2n"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which traversal technique uses recursion and a stack internally?",
+          "options": [
+            "BFS",
+            "DFS",
+            "Level Order",
+            "Inorder"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which graph traversal is better for finding the shortest path in an unweighted graph?",
+          "options": [
+            "DFS",
+            "BFS",
+            "Dijkstra",
+            "Kruskal"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is a graph with direction on its edges called?",
+          "options": [
+            "Undirected Graph",
+            "Weighted Graph",
+            "Directed Graph",
+            "Tree"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    "9": {
+      "title": "Hashing",
+      "questions": [
+        {
+          "question": "What is hashing primarily used for?",
+          "options": [
+            "Sorting data",
+            "Searching data efficiently",
+            "Storing data sequentially",
+            "Compressing data"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does a hash function do?",
+          "options": [
+            "Converts data into a fixed-size value or key",
+            "Sorts the data",
+            "Deletes data",
+            "Encrypts the data"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which data structure uses hashing?",
+          "options": [
+            "Array",
+            "Stack",
+            "Hash Table",
+            "Linked List"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What problem occurs when two keys hash to the same index?",
+          "options": [
+            "Overflow",
+            "Collision",
+            "Underflow",
+            "Deadlock"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following is a common method to resolve collisions?",
+          "options": [
+            "Chaining",
+            "Sorting",
+            "Merging",
+            "Partitioning"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the average time complexity of searching in a well-implemented hash table?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(1)",
+            "O(n log n)"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of these is NOT a good property of a hash function?",
+          "options": [
+            "Deterministic output",
+            "Uniform distribution",
+            "High collision rate",
+            "Fast computation"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "What does the load factor in a hash table represent?",
+          "options": [
+            "Number of elements divided by the number of buckets",
+            "Number of collisions",
+            "Size of the hash table",
+            "Maximum number of keys"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which collision resolution technique uses linked lists at each index?",
+          "options": [
+            "Open addressing",
+            "Chaining",
+            "Double hashing",
+            "Rehashing"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What happens during rehashing?",
+          "options": [
+            "The hash table size is decreased",
+            "The hash table is rebuilt with a new hash function or size",
+            "All elements are deleted",
+            "Collision handling is disabled"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "10": {
+      "title": "Recursion",
+      "questions": [
+        {
+          "question": "What is recursion?",
+          "options": [
+            "A loop that repeats a fixed number of times",
+            "A function calling itself",
+            "A function calling another function",
+            "A conditional statement"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the purpose of the base case in recursion?",
+          "options": [
+            "To make recursive calls",
+            "To stop the recursion",
+            "To initialize variables",
+            "To call the main function"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What happens if a recursive function has no base case?",
+          "options": [
+            "It runs infinitely causing stack overflow",
+            "It runs once and stops",
+            "It terminates immediately",
+            "It returns zero"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which data structure is mainly used to manage function calls in recursion?",
+          "options": [
+            "Queue",
+            "Stack",
+            "Array",
+            "Linked List"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is tail recursion?",
+          "options": [
+            "Recursive call is the last operation in the function",
+            "Function calls multiple recursive calls",
+            "Function without recursion",
+            "Recursion with loops"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What will be the output of the following Python code?\n\n```python\ndef factorial(n):\n  if n == 0:\n    return 1\n  return n * factorial(n - 1)\n\nprint(factorial(4))\n```",
+          "options": [
+            "24",
+            "10",
+            "120",
+            "1"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which of these problems is commonly solved using recursion?",
+          "options": [
+            "Linear Search",
+            "Binary Search",
+            "Bubble Sort",
+            "Iterative Sum"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which of the following is a disadvantage of recursion?",
+          "options": [
+            "Code is harder to read",
+            "Uses more memory due to call stack",
+            "Can lead to stack overflow",
+            "All of the above"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which traversal of a binary tree uses recursion?",
+          "options": [
+            "Inorder",
+            "Preorder",
+            "Postorder",
+            "All of the above"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which of these is NOT true about recursion?",
+          "options": [
+            "Every recursive function must have a base case",
+            "Recursion always uses more memory than iteration",
+            "Recursion can be replaced by iteration",
+            "Recursion is only used in sorting algorithms"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    "11": {
+      "title": "Dynamic Programming",
+      "questions": [
+        {
+          "question": "What is dynamic programming primarily used for?",
+          "options": [
+            "Sorting data",
+            "Solving problems by breaking them down into overlapping subproblems",
+            "Searching data",
+            "Graph traversal"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which two properties must a problem have to be solved by dynamic programming?",
+          "options": [
+            "Recursion and iteration",
+            "Overlapping subproblems and optimal substructure",
+            "Greedy choice property and sorting",
+            "Backtracking and divide-and-conquer"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "In dynamic programming, what is 'memoization'?",
+          "options": [
+            "Storing results of subproblems to avoid recomputation",
+            "Sorting subproblems before solving",
+            "Dividing the problem into independent parts",
+            "Applying recursion without optimization"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "What is the main difference between memoization and tabulation?",
+          "options": [
+            "Memoization uses bottom-up approach, tabulation uses top-down",
+            "Memoization uses top-down approach, tabulation uses bottom-up",
+            "Memoization uses recursion, tabulation doesn’t",
+            "Both are same"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which problem is a classic example of dynamic programming?",
+          "options": [
+            "Binary Search",
+            "Fibonacci sequence calculation",
+            "Bubble Sort",
+            "Stack operations"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the time complexity of calculating the nth Fibonacci number using simple recursion?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(2^n)",
+            "O(n^2)"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Using dynamic programming, what is the time complexity of calculating the nth Fibonacci number?",
+          "options": [
+            "O(n)",
+            "O(log n)",
+            "O(2^n)",
+            "O(n^2)"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "In the 0/1 Knapsack problem, what is the main decision at each step?",
+          "options": [
+            "To include the current item or not",
+            "Sort items by weight",
+            "Divide items into smaller groups",
+            "Ignore item weight"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which data structure is commonly used to store solutions to subproblems in DP?",
+          "options": [
+            "Stack",
+            "Queue",
+            "Array or Table",
+            "Linked List"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which of the following problems cannot be solved using dynamic programming?",
+          "options": [
+            "Longest Common Subsequence",
+            "Tower of Hanoi",
+            "Matrix Chain Multiplication",
+            "Coin Change Problem"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    "12": {
+      "title": "Greedy Algorithm",
+      "questions": [
+        {
+          "question": "What is the main idea behind a greedy algorithm?",
+          "options": [
+            "Try all possible solutions and pick the best",
+            "Make the locally optimal choice at each step",
+            "Divide the problem into smaller subproblems",
+            "Use recursion to solve problems"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Which property must a problem have to be solved correctly by a greedy algorithm?",
+          "options": [
+            "Overlapping subproblems",
+            "Optimal substructure",
+            "Greedy choice property",
+            "Both 2 and 3"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Which of these problems can be solved optimally using a greedy algorithm?",
+          "options": [
+            "0/1 Knapsack Problem",
+            "Fractional Knapsack Problem",
+            "Longest Common Subsequence",
+            "Matrix Chain Multiplication"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What is the time complexity of the Fractional Knapsack greedy algorithm when sorting is included?",
+          "options": [
+            "O(n^2)",
+            "O(n log n)",
+            "O(n)",
+            "O(log n)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "In which of the following problems is a greedy algorithm NOT guaranteed to find the optimal solution?",
+          "options": [
+            "Huffman Coding",
+            "Prim's Minimum Spanning Tree",
+            "0/1 Knapsack Problem",
+            "Activity Selection Problem"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which greedy algorithm is used for finding the Minimum Spanning Tree of a graph?",
+          "options": [
+            "Dijkstra's Algorithm",
+            "Kruskal's Algorithm",
+            "Floyd-Warshall Algorithm",
+            "Bellman-Ford Algorithm"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "What does the greedy choice property mean?",
+          "options": [
+            "A globally optimal solution can be arrived at by choosing locally optimal solutions",
+            "Solutions can be combined from subproblems",
+            "All subproblems overlap",
+            "Every problem has multiple optimal solutions"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Which data structure is commonly used in the Huffman coding algorithm?",
+          "options": [
+            "Queue",
+            "Stack",
+            "Priority Queue (Min-Heap)",
+            "Linked List"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Which problem does Prim’s algorithm solve?",
+          "options": [
+            "Shortest path in weighted graph",
+            "Minimum Spanning Tree",
+            "Topological sort",
+            "Cycle detection"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Greedy algorithms do not always guarantee an optimal solution for which type of problem?",
+          "options": [
+            "Problems with the greedy choice property",
+            "Problems without optimal substructure",
+            "Problems with overlapping subproblems",
+            "All problems"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  }
+}

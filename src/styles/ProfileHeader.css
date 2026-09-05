@@ -3,29 +3,20 @@
    GLOBAL RESET
    ========================================================= */
 
-* {
+.profile-page * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all 0.3s ease-in-out;
 }
 
-html {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
 
 
 /* =========================================================
    HEADER
    ========================================================= */
 
-header {
+.profile-page header {
     width: 100%;
     min-height: 85px;
     height: 85px;
@@ -51,7 +42,7 @@ header {
    LOGO
    ========================================================= */
 
-.logo_container {
+.profile-page .logo_container {
     font-family: "Poppins", sans-serif;
     color: white;
 
@@ -61,14 +52,14 @@ header {
     flex-shrink: 0;
 }
 
-.logo_container a {
+.profile-page .logo_container a {
     display: flex;
     align-items: center;
 
     text-decoration: none;
 }
 
-.logo {
+.profile-page .logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,8 +67,8 @@ header {
     flex-shrink: 0;
 }
 
-.logo,
-.Logo-demo {
+.profile-page .logo,
+.profile-page .Logo-demo {
     height: clamp(52px, 5vw, 75px);
     width: auto;
     max-width: 180px;
@@ -96,7 +87,7 @@ header {
    DESKTOP NAVIGATION
    ========================================================= */
 
-.nav_bar {
+.profile-page .nav_bar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +99,7 @@ header {
     margin: 0 clamp(15px, 3vw, 55px);
 }
 
-.nav_bar a {
+.profile-page .nav_bar a {
     position: relative;
 
     display: flex;
@@ -134,7 +125,7 @@ header {
     transition: all 0.3s ease;
 }
 
-.nav_bar a::after {
+.profile-page .nav_bar a::after {
     content: "";
 
     position: absolute;
@@ -158,7 +149,7 @@ header {
     border-radius: 5px;
 }
 
-.nav_bar a:hover {
+.profile-page .nav_bar a:hover {
     color: #00f2fe;
 
     background: rgba(255, 255, 255, 0.05);
@@ -169,7 +160,7 @@ header {
         0 2px 8px rgba(0, 242, 254, 0.2);
 }
 
-.nav_bar a:hover::after {
+.profile-page .nav_bar a:hover::after {
     width: 70%;
 }
 
@@ -178,7 +169,7 @@ header {
    USER / ACTION AREA
    ========================================================= */
 
-.action_bar {
+.profile-page .action_bar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,7 +179,7 @@ header {
     flex-shrink: 0;
 }
 
-.user-name {
+.profile-page .user-name {
     display: flex;
     align-items: center;
 
@@ -197,7 +188,7 @@ header {
     white-space: nowrap;
 }
 
-.user-name a {
+.profile-page .user-name a {
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -206,7 +197,7 @@ header {
     font-size: clamp(14px, 1vw, 16px);
 }
 
-.user-name i {
+.profile-page .user-name i {
     flex-shrink: 0;
 }
 
@@ -215,14 +206,14 @@ header {
    MOBILE MENU
    ========================================================= */
 
-.menu_toggle {
+.profile-page .menu_toggle {
     display: none;
 
     position: relative;
     flex-shrink: 0;
 }
 
-.menu_toggle .parent {
+.profile-page .menu_toggle .menu_toggle_parent {
     position: relative;
 
     display: flex;
@@ -230,7 +221,7 @@ header {
     justify-content: center;
 }
 
-.menu_toggle .material-symbols-outlined {
+.profile-page .menu_toggle .material-symbols-outlined {
     font-size: 32px;
     color: white;
 
@@ -243,7 +234,7 @@ header {
     border-radius: 8px;
 }
 
-.menu_toggle .material-symbols-outlined:hover {
+.profile-page .menu_toggle .material-symbols-outlined:hover {
     color: #00f2fe;
     background: rgba(255, 255, 255, 0.05);
 }
@@ -253,8 +244,10 @@ header {
    MOBILE NAVIGATION DROPDOWN
    ========================================================= */
 
-.mobile_nav {
-    display: none;
+/* Rendered only while the menu is open (React state), so it is always shown
+   when present - the old `:hover` rule made it unreachable on touch devices. */
+.profile-page .mobile_nav {
+    display: flex;
 
     flex-direction: column;
 
@@ -284,11 +277,7 @@ header {
     z-index: 1001;
 }
 
-.menu_toggle .parent:hover .mobile_nav {
-    display: flex;
-}
-
-.mobile_nav div {
+.profile-page .mobile_nav div {
     width: 100%;
 
     padding: 12px 4px;
@@ -311,11 +300,11 @@ header {
     border-radius: 6px;
 }
 
-.mobile_nav div:last-child {
+.profile-page .mobile_nav div:last-child {
     border-bottom: none;
 }
 
-.mobile_nav div:hover {
+.profile-page .mobile_nav div:hover {
     color: #00f2fe;
 
     background: rgba(255, 255, 255, 0.04);
@@ -329,12 +318,12 @@ header {
    ========================================================= */
 
 @media (min-width: 1440px) {
-    header {
+    .profile-page header {
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    .nav_bar {
+    .profile-page .nav_bar {
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -346,17 +335,17 @@ header {
    ========================================================= */
 
 @media (max-width: 1200px) {
-    header {
+    .profile-page header {
         padding-left: 3%;
         padding-right: 3%;
     }
 
-    .nav_bar {
+    .profile-page .nav_bar {
         margin-left: 15px;
         margin-right: 15px;
     }
 
-    .nav_bar a {
+    .profile-page .nav_bar a {
         padding-left: 8px;
         padding-right: 8px;
         margin-left: 2px;
@@ -370,7 +359,7 @@ header {
    ========================================================= */
 
 @media (max-width: 1025px) {
-    header {
+    .profile-page header {
         min-height: 80px;
         height: 80px;
 
@@ -378,17 +367,17 @@ header {
         padding-right: 24px;
     }
 
-    .nav_bar,
-    .action_bar {
+    .profile-page .nav_bar,
+.profile-page .action_bar {
         display: none;
     }
 
-    .menu_toggle {
+    .profile-page .menu_toggle {
         display: block;
     }
 
-    .logo,
-    .Logo-demo {
+    .profile-page .logo,
+.profile-page .Logo-demo {
         height: 64px;
         max-width: 170px;
     }
@@ -400,7 +389,7 @@ header {
    ========================================================= */
 
 @media (max-width: 600px) {
-    header {
+    .profile-page header {
         min-height: 72px;
         height: 72px;
 
@@ -408,17 +397,17 @@ header {
         padding-right: 16px;
     }
 
-    .logo,
-    .Logo-demo {
+    .profile-page .logo,
+.profile-page .Logo-demo {
         height: 56px;
         max-width: 150px;
     }
 
-    .menu_toggle .material-symbols-outlined {
+    .profile-page .menu_toggle .material-symbols-outlined {
         font-size: 30px;
     }
 
-    .mobile_nav {
+    .profile-page .mobile_nav {
         top: calc(100% + 12px);
 
         width: min(
@@ -434,7 +423,7 @@ header {
    ========================================================= */
 
 @media (max-width: 400px) {
-    header {
+    .profile-page header {
         min-height: 68px;
         height: 68px;
 
@@ -442,17 +431,17 @@ header {
         padding-right: 12px;
     }
 
-    .logo,
-    .Logo-demo {
+    .profile-page .logo,
+.profile-page .Logo-demo {
         height: 50px;
         max-width: 135px;
     }
 
-    .menu_toggle .material-symbols-outlined {
+    .profile-page .menu_toggle .material-symbols-outlined {
         font-size: 28px;
     }
 
-    .mobile_nav {
+    .profile-page .mobile_nav {
         width: calc(100vw - 24px);
 
         right: -4px;
@@ -460,7 +449,7 @@ header {
         padding: 10px 14px;
     }
 
-    .mobile_nav div {
+    .profile-page .mobile_nav div {
         font-size: 0.95rem;
         padding: 11px 4px;
     }
@@ -472,18 +461,18 @@ header {
    ========================================================= */
 
 @media (max-width: 320px) {
-    header {
+    .profile-page header {
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .logo,
-    .Logo-demo {
+    .profile-page .logo,
+.profile-page .Logo-demo {
         height: 46px;
         max-width: 125px;
     }
 
-    .menu_toggle .material-symbols-outlined {
+    .profile-page .menu_toggle .material-symbols-outlined {
         font-size: 26px;
     }
 }
@@ -494,17 +483,17 @@ header {
    ========================================================= */
 
 @media (hover: none) {
-    .nav_bar a:hover {
+    .profile-page .nav_bar a:hover {
         color: white;
         background: transparent;
         box-shadow: none;
     }
 
-    .nav_bar a:hover::after {
+    .profile-page .nav_bar a:hover::after {
         width: 0;
     }
 
-    .mobile_nav div:hover {
+    .profile-page .mobile_nav div:hover {
         color: white;
         background: transparent;
         padding-left: 4px;
@@ -517,9 +506,9 @@ header {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .profile-page *,
+.profile-page *::before,
+.profile-page *::after {
         transition: none !important;
         animation: none !important;
     }

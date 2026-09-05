@@ -3,7 +3,7 @@
    FOOTER - BASE
    ========================================================= */
 
-footer {
+.profile-page footer {
     width: 100%;
     overflow: hidden;
 
@@ -26,7 +26,7 @@ footer {
    FOOTER CONTAINER
    ========================================================= */
 
-.footer-container {
+.profile-page .footer-container {
     width: 100%;
     max-width: 1280px;
 
@@ -49,12 +49,12 @@ footer {
    FOOTER SECTIONS
    ========================================================= */
 
-.footer-section {
+.profile-page .footer-section {
     min-width: 0;
 }
 
-.footer-section p,
-.footer-section a {
+.profile-page .footer-section p,
+.profile-page .footer-section a {
     font-size: 15px;
 
     color: #cccccc;
@@ -77,11 +77,11 @@ footer {
    BRAND
    ========================================================= */
 
-.footer-brand {
+.profile-page .footer-brand {
     max-width: 360px;
 }
 
-.footer-logo {
+.profile-page .footer-logo {
     font-size: clamp(24px, 2vw, 30px);
 
     font-weight: 700;
@@ -95,7 +95,7 @@ footer {
     line-height: 1.2;
 }
 
-.footer-brand p {
+.profile-page .footer-brand p {
     max-width: 330px;
 
     margin-bottom: 0;
@@ -110,7 +110,7 @@ footer {
    HEADINGS
    ========================================================= */
 
-.footer-section h4 {
+.profile-page .footer-section h4 {
     font-size: 16px;
 
     margin-bottom: 16px;
@@ -131,7 +131,7 @@ footer {
    QUICK LINKS
    ========================================================= */
 
-.quick-links {
+.profile-page .quick-links {
     display: flex;
 
     flex-wrap: wrap;
@@ -141,13 +141,13 @@ footer {
     max-width: 360px;
 }
 
-.quick-links a {
+.profile-page .quick-links a {
     width: fit-content;
 
     margin-bottom: 4px;
 }
 
-.footer-section a:hover {
+.profile-page .footer-section a:hover {
     color: #00f2fe;
 
     transform: translateX(3px);
@@ -158,15 +158,15 @@ footer {
    FOLLOW US
    ========================================================= */
 
-.follow-section {
+.profile-page .follow-section {
     margin-top: 28px;
 }
 
-.follow-section h4 {
+.profile-page .follow-section h4 {
     margin-bottom: 14px;
 }
 
-.linking {
+.profile-page .linking {
     display: flex;
 
     align-items: center;
@@ -174,7 +174,7 @@ footer {
     gap: 24px;
 }
 
-.linking a {
+.profile-page .linking a {
     width: 38px;
     height: 38px;
 
@@ -210,7 +210,7 @@ footer {
         transform 0.3s ease;
 }
 
-.linking a:hover {
+.profile-page .linking a:hover {
     color: #00f2fe;
 
     background: rgba(
@@ -235,7 +235,7 @@ footer {
    CONTACT
    ========================================================= */
 
-.footer-contact a {
+.profile-page .footer-contact a {
     word-break: break-word;
 
     overflow-wrap: anywhere;
@@ -243,7 +243,7 @@ footer {
     max-width: 300px;
 }
 
-.footer-contact p {
+.profile-page .footer-contact p {
     margin-top: 2px;
 }
 
@@ -252,7 +252,7 @@ footer {
    FOOTER BOTTOM
    ========================================================= */
 
-.footer-bottom {
+.profile-page .footer-bottom {
     width: 100%;
 
     max-width: 1280px;
@@ -287,18 +287,18 @@ footer {
    ========================================================= */
 
 @media (min-width: 1440px) {
-    footer {
+    .profile-page footer {
         padding-top: 70px;
     }
 
-    .footer-container {
+    .profile-page .footer-container {
         gap: 100px;
 
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .footer-bottom {
+    .profile-page .footer-bottom {
         margin-top: 50px;
     }
 }
@@ -309,7 +309,7 @@ footer {
    ========================================================= */
 
 @media (max-width: 1100px) {
-    .footer-container {
+    .profile-page .footer-container {
         grid-template-columns:
             1fr
             1fr;
@@ -317,11 +317,11 @@ footer {
         gap: 45px;
     }
 
-    .footer-brand {
+    .profile-page .footer-brand {
         max-width: 420px;
     }
 
-    .footer-contact {
+    .profile-page .footer-contact {
         grid-column: 1 / -1;
     }
 }
@@ -332,12 +332,12 @@ footer {
    ========================================================= */
 
 @media (max-width: 768px) {
-    footer {
+    .profile-page footer {
         padding:
             50px 20px 25px;
     }
 
-    .footer-container {
+    .profile-page .footer-container {
         grid-template-columns: 1fr;
 
         gap: 36px;
@@ -348,7 +348,7 @@ footer {
         text-align: center;
     }
 
-    .footer-section {
+    .profile-page .footer-section {
         width: 100%;
 
         max-width: 500px;
@@ -356,16 +356,16 @@ footer {
         margin: 0 auto;
     }
 
-    .footer-brand,
-    .footer-brand p {
+    .profile-page .footer-brand,
+.profile-page .footer-brand p {
         max-width: 500px;
     }
 
-    .footer-section h4 {
+    .profile-page .footer-section h4 {
         margin-bottom: 14px;
     }
 
-    .quick-links {
+    .profile-page .quick-links {
         justify-content: center;
 
         max-width: 100%;
@@ -373,32 +373,32 @@ footer {
         gap: 8px 22px;
     }
 
-    .quick-links a {
+    .profile-page .quick-links a {
         margin-bottom: 4px;
     }
 
-    .footer-section a:hover {
+    .profile-page .footer-section a:hover {
         transform: none;
     }
 
-    .follow-section {
+    .profile-page .follow-section {
         margin-top: 30px;
     }
 
-    .linking {
+    .profile-page .linking {
         justify-content: center;
 
         gap: 20px;
     }
 
-    .footer-contact a {
+    .profile-page .footer-contact a {
         max-width: 100%;
 
         margin-left: auto;
         margin-right: auto;
     }
 
-    .footer-bottom {
+    .profile-page .footer-bottom {
         margin-top: 35px;
 
         padding-top: 22px;
@@ -414,50 +414,50 @@ footer {
    ========================================================= */
 
 @media (max-width: 600px) {
-    footer {
+    .profile-page footer {
         padding:
             45px 16px 22px;
     }
 
-    .footer-container {
+    .profile-page .footer-container {
         gap: 32px;
 
         padding: 0 4px;
     }
 
-    .footer-logo {
+    .profile-page .footer-logo {
         font-size: 25px;
     }
 
-    .footer-section p,
-    .footer-section a {
+    .profile-page .footer-section p,
+.profile-page .footer-section a {
         font-size: 14px;
     }
 
-    .footer-section h4 {
+    .profile-page .footer-section h4 {
         font-size: 15px;
 
         margin-bottom: 13px;
     }
 
-    .quick-links {
+    .profile-page .quick-links {
         gap: 10px 18px;
     }
 
-    .quick-links a {
+    .profile-page .quick-links a {
         padding: 3px 5px;
     }
 
-    .linking {
+    .profile-page .linking {
         gap: 16px;
     }
 
-    .linking a {
+    .profile-page .linking a {
         width: 36px;
         height: 36px;
     }
 
-    .footer-bottom {
+    .profile-page .footer-bottom {
         font-size: 13px;
 
         margin-top: 30px;
@@ -472,50 +472,50 @@ footer {
    ========================================================= */
 
 @media (max-width: 400px) {
-    footer {
+    .profile-page footer {
         padding:
             40px 12px 20px;
     }
 
-    .footer-container {
+    .profile-page .footer-container {
         gap: 28px;
 
         padding: 0;
     }
 
-    .footer-logo {
+    .profile-page .footer-logo {
         font-size: 23px;
     }
 
-    .footer-section p,
-    .footer-section a {
+    .profile-page .footer-section p,
+.profile-page .footer-section a {
         font-size: 13px;
 
         line-height: 1.55;
     }
 
-    .footer-section h4 {
+    .profile-page .footer-section h4 {
         font-size: 14px;
     }
 
-    .quick-links {
+    .profile-page .quick-links {
         gap: 8px 12px;
     }
 
-    .quick-links a {
+    .profile-page .quick-links a {
         padding: 3px 4px;
     }
 
-    .linking {
+    .profile-page .linking {
         gap: 14px;
     }
 
-    .linking a {
+    .profile-page .linking a {
         width: 34px;
         height: 34px;
     }
 
-    .footer-bottom {
+    .profile-page .footer-bottom {
         font-size: 12px;
 
         letter-spacing: 0.3px;
@@ -530,38 +530,38 @@ footer {
    ========================================================= */
 
 @media (max-width: 320px) {
-    footer {
+    .profile-page footer {
         padding:
             35px 10px 18px;
     }
 
-    .footer-logo {
+    .profile-page .footer-logo {
         font-size: 21px;
     }
 
-    .footer-section p,
-    .footer-section a {
+    .profile-page .footer-section p,
+.profile-page .footer-section a {
         font-size: 12px;
     }
 
-    .footer-section h4 {
+    .profile-page .footer-section h4 {
         font-size: 13px;
     }
 
-    .quick-links {
+    .profile-page .quick-links {
         gap: 6px 10px;
     }
 
-    .linking {
+    .profile-page .linking {
         gap: 12px;
     }
 
-    .linking a {
+    .profile-page .linking a {
         width: 32px;
         height: 32px;
     }
 
-    .footer-bottom {
+    .profile-page .footer-bottom {
         font-size: 11px;
     }
 }
@@ -572,12 +572,12 @@ footer {
    ========================================================= */
 
 @media (hover: none) {
-    .footer-section a:hover {
+    .profile-page .footer-section a:hover {
         color: #cccccc;
         transform: none;
     }
 
-    .linking a:hover {
+    .profile-page .linking a:hover {
         color: #ccc;
 
         background: rgba(
@@ -604,9 +604,9 @@ footer {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .profile-page *,
+.profile-page *::before,
+.profile-page *::after {
         transition: none !important;
         animation: none !important;
     }

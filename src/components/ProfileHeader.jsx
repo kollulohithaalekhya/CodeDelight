@@ -1,40 +1,62 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/ProfileHeader.css";
 
-// import logo from "../assets/logo3.png";
+const NAV_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "Courses", to: "/course" },
+  { label: "Compilers", to: "/compiler" },
+  { label: "Fun Zone", to: "/funzone" },
+];
+
+const MOBILE_LINKS = [{ label: "Dashboard", to: "/profile" }, ...NAV_LINKS];
 
 const ProfileHeader = () => {
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onPointerDown = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isOpen]);
+
   return (
     <header>
       <div className="logo_container">
-        <a href="#">
+        <Link to="/">
           <div className="logo">
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              height="60px"
-              className="Logo-demo"
-            />
+            <img src="/images/logo.png" alt="Logo" height="60px" className="Logo-demo" />
           </div>
-        </a>
+        </Link>
       </div>
 
       <nav className="nav_bar">
-        <a href="../html/homepage.html">Home</a>
-        <a href="../html/scourses.html">Courses</a>
-        <a href="../html/scompiler.html">Compilers</a>
-        <a href="../html/sfunzone.html">Fun Zone</a>
+        {NAV_LINKS.map((link) => (
+          <Link key={link.to} to={link.to}>
+            {link.label}
+          </Link>
+        ))}
       </nav>
 
       <div className="action_bar">
         <div className="user-name">
-          <i
-            className="fa-solid fa-circle-user fa-xl"
-            style={{ color: "white" }}
-          ></i>
-
-          <a
-            href="../html/profile.html"
+          <i className="fa-solid fa-circle-user fa-xl" style={{ color: "white" }}></i>
+          <Link
+            to="/profile"
             style={{
               color: "white",
               textDecoration: "none",
@@ -43,60 +65,45 @@ const ProfileHeader = () => {
             }}
           >
             Lakshan
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div className="menu_toggle">
-        <div className="parent">
-          <span className="material-symbols-outlined">menu</span>
-
-          <div className="mobile_nav">
-            <div
-              className="nav-item"
-              onClick={() =>
-                (window.location.href = "../html/profile.html")
+      <div className="menu_toggle" ref={containerRef}>
+        <div className="menu_toggle_parent">
+          <span
+            className="material-symbols-outlined menu_toggle_icon"
+            role="button"
+            tabIndex={0}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((open) => !open)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setIsOpen((open) => !open);
               }
-            >
-              Dashboard
-            </div>
+            }}
+          >
+            {isOpen ? "close" : "menu"}
+          </span>
 
-            <div
-              className="nav-item"
-              onClick={() =>
-                (window.location.href = "../html/homepage.html")
-              }
-            >
-              Home
+          {isOpen && (
+            <div className="mobile_nav">
+              {MOBILE_LINKS.map((link) => (
+                <div
+                  key={link.to}
+                  className="nav-item"
+                  onClick={() => {
+                    navigate(link.to);
+                    setIsOpen(false);
+                  }}
+                >
+                  {link.label}
+                </div>
+              ))}
             </div>
-
-            <div
-              className="nav-item"
-              onClick={() =>
-                (window.location.href = "../html/scourses.html")
-              }
-            >
-              Courses
-            </div>
-
-            <div
-              className="nav-item"
-              onClick={() =>
-                (window.location.href = "../html/scompiler.html")
-              }
-            >
-              Compilers
-            </div>
-
-            <div
-              className="nav-item"
-              onClick={() =>
-                (window.location.href = "../html/sfunzone.html")
-              }
-            >
-              Fun Zone
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </header>

@@ -1,0 +1,162 @@
+/* Quiz screen, ported from the original quiz.css. Everything is scoped under
+   .quiz-page so the old page-level `body { display:flex }` no longer leaks
+   into the rest of the app. */
+
+.quiz-page {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #0a1d3a, #102944);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+.quiz-page .quiz-container {
+  border-radius: 16px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid #00f2fe;
+  box-sizing: border-box;
+}
+
+.quiz-page h2 {
+  text-align: center;
+  color: #00f2fe;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.quiz-progress-bar {
+  height: 12px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  transition: width 0.3s;
+}
+
+.quiz-question {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  white-space: pre-wrap;
+}
+
+.quiz-page .option {
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quiz-page .option:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.quiz-page .option input[type="radio"] {
+  accent-color: #ffffff;
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.quiz-error {
+  color: #ffb4b4;
+  margin-top: 12px;
+}
+
+.quiz-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quiz-page .submit-btn,
+.quiz-page .ok-btn,
+.quiz-page .back-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #142042;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.quiz-page .submit-btn:hover,
+.quiz-page .ok-btn:hover,
+.quiz-page .back-btn:hover {
+  background: #ddd;
+}
+
+.quiz-result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  animation: quizFadeIn 0.5s ease-in-out;
+}
+
+.quiz-result .pass-icon { color: #4ade80; }
+.quiz-result .fail-icon { color: #f87171; }
+
+.quiz-result .stars {
+  margin-top: 10px;
+  font-size: 2rem;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.quiz-result .star { color: #444; transition: color 0.3s ease; }
+.quiz-result .star.filled { color: #ffd93b; }
+
+.coins-earned {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #00f2fe;
+}
+
+@keyframes quizFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .quiz-page .quiz-container {
+    padding: 20px;
+  }
+  .quiz-page h2 {
+    font-size: 1.5rem;
+  }
+  .quiz-question {
+    font-size: 1rem;
+  }
+  .quiz-page .submit-btn,
+  .quiz-page .ok-btn,
+  .quiz-page .back-btn {
+    flex: 1 1 100%;
+    margin-right: 0;
+    margin-top: 15px;
+  }
+}

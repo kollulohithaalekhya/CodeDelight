@@ -46,3 +46,45 @@
   font-size: 0.95rem;
   color: #d0d0d0;
 }
+/* Mobile: "Why Choose Code Delight?" reads as a 2x2 grid rather than one
+   long column (four flex items with a 220px basis stack on phones). */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 56px 16px;
+  }
+  .features-heading {
+    font-size: 1.9rem;
+    margin-bottom: 32px;
+  }
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .feature-box {
+    max-width: none;
+    padding: 22px 14px;
+  }
+  .feature-box i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .feature-box h3 {
+    font-size: 1.05rem;
+  }
+  .feature-box p {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .feature-box {
+    padding: 16px 10px;
+  }
+  .feature-box h3 {
+    font-size: 0.95rem;
+  }
+  .feature-box p {
+    font-size: 0.76rem;
+  }
+}

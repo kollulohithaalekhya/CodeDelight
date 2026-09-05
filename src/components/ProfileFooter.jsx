@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/ProfileFooter.css";
 
 // import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -22,10 +23,10 @@ const Footer = () => {
           <h4>Quick Links</h4>
 
           <div className="quick-links">
-            <a href="/homepage">Home</a>
-            <a href="/courses">Courses</a>
-            <a href="/compiler">Compilers</a>
-            <a href="/funzone">Fun Zone</a>
+            <Link to="/">Home</Link>
+            <Link to="/course">Courses</Link>
+            <Link to="/compiler">Compilers</Link>
+            <Link to="/funzone">Fun Zone</Link>
           </div>
 
           <div className="follow-section">

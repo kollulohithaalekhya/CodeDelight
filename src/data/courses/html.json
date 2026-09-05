@@ -1,0 +1,558 @@
+{
+  "key": "html",
+  "title": "Learn HTML the Right Way",
+  "subtitle": "Your Journey Into Web Development Starts Here",
+  "quizPath": "/html-levels",
+  "sidebar": {
+    "entries": [
+      {
+        "type": "link",
+        "id": "introduction",
+        "label": "Introduction to HTML"
+      },
+      {
+        "type": "group",
+        "label": "HTML Basics",
+        "items": [
+          {
+            "id": "basics",
+            "label": "HTML Basics"
+          },
+          {
+            "id": "editors",
+            "label": "HTML Editors"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Structure and Elements",
+        "items": [
+          {
+            "id": "elements",
+            "label": "HTML Elements"
+          },
+          {
+            "id": "attributes",
+            "label": "HTML Attributes"
+          },
+          {
+            "id": "block_inline",
+            "label": "Block vs. Inline"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Headings & Paragraphs",
+        "items": [
+          {
+            "id": "headings",
+            "label": "Headings"
+          },
+          {
+            "id": "parag",
+            "label": "Paragraphs"
+          },
+          {
+            "id": "format",
+            "label": "Text Formatting"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Lists",
+        "items": [
+          {
+            "id": "lists",
+            "label": "Lists"
+          },
+          {
+            "id": "types",
+            "label": "Types of Lists"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Visuals and Media",
+        "items": [
+          {
+            "id": "hyper",
+            "label": "Hyperlinks"
+          },
+          {
+            "id": "au_vi",
+            "label": "video & Audio"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Iframes and Forms",
+        "items": [
+          {
+            "id": "ifram",
+            "label": "Iframes"
+          },
+          {
+            "id": "forms",
+            "label": "Forms"
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "id": "tasks",
+        "label": "Tasks"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "prev": null,
+      "next": "basics",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n                   <h1>HTML Introduction</h1>\r\n                   <p>HTML stands for <b>Hyper Text Markup Language,</b> which is the core language used to structure content on the web. \r\n                    It organizes text, images, links, and media using tags and elements that browsers can interpret. \r\n                    As of 2025, over 95% of websites rely on HTML alongside CSS and JavaScript, making it a fundamental tool in modern web development.</p>\r\n                    <ul>\r\n                      <li>It is a markup language, not a programming language. \r\n                      This means it annotates text to define how it is structured and displayed by web browsers.</li>\r\n                      <li>It is a static language, meaning it does not inherently provide interactive features \r\n                      but can be combined with CSS for styling and JavaScript for interactivity.</li>\r\n                    </ul>\r\n                   <h2>Basic HTML Code Example</h2>\r\n                  "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <h1>Welcome to HTML!</h1>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>HTML Page Structure</h2>\r\n             <p>The basic structure of an HTML page is shown below. It contains the essential building-block elements\r\n               (i.e. doctype declaration, HTML, head, title, and body elements)\r\n               upon which all web pages are created.</p>\r\n               <center><img src=\"/images/page_struct.png\"/></center>\r\n               <ul>\r\n                <li>&lt;!DOCTYPE html&gt; - This is the document type declaration, not a tag. \r\n                  It declares that the document is an HTML5 document.</li>\r\n                <li>&lt;html&gt; - This is called the HTML root element. \r\n                  All other elements are contained within it.</li>\r\n                  <li>&lt;head&gt; - The head tag contains the \"behind the scenes\" elements for a webpage. Elements within the head aren't visible on the front end of a webpage. \r\n                   </li>\r\n                    <li>Typical elements inside the &lt;head&gt; include:</li>\r\n                  <ul>\r\n                    <li>&lt;title&gt;: Defines the title displayed on the browser tab.</li>\r\n                    <li>&lt;meta&gt;: Provides information like the character set or viewport settings.</li>\r\n                    <li>&lt;link&gt;: Links external stylesheets or resources.</li>\r\n                    <li>&lt;style&gt;: Embeds internal CSS styles.</li>\r\n                    <li>&lt;script&gt;: Embeds JavaScript for functionality.</li>\r\n                  </ul>\r\n                  <li>&lt;title&gt; - The title is what is displayed on the top of your browser when you visit a website and contains \r\n                    the title of the webpage that you are viewing.</li>\r\n                  <li>&lt;h2&gt; - The &lt;h2&gt; tag is a second-level heading tag.</li>\r\n                  <li>&lt;p&gt; - The &lt;p&gt; tag represents a paragraph of text.</li>\r\n                  <li>&lt;body&gt; - The body tag is used to enclose all the visible content of a webpage.\r\n                     In other words, the body content is what the browser will show on the front end.</li>\r\n               </ul>\r\n               <p>An HTML document can be created using an HTML text editor. \r\n                Save the text file using the \".html\" or \".htm\" extension. Once saved as an HTML document, \r\n                the file can be opened as a webpage in the browser.</p>\r\n              <h1>HTML Elements and HTML Tag</h1>\r\n              <p>HTML Elements and HTML Tags are related but distinct. An HTML element is the \r\n                complete structure, including the opening tag, content \r\n                (if any), and the closing tag (if applicable).</p>\r\n              <p>On the other hand, A tag is the actual keyword or name enclosed in angle brackets (&lt; &gt;) that tells \r\n                the browser what kind of content to expect.</p>\r\n              <center><img src=\"/images/element.png\"/></center>\r\n          <div class=\"scroll-wrapper\">\r\n              <table border=\"1\" >\r\n  <thead>\r\n    <tr>\r\n      <th>Tag</th>\r\n      <th>Description</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>&lt;html&gt;</td>\r\n      <td>The root element of an HTML document</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;head&gt;</td>\r\n      <td>Contains meta-information about the webpage</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;body&gt;</td>\r\n      <td>Contains the visible content of the webpage</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;h1&gt; to &lt;h6&gt;</td>\r\n      <td>Headings of various levels (h1 being the largest)</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;p&gt;</td>\r\n      <td>Defines a paragraph</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;a&gt;</td>\r\n      <td>Defines a hyperlink</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;img&gt;</td>\r\n      <td>Embed an image</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;ul&gt;</td>\r\n      <td>Defines an unordered list</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;ol&gt;</td>\r\n      <td>Defines an ordered list</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;li&gt;</td>\r\n      <td>Defines a list item</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n<h2>Web Browser</h2>\r\n<p>Unlike other programming languages, HTML does not show output on the any compiler.\r\n   Web browsers is an compiler\r\n   which show the results of an your HTML code.</p>\r\n   <p>It reads HTML files and determines how to show content with the help of HTML tags. \r\n    Any web browser (Google, Safari, Mozilla Firefox, etc) can be used to open a .\r\n     HTML file and view the results.</p>\r\n     <center><img src=\"/images/web_browse.png\"/></center>\r\n     <h2>Why Learn HTML?</h2>\r\n     <p>Here are 5 common reasons to learn HTML:</p>\r\n     <ol>\r\n      <li><b>Build Websites:</b> HTML is the basic building block for creating any website. Learning HTML can \r\n        help you pursue a career in web development.</li>\r\n      <li><b>Customize Content:</b> Allows you to edit or tweak web pages, \r\n        emails, or templates to fit your needs.</li>\r\n      <li><b>Understand how the web works:</b> This helps you grasp how the internet works\r\n         and how web pages are structured.</li>\r\n      <li><b>Employment Opportunities:</b> According to the Bureau of Labor Statistics, projects that employment \r\n        for web developers will grow 16% between 2022 and 2032, which is much \r\n        faster than the average across all occupations.</li>\r\n      <li><b>Learn Easily:</b> HTML is beginner-friendly, making it a great first step into the world of coding and technology.</li>\r\n     </ol>\r\n     <h2>Applications of HTML</h2>\r\n     <ul>\r\n      <li><b>Web Development:</b> HTML is the backbone of every webpage. It structures the content and integrates multimedia, hyperlinks, and more.</li>\r\n      <li><b>Web Applications:</b> HTML, in combination with CSS and JavaScript, powers complex web applications (e.g., Google Docs, Trello).</li>\r\n      <li><b>Emails:</b> HTML emails use table-based layouts and embedded media to deliver rich, interactive content.</li>\r\n      <li><b>Mobile App Development:</b> HTML5 is used with frameworks like PhoneGap to build mobile apps for iOS and Android.</li>\r\n     </ul>\r\n     <h2>Limitations of HTML</h2>\r\n     <ul>\r\n      <li><b>No Logic or Functionality:</b> HTML cannot handle complex logic, interactivity, or dynamic content on its own. \r\n        It requires JavaScript for such tasks.</li>\r\n      <li><b>SEO Limitations:</b> While HTML provides structure, it’s not enough by itself for search engine \r\n        optimization (SEO). Proper metadata and content structuring, \r\n        as well as external SEO practices, are necessary.</li>\r\n      <li><b>Limited Styles:</b> While HTML can handle basic styles via the style attribute, it is typically complemented by CSS for complex styling and layout.</li>\r\n     </ul>\r\n              \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "prev": null,
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>HTML Tasks</h1>\r\n          <div class=\"tasks-container\">\r\n            <a href=\"/pdfs/task1.pdf\" target=\"_blank\"><div class=\"task-item\">Task 1</div></a>\r\n            <a href=\"/pdfs/task2.pdf\" target=\"_blank\"><div class=\"task-item\">Task 2</div></a>\r\n            <div class=\"task-item\">Task 3</div>\r\n            <div class=\"task-item\">Task 4</div>\r\n            <div class=\"task-item\">Task 5</div>\r\n          </div>\r\n          <div class=\"nav-buttons\">\r\n            <a href=\"#\"><button>🏁 End of Module</button></a>\r\n          </div>\r\n          "
+        }
+      ]
+    },
+    {
+      "id": "basics",
+      "prev": "introduction",
+      "next": "editors",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n            <h1>HTML Basics</h1>\r\n            <p>HTML (HyperText Markup Language) is the standard markup language used to create and structure web pages.</p>\r\n            <ul>\r\n                <li>It defines the layout of a webpage using elements and tags, allowing for the display of text, images, links, and multimedia content.</li>\r\n                <li>As the foundation of nearly all websites, HTML is used in over 95% of all web pages today, making it an essential part of modern web development.</li>\r\n            </ul>\r\n            <p>In this guide, we learn the basics of HTML, which includes HTML tags ( &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;, etc), attributes, elements, \r\n              and document structure which collectively form a working web page.</p>\r\n            <h1>HTML Basic Document and Structure</h1>\r\n            <p>Every HTML document begins with a document type declaration, setting the foundation for the webpage. \r\n              This section introduces basic HTML tags that structure the page, such as &lt;head&gt;, &lt;body&gt;, and &lt;title&gt;. Although this is not mandatory, it is a good convention to start the document with the below-mentioned tag. </p>\r\n            <center><img src=\"/images/structure_html.png\"/></center>\r\n            <p>Below mentioned are the basic HTML tags that divide the whole page into various parts like head, body, etc. </p>\r\n             <ul>\r\n                <li>&lt;html&gt; -- Encloses the entire HTML document, serving as the root element for all HTML content.</li>\r\n                <li>&lt;head&gt; -- Contains header information about the webpage, including title, meta tags, and linked stylesheets. \r\n                  It is part of the document's structure but is not displayed on the webpage.</li>\r\n                <li>&lt;title&gt; -- Used within the &lt;head&gt;section to define the title of the HTML document. It appears in the browser tab or window and provides a brief description of the webpage's content.</li>\r\n                <li>&lt;body&gt; -- Encloses the visible content of the webpage, such as text, images, audio, videos, and links. All elements within this tag are displayed on the actual webpage when viewed in a browser.</li>\r\n            </ul>\r\n            <h2>Example:</h2>\r\n             "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <h1>Welcome</h1>\r\n    <!-- Enter to run the code -->\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>HTML Headings</h2>\r\n            <p>The HTML heading tags are used to create headings for the content of a webpage. \r\n              These tags are typically placed inside the body tag. HTML offers six heading tags, \r\n              from &lt;h1&gt; to &lt;/h6&gt;, each displaying the heading in a different font size.</p>\r\n            <h3>Syntax:</h3>\r\n            <div class=\"syntax\">\r\n              <p>&lt;h1&gt;&lt;/h1&gt;</p>\r\n              <p>&lt;h2&gt;&lt;/h2&gt;</p>\r\n              <p>&lt;h3&gt;&lt;/h3&gt;</p>\r\n              <p>&lt;h4&gt;&lt;/h4&gt;</p>\r\n              <p>&lt;h5&gt;&lt;/h5&gt;</p>\r\n              <p>&lt;h6&gt;&lt;/h6&gt;</p>\r\n            </div>\r\n             <h2>Example:</h2>\r\n            "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" \r\n          content=\"width=device-width, initial-scale=1.0\">\r\n    <title>HTML</title>\r\n</head>\r\n<body>\r\n      <h1>Heading1</h1>\r\n      <h2>Heading2</h2>\r\n      <h3>Heading3</h3>\r\n      <h4>Heading4</h4>\r\n      <h5>Heading5</h5>\r\n      <h6>Heading6</h6>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>Code Overview:</h3>\r\n             <ul>\r\n              <li>This code displays six headings (&lt;h1&gt; to &lt;/h6&gt;) on the webpage, with &lt;h1&gt; \r\n                being the largest and most prominent and &lt;h6&gt; being the smallest.</li>\r\n                <li>The headings are used to define text hierarchy and emphasize content based on importance.</li>\r\n             </ul>\r\n             <h2>HTML Paragraph and Break Elements</h2>\r\n             <p>HTML &lt;p&gt; tags are used to write paragraph statements on a webpage. \r\n              They start with the &lt;p&gt; tag and end with &lt;/p&gt;. \r\n              The HTML &lt;br&gt; tag is used to insert a single line break and does not require a closing tag. \r\n              In HTML, the break tag is written as &lt;br&gt;.</p>\r\n              <h3>Syntax:</h3>\r\n              <div class=\"syntax\">\r\n                <p>// for paragraph</p>\r\n                <p>&lt;p&gt; Content... &lt;/p&gt;</p>\r\n                <p>// for Break</p>\r\n                <p>&lt;br&gt;</p>\r\n              </div>\r\n              <h3>Example:</h3>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" \r\n          content=\"width=device-width, initial-scale=1.0\">\r\n    <title>HTML</title>\r\n</head>\r\n<body>\r\n      <p>\r\n            HTML stands for HyperText Markup Language.<br>\r\n            It is used to design web pages using a markup\r\n            language.<br>HTML is a combination of Hypertext\r\n            and Markup language.<br>Hypertext defines the\r\n            link between web pages.<br>A markup language\r\n            is used to define the text document within the\r\n            tag which defines the structure of web pages.\r\n      </p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>Code Overview:</h3>\r\n             <ul>\r\n              <li>This HTML code uses a  &lt;p&gt; tag to display a paragraph of text, providing an overview of what HTML is and its purpose.</li>\r\n              <li>The &lt;br&gt;tags are used to insert line breaks, making the text more readable by separating each sentence onto a new line within the paragraph.</li>\r\n             </ul>\r\n             <h2>HTML Horizontal Line</h2>\r\n             <p>The HTML &lt;hr&gt; tag is used to divide a page into sections by creating a horizontal line that spans\r\n               from the left to the right side of the page. This is an empty tag and does not require a closing tag \r\n               or any additional attributes.</p>\r\n               <h3>Syntax:</h3>\r\n               <div class=\"syntax\">\r\n                <p>&lt;hr&gt;</p>\r\n               </div>\r\n                "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n<body>\r\n      <h1>The Main Languages of the Web</h1>\r\n\r\n<p>HTML is the standard markup language for creating Web pages. \r\nHTML describes the structure of a Web page, and consists of a series of elements. \r\nHTML elements tell the browser how to display the content.</p>\r\n<hr>\r\n<p>CSS is a language that describes how HTML elements are to be displayed \r\non screen, paper, or in other media. CSS saves a lot of work, \r\nbecause it can control the layout of multiple web pages all at once.</p>\r\n<hr>\r\n<p>JavaScript is the programming language of HTML and the Web. \r\nJavaScript can change HTML content and attribute values. JavaScript can change CSS. \r\nJavaScript can hide and show HTML elements, and more.</p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>HTML Comments</h2>\r\n             <p>HTML comments are annotations in your code that are not displayed in the browser. \r\n              They are enclosed within &lt;!-- and --&gt; tags and are primarily used for documentation, \r\n              explanation, or temporarily disabling code during debugging.</p>\r\n              <h3>Syntax of HTML Comments</h3>\r\n              <ul>\r\n                <li>Single-line comment:</li>\r\n              </ul>\r\n              <div class=\"syntax\">\r\n                <p>&lt;!-- This is a single-line comment --&gt;</p>\r\n              </div>\r\n              <ul>\r\n                <li>Multi-line comment:</li>\r\n              </ul>\r\n              <div class=\"syntax\">\r\n                <p>&lt;!-- This is a multi-line comment<br> spanning multiple lines<br>--&gt;</p> \r\n              </div>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <!-- This is a heading tag -->\r\n    <h1>Welcome to HTML!</h1>\r\n     <!-- This is a paragraph tag -->\r\n      <p>Learn HTML, CSS, and JavaScript here.</p>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>HTML Images</h2>\r\n             <p>The &lt;img&gt; tag is used to insert an image into a webpage. \r\n              The source of the image is specified within the src attribute, \r\n              like this: &lt;img src=\"source_of_image\"&gt;.</p>\r\n              <h3>Syntax</h3>\r\n              <div class=\"syntax\">\r\n                <p>&lt;img src=\"fruits.png\"&gt;</p>\r\n              </div>\r\n              <ul>\r\n                <li>This HTML code uses the &lt;img&gt; tag to display an image on a webpage.</li>\r\n                <li>The src attribute specifies the URL of the image, \r\n                  which is loaded and displayed when the page is rendered in the browser.</li>\r\n              </ul>\r\n              <h2>Conclusion</h2>\r\n              <p>Understanding HTML is the first step in becoming a web developer. \r\n                By learning the basic tags and structure, you can create well-organized and functional web pages. \r\n                The more you practice and experiment with HTML, \r\n                the better you'll understand how to create interactive, engaging, and well-optimized websites.</p>\r\n              \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "editors",
+      "prev": "basics",
+      "next": "elements",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n             <h1>HTML Editors</h1>\r\n             <p>An HTML Editor is a software application designed to help users create and modify HTML code. \r\n              It often includes features like syntax highlighting, tag completion, and error detection, \r\n              which facilitate the coding process.</p>\r\n              <p>There are two main types of HTML editors:</p>\r\n              <ol>\r\n                <li><strong>Text-Based Editors</strong> - Allow direct coding with features like syntax \r\n                  highlighting and code completion for full control over the webpage structure. \r\n                  Example - Sublime Text, Visual Studio Code, etc.</li>\r\n                <li><strong>WYSIWYG (What You See Is What You Get) Editors -</strong> Offer a graphical interface\r\n                   to design web pages visually, automatically generating the corresponding HTML code. \r\n                   Example - Adobe Dreamweaver, etc.</li>\r\n              </ol>\r\n              <h2>HTML Editors List</h2>\r\n              <p>There are various free and paid HTML editors available in the market, \r\n                but in this article, we will be covering some renowned free HTML editors \r\n                that you can use as a beginner or switch to if you are an experienced developer.</p>\r\n                <div class=\"content\">\r\n                  <h3>Table of Content</h3>\r\n                  <ul>\r\n                      <li>1. Notepad</li>\r\n                      <li>2. Brackets</li>\r\n                      <li>3. Sublime Text Editor</li>\r\n                      <li>4. Atom</li>\r\n                      <li>5. Visual Studio Code</li>\r\n                    </ul>\r\n                </div>\r\n                <h2>1. Notepad</h2>\r\n                <p>Notepad is a simple text editor that is also used to write HTML code. \r\n                  It is an inbuilt desktop application available in Windows OS. </p>\r\n                <h3>Steps to Write HTML Code in Text Editor:</h3>\r\n                <p><strong>Step 1:</strong> Open any of the text editors of your choice. Here we are using the <strong>Notepad</strong> text editor. </p>\r\n                <center><img src=\"/images/note_edit.png\"/></center>\r\n                <p><strong>Step 2:</strong> Create new file: File->New File or Ctrl+N.</p>\r\n                <center><img src=\"/images/step-2.png\"/></center>\r\n                <p><strong>Step 3:</strong> Write HTML code in text editor.</p>\r\n                <center><img src=\"/images/step-3.png\"/></center>\r\n                <p><strong>Step 4:</strong>Save the file with a suitable name of your choice and a .html extension. </p>\r\n                <center><img src=\"/images/step-4.png\"/></center>\r\n                <p><strong>Step 5:</strong>Open the saved HTML file in your favorite browser (double-click on the file, or right-click - and choose \"Open with\"). </p>\r\n                <center><img src=\"/images/step-5.png\"/></center>\r\n                <h2>2. Brackets</h2>\r\n                <p>Brackets is an open-source software primarily used for Web development. \r\n                  It provides live HTML, CSS, and JavaScript editing functionality. \r\n                  Similar to the Notepad editor, create a new file and save it with a \r\n                  .html extension to run the HTML file.</p>\r\n                  <center><img src=\"/images/brack-edit.png\"/></center>\r\n                <h2>3. Sublime Text Editor</h2>\r\n                <p>Sublime is a cross-platform code editor tool. \r\n                  It supports all markup languages and is used as an editor for HTML. \r\n                  Similar to the Notepad editor, create a new file and save it with a \r\n                  .html extension to run an HTML file.\r\n                </p>\r\n                 <center><img src=\"/images/sublime-edit.png\"/></center>\r\n                 <h2>4. Atom</h2>\r\n                 <p>Atom is an open-source code editor tool for MAC, Linux, and Windows.\r\n                   We can use Atom to write and edit HTML code. \r\n                   Similar to the Notepad editor, create a new file and save it with a \r\n                   .html extension to run an HTML file.</p>\r\n                  <center><img src=\"/images/atom-edit.png\"/></center>\r\n                 <h2>5. Visual Studio Code</h2>\r\n                 <p>It is one of the most popular code editors of today's generation.\r\n                   Many companies and software developers prefer this online HTML code editor.</p>\r\n                 <p><strong>Step 1:</strong>Open the VS code Editor and Install the Live Server. \r\n                  By clicking the extension button simply search live server on the search bar and download.\r\n                   Live server extension helps to run the code and display output.</p>\r\n                    <center><img src=\"/images/vs-edit.png\"/></center>\r\n                  <p><strong>Step 2:</strong>Create a new File and save it with the \r\n                    .html extension and use the open live server button to click the right button.</p>\r\n                    <center><img src=\"/images/vs_step-2.png\"/></center>\r\n                    <h2>HTML Editors Comparison</h2>\r\n<div class=\"scroll-wrapper\">\r\n<table class=\"comparison-table\">\r\n  <thead>\r\n    <tr>\r\n      <th>Editor</th>\r\n      <th>Platform</th>\r\n      <th>Key Features</th>\r\n      <th>Ideal For</th>\r\n      <th>Pros</th>\r\n      <th>Cons</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td><b>Notepad</b></td>\r\n      <td>Windows</td>\r\n      <td>Basic text editing, lightweight</td>\r\n      <td>Beginners</td>\r\n      <td>Pre-installed, simple to use</td>\r\n      <td>No advanced features like syntax highlighting or debugging</td>\r\n    </tr>\r\n    <tr>\r\n      <td><b>VS Code</b></td>\r\n      <td>Cross-Platform</td>\r\n      <td>Live Server, Extensions, Debugging, Git Integration</td>\r\n      <td>Professionals</td>\r\n      <td>Highly extensible, supports multiple languages, great debugging tools</td>\r\n      <td>Can be resource-heavy for basic tasks</td>\r\n    </tr>\r\n    <tr>\r\n      <td><b>Atom</b></td>\r\n      <td>Cross-Platform</td>\r\n      <td>Open-source, Collaborative Editing, Customizable UI</td>\r\n      <td>Advanced Learners</td>\r\n      <td>Flexible and extensible, integrates well with GitHub</td>\r\n      <td>Slower performance compared to other editors</td>\r\n    </tr>\r\n    <tr>\r\n      <td><b>Brackets</b></td>\r\n      <td>Cross-Platform</td>\r\n      <td>Live Preview, Lightweight, Focused on Web Design</td>\r\n      <td>Frontend Developers</td>\r\n      <td>Real-time preview, supports web-centric workflows</td>\r\n      <td>Discontinued updates, limited community support</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n          <h2>How to Choose the Right HTML Editor?</h2>\r\n          <p>When selecting an HTML editor, consider the following factors:</p>\r\n           <p>1. <strong>Skill level: </strong>Beginners might prefer WYSIWYG editors for ease of use, whereas advanced users may opt \r\n            for text-based editors for better control.</p>\r\n            <p>2. <strong>Project needs:</strong>Larger projects might benefit from a more robust \r\n              editor with extensive features and integrations.</p>\r\n            <p>3. <strong>Compatibility:</strong>Ensure the editor supports other technologies you plan \r\n              to use like CSS, JavaScript, or various frameworks.</p>\r\n              <h2>Conclusion</h2>\r\n              <p>By choosing the right editor for your needs and skill level, you can greatly enhance the efficiency and quality of your web development projects.\r\n                Whether you’re just starting out or are a seasoned developer, \r\n                there’s an HTML editor out there that’s perfect for you.</p>\r\n                \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "prev": "editors",
+      "next": "attributes",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n             <h1>HTML Elements</h1>\r\n             <p>An <b>HTML Element</b> consists of a <b>start tag, content,</b> and an <b>end tag,</b>\r\n              which together define the element's structure and functionality. Elements are the basic building blocks of a webpage and can represent different types of content, \r\n              such as text, links, images, or headings.</p>\r\n              <p>For example, the &lt;p&gt; element for paragraphs includes opening and \r\n                closing tags with text content in between.</p>\r\n                <center><img src=\"/images/element.png\"/></center>\r\n                <h3 class=\"above\">Syntax</h3>\r\n                <div class=\"syntax\">&lt;tagname&gt; Your Contents... &lt;/tagname&gt;</div>\r\n                <h3>HTML Element Code Example:</h3>\r\n                <p>In this example &lt;p&gt; is a starting tag, &lt;/p&gt; is an ending tag and it contains some content between the \r\n                tags, which form an element</p>\r\n                 "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <p>Welcome to HTML!</p>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n                  <h2>Some Key Points About HTML Elements</h2>\r\n                  <h3>1. Syntax:</h3>\r\n                  <ul>\r\n                    <li>An opening tag indicates where the content begins: &lt;tagname&gt;.</li>\r\n                    <li>A closing tag indicates where the content ends: &lt;tagname&gt;.</li>\r\n                    <li>The actual content resides between the opening and closing tags.</li>\r\n                  </ul>\r\n                  <h3>2. Case Sensitivity:</h3>\r\n                  <ul>\r\n                    <li>HTML tags are not case-sensitive. For example, &lt;B&gt; and  &lt;b&gt; both represent bold text.</li>\r\n                    <li>However, it’s a best practice to use lowercase tags for consistency and readability.</li>\r\n                  </ul>\r\n                  <h2>Nested HTML Elements</h2>\r\n                  <p>Nested HTML Elements occur when one element is placed inside another, creating a hierarchical structure. \r\n                    This structure is crucial for organizing content on web pages effectively, \r\n                    ensuring that different elements relate logically and visually to each other.</p>\r\n                  <p><b>Example:</b>Here, the &lt;html&gt;tag contains the  &lt;head&gt; and  &lt;body&gt; tags, forming a nested structure.</p>\r\n                   "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body style=\"text-align: center\" >\r\n    <h1>Welcome</h1>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <p>Here, the &lt;html&gt;tag contains the&lt;head&gt;and &lt;body&gt;. The &lt;head&gt; and &lt;body&gt;tag contain other elements so it is called a nested element.</p>\r\n             <h2>Necessary to Add an End Tag</h2>\r\n             <p>For non-empty HTML elements, if you forget to add a closing or end tag, modern browsers may automatically add it in some cases.</p>\r\n             <p>However, this can cause issues when you add additional HTML elements later on. Therefore, it is best practice to always \r\n              include the closing tag for non-void HTML elements.</p>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <h1>Welcome</h1>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <P><b>Output:</b>This Image is showing the Browser's Developer Tools and you can see that the missing closing tag of the paragraph element in the above-written code is automatically added by the browser without showing any error.</P>\r\n             <h2>HTML Empty Element</h2>\r\n             <p>HTML Elements without any content i.e., that do not print anything are called Empty elements. Empty HTML elements do not have an ending tag. For instance.\r\n              &lt;br&gt;, &lt;hr&gt;, &lt;link&gt;,&lt;input&gt; etc are HTML elements.</p>\r\n             <p><b>Example:</b>In this example  &lt;br&gt; tag doesn't print anything. It is used as a line break \r\n              that breaks the line between  &lt;h2&gt;and &lt;p&gt; tags.</p>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body style=\"text-align: center\" >\r\n    <h1>Welcome</h1>\r\n    <br />\r\n    <p>Hello.</p>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>Block-Level Elements and Inline Elements</h2>\r\n             <p>In HTML, elements are broadly categorized into two main types based on how they display in the document layout: \r\n              block-level elements and inline elements.</p>\r\n              <p><b>1. Block-Level Elements</b></p>\r\n              <p>Block-level elements typically start on a new line and take up the full width available to them, regardless of their actual content width. This means they stack vertically and can contain other block-level elements as well as inline elements. \r\n                Here are some examples of block-level elements:</p>\r\n              <p><b>Examples:</b></p>\r\n              <ul>\r\n                <li>&lt;div&gt;: A general-purpose container for other elements.</li>\r\n                <li>&lt;p&gt;:Defines a paragraph.</li>\r\n                <li>&lt;h1&gt;,&lt;h2&gt;, ..., &lt;h6&gt;: Heading elements of different levels.</li>\r\n                <li>&lt;ol&gt;,&lt;ul&gt;: Ordered and unordered lists.</li>\r\n                <li>&lt;table&gt;: Defines a table.</li>\r\n                <Li>&lt;form&gt;: Used for HTML forms to collect user inputs.</Li>\r\n                <li>&lt;section&gt;, &lt;article&gt;, &lt;nav&gt;, &lt;aside&gt;, &lt;header&gt;, &lt;footer&gt;: Semantic elements \r\n                  that define areas of a webpage.</li>\r\n              </ul>\r\n              <p><b>2. Inline Elements</b></p>\r\n              <p>Inline elements do not start on a new line; they appear \r\n                on the same line as adjacent content, as long as there is space. They only take up as much width as their content requires.\r\n                 Inline elements are typically used within block-level elements to add content or style.\r\n                Here are some examples of inline elements:</p>\r\n                <p><b>Examples:</b></h3>\r\n                <ul>\r\n                  <li>&lt;span&gt;: A general-purpose inline container for phrasing content.</li>\r\n                  <li>&lt;a&gt;: Creates hyperlinks.</li>\r\n                  <li>&lt;img&gt;: Embeds an image.</li>\r\n                  <li>&lt;strong&gt;, &lt;b&gt;: Used for strong emphasis and bold text, respectively.</li>\r\n                  <li>&lt;em&gt;, &lt;i&gt;: Used for emphasis and italic text, respectively.</li>\r\n                  <li>&lt;br&gt;: Inserts a line break within text.</li>\r\n                  <li>&lt;input&gt;: Creates interactive controls for forms.</li>\r\n                </ul>\r\n                <h2>Best Practices When Using HTML Elements</h2>\r\n                <ul>\r\n                  <li><b>Semantic HTML:</b>Use HTML elements according to their intended purpose. For example, use heading elements for headings, \r\n                    &lt;p&gt; for paragraphs, and &lt;a&gt; for links.</li>\r\n                  <li><b>Accessibility:</b>Enhance accessibility by using proper elements like &lt;main&gt;, &lt;aside&gt;, &lt;header&gt;, and &lt;footer&gt;. \r\n                    Also, always include alt text for images.</li>\r\n                    <li><b>Keep it Simple:</b>Avoid unnecessary complexity in HTML structure. Use the simplest possible elements to achieve the \r\n                      desired layout and functionality.</li>\r\n                </ul>\r\n                \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "attributes",
+      "prev": "elements",
+      "next": "block_inline",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n            <h1>HTML Attributes</h1>\r\n            <p><b>HTML Attributes</b> are special words <b>used within the opening tag of an HTML element. </b>They provide additional information \r\n              about HTML elements. HTML attributes are used to configure and adjust the element's behavior, appearance, \r\n              or functionality in a variety of ways.</p>\r\n            <p>Each attribute has a name and a value, formatted as <b>name=\"value\".</b> Attributes tell the browser how to render the element or how it s\r\n              hould behave during user interactions.</p>\r\n            <h3>Syntax:</h3>\r\n            <div class=\"syntax\">\r\n              <p>&lt;tagname attribute_name = \"attribute_value\"&gt; content... &lt;/tagname&gt;</p>\r\n            </div>\r\n            <h2>Code Example of Using HTML Attributes</h2>\r\n            <p>This HTML code demonstrates the use of the <b>src attribute</b> within the &lt;img&gt;tag to display an image.</p>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>HTML img src Attribute</title>\r\n  </head>\r\n  <body>\r\n    <img src= \"https://m.media-amazon.com/images/I/81OXEQrFPTL._UF1000,1000_QL80_.jpg\">\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h4>In this example:</h4>\r\n             <ul>\r\n              <li><b>Tag:</b>&lt;img&gt;</li>\r\n              <li><b>Attribute:</b>src</li>\r\n              <li><b>Value of Attribute : </b>\"https://m.media-amazon.com/images/I/81OXEQrFPTL._UF1000,1000_QL80_.jpg\"</li>\r\n              <li><b>Purpose:</b>The &lt;img&gt; tag is used for embedding images in an HTML page. \r\n                The src attribute within the &lt;img&gt; tag specifies the path to the image file you wish to display. This attribute is crucial as it directs the browser to the image’s\r\n                 location on the internet or a local directory.</li>\r\n             </ul>\r\n             <h2>Components of Attribute</h2>\r\n             <p>An HTML attribute consists of two primary components:</p>\r\n             <p><b>1. attribute_name:</b> This is the name of the attribute, which specifies what kind of additional information or property you are defining for the element. \r\n              Common attribute names include href, src, class, id, etc.</p>\r\n             <p><b>2. attribute_value: </b>The value is assigned to the attribute to define the specific setting or behavior. \r\n              It is always placed in quotes.</p>\r\n              <h2>Common HTML Attributes</h2>\r\n              <p>Let's take look at some of the most commonly used HTML attributes:</p>\r\n              <h2>1. HTML alt Attribute</h2>\r\n              <p>The alt attribute in HTML provides alternative text for an image if the image cannot be displayed. \r\n                It improves accessibility and provides context for screen readers.</p>\r\n              <p><b>Example:</b> This example explains the HTML <b>alt Attributes</b> to specify\r\n                 the name of the file when the image is not loaded properly.</p>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>HTML img src Attribute</title>\r\n  </head>\r\n  <body>\r\n    <img src= \"https://m.media-amazon.com/images/I/81OXEQrFPTL._UF1000,1000_QL80_.jpg\" alt=\"The Logo\"><br>\r\n    <img src=\"\" \r\n         alt=\"Since the src value is blank,the alt value is displayed\">\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>2. HTML width and height Attribute</h2>\r\n             <p>The <b>width</b> and <b>height Attribute</b> is used to adjust the width \r\n              and height of an image(in pixels).</p>\r\n             <p><b>Example:</b> This example explains the HTML <b>width & height</b> Attributes to specify the \r\n              different sizes of the images.</p>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>HTML img src Attribute</title>\r\n  </head>\r\n  <body>\r\n    <img src= \"https://m.media-amazon.com/images/I/81OXEQrFPTL._UF1000,1000_QL80_.jpg \"\r\n    width=\"300px\"\r\n    height=\"100px\" >\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>3. HTML id Attribute</h2>\r\n             <p>The <b>id attribute</b> in HTML assigns a unique identifier to an element, allowing it to be targeted by CSS and JavaScript for\r\n               styling and manipulation purposes.</p>\r\n              <p><b>Example: </b>This example explains the HTML <b>id Attribute</b> to specify the unique value for the specific element.</p>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <style>\r\n        #geeks {\r\n            color: green;\r\n        }\r\n    </style>\r\n</head>\r\n\r\n<body>\r\n    <h1 id=\"geeks\">Welcome to GeeksforGeeks</h1>\r\n</body>\r\n\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>4. HTML title Attribute</h2>\r\n             <p>The<b>title attribute</b>is used to explain an element by hovering the mouse over it. The behavior differs with various elements but generally, the value is displayed while loading \r\n              or hovering the mouse pointer over it.</p>\r\n              <p><b>Example:</b>This example explains the HTML <b>title Attributes</b> to specify the metadata for the element by hovering \r\n                the mouse over it.</p>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <title>HTML title Attribute</title>\r\n</head>\r\n\r\n<body>\r\n    <h3 title=\"Hello World\">\r\n        Hover to see the effect\r\n    </h3>\r\n</body>\r\n\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>5. HTML href Attribute</h2>\r\n             <p>The <b>href attribute</b> in HTML, used with the &lt;a&gt; tag, specifies a link destination. Clicking the linked text navigates to this address. Adding `target=\"_blank\"` \r\n              opens it in a new tab.</p>\r\n              <p><b>Example:</b>This example explains the HTML <b>href Attributes</b> specify the \r\n                link address of the file.</p>\r\n              "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <title>link Attribute</title>\r\n</head>\r\n\r\n<body>\r\n    <a href=\"https://www.geeksforgeeks.org/\">\r\n        Click to open in the same tab\r\n    </a><br>\r\n    <a href=\"https://www.geeksforgeeks.org/\" \r\n       target=\"_blank\">\r\n        Click to open in a different tab\r\n    </a>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>Important Points About HTML Attributes</h2>\r\n             <h3>1. Always Use Lowercase Attributes:</h3>\r\n             <p>You can use either uppercase or lowercase letters for defining attributes. For example, both alt and ALT in an img tag are valid. However, it is recommended to use lowercase attributes as per \r\n              W3C guidelines for consistency and better readability.</p>\r\n            <h3>2. Always Quote Attribute Values:</h3>\r\n            <p>The HTML standard does not require quotes around attribute values in certain situations. However, W3C recommends always using quotes \r\n              for attribute values, and quotes are mandatory for stricter document types like XHTML. Using quotes helps avoid errors, especially \r\n              when the attribute value contains spaces or special characters.</p>\r\n            <h3>3. Declare Quote as an Attribute Value:</h3>\r\n            <p>You can use either <b>single (')</b> or <b>double (\")</b> quotes for attribute values in HTML, but it is essential to be consistent throughout your document. \r\n              If the attribute value contains a <b>double quote</b>, then use single quotes to enclose it, and vice versa.\r\n              For simplicity, it is a good practice to consistently use double quotes, as it aligns \r\n              with the convention used in many HTML examples and tutorials.</p>\r\n            <h3>4. Boolean Attributes Should Be Written Without Values:</h3>\r\n            <p>Boolean attributes do not require a value. If the attribute is present, it is considered true. \r\n              For example, the checked attribute of an &lt;input&gt; element is \r\n              correctly written as:</p>\r\n              <h3>Example:</h3>\r\n              <div class=\"syntax\">&lt;input type=\"checkbox\" checked&gt;</div>\r\n              <p>Writing <b>checked=\"checked\"</b> also works, but it is redundant. Simply including the attribute \r\n                is enough to represent a true state.</p>\r\n                <h2>Summing up!</h2>\r\n                <p>Understanding HTML attributes is essential for creating well-structured and accessible web pages. By using these attributes effectively, you can enhance user \r\n                  experience and optimize your content for search engines.</p>\r\n                  \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "block_inline",
+      "prev": "attributes",
+      "next": "headings",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n            <h1>HTML Block and Inline Elements</h1>\r\n            <p>HTML elements are either block-level, which structure the layout and \r\n              span full width (like &lt;div&gt; or &lt;p&gt;), or inline, which styles content within blocks \r\n                without breaking the flow (like &lt;span&gt; or &lt;a&gt;). \r\n              This distinction covers 80–90% of common HTML usage.</p>\r\n              <center><img src=\"/images/block.webp\"></center>\r\n              <p><b>Example: </b>Here, we illustrate the use of the block-level element(Div) \r\n                and the inline element(&lt;a&gt;).</p>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <body>\r\n    <div>Welcome</div>\r\n    Hello\r\n    <a href=\"www.youtube.com\" alt=\"GeeksforGeeks youtube\"> official </a>\r\n    youtube for the videoes on various courses.\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>Code Overview:</h3>\r\n             <p>In the above example, we have used the &lt;div&gt; tag that always starts \r\n              in a new line & captures the full width available. and We have used the inline element anchor tag &lt;a&gt; that is used to provide a link to a text that doesn't start in a new line \r\n              & captures only the space around the element.</p>\r\n              <h2>HTML Block Elements</h2>\r\n              <p>A block-level element always starts on a new line and\r\n                 stretches out to the left and right as far as it can i.e, it occupies the whole horizontal space of its parent element \r\n                & the height is equal to the content's height.</p>\r\n                <ul>\r\n                  <li> &lt;address&gt;</li>\r\n                  <li> &lt;dd&gt;</li>\r\n                  <li> &lt;div&gt;</li>\r\n                  <li> &lt;form&gt;</li>\r\n                  <li> &lt;hr&gt;</li>\r\n                  <li> &lt;li&gt;</li>\r\n                  <li> &lt;main&gt;</li>\r\n                  <li> &lt;nav&gt;</li>\r\n                  <li> &lt;noscript&gt;</li>\r\n                  <li> &lt;ol&gt;</li>\r\n                  <li> &lt;figcaption&gt;</li>\r\n                  <li> &lt;header&gt;</li>\r\n                  <li> &lt;footer&gt;</li>\r\n                </ul>\r\n                <h3>div element:</h3>\r\n                <p>The &lt;div&gt; element is used as a container for other HTML elements. It has no required attributes. \r\n                  Style, class, and id are the commonly used attributes.</p>\r\n                <h3>Syntax:</h3>\r\n                <div class=\"syntax\">\r\n                   &lt;div&gt;HelloWorld&lt;/div&gt;\r\n                </div>\r\n                <p><b>Example: </b>The below code illustrates the implementation of &lt;div&gt;tag. </p>\r\n                 "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>Block-level Element</title>\r\n</head>\r\n<body>\r\n    <div>\r\n        <h1>GeeksforGeeks</h1>\r\n        <h3>GeeksforGeeks is a science portal for geeks.</h3>\r\n    </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h2>Inline Elements</h2>\r\n             <p>An inline element is the opposite of the block-level element. \r\n              It does not start on a new line and takes up only the necessary width ie., \r\n              it only occupies the space bounded by the tags defining the HTML element,\r\n              instead of breaking the flow of the content. </p>\r\n              <ul>\r\n                 <li> &lt;br&gt;</li>\r\n                  <li> &lt;button&gt;</li>\r\n                  <li> &lt;time&gt;</li>\r\n                  <li> &lt;tt&gt;</li>\r\n                  <li> &lt;a&gt;</li>\r\n                  <li> &lt;abbr&gt;</li>\r\n                  <li> &lt;b&gt;</li>\r\n                  <li> &lt;code&gt;</li>\r\n                  <li> &lt;cite&gt;</li>\r\n                  <li> &lt;sub&gt;</li>\r\n                  <li> &lt;sup&gt;</li>\r\n                  <li> &lt;input&gt;</li>\r\n                  <li> &lt;textarea&gt;</li>\r\n              </ul>\r\n              <h3>span element:</h3>\r\n              <p>The &lt;span&gt; tag is used as a container for text. It has no required attributes. \r\n                Style, class, and id are the commonly used attributes.</p>\r\n              <h3>Syntax:</h3>\r\n              <div class=\"syntax\">\r\n                &lt;span&gt;HelloWorld&lt;/span&gt;\r\n              </div>\r\n              <p><b>Example:</b> The below code illustrates the implementation of &lt;span&gt; tag. </p>\r\n               "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>HTML span element</title>\r\n    <style>\r\n        h1 {\r\n            color: green;\r\n        }\r\n        span {\r\n            color: black;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n    <h1>Hello\r\n        <span> World</span>\r\n    </h1>\r\n</body>\r\n</html>"
+        }
+      ]
+    },
+    {
+      "id": "headings",
+      "prev": "block_inline",
+      "next": "parag",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Headings</h1>\r\n        <p>\r\n          <b>HTML headings</b> are used to define the titles and subtitles of sections on a webpage. \r\n          They help organize \r\n          the content and create a structure that is easy to navigate.\r\n        </p>\r\n        <ul>\r\n          <li>Proper use of headings enhances readability by \r\n            organizing content into clear sections.</li>\r\n          <li>Search engines utilize headings to understand page structure,\r\n            aiding in SEO.</li>\r\n        </ul>\r\n      "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" \r\n          content=\"width=device-width, initial-scale=1.0\">\r\n    <title>HTML</title>\r\n</head>\r\n<body>\r\n      <h1>Heading1</h1>\r\n      <h2>Heading2</h2>\r\n      <h3>Heading3</h3>\r\n      <h4>Heading4</h4>\r\n      <h5>Heading5</h5>\r\n      <h6>Heading6</h6>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>Code Overview:</h3>\r\n             <ul>\r\n              <li>This code displays six headings (&lt;h1&gt; to &lt;/h6&gt;) on the webpage, with &lt;h1&gt; \r\n                being the largest and most prominent and &lt;h6&gt; being the smallest.</li>\r\n                <li>Each tag shoes the hierarchy of the content, helping organize the structure of the webpage.</li>\r\n             </ul>\r\n              <p><b>Note:</b>the 'h' inside the tag should always be in lowercase.</p>\r\n              <h2>Levels of HTML Heading Tags</h2>\r\n              <p>HTML offers <b>six levels of heading tags,</b> each serving a different purpose in structuring your content:</p>\r\n              <center><img src=\"/images/heading.png\"/></center>\r\n              <div>\r\n                <h2>&lt;h1&gt; -  Main Heading (Largest)</h2>\r\n                <ul>\r\n                  <li>Represents the primary focus of the page,\r\n                     usually used for the main title.</li>\r\n                  <li>Use only one &lt;h1&gt; tag per page for the best SEO practices.</li>\r\n                  <li>Makes it clear to both users and search engines what the main topic is.</li>\r\n                </ul>\r\n              </div>\r\n              <div>\r\n                <h2>&lt;h2&gt; - Subheadings</h2>\r\n                <ul>\r\n                  <li>deal for dividing the content into major sections.</li>\r\n                  <li>If the content has further subsections, use &lt;h3&gt; to create a logical flow.</li>\r\n                  <li>Makes it clear to both users and search engines what the main topic is.</li>\r\n                </ul>\r\n              </div>\r\n              <div>\r\n                <h2>&lt;h3&gt; to &lt;h6&gt; - Smaller Headings</h2>\r\n                <ul>\r\n                  <li>These heading levels are used for finer subdivisions, gradually decreasing in size and importance.</li>\r\n                  <li>&lt;h3&gt; is used for subsections under &lt;h2&gt;, while &lt;h4&gt; to &lt;h6&gt; are used for additional, less important subdivisions.</li>\r\n                  <li>&lt;h6&gt; defines the least important heading.</li>\r\n                </ul>\r\n              </div>\r\n              <h2>Best Practices for Using HTML Headings</h2>\r\n              <ul>\r\n                <li><b>Use Only One &lt;h1&gt; per Page:</b> &lt;h1&gt; tag should be reserved for the main title of the page. Too many  &lt;h1&gt; tags can confuse both users \r\n                  and search engines about the content’s priority.</li>\r\n                <li><b>Maintain a Logical Structure:</b> Follow a logical hierarchy of headings (&lt;h1&gt; → &lt;h2&gt; → &lt;h3&gt;) to ensure content is organized. \r\n                  Don't jump directly from &lt;h1&gt; to &lt;h4&gt;,\r\n                   as it can make the content harder to navigate.</li>\r\n                  <li><b>Keep Headings Descriptive:</b> Headings should clearly describe the content that follows. This makes it easier for \r\n                    readers to understand what each section is about.</li>\r\n                  <li><b>Avoid Overusing Heading Tags:</b> Headings are for organizing content, not for styling text. Use them where appropriate and avoid using \r\n                    heading tags for emphasis or styling alone.</li>\r\n              </ul>\r\n               \r\n      "
+        }
+      ]
+    },
+    {
+      "id": "parag",
+      "prev": "headings",
+      "next": "format",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Paragraphs</h1>\r\n        <p>A paragraph in HTML is simply a block of text enclosed within the &lt;p&gt;tag. \r\n          The &lt;p&gt;,tag helps divide content into manageable, readable sections. It’s the go-to element for wrapping text in a web page that is meant \r\n          to be displayed as a distinct paragraph.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;p&gt; Some Content... &lt;/p&gt;</p>\r\n        </div>\r\n        <h3>How HTML Paragraphs are Rendered?</h3>\r\n        <p>In HTML, when you wrap text inside the &lt;p&gt;tag, it automatically:</p>\r\n        <ul>\r\n          <li>Adds space before and after the paragraph to visually separate it from other content.</li>\r\n          <li>Breaks the text into a single block, creating an easy-to-read section.</li>\r\n        </ul>\r\n        <h2>HTML Paragraph Code Example</h2>\r\n        <p>Here’s an example showing two paragraphs in HTML:</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<p>A Computer Science portal for geeks.</p>\r\n<p>It contains well written, well thought articles.</p>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>Properties of the paragraph Tag</h3>\r\n             <ul>\r\n              <li>The browser reduces multiple spaces added by users to a single space.</li>\r\n              <li>If a user adds various lines, the browser compresses them into one line.</li>\r\n              <li>By default, the display of the paragraph element is set to \"block,\" meaning each new paragraph is placed on a new line. (Note: This behavior can be modified using CSS.)</li>\r\n             </ul>\r\n        <h2>\r\n          The &lt;br&gt; tag\r\n        </h2>\r\n        <p>The HTML &lt;br&gt; tag element creates a line break, giving you a new line without starting a new paragraph. Use &lt;br&gt; \r\n          when you want to move to the next line without beginning a whole new paragraph.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;br&gt;</p>\r\n        </div>\r\n        <p>Example: This example explains the &lt;br&gt; tag inside the &lt;p&gt; tag to add the line-break.</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<p>\r\n    This paragraph has multiple\r\n    <br />lines. But HTML reduces them\r\n    <br />to a single line, omitting\r\n    <br />the carriage return we have used.\r\n</p>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n             <h3>The Horizontal Rules &lt;hr&gt; tag</h3>\r\n      <p>The HTML &lt;hr&gt; tag is used to create a horizontal rule or line,\r\n         visually separating content on a webpage. Use &lt;hr&gt; when you want to insert a horizontal line \r\n         to signify a division between sections or elements, \r\n        providing a clear visual break in the page.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;hr&gt;</p>\r\n        </div>\r\n        <p>Example: In this example we will use the &lt;hr&gt; tag with an example by using &lt;p&gt; tag also.</p>\r\n        <h3>Align attribute</h3>\r\n        <p>The &lt;p&gt; tag specifically supports the alignment attribute and allows us to align our paragraphs in left, right, or center alignment. </p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;p align =\"value\"&gt;</p>\r\n        </div>\r\n        <h2>Avoiding Common Mistakes with Paragraphs</h2>\r\n        <ol>\r\n          <li>Avoid Nested Paragraphs: You cannot nest paragraphs within one another. Each &lt;p&gt; \r\n            tag should contain only the text for one block of content.</li>\r\n          <li>Avoid Using &lt;p&gt; for Non-Textual Content: The <p> tag is meant for text-based content. If you need to wrap images, tables, or other elements,\r\n             use appropriate tags like &lt;img&gt; , &lt;table&gt;or &lt;div&gt;.</li>\r\n        </ol>\r\n         \r\n      "
+        }
+      ]
+    },
+    {
+      "id": "format",
+      "prev": "parag",
+      "next": "lists",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Text Formatting</h1>\r\n        <p>HTML text formatting refers to the use of specific HTML tags to modify\r\n           the appearance and structure of text on a webpage. It allows you to style text in different ways,\r\n            such as making it bold,\r\n          italic, underlined, highlighted, or struck-through.</p>\r\n        <h2>Categories of HTML Text Formatting</h2>\r\n        <p>HTML text formatting can be divided into two main categories: \r\n          <b>Logical Tags</b> and <b>Physical Tags.</b></p>\r\n        <h3>1. Logical Tags</h3>\r\n        <p>Logical tags convey the meaning or importance of the text without necessarily altering its visual appearance. \r\n          These tags help browsers, search engines, and assistive \r\n          technologies understand the purpose of the text.</p>\r\n          <ul>\r\n            <li><b>&lt;em&gt;</b> Emphasizes text, typically rendered in italics. It implies that the text carries special \r\n              importance or requires emphasis.</li>\r\n            <li><b>&lt;strong&gt;</b>Marks text as important, often displayed in bold. \r\n              It implies the content is of strong importance.</li>\r\n          </ul>\r\n          <h3>2. Physical Tags</h3>\r\n          <p>Physical tags directly affect how text looks on the webpage by changing the font,\r\n             size, or style.</p>\r\n          <ul>\r\n            <li>&lt;b&gt;: Displays text in bold without implying importance.</li>\r\n            <li>&lt;i&gt;: Italicizes text without any implied emphasis.</li>\r\n          </ul>\r\n          <p>Here’s a list of commonly used HTML text formatting tags and their description:</p>\r\n          <h3>HTML Formatting Elements</h3>\r\n          <h4>1. &lt;i&gt; – Italicizes text</h4>\r\n          <p>Use the &lt;i&gt; tag to display text in italics without implying emphasis.</p>\r\n          <div class=\"syntax\">&lt;i&gt;This is italic text.&lt;/i&gt;</div>\r\n          <h4>2. &lt;small&gt; – Reduces the font size of the text</h4>\r\n          <p>The &lt;small&gt; tag renders text in a smaller font than the surrounding text.</p>\r\n          <div class=\"syntax\">&lt;small&gt;This text is smaller than the rest.&lt;/small&gt;</div>\r\n          <h4>3. &lt;ins&gt; – Highlights inserted text</h4>\r\n          <p>The &lt;ins&gt; tag marks text as newly added or inserted, often displayed with an underline.</p>\r\n          <div class=\"syntax\">&lt;ins&gt;This is inserted text.&lt;/ins&gt;</div>\r\n          <h4>\r\n            4. &lt;sub&gt; – Displays subscript text\r\n          </h4>\r\n          <p>Use the &lt;sub&gt; tag for subscripted text, often used in chemical formulas or footnotes.</p>\r\n          <div class=\"syntax\">H&lt;sub&gt;2&lt;sub&gt;O</div>\r\n          <h4>5. &lt;mark&gt; – Highlights text with a background color</h4>\r\n          <p>The &lt;mark&gt; tag highlights text with a background color, similar to using a highlighter on paper.</p>\r\n          <div class=\"syntax\">&lt;mark&gt;This text is highlighted.&lt;/mark&gt;</div>\r\n          <h2>Examples of HTML Text Formatting</h2>\r\n          <h3>Example 1: Basic Text Formatting</h3>\r\n           "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n</head>\r\n<body>\r\n      <p>\r\n        <strong>Strong:</strong> \r\n        This text is important and bold.\r\n    </p>\r\n    <p>\r\n        <em>Emphasized:</em> \r\n        This text is emphasized and italic.\r\n    </p>\r\n    <p>\r\n        <b>Bold:</b> \r\n        This text is bold.\r\n    </p>\r\n    <p>\r\n        <i>Italic:</i> \r\n        This text is italic.\r\n    </p>\r\n    <p>\r\n        <mark>Marked:</mark> \r\n        This text is highlighted.\r\n    </p>\r\n</body>\r\n</html>"
+        }
+      ]
+    },
+    {
+      "id": "hyper",
+      "prev": "types",
+      "next": "au_vi",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>HTML Links Hyperlinks</h1>\r\n  <p><b>HTML Links,</b> also known as<b>hyperlinks,</b> are defined by the <b>&lt;a&gt;</b> tag in HTML, \r\n    which stands for \"anchor.\" These links are essential for navigating between web pages and directing users to different sites,\r\n     documents, or sections within the same page.</p>\r\n  <p>The basic attributes of the <b>&lt;a&gt;</b> tag include <b>href,</b> <b>title,</b> and <b>target,</b> among others.</p>\r\n  <h3>Basic Syntax of an HTML Link:</h3>\r\n  <div class=\"syntax\">\r\n    &lt;a href=\"https://www.example.com///\">Visit Example&lt;/a&gt;\r\n  </div>\r\n  <p><b>Note:</b> A hyperlink can be represented by an image or any other HTML element, not just text.</p>\r\n  <h2>A Simple HTML Link Example</h2>\r\n  <p>In this example, we contains a paragraph instructing users to click on the link labeled \"Google,\" which directs to the website\r\n     \"https://www.google.com/\".</p>\r\n  "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <title>HTML Links</title>\r\n</head>\r\n\r\n<body>\r\n    <p>Click on the following link</p>\r\n    <a href=\"https://www.google.com/\">\r\n        Google\r\n    </a>\r\n</body>\r\n\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n    <p>By default, links will appear as follows in all browsers:</p>\r\n    <ul>\r\n      <li>An unvisited link is underlined and blue.</li>\r\n      <li>A visited link is underlined and purple.</li>\r\n      <li>An active link is underlined and red.</li>\r\n    </ul>\r\n    <h2>HTML Links - Target Attribute</h2>\r\n    <p>The target attribute in the &lt;a&gt; tag specifies where to open the \r\n      linked document. It controls whether the link opens in the same window,\r\n       a new window, or a specific frame.</p>\r\n       <div class=\"scroll-wrapper\">\r\n    <table border=\"1\">\r\n  <thead>\r\n    <tr>\r\n      <th>Attribute</th>\r\n      <th>Description</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td><code>_blank</code></td>\r\n      <td>Opens the linked document in a new window or tab.</td>\r\n    </tr>\r\n    <tr>\r\n      <td><code>_self</code></td>\r\n      <td>Opens the linked document in the same frame or window as the link. (Default behavior)</td>\r\n    </tr>\r\n    <tr>\r\n      <td><code>_parent</code></td>\r\n      <td>Opens the linked document in the parent frame.</td>\r\n    </tr>\r\n    <tr>\r\n      <td><code>_top</code></td>\r\n      <td>Opens the linked document in the full body of the window.</td>\r\n    </tr>\r\n    <tr>\r\n      <td><code>framename</code></td>\r\n      <td>Opens the linked document in a specified frame. The frame’s name is specified in the attribute.</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n<h2>Linking Different HTML Elements</h2>\r\n<p>Below are examples of how to link different HTML elements with their respective code snippets</p>\r\n<div class=\"scroll-wrapper\">\r\n<table border=\"1\">\r\n  <thead>\r\n    <tr>\r\n      <th>Element to Interlink</th>\r\n      <th>Specific Code</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>Linking to an image</td>\r\n      <td>\r\n        &lt;a href=\"image.jpg\"&gt;&lt;img src=\"image.jpg\" alt=\"Image\"&gt;&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Link to an Email Address</td>\r\n      <td>\r\n        &lt;a href=\"mailto:someone@example.com\"&gt;Send Email&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Phone Number</td>\r\n      <td>\r\n        &lt;a href=\"tel:+1234567890\"&gt;Call Now&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Button</td>\r\n      <td>\r\n        &lt;a href=\"https://www.example.com///\"&gt;&lt;button&gt;Visit Example&lt;/button&gt;&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Link to Download File</td>\r\n      <td>\r\n        &lt;a href=\"file.pdf\" download&gt;Download File&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td>Link Title</td>\r\n      <td>\r\n        &lt;a href=\"https://www.example.com///\" title=\"Visit Example\"&gt;Link Text&lt;/a&gt;\r\n      </td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n \r\n"
+        }
+      ]
+    },
+    {
+      "id": "au_vi",
+      "prev": "hyper",
+      "next": "ifram",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n<h1>HTML Video</h1>\r\n<p>The &lt;video&gt; element in HTML is used to show video content on web pages. It supports various video formats, including MP4, WebM, and Ogg. \r\n  It is introduced in HTML5.</p>\r\n<p>Scroll down to the End, there is a Tutorial Video which is a live example of the Video Element \r\n  displaying on this webpage.</p>\r\n<h3>Syntax:</h3>\r\n<div class=\"syntax\">\r\n  &lt;video src=&quot; &quot; controls&gt;&lt;/video&gt;\r\n\r\n&lt;!-- OR --&gt;\r\n\r\n&lt;video controls=&quot;controls&quot;&gt;\r\n  &lt;source src=&quot;video_filename&quot; type=&quot;video_type&quot;&gt;\r\n&lt;/video&gt;\r\n\r\n</div>\r\n<p>Generally, we prefer the syntax with the &lt;source&gt;tag wrapped between the video tag because:</p>\r\n<ul>\r\n  <li>It allows you to specify multiple <source> elements for different formats of the video (e.g., MP4, WebM, Ogg), improving cross-browser compatibility.</li>\r\n  <li>By including the type attribute, you can tell the browser the exact MIME type of the video file, helping it determine whether it can play the file.</li>\r\n</ul>\r\n<h3>Key Attributes of the &lt;video&gt; Element</h3>\r\n<p>The following attributes can be used with the &lt;video&gt; tag to enhance video playback:</p>\r\n<div class=\"scroll-wrapper\">\r\n  <table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\r\n  <thead>\r\n    <tr>\r\n      <th>Attribute</th>\r\n      <th>Description</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>controls</td>\r\n      <td>Adds playback controls such as play, pause, volume, etc.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>width</td>\r\n      <td>Specifies the width of the video player.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>height</td>\r\n      <td>Specifies the height of the video player.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>autoplay</td>\r\n      <td>Automatically starts playing the video when it's loaded.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>muted</td>\r\n      <td>Mutes the video by default.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>src</td>\r\n      <td>Specifies the video file's path.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>type</td>\r\n      <td>Defines the format of the video (e.g., &lt;code&gt;video/mp4&lt;/code&gt;, &lt;code&gt;video/webm&lt;/code&gt;).</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n<h1>HTML Audio</h1>\r\n<p>The HTML &lt;audio&gt; element is used to play an audio file on a web page.</p>\r\n<h2 style=\"color: rgb(40, 39, 39);\">The HTML &lt;audio&gt; Element</h2>\r\n<p>To play an audio file in HTML, use the &lt;audio&gt; element:</p>\r\n"
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<audio controls>\r\n  <source src=\"horse.ogg\" type=\"audio/ogg\">\r\n  <source src=\"horse.mp3\" type=\"audio/mpeg\">\r\n  Your browser does not support the audio element.\r\n</audio>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n<h2>HTML Audio - How It Works</h2>\r\n<p>The controls attribute adds audio controls, like play, pause, and volume.</p>\r\n<p>The &lt;source&gt; element allows you to specify alternative audio files which the browser may choose from. \r\n  The browser will use the first recognized format.</p>\r\n<p>The text between the &lt;audio&gt; and &lt;/audio&gt; tags will only be displayed in browsers that do not support the &lt;audio&gt; element.</p>\r\n\r\n"
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "prev": "format",
+      "next": "types",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n<h1>HTML Lists</h1>\r\n<p>An HTML List allows you to organize data on web pages into an ordered or \r\n  unordered format to make the information easier to read and visually appealing. \r\n  HTML Lists are very helpful for creating structured, \r\n  accessible content in web development.</p>\r\n<h1>Types of HTML Lists</h1>\r\n<p>There are three main types of lists in HTML:</p>\r\n<ol>\r\n  <li>Unordered Lists (&lt;ul&gt;): These lists are used for items that do not need to be in any specific order.\r\n     The list items are typically marked with bullets.</li>\r\n  <li>Ordered Lists (&lt;ol&gt;): These lists are used when the order of the items is important.\r\n    Each item in an ordered list is \r\n    typically marked with numbers or letters.</li>\r\n  <li>Description Lists (&lt;dl&gt;): These lists are used to contain terms and \r\n    their corresponding descriptions.</li>\r\n  <h2>Basic Example of HTML Lists</h2>\r\n</ol>\r\n "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<h5>List of available courses</h5>\r\n    <ul>\r\n        <li>Data Structures and Algorithm</li>\r\n        <li>Web Technology</li>\r\n    </ul>\r\n <h5>Data Structures topics</h5>\r\n    <ol>\r\n        <li>Array</li>\r\n        <li>Linked List</li>\r\n        <li>Stacks</li>\r\n     </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n  <h2>HTML List Tags</h2>\r\n  <div class=\"scroll-wrapper\">\r\n  <table border=\"1\">\r\n  <thead>\r\n    <tr>\r\n      <th>Tag</th>\r\n      <th>Description</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>&lt;ul&gt;</td>\r\n      <td>Defines an unordered list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;ol&gt;</td>\r\n      <td>Defines an ordered list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;li&gt;</td>\r\n      <td>Defines a list item.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;dl&gt;</td>\r\n      <td>Defines a description list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;dt&gt;</td>\r\n      <td>Defines a term in a description list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;dd&gt;</td>\r\n      <td>Details the term in a description list.</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n<h2>1. Using HTML Unordered List or Bulleted List</h2>\r\n<p>Unordered lists are ideal for scenarios where the sequence \r\n  of the items is not important.</p>\r\n<p>The unordered list items are marked with bullets, also known as bulleted lists. An unordered list starts with the &lt;ul&gt; tag, \r\n  and each list item begins with the &lt;li&gt; tag.</p>\r\n<h3>Syntax:</h3>\r\n<div class=\"syntax\">\r\n <p>&lt;ul&gt;<br>\r\n    &lt;li&gt;Item 1&lt;/li&gt;<br>\r\n    &lt;li&gt;Item 2&lt;/li&gt;<br>\r\n    &lt;li&gt;Item 3&lt;/li&gt;<br>\r\n&lt;/ul&gt;\r\n</p>\r\n</div>\r\n<p>Attribute: This tag contains two attributes which are listed below: </p>\r\n<ul>\r\n  <li>compact: It will render the list smaller.</li>\r\n  <li>type: It specifies which kind of marker is used in the list.</li>\r\n</ul>\r\n<h2>2. Using HTML Ordered List</h2>\r\n<p>Ordered lists are used when the items need to follow a specific sequence.</p>\r\n<p>In an ordered list, all list items are marked with numbers by default. An ordered list starts with the &lt;ol&gt; tag, and \r\n  each list item begins with the &lt;li&gt; tag.</p>\r\n<h3>Syntax:</h3>\r\n<div class=\"syntax\">\r\n  <p>&lt;ol&gt;<br>\r\n   &lt;li&gt;Item1&lt;/li&gt;<br>\r\n   &lt;li&gt;Item2&lt;/li&gt;<br>\r\n   &lt;li&gt;Item3&lt;/li&gt;<br>\r\n&lt;/ol&gt;\r\n</p>\r\n</div>\r\n<h3>Attributes:</h3>\r\n<ul>\r\n  <li>compact: It defines the list should be compacted \r\n    (compact attribute is not supported in HTML5. Use CSS instead.).</li>\r\n  <li>reversed: It defines that the order will be descending.</li>\r\n  <li>start: It defines from which number or alphabet the order will start.</li>\r\n  <li>type: It defines which type(1, A, a, I, and i) of the order you want in your list of numeric, alphabetic, or roman numbers.</li>\r\n</ul>\r\n<h2>3. Using HTML Description List</h2>\r\n<p>A description list is a list of terms, with a description of each term. Description lists are less common but very useful for definitions, glossaries, \r\n  or any other key-value pairs of items.</p>\r\n<p>The &lt;dl&gt; tag defines the description list, the &lt;dt&gt; tag defines the term name, and the &lt;dd&gt; tag describes each term.</p>\r\n<h3>Syntax:</h3>\r\n<div class=\"syntax\">\r\n  <p>\r\n  &lt;dl&gt;<br>\r\n    &lt;dt&gt;Item 1&lt;/dt&gt;<br>\r\n    &lt;dd&gt;Description of Item 1&lt;/dd&gt;<br>\r\n    &lt;dt&gt;Item 2&lt;/dt&gt;<br>\r\n    &lt;dd&gt;Description of Item 2&lt;/dd&gt;<br>\r\n&lt;/dl&gt;\r\n</div>\r\n<p>Here, &lt;dt&gt; (description term) is used for the term being defined, and &lt;dd&gt;(description details) is used for the description.</p>\r\n \r\n"
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "prev": "lists",
+      "next": "hyper",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>HTML Ordered Lists</h1>\r\n  <p>An HTML Ordered List is created using the  &lt;ol&gt; tag to display items in a specific sequence, \r\n    typically numbered or alphabetically ordered. Each list item is defined using the &lt;ol&gt;  (list item) tag.\r\n       Ordered lists are widely used for instructions, rankings, and step-by-step guides—appearing in over 60% of structured \r\n    web content that requires clear, sequential formatting.</p>\r\n  <p>This is how the HTML Ordered list will be displayed in a browser:</p>\r\n  <ul>\r\n    <li>Item a</li>\r\n    <li>Item b</li>\r\n    <li>Item c</li>\r\n  </ul>\r\n  <p>The list is automatically numbered by the browser, but the style of numbering can be adjusted using attributes and CSS.</p>\r\n  <h2>Basic Ordered List</h2>\r\n  "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<h2>My To-Do List</h2>\r\n    <ol>\r\n        <li>Go grocery shopping</li>\r\n        <li>Pay utility bills</li>\r\n        <li>Prepare dinner</li>\r\n    </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n  <h2>Different Type Attributes in HTML Ordered List</h2>\r\n  <p>The type attribute of &lt;ol&gt; tag specifies the order we want to create.</p>\r\n  <div class=\"scroll-wrapper\">\r\n  <table border=\"1\">\r\n  <tr>\r\n    <th>Type</th>\r\n    <th>Description</th>\r\n  </tr>\r\n  <tr>\r\n    <td><ol type=\"1\"><li>Item</li></ol></td>\r\n    <td>Numbered list (default)</td>\r\n  </tr>\r\n  <tr>\r\n    <td><ol type=\"A\"><li>Item</li></ol></td>\r\n    <td>Uppercase letters</td>\r\n  </tr>\r\n  <tr>\r\n    <td><ol type=\"a\"><li>Item</li></ol></td>\r\n    <td>Lowercase letters</td>\r\n  </tr>\r\n  <tr>\r\n    <td><ol type=\"I\"><li>Item</li></ol></td>\r\n    <td>Uppercase Roman numerals</td>\r\n  </tr>\r\n  <tr>\r\n    <td><ol type=\"i\"><li>Item</li></ol></td>\r\n    <td>Lowercase Roman numerals</td>\r\n  </tr>\r\n</table>\r\n</div>\r\n<h3>Nested Ordered Lists</h3>\r\n<p>Nested ordered lists use &lt;ol&gt; inside &lt;li&gt; tags to create sublists, \r\n  making content more organized.</p>\r\n<p>Example: In this example we are creating nested ordered list, \r\n  listing programming languages with their respective frameworks as subitems</p>\r\n"
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<ol>\r\n        <li>\r\n            JavaScript\r\n            <ol>\r\n                <li>React</li>\r\n                <li>Angular</li>\r\n            </ol>\r\n        </li>\r\n        <li>\r\n            Python\r\n            <ol>\r\n                <li>Django</li>\r\n                <li>Flask</li>\r\n            </ol>\r\n        </li>\r\n    </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n  <h1>HTML Unordered Lists</h1>\r\n  <p>An unordered list in HTML is used to group a set of list items that don't need to be in a specific order. The items in an unordered list are usually displayed with bullet points by default. \r\n    Here are the some key features of HTML unordered lists:</p>\r\n  <ul>\r\n    <li>No Order: Lists items without a specific sequence.</li>\r\n    <li>Customizable Bullets: Bullets can be changed with CSS.</li>\r\n    <li>Nesting: Allows lists within lists.</li>\r\n    <li>Simple Syntax: Created with &lt;ul&gt; and &lt;li&gt;.</li>\r\n  </ul>\r\n  "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<ul>\r\n    <li>HTML</li>\r\n    <li>CSS</li>\r\n    <li>Javascript</li>\r\n    <li>React</li>\r\n</ul>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n      <h2>Unordered Lists Style Types</h2>\r\n      <p>In HTML, unordered lists (&lt;ul&gt;) are used to display items without any specific order, \r\n        and by default, they show bullet points. However, the appearance of these bullets \r\n        can be changed using CSS with different styles.</p>\r\n      <p>Here are some common list-style-type values that you can apply to unordered lists \r\n        to change the bullet style.</p>\r\n      <ol>\r\n        <li>Square Bullet Style</li>\r\n        <li>Circle Bullet Style</li>\r\n        <li>Removing Bullets</li>\r\n      </ol>\r\n  <h1>HTML Description Lists</h1>\r\n  <p>An HTML Description List is not as commonly used as unordered or ordered lists but serves an \r\n    important purpose for displaying name-value pairs. This type of list \r\n    is marked up using three tags: &lt;dl&gt;, &lt;dt&gt;, and &lt;dd&gt;.</p>\r\n  <ul>\r\n    <li>&lt;dl&gt;(Description List): This tag defines the description list itself and acts as a container for the list items.</li>\r\n    <li>&lt;dt&gt; (Description Term): Represents a term or a name within the list.</li>\r\n    <li>&lt;dd&gt; (Description Details): Provides the description or definition of the term.</li>\r\n  </ul>\r\n   "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<dl>\r\n        <dt>HTML</dt>\r\n        <dd>\r\n            HyperText Markup Language\r\n        </dd>\r\n\r\n        <dt>CSS</dt>\r\n        <dd>\r\n            Cascading Style Sheets\r\n        </dd>\r\n\r\n        <dt>JavaScript</dt>\r\n        <dd>\r\n           Scripting language for Web pages\r\n        </dd>\r\n    </dl>"
+        }
+      ]
+    },
+    {
+      "id": "ifram",
+      "prev": "au_vi",
+      "next": "forms",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>HTML Iframes</h1>\r\n  <p>An iframe, or Inline Frame, is an HTML element represented by the &lt;iframe&gt; tag. \r\n    It functions as a 'window' on your webpage through which visitors can view and interact with another \r\n    webpage from a different source.</p>\r\n  <p>Iframes are used for various purposes like:</p>\r\n  <ul>\r\n    <li>Embedding Multimedia: Easily integrate videos, audio, or animations from platforms like YouTube, etc.</li>\r\n    <li>Including Maps: Embed maps from services like Google Maps directly into your site.</li>\r\n    <li>Loading Forms and Widgets: Incorporate forms or widgets from other sources without writing complex code.</li>\r\n  </ul>\r\n  <h3>Syntax:</h3>\r\n  <div class=\"syntax\">\r\n    <p>&lt;iframe src=\"URL\" title=\"description\"&gt;&lt;/iframe&gt;</p>\r\n  </div>\r\n  <ul>\r\n    <li>The src attribute specifies the URL of the document you want to embed.</li>\r\n    <li>Iframes can include videos, maps, or entire web pages from other sources.</li>\r\n  </ul>\r\n  <h2>HTML Iframes Examples</h2>\r\n  <p>Example 1: Basic Iframe Embedding</p>\r\n  <p>In this example, an iframe is used to display another webpage within \r\n    the current webpage.</p>\r\n    "
+        },
+        {
+          "type": "editor",
+          "code": "\n<h2>HTML iframe Tag</h2>\r\n   <iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\"\r\n           height=\"370\"\r\n           width=\"400\">\r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n  <p>Example 2:  Using Height and Width attribute</p>\r\n  <p>The height and width attributes are used to specify the size of the iframe. \r\n    The attribute values are specified in pixels by default. \r\n    You can use pixels or percentages (e.g., “80%”).</p>\r\n    "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\"\r\n           height=\"395\" \r\n           width=\"400\">\r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n<p>Example 3:  Removing Borders from Iframe</p>\r\n  <p>By default, iframe has a border around it. To remove the border, \r\n    we must use the style attribute \r\n    and use the CSS border property.</p>\r\n    "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20231227155729/jsonPrac3.html\" \r\n           height=\"300\" \r\n           width=\"400\" \r\n           style=\"border: none\"> \r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n<p>Example 4: Styling Iframe Border Using CSS</p>\r\n  <p>You can change the size, style, and color of the iframe border using CSS.</p>\r\n    "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\" \r\n           height=\"400\" \r\n           width=\"400\" \r\n           style=\"border: 4px solid orange\"> \r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n<h3>Best Practices for Using Iframes</h3>\r\n<p>While iframes offer significant flexibility, they should be used wisely to ensure they enhance rather\r\n   than detract from the user experience.</p>\r\n<ul>\r\n  <li>Security: Always use the sandbox attribute to restrict the iframe's capabilities unless you fully trust the content. \r\n    This can prevent malicious scripts from running.</li>\r\n  <li>Performance: Iframes can slow down your page loading times.\r\n     Only use them when necessary and ensure the embedded content is optimized for fast loading.</li>\r\n   <li>Accessibility: Provide alternative content for users who might not be able to interact with iframes. \r\n    This can be done by placing text or links inside the &lt;iframe&gt; tags, \r\n    which will only display if iframes are not supported.</li>\r\n</ul>\r\n \r\n"
+        }
+      ]
+    },
+    {
+      "id": "forms",
+      "prev": "ifram",
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>HTML Forms</h1>\r\n  <p>HTML forms, defined using the &lt;form&gt;Tags are essential for collecting user input on web pages. \r\n    They incorporate a variety of interactive controls such as text fields, numeric inputs, email fields, password fields, checkboxes, radio buttons, and submit buttons. \r\n    Over 85% of websites rely on forms to gather data from users, making them a fundamental \r\n    component of modern web development.</p>\r\n  <h3>Syntax</h3>\r\n  <div class=\"syntax\">\r\n    <p>&lt;form&gt;<br>\r\n      form elements..<br>\r\n&lt;/form&gt;</p>\r\n  </div>\r\n  <h3>Basic HTML Forms Example</h3>\r\n   "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n <form>\r\n    <label for=\"username\">Username:</label><br>\r\n    <input type=\"text\" id=\"username\" name=\"username\"><br><br>\r\n    \r\n    <label for=\"password\">Password:</label><br>\r\n    <input type=\"password\" id=\"password\" name=\"password\"><br><br>\r\n    \r\n    <input type=\"submit\" value=\"Submit\">\r\n</form>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n<h3>Code Overview:</h3>\r\n<ul>\r\n  <li>HTML Structure:The code has a basic HTML structure with a title \"HTML Forms.\"</li>\r\n  <li>Heading: The &lt;h2&gt;tag displays \"HTML Forms\" as the main heading on the page.</li>\r\n  <li>Form Tag: The &lt;form&gt; tag defines a form for user input.</li>\r\n  <li>Username Field: A text input field for the username with a label.</li>\r\n  <li>Password Field & Submit: A password input field and a submit button to send the form data.</li>\r\n</ul>\r\n<h3>Advance HTML Forms</h3>\r\n<p>This HTML form collects users personal information, including name, email, password, \r\n  gender, date of birth, and address. It features proper styling for \r\n  input fields and submission buttons.</p>\r\n<center><img src=\"/images/html_form.gif\"/></center>\r\n<h3>Form Elements</h3>\r\n<div class=\"scroll-wrapper\">\r\n<table border=\"1\" cellpadding=\"10\" cellspacing=\"0\">\r\n  <thead>\r\n    <tr>\r\n      <th>Elements</th>\r\n      <th>Descriptions</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>&lt;label&gt;</td>\r\n      <td>It defines labels for &lt;form&gt; elements.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;input&gt;</td>\r\n      <td>It is used to get input data from various types such as text, password, email, etc by changing its type.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;button&gt;</td>\r\n      <td>It defines a clickable button to control other elements or execute a functionality.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;select&gt;</td>\r\n      <td>It is used to create a drop-down list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;textarea&gt;</td>\r\n      <td>It is used to get input long text content.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;fieldset&gt;</td>\r\n      <td>It is used to draw a box around other form elements and group the related data.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;legend&gt;</td>\r\n      <td>It defines a caption for fieldset elements.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;datalist&gt;</td>\r\n      <td>It is used to specify pre-defined list options for input controls.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;output&gt;</td>\r\n      <td>It displays the output of performed calculations.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;option&gt;</td>\r\n      <td>It is used to define options in a drop-down list.</td>\r\n    </tr>\r\n    <tr>\r\n      <td>&lt;optgroup&gt;</td>\r\n      <td>It is used to define group-related options in a drop-down list.</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n</div>\r\n\r\n</div>\r\n</div>\r\n"
+        }
+      ]
+    }
+  ]
+}

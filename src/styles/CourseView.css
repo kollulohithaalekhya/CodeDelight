@@ -1,0 +1,141 @@
+/* Layout + polish for the data-driven course reader (CourseView.jsx).
+   Base sidebar/typography rules live in Sidebar.css, which this file refines. */
+
+.course-parent {
+  min-height: 100vh;
+  background: #111927;
+}
+
+.course-parent .main {
+  background: #111927;
+  min-width: 0; /* let long code/tables shrink instead of forcing page overflow */
+}
+
+.course-parent .heading {
+  padding-bottom: 10px;
+}
+
+.course-parent .content-section {
+  overflow-x: hidden;
+}
+
+/* Wide content inside course prose scrolls in its own box rather than
+   stretching the page. Tables are wrapped in .scroll-wrapper at render time
+   (CourseBlock.jsx) because they carry a min-width from the source styles. */
+.course-parent .content-section pre {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.course-parent .content-section .scroll-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.course-editor-block {
+  margin-top: 16px;
+}
+
+.course-editor-block .output-box {
+  min-height: 140px;
+}
+
+/* Previous / Next */
+.course-parent .nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.course-parent .nav-buttons button {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 18px;
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.course-parent .nav-buttons button:last-child {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.nav-target {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Sidebar active state + quiz link */
+.sidebar .nav-links li.active {
+  background-color: #166f9e;
+  border-radius: 6px;
+}
+
+.sidebar .submenu li.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.sidebar-quiz-link {
+  display: block;
+}
+
+.check-knowledge {
+  border-bottom: 3px solid #00f2fe;
+  margin-top: 18px;
+}
+
+/* Off-canvas backdrop, only reachable at the drawer breakpoint */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+@media (min-width: 901px) {
+  .sidebar-backdrop {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .course-parent .content-section {
+    padding: 24px 18px;
+    margin: 14px;
+  }
+  .course-parent .heading h1 {
+    margin-left: 24px;
+  }
+  .course-parent .heading h2 {
+    margin-left: 24px;
+  }
+  .course-parent .heading input {
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .course-parent .content-section {
+    padding: 18px 14px;
+    margin: 10px;
+  }
+  .course-parent .content-section h1 {
+    font-size: 24px;
+  }
+  .course-parent .content-section h2 {
+    font-size: 19px;
+  }
+  .course-parent .nav-buttons button {
+    flex: 1 1 100%;
+  }
+}

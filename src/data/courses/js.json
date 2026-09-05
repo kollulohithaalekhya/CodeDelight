@@ -1,0 +1,468 @@
+{
+  "key": "js",
+  "title": "Learn JavaScript the Right Way",
+  "subtitle": "From first script to real interactivity.",
+  "quizPath": "/js-levels",
+  "sidebar": {
+    "entries": [
+      {
+        "type": "link",
+        "id": "introduction",
+        "label": "Introduction to JavaScript"
+      },
+      {
+        "type": "group",
+        "label": "JS statements",
+        "items": [
+          {
+            "id": "basics",
+            "label": "JS Syntax"
+          },
+          {
+            "id": "editors",
+            "label": "JavaScript Comments"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Structure and Elements",
+        "items": [
+          {
+            "id": "elements",
+            "label": "JavaScript Variables"
+          },
+          {
+            "id": "block_inline",
+            "label": "JavaScript Const"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Expressions and Operators",
+        "items": [
+          {
+            "id": "headings",
+            "label": "JavaScript Operators"
+          },
+          {
+            "id": "parag",
+            "label": "JavaScript Arithmetic"
+          },
+          {
+            "id": "format",
+            "label": "JavaScript Assignment"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Objects",
+        "items": [
+          {
+            "id": "hyper",
+            "label": "Hyperlinks"
+          },
+          {
+            "id": "lists",
+            "label": "JavaScript Object Properties"
+          },
+          {
+            "id": "types",
+            "label": "JavaScript Object Methods"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "JavaScript Strings",
+        "items": [
+          {
+            "id": "hyper",
+            "label": "JavaScript String Methods"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Iframes and Forms",
+        "items": [
+          {
+            "id": "ifram",
+            "label": "Iframes"
+          },
+          {
+            "id": "forms",
+            "label": "Forms"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "prev": null,
+      "next": "basics",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>Javascript Introduction</h1>\r\n        <p>JavaScript is the programming language of the web.\r\n        \r\n        It can update and change both HTML and CSS.\r\n        \r\n        It can calculate, manipulate and validate data.</p>\r\n        <ul>\r\n          <li>While HTML structures the content and CSS styles it, JavaScript controls the behavior. It runs directly in the browser\r\n          and can react to user actions, update content without reloading the page, and connect with servers to fetch data (like\r\n          in live search or chat apps).</li>\r\n          <li>JavaScript is not limited to just web pages. With modern tools and frameworks like Node.js, React, and Angular, it is\r\n          used for building full web applications, mobile apps, games, and even server-side development. Its flexibility makes it\r\n          one of the most popular programming languages in the world.</li>\r\n        </ul>\r\n        <h2>Basic JS Code Example</h2>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\ndocument.getElementById(\"demo\").innerHTML = \"Hello JavaScript\";"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h2>JavaScript Where To</h2>\r\n        <p>JavaScript can be written directly inside an HTML file using the script tag. It is usually placed either in the head\r\n        section or just before the closing body tag. You can also write JavaScript in a separate file with a .js extension and\r\n        link it to your HTML file. This helps keep the code clean and easier to manage.</p>\r\n        <p>1. JavaScript is a popular programming language used to create dynamic and interactive websites.</p>\r\n        \r\n        <p>2. It allows web pages to respond to user actions, such as clicking buttons, filling forms, or moving the mouse.</p>\r\n        \r\n        <p>3. JavaScript works together with HTML and CSS to build complete and functional websites.</p>\r\n        \r\n        <p>4. It can be written directly inside the HTML file or linked through external JavaScript files.</p>\r\n        \r\n        <p>5. JavaScript runs in the browser, which means users don’t need to install anything extra to use it.</p>\r\n        \r\n        <p>6. With JavaScript, developers can change the content of a webpage without reloading the entire page.</p>\r\n        \r\n        <p>7. JavaScript is used in many web applications, including games, form validation, and interactive charts.</p>\r\n        \r\n        <p>8. Modern frameworks like React, Angular, and Vue are built on JavaScript to create powerful applications.</p>\r\n        \r\n        <p>9. JavaScript is also used on the server-side using platforms like Node.js, making it a full-stack language.</p>\r\n        \r\n        <p>10. Learning JavaScript is essential for anyone interested in web development, as it brings websites to life.</p>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "basics",
+      "prev": "introduction",
+      "next": "editors",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>JS Syntax</h1>\r\n        <p>\r\n          JavaScript syntax is the set of rules that define how the language should be written and understood. It includes the\r\n          correct way to use variables, functions, loops, conditions, and other elements. Every JavaScript statement usually\r\n          ends with a semicolon, though it’s optional in some cases. These statements are the basic building blocks of your code\r\n          and are executed in the order they appear unless told otherwise by control structures.\r\n        </p>\r\n        \r\n        <p>\r\n          Variables are used to store data values and can be declared using keywords like var, let, or const. Each of these has\r\n          its own rules—‘let’ and ‘const’ are block-scoped and more modern, while ‘var’ is function-scoped and older. JavaScript\r\n          is case-sensitive, meaning `myVariable` and `myvariable` would be treated as different names. Strings must be enclosed\r\n          in quotes, numbers don’t need them, and comments can be added using double slashes (//) or a slash-asterisk block (/*\r\n          */).\r\n        </p>\r\n        \r\n        <p>\r\n          Functions in JavaScript are reusable blocks of code designed to perform a task. They are declared using the function\r\n          keyword, followed by a name, parentheses, and curly braces. Inside the braces, you write the code that will run when\r\n          the function is called. JavaScript also uses curly braces to group blocks of code for conditions (like if-else) and\r\n          loops (like for or while), making it clear where logic starts and ends. Understanding syntax is the first step to\r\n          writing error-free, well-structured code in JavaScript.\r\n        </p>\r\n\r\n        <!-- <p>The document outline in HTML defines the structure of the page from top to bottom. \r\n               It follows a tree-like hierarchy that the browser and search engines understand. \r\n               The main sections include the doctype declaration, html root, and two key sections: head and body.</p> -->\r\n        <ul>\r\n          <p>\r\n            Always use clear and meaningful variable names. Instead of using short names like x or a, use names like userName or\r\n            totalPrice. This makes your code easier to understand and maintain, especially when projects grow larger.\r\n          </p>\r\n          \r\n          <p>\r\n            Consistently use indentation and spacing. Proper formatting does not affect how the code runs but makes it much easier\r\n            to read and debug. Following good formatting habits helps you and others quickly spot errors or understand logic flow.\r\n          </p>\r\n         \r\n        </ul>\r\n        <p>In this guide, we learn the basics of HTML, which includes HTML tags ( &lt;h1&gt;, &lt;p&gt;, &lt;img&gt;,\r\n          etc), attributes, elements,\r\n          and document structure which collectively form a working web page.</p>\r\n        <!-- <h1>JavaScript Basic Document and Structure</h1> -->\r\n        <h1>JavaScript Basic Document and Structure</h1>\r\n        <ul>\r\n          <li>JavaScript is written inside a &lt;script&gt; tag within an HTML document.</li>\r\n          <li>You can place the &lt;script&gt; tag inside the &lt;head&gt; or at the end of the &lt;body&gt; tag.</li>\r\n          <li>It is recommended to place scripts at the end of the body for better page loading speed.</li>\r\n          <li>JavaScript code runs from top to bottom, line by line.</li>\r\n          <li>Semicolons are used to separate JavaScript statements.</li>\r\n          <li>Functions group multiple lines of code to perform specific tasks.</li>\r\n          <li>Comments in JavaScript are written using // for single-line or /* */ for multi-line.</li>\r\n          <li>External JavaScript files can be linked using the src attribute in the &lt;script&gt; tag.</li>\r\n          <li>Using proper indentation and spacing improves code readability.</li>\r\n          <li>JavaScript structure includes declarations, conditions, loops, and event handling.</li>\r\n        </ul>\r\n        <h2>Example:</h2>\r\n        <textarea id=\"editor-basics\" rows=\"15\" cols=\"60\">\r\n        &lt;!DOCTYPE html&gt;\r\n        &lt;html&gt;\r\n        &lt;head&gt;\r\n          &lt;title&gt;JS Example&lt;/title&gt;\r\n          &lt;script&gt;\r\n            // This is a simple JavaScript alert\r\n            function greet() {\r\n              alert(\"Hello, welcome to JavaScript!\");\r\n            }\r\n          &lt;/script&gt;\r\n        &lt;/head&gt;\r\n        &lt;body&gt;\r\n          &lt;h1&gt;My First JavaScript Example&lt;/h1&gt;\r\n          &lt;button onclick=\"greet()\"&gt;Click Me&lt;/button&gt;\r\n        &lt;/body&gt;\r\n        &lt;/html&gt;\r\n        </textarea>\r\n\r\n\r\n        <h3>Output Preview</h3>\r\n        \r\n        \r\n        <h2>Example:</h2>\r\n        <textarea id=\"editor-heading\" rows=\"15\" cols=\"60\">\r\n        &lt;!DOCTYPE html&gt;\r\n        &lt;html&gt;\r\n        &lt;head&gt;\r\n          &lt;title&gt;JavaScript Heading Example&lt;/title&gt;\r\n          &lt;script&gt;\r\n            function changeHeading() {\r\n              document.getElementById(\"main-heading\").innerText = \"JavaScript Changed This Heading!\";\r\n            }\r\n          &lt;/script&gt;\r\n        &lt;/head&gt;\r\n        &lt;body&gt;\r\n          &lt;h1 id=\"main-heading\"&gt;Original Heading&lt;/h1&gt;\r\n          &lt;button onclick=\"changeHeading()\"&gt;Change Heading&lt;/button&gt;\r\n        &lt;/body&gt;\r\n        &lt;/html&gt;\r\n        </textarea>\r\n\r\n        \r\n        \r\n        <h3>Key Points:</h3>\r\n        <ul>\r\n          <li>Statements in JavaScript end with a semicolon (<code>;</code>).</li>\r\n          <li>Code is executed from top to bottom, line by line.</li>\r\n          <li>JavaScript is case-sensitive (e.g., <code>myVar</code> ≠ <code>MyVar</code>).</li>\r\n          <li>Code blocks are defined using curly braces <code>{ }</code>.</li>\r\n          <li>Comments are added using <code>//</code> for single-line and <code>/* */</code> for multi-line.</li>\r\n        </ul>\r\n        \r\n      "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>HTML</title>\r\n    <script> // Can write script inside head tag </script>\r\n</head>\r\n<body>\r\n    <p>\r\n        HTML stands for HyperText Markup Language.<br>\r\n        It is used to design web pages using a markup language.<br>\r\n        HTML is a combination of Hypertext and Markup language.<br>\r\n        Hypertext defines the link between web pages.<br>\r\n        A markup language is used to define the text document within the tag \r\n        which defines the structure of web pages.\r\n    </p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        \r\n        <h2>JavaScript Console Output</h2>\r\n        <p>The <code>console.log()</code> method is used to print messages to the browser’s console.\r\n          It's commonly used for testing, debugging, and checking variable values while writing code.</p>\r\n        \r\n        <h3>Syntax of console.log()</h3>\r\n        <div class=\"syntax\">\r\n          <p><code>console.log(\"Your message here\");</code></p>\r\n        </div>\r\n\r\n        <ul>\r\n          <li>Outputs messages in the browser's developer console (press F12 to view it).</li>\r\n          <li>Can be used to print variables, results, objects, arrays, and more.</li>\r\n        </ul>\r\n\r\n        \r\n        <textarea id=\"editor-hr\" rows=\"20\" cols=\"80\">\r\n        <!DOCTYPE html>\r\n        <html>\r\n        <head>\r\n          <title>JS Example</title>\r\n          <script>\r\n            function showDate() {\r\n              document.getElementById(\"output\").innerText = new Date();\r\n            }\r\n          </script>\r\n        </head>\r\n        <body>\r\n          <h2>JavaScript Date Example</h2>\r\n          <p>Click the button to show today's date:</p>\r\n          <button onclick=\"showDate()\">Show Date</button>\r\n          <p id=\"output\"></p>\r\n        </body>\r\n        </html>\r\n        </textarea>\r\n\r\n\r\n        <h3>Output Preview</h3>\r\n        \r\n        <!-- <h2>HTML Comments</h2>\r\n        <p>HTML comments are annotations in your code that are not displayed in the browser.\r\n          They are enclosed within &lt;!-- and --&gt; tags and are primarily used for documentation,\r\n          explanation, or temporarily disabling code during debugging.</p>\r\n        <h3>Syntax of HTML Comments</h3>\r\n        <ul>\r\n          <li>Single-line comment:</li>\r\n        </ul> -->\r\n        <!-- <div class=\"syntax\">\r\n          <p>&lt;!-- This is a single-line comment --&gt;</p>\r\n        </div>\r\n        <ul>\r\n          <li>Multi-line comment:</li>\r\n        </ul>\r\n        <div class=\"syntax\">\r\n          <p>&lt;!-- This is a multi-line comment<br> spanning multiple lines<br>--&gt;</p>\r\n        </div> -->\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>My First Web Page</title>\r\n  </head>\r\n  <body>\r\n    <!-- This is a heading tag -->\r\n    <h1>Welcome to HTML!</h1>\r\n     <!-- This is a paragraph tag -->\r\n      <p>Learn HTML, CSS, and JavaScript here.</p>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <!-- <h2>HTML Images</h2>\r\n        <p>The &lt;img&gt; tag is used to insert an image into a webpage.\r\n          The source of the image is specified within the src attribute,\r\n          like this: &lt;img src=\"source_of_image\"&gt;.</p>\r\n        <h3>Syntax</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;img src=\"fruits.png\"&gt;</p>\r\n        </div>\r\n        <ul>\r\n          <li>This HTML code uses the &lt;img&gt; tag to display an image on a webpage.</li>\r\n          <li>The src attribute specifies the URL of the image,\r\n            which is loaded and displayed when the page is rendered in the browser.</li>\r\n        </ul>\r\n        <h2>Conclusion</h2>\r\n        <p>Understanding HTML is the first step in becoming a web developer.\r\n          By learning the basic tags and structure, you can create well-organized and functional web pages.\r\n          The more you practice and experiment with HTML,\r\n          the better you'll understand how to create interactive, engaging, and well-optimized websites.</p> -->\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "editors",
+      "prev": "basics",
+      "next": "elements",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>JavaScript Comments</h1>\r\n        <p>JavaScript comments are used to explain code, make it more readable, and help with debugging by temporarily disabling\r\n          parts of code during development.</p>\r\n        \r\n        <p>There are two main types of comments in JavaScript:</p>\r\n        <ol>\r\n          <li><strong>Single-line Comments</strong> – These start with <code>//</code> and are used for short explanations or\r\n            notes on the same line as code.<br>\r\n            Example:<br><code>// This is a single-line comment</code>\r\n          </li>\r\n        \r\n          <li><strong>Multi-line Comments</strong> – These start with <code>/*</code> and end with <code>*/</code>. They are\r\n            useful for adding detailed descriptions or commenting out blocks of code.<br>\r\n            Example:<br><code>/* This is a multi-line comment <br> It spans multiple lines */</code>\r\n          </li>\r\n        </ol>\r\n\r\n        <h2>JavaScript Comments</h2>\r\n        <p>JavaScript comments are pieces of code that the JavaScript engine ignores during execution. They are used to explain\r\n          code, make it more readable, and help developers debug or disable code temporarily. Comments are essential for\r\n          collaboration and maintenance, especially in large projects.</p>\r\n        \r\n        <div class=\"content\">\r\n          <h3>Table of Contents</h3>\r\n          <ul>\r\n            <li>1. Why Use Comments in JavaScript?</li>\r\n            <li>2. Types of Comments</li>\r\n            <li>3. Examples</li>\r\n            <li>4. Tips & Best Practices</li>\r\n            <li>5. When Not to Use Comments</li>\r\n          </ul>\r\n        </div>\r\n        \r\n        <h2>1. Why Use Comments in JavaScript?</h2>\r\n        <p>Comments in JavaScript help developers:</p>\r\n        <ul>\r\n          <li>Understand the purpose of the code</li>\r\n          <li>Improve collaboration with other developers</li>\r\n          <li>Temporarily disable a block of code during debugging</li>\r\n          <li>Leave reminders or TODO notes</li>\r\n        </ul>\r\n        \r\n        <h2>2. Types of Comments</h2>\r\n        <ol>\r\n          <li><strong>Single-line Comment (<code>//</code>):</strong><br>\r\n            Used for brief explanations.<br>\r\n            <code>// This is a single-line comment</code>\r\n          </li>\r\n          <li><strong>Multi-line Comment (<code>/* ... */</code>):</strong><br>\r\n            Useful for longer descriptions or disabling code blocks.<br>\r\n            <code>\r\n                /* This is a multi-line comment<br>\r\n                It can span multiple lines */\r\n              </code>\r\n          </li>\r\n        </ol>\r\n        \r\n        <h2>3. Examples</h2>\r\n        <pre><code>\r\n        // Declare a variable\r\n        let name = \"John\"; // user's name\r\n        \r\n        /* \r\n          This function greets the user\r\n          using an alert dialog box \r\n        */\r\n        function greet() {\r\n          alert(\"Hello, \" + name + \"!\");\r\n        }\r\n        </code></pre>\r\n        \r\n        <h2>4. Tips & Best Practices</h2>\r\n        <ul>\r\n          <li>Write clear and concise comments that explain *why*, not just *what* the code does.</li>\r\n          <li>Keep comments up-to-date as code changes.</li>\r\n          <li>Use comments to mark TODOs and FIXMEs for future improvements.</li>\r\n          <li>Use comments to separate sections of code for better readability.</li>\r\n        </ul>\r\n        \r\n        <h2>5. When Not to Use Comments</h2>\r\n        <ul>\r\n          <li>Don’t state the obvious — avoid comments that restate the code (e.g., <code>// add 1 to i</code> for\r\n            <code>i++</code>).</li>\r\n          <li>Avoid clutter — too many comments can be as confusing as no comments at all.</li>\r\n          <li>Don’t leave outdated or misleading comments in the codebase.</li>\r\n        </ul>\r\n        \r\n        <h2>Conclusion</h2>\r\n        <p>JavaScript comments are powerful tools for improving the clarity and maintainability of your code. Use them wisely to\r\n          document your thought process, debug efficiently, and collaborate effectively. Well-commented code is a hallmark of a\r\n          professional developer.</p>\r\n\r\n\r\n\r\n        <div class=\"nav-buttons\">\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "elements",
+      "prev": "editors",
+      "next": "block_inline",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>JavaScript Variables</h1>\r\n        <p><b>JavaScript Variables</b> are containers for storing data values. Variables allow you to store and manipulate data\r\n          in your scripts. They are fundamental building blocks in JavaScript programming.</p>\r\n        <p>You can declare a variable using <code>var</code>, <code>let</code>, or <code>const</code> keywords depending on the\r\n          use case. <code>let</code> and <code>const</code> are modern and preferred over <code>var</code> in most scenarios.\r\n        </p>\r\n        \r\n        <h3 class=\"above\">Syntax</h3>\r\n        <div class=\"syntax\">let variableName = value;</div>\r\n        \r\n        <h3>JavaScript Variable Code Example:</h3>\r\n        <p>In this example, a variable called <code>name</code> is declared using <code>let</code> and stores a string value.\r\n        </p>\r\n        \r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <title>JS Variable Example</title>\r\n    <script>\r\n      let name = \"Ashrita\";\r\n      document.addEventListener(\"DOMContentLoaded\", function() {\r\n        document.getElementById(\"output\").innerText = \"Hello, \" + name + \"!\";\r\n      });\r\n    </script>\r\n  </head>\r\n  <body>\r\n    <h2>JavaScript Variable Demo</h2>\r\n    <p id=\"output\"></p>\r\n  </body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        \r\n        <h2>Some Key Points About JavaScript Variables</h2>\r\n        \r\n        <h3>1. Syntax:</h3>\r\n        <ul>\r\n          <li>Variables in JavaScript can be declared using <code>var</code>, <code>let</code>, or <code>const</code>.</li>\r\n          <li>The general syntax is: <code>let variableName = value;</code></li>\r\n          <li>Example: <code>let age = 25;</code></li>\r\n        </ul>\r\n        \r\n        <h3>2. Case Sensitivity:</h3>\r\n        <ul>\r\n          <li>JavaScript is case-sensitive. <code>age</code> and <code>Age</code> are treated as different variables.</li>\r\n          <li>Always use consistent casing (e.g., camelCase) for readability.</li>\r\n        </ul>\r\n        \r\n        <h2>Understanding Variable Scope</h2>\r\n        <p>Variables declared with <code>var</code> have function scope, while <code>let</code> and <code>const</code> have\r\n          block scope. This affects where they can be accessed in your code.</p>\r\n        \r\n        <p><b>Example:</b> In the example below, the variable <code>message</code> is declared using <code>let</code>, and can\r\n          only be accessed inside the block it was declared in.</p>\r\n        \r\n        <pre><code>\r\n        {\r\n          let message = \"Hello, world!\";\r\n          console.log(message); // Works fine\r\n        }\r\n        console.log(message); // Error: message is not defined\r\n        </code></pre>\r\n\r\n\r\n\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\nlet name = \"Ashrita\";\r\nlet age = 20;\r\nconst college = \"Aditya University\";\r\n\r\nconsole.log(\"Name:\", name);\r\nconsole.log(\"Age:\", age);\r\nconsole.log(\"College:\", college);"
+        },
+        {
+          "type": "editor",
+          "code": "\n// This is a single-line comment\r\nlet x = 10;\r\nconsole.log(\"Value of x:\", x); // Output will be shown in the console"
+        },
+        {
+          "type": "editor",
+          "code": "\n/* This is a multi-line comment\r\nexplaining the code below */\r\nlet name = \"Ashrita\";\r\nconsole.log(\"Hello \" + name);"
+        },
+        {
+          "type": "editor",
+          "code": "\n// Declare a variable\r\nlet age = 18;\r\n\r\n/*\r\n  Print the value of age\r\n  using console.log\r\n*/\r\nconsole.log(\"Age is:\", age);"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <!-- <h4>In this example:</h4>\r\n        <ul>\r\n          <li><b>Tag:</b>&lt;img&gt;</li>\r\n          <li><b>Attribute:</b>src</li>\r\n          <li><b>Value of Attribute : </b>\"https://m.media-amazon.com/images/I/81OXEQrFPTL._UF1000,1000_QL80_.jpg\"</li>\r\n          <li><b>Purpose:</b>The &lt;img&gt; tag is used for embedding images in an HTML page.\r\n            The src attribute within the &lt;img&gt; tag specifies the path to the image file you wish to display. This\r\n            attribute is crucial as it directs the browser to the image’s\r\n            location on the internet or a local directory.</li>\r\n        </ul>\r\n        <h2>Components of Attribute</h2>\r\n        <p>An HTML attribute consists of two primary components:</p>\r\n        <p><b>1. attribute_name:</b> This is the name of the attribute, which specifies what kind of additional\r\n          information or property you are defining for the element.\r\n          Common attribute names include href, src, class, id, etc.</p>\r\n        <p><b>2. attribute_value: </b>The value is assigned to the attribute to define the specific setting or behavior.\r\n          It is always placed in quotes.</p>\r\n        <h2>Common HTML Attributes</h2>\r\n        <p>Let's take look at some of the most commonly used HTML attributes:</p>\r\n        <h2>1. HTML alt Attribute</h2>\r\n        <p>The alt attribute in HTML provides alternative text for an image if the image cannot be displayed.\r\n          It improves accessibility and provides context for screen readers.</p>\r\n        <p><b>Example:</b> This example explains the HTML <b>alt Attributes</b> to specify\r\n          the name of the file when the image is not loaded properly.</p> -->\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n// This is a single-line comment\r\nlet x = 10;\r\nconsole.log(\"Value of x:\", x); // Output will be shown in the console"
+        },
+        {
+          "type": "editor",
+          "code": ""
+        },
+        {
+          "type": "editor",
+          "code": ""
+        },
+        {
+          "type": "editor",
+          "code": ""
+        },
+        {
+          "type": "editor",
+          "code": ""
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h2>Important Points About JavaScript Variables</h2>\r\n        \r\n        <h3>1. Use `let`, `const`, or `var` to Declare Variables:</h3>\r\n        <p>\r\n          In JavaScript, you can declare variables using <code>let</code>, <code>const</code>, or <code>var</code>.\r\n          It's recommended to use <code>let</code> for variables that will change and <code>const</code> for values that should\r\n          remain constant.\r\n          Avoid using <code>var</code> in modern JavaScript unless necessary, as it can lead to unexpected behavior due to\r\n          function scoping.\r\n        </p>\r\n        \r\n        <h3>2. Variable Names are Case-Sensitive:</h3>\r\n        <p>\r\n          JavaScript is case-sensitive, so <code>username</code> and <code>UserName</code> are treated as two different\r\n          variables.\r\n          Use consistent naming conventions like camelCase to avoid confusion and improve code readability.\r\n        </p>\r\n        \r\n        <h3>3. Don't Use Reserved Keywords:</h3>\r\n        <p>\r\n          You cannot use JavaScript reserved words like <code>function</code>, <code>return</code>, <code>class</code>, or\r\n          <code>new</code> as variable names.\r\n          Doing so will result in a syntax error. Always choose meaningful, descriptive names.\r\n        </p>\r\n        \r\n        <h3>4. Variables Can Hold Any Data Type:</h3>\r\n        <p>\r\n          JavaScript variables are dynamically typed. This means a variable can hold a number, string, boolean, array, object,\r\n          or even a function.\r\n          For example:\r\n        </p>\r\n        \r\n        <h3>Example:</h3>\r\n        <div class=\"syntax\">\r\n          <pre>\r\n        let name = \"Ashrita\";\r\n        let age = 20;\r\n        let isStudent = true;\r\n        let skills = [\"HTML\", \"CSS\", \"JavaScript\"];\r\n        </pre>\r\n        </div>\r\n        \r\n        <p>\r\n          Each of these variables holds a different data type, and JavaScript handles them dynamically during runtime.\r\n        </p>\r\n        \r\n        <h2>Summing up!</h2>\r\n        <p>\r\n          Understanding how to properly declare and use variables is a fundamental step in learning JavaScript.\r\n          Use modern keywords like <code>let</code> and <code>const</code>, choose clear names, and take advantage of\r\n          JavaScript’s flexibility\r\n          with data types to write efficient and readable code.\r\n        </p>\r\n\r\n        \r\n      "
+        }
+      ]
+    },
+    {
+      "id": "block_inline",
+      "prev": "elements",
+      "next": "headings",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>JavaScript <code>const</code></h1>\r\n        <p>\r\n          The <code>const</code> keyword in JavaScript is used to declare variables whose values are not meant to be reassigned.\r\n          Once a variable is declared with <code>const</code>, its identifier cannot be reassigned to a different value.\r\n          However, if it refers to objects or arrays, the contents of those objects or arrays can still be modified.\r\n        </p>\r\n        \r\n        <center><img src=\"/images/const.png\"></center>\r\n        \r\n        <p><b>Example:</b> Here, we declare a constant using <code>const</code> and attempt to reassign it, which throws an\r\n          error.</p>\r\n        \r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<body>\r\n  <script>\r\n    const name = \"Ashrita\";\r\n    document.write(\"Name: \" + name);\r\n\r\n    // Uncommenting the line below will throw an error:\r\n    // name = \"Anu\"; // ❌ TypeError: Assignment to constant variable.\r\n  </script>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        \r\n        <h3>Code Overview:</h3>\r\n        <p>\r\n          In the example above, the variable <code>name</code> is declared using <code>const</code> and holds a string value.\r\n          Trying to reassign a new value to <code>name</code> will throw a TypeError.\r\n        </p>\r\n        \r\n        <h2>JavaScript const Characteristics</h2>\r\n        <ul>\r\n          <li><b>Block Scoped:</b> <code>const</code> declarations are block-scoped, meaning they are only accessible within the\r\n            block in which they are defined.</li>\r\n          <li><b>Must Be Initialized:</b> You must assign an initial value to a <code>const</code> variable at the time of\r\n            declaration.</li>\r\n          <li><b>Cannot Be Reassigned:</b> Reassigning a <code>const</code> variable results in a TypeError.</li>\r\n          <li><b>Objects and Arrays:</b> The contents of objects and arrays declared with <code>const</code> can be changed, but\r\n            the reference cannot.</li>\r\n        </ul>\r\n        \r\n        <h3>Object Example:</h3>\r\n        <p>The below code shows how you can modify properties of a constant object:</p>\r\n        \r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<body>\r\n  <script>\r\n    const person = { name: \"Ashrita\", age: 20 };\r\n    person.age = 21; // ✅ allowed\r\n    document.write(\"Updated Age: \" + person.age);\r\n\r\n    // person = {}; ❌ Not allowed – reassignment throws an error\r\n  </script>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        \r\n        <h2>Array Example:</h2>\r\n        <p>The example below shows that <code>const</code> arrays can have their elements changed or added, but the array itself\r\n          cannot be reassigned.</p>\r\n        \r\n        <ul>\r\n          <li><code>const numbers = [1, 2, 3]</code> – Valid declaration.</li>\r\n          <li><code>numbers.push(4)</code> – Allowed.</li>\r\n          <li><code>numbers = [5, 6]</code> – Not allowed.</li>\r\n        </ul>\r\n        \r\n        <h3>Example Code:</h3>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<body>\r\n  <script>\r\n    const numbers = [1, 2, 3];\r\n    numbers.push(4); // ✅ allowed\r\n    document.write(\"Array: \" + numbers);\r\n\r\n    // numbers = [5, 6]; // ❌ TypeError\r\n  </script>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "<!--  -->\r\n\r\n        \r\n        \r\n      "
+        }
+      ]
+    },
+    {
+      "id": "headings",
+      "prev": "block_inline",
+      "next": "parag",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h2>JavaScript Operators</h2>\r\n        <p>\r\n          <b>JavaScript operators</b> are special symbols used to perform operations on operands (values and variables).\r\n          They are the building blocks of most expressions and logic in JavaScript.\r\n        </p>\r\n        <ul>\r\n          <li>Operators are used for assignments, comparisons, arithmetic operations, logical evaluations, and more.</li>\r\n          <li>They help in manipulating data and making decisions in code execution.</li>\r\n        </ul>\r\n        \r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>JavaScript Operators</title>\r\n</head>\r\n<body>\r\n  <script>\r\n    let a = 10, b = 5;\r\n\r\n    // Arithmetic Operators\r\n    document.write(\"a + b = \" + (a + b) + \"<br>\");\r\n    document.write(\"a - b = \" + (a - b) + \"<br>\");\r\n    document.write(\"a * b = \" + (a * b) + \"<br>\");\r\n    document.write(\"a / b = \" + (a / b) + \"<br>\");\r\n\r\n    // Comparison Operator\r\n    document.write(\"a > b: \" + (a > b) + \"<br>\");\r\n\r\n    // Logical Operator\r\n    document.write(\"(a > 5 && b < 10): \" + (a > 5 && b < 10));\r\n  </script>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        \r\n        <h3>Code Overview:</h3>\r\n        <ul>\r\n          <li>This code demonstrates common JavaScript operators such as arithmetic (+, -, *, /), comparison (&gt;), and logical\r\n            (&&).</li>\r\n          <li>Operators are used to evaluate and output the results directly on the web page.</li>\r\n        </ul>\r\n        <p><b>Note:</b> Always use parentheses to clarify complex expressions and maintain code readability.</p>\r\n        \r\n        <h2>Categories of JavaScript Operators</h2>\r\n        <p>JavaScript offers several categories of operators used for various purposes:</p>\r\n        <center><img src=\"/images/js-operators.png\" /></center>\r\n        \r\n        <div>\r\n          <h2>1. Arithmetic Operators</h2>\r\n          <ul>\r\n            <li>Used to perform mathematical operations.</li>\r\n            <li>Examples: +, -, *, /, %, ++, --</li>\r\n            <li><code>let sum = 10 + 5;</code></li>\r\n          </ul>\r\n        </div>\r\n        \r\n        <div>\r\n          <h2>2. Comparison Operators</h2>\r\n          <ul>\r\n            <li>Used to compare two values and return a boolean.</li>\r\n            <li>Examples: ==, ===, !=, !==, &gt;, &lt;, &gt;=, &lt;=</li>\r\n            <li><code>10 &gt; 5 // true</code></li>\r\n          </ul>\r\n        </div>\r\n        \r\n        <div>\r\n          <h2>3. Logical Operators</h2>\r\n          <ul>\r\n            <li>Used to perform logical operations.</li>\r\n            <li>Examples: && (AND), || (OR), ! (NOT)</li>\r\n            <li><code>(a &gt; 5 &amp;&amp; b &lt; 10) // true</code></li>\r\n          </ul>\r\n        </div>\r\n        \r\n        <div>\r\n          <h2>4. Assignment Operators</h2>\r\n          <ul>\r\n            <li>Used to assign values to variables.</li>\r\n            <li>Examples: =, +=, -=, *=, /=, %=</li>\r\n            <li><code>x += 5 // same as x = x + 5</code></li>\r\n          </ul>\r\n        </div>\r\n        \r\n        <h2>Best Practices for Using JavaScript Operators</h2>\r\n        <ul>\r\n          <li><b>Use === instead of ==</b> for strict equality to avoid type coercion bugs.</li>\r\n          <li><b>Use parentheses</b> to make complex expressions clearer and easier to debug.</li>\r\n          <li><b>Combine logical operators wisely</b> to build concise conditionals.</li>\r\n          <li><b>Be cautious with increment/decrement (++, --)</b> inside expressions to avoid unexpected results.</li>\r\n        </ul>\r\n\r\n\r\n\r\n\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "parag",
+      "prev": "headings",
+      "next": "format",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>JavaScript Arithmetic</h1>\r\n        <p>A paragraph in HTML is simply a block of text enclosed within the &lt;p&gt;tag.\r\n          The &lt;p&gt;,tag helps divide content into manageable, readable sections. It’s the go-to element for wrapping\r\n          text in a web page that is meant\r\n          to be displayed as a distinct paragraph.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;p&gt; Some Content... &lt;/p&gt;</p>\r\n        </div>\r\n        <h3>How HTML Paragraphs are Rendered?</h3>\r\n        <p>In HTML, when you wrap text inside the &lt;p&gt;tag, it automatically:</p>\r\n        <ul>\r\n          <li>Adds space before and after the paragraph to visually separate it from other content.</li>\r\n          <li>Breaks the text into a single block, creating an easy-to-read section.</li>\r\n        </ul>\r\n        <h2>HTML Paragraph Code Example</h2>\r\n        <p>Here’s an example showing two paragraphs in HTML:</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<p>A Computer Science portal for geeks.</p>\r\n<p>It contains well written, well thought articles.</p>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h3>Properties of the paragraph Tag</h3>\r\n        <ul>\r\n          <li>The browser reduces multiple spaces added by users to a single space.</li>\r\n          <li>If a user adds various lines, the browser compresses them into one line.</li>\r\n          <li>By default, the display of the paragraph element is set to \"block,\" meaning each new paragraph is placed\r\n            on a new line. (Note: This behavior can be modified using CSS.)</li>\r\n        </ul>\r\n        <h2>\r\n          The &lt;br&gt; tag\r\n        </h2>\r\n        <p>The HTML &lt;br&gt; tag element creates a line break, giving you a new line without starting a new paragraph.\r\n          Use &lt;br&gt;\r\n          when you want to move to the next line without beginning a whole new paragraph.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;br&gt;</p>\r\n        </div>\r\n        <p>Example: This example explains the &lt;br&gt; tag inside the &lt;p&gt; tag to add the line-break.</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<p>\r\n    This paragraph has multiple\r\n    <br />lines. But HTML reduces them\r\n    <br />to a single line, omitting\r\n    <br />the carriage return we have used.\r\n</p>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h3>The Horizontal Rules &lt;hr&gt; tag</h3>\r\n        <p>The HTML &lt;hr&gt; tag is used to create a horizontal rule or line,\r\n          visually separating content on a webpage. Use &lt;hr&gt; when you want to insert a horizontal line\r\n          to signify a division between sections or elements,\r\n          providing a clear visual break in the page.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;hr&gt;</p>\r\n        </div>\r\n        <p>Example: In this example we will use the &lt;hr&gt; tag with an example by using &lt;p&gt; tag also.</p>\r\n        <h3>Align attribute</h3>\r\n        <p>The &lt;p&gt; tag specifically supports the alignment attribute and allows us to align our paragraphs in\r\n          left, right, or center alignment. </p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;p align =\"value\"&gt;</p>\r\n        </div>\r\n        <h2>Avoiding Common Mistakes with Paragraphs</h2>\r\n        <ol>\r\n          <li>Avoid Nested Paragraphs: You cannot nest paragraphs within one another. Each &lt;p&gt;\r\n            tag should contain only the text for one block of content.</li>\r\n          <li>Avoid Using &lt;p&gt; for Non-Textual Content: The <p> tag is meant for text-based content. If you need to\r\n              wrap images, tables, or other elements,\r\n              use appropriate tags like &lt;img&gt; , &lt;table&gt;or &lt;div&gt;.</li>\r\n        </ol>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "format",
+      "prev": "parag",
+      "next": "hyper",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Text Formatting</h1>\r\n        <p>HTML text formatting refers to the use of specific HTML tags to modify\r\n          the appearance and structure of text on a webpage. It allows you to style text in different ways,\r\n          such as making it bold,\r\n          italic, underlined, highlighted, or struck-through.</p>\r\n        <h2>Categories of HTML Text Formatting</h2>\r\n        <p>HTML text formatting can be divided into two main categories:\r\n          <b>Logical Tags</b> and <b>Physical Tags.</b>\r\n        </p>\r\n        <h3>1. Logical Tags</h3>\r\n        <p>Logical tags convey the meaning or importance of the text without necessarily altering its visual appearance.\r\n          These tags help browsers, search engines, and assistive\r\n          technologies understand the purpose of the text.</p>\r\n        <ul>\r\n          <li><b>&lt;em&gt;</b> Emphasizes text, typically rendered in italics. It implies that the text carries special\r\n            importance or requires emphasis.</li>\r\n          <li><b>&lt;strong&gt;</b>Marks text as important, often displayed in bold.\r\n            It implies the content is of strong importance.</li>\r\n        </ul>\r\n        <h3>2. Physical Tags</h3>\r\n        <p>Physical tags directly affect how text looks on the webpage by changing the font,\r\n          size, or style.</p>\r\n        <ul>\r\n          <li>&lt;b&gt;: Displays text in bold without implying importance.</li>\r\n          <li>&lt;i&gt;: Italicizes text without any implied emphasis.</li>\r\n        </ul>\r\n        <p>Here’s a list of commonly used HTML text formatting tags and their description:</p>\r\n        <h3>HTML Formatting Elements</h3>\r\n        <h4>1. &lt;i&gt; – Italicizes text</h4>\r\n        <p>Use the &lt;i&gt; tag to display text in italics without implying emphasis.</p>\r\n        <div class=\"syntax\">&lt;i&gt;This is italic text.&lt;/i&gt;</div>\r\n        <h4>2. &lt;small&gt; – Reduces the font size of the text</h4>\r\n        <p>The &lt;small&gt; tag renders text in a smaller font than the surrounding text.</p>\r\n        <div class=\"syntax\">&lt;small&gt;This text is smaller than the rest.&lt;/small&gt;</div>\r\n        <h4>3. &lt;ins&gt; – Highlights inserted text</h4>\r\n        <p>The &lt;ins&gt; tag marks text as newly added or inserted, often displayed with an underline.</p>\r\n        <div class=\"syntax\">&lt;ins&gt;This is inserted text.&lt;/ins&gt;</div>\r\n        <h4>\r\n          4. &lt;sub&gt; – Displays subscript text\r\n        </h4>\r\n        <p>Use the &lt;sub&gt; tag for subscripted text, often used in chemical formulas or footnotes.</p>\r\n        <div class=\"syntax\">H&lt;sub&gt;2&lt;sub&gt;O</div>\r\n        <h4>5. &lt;mark&gt; – Highlights text with a background color</h4>\r\n        <p>The &lt;mark&gt; tag highlights text with a background color, similar to using a highlighter on paper.</p>\r\n        <div class=\"syntax\">&lt;mark&gt;This text is highlighted.&lt;/mark&gt;</div>\r\n        <h2>Examples of HTML Text Formatting</h2>\r\n        <h3>Example 1: Basic Text Formatting</h3>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n</head>\r\n<body>\r\n      <p>\r\n        <strong>Strong:</strong> \r\n        This text is important and bold.\r\n    </p>\r\n    <p>\r\n        <em>Emphasized:</em> \r\n        This text is emphasized and italic.\r\n    </p>\r\n    <p>\r\n        <b>Bold:</b> \r\n        This text is bold.\r\n    </p>\r\n    <p>\r\n        <i>Italic:</i> \r\n        This text is italic.\r\n    </p>\r\n    <p>\r\n        <mark>Marked:</mark> \r\n        This text is highlighted.\r\n    </p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "hyper",
+      "prev": "format",
+      "next": "lists",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Links Hyperlinks</h1>\r\n        <p><b>HTML Links,</b> also known as<b>hyperlinks,</b> are defined by the <b>&lt;a&gt;</b> tag in HTML,\r\n          which stands for \"anchor.\" These links are essential for navigating between web pages and directing users to\r\n          different sites,\r\n          documents, or sections within the same page.</p>\r\n        <p>The basic attributes of the <b>&lt;a&gt;</b> tag include <b>href,</b> <b>title,</b> and <b>target,</b> among\r\n          others.</p>\r\n        <h3>Basic Syntax of an HTML Link:</h3>\r\n        <div class=\"syntax\">\r\n          &lt;a href=\"https://www.example.com///\">Visit Example&lt;/a&gt;\r\n        </div>\r\n        <p><b>Note:</b> A hyperlink can be represented by an image or any other HTML element, not just text.</p>\r\n        <h2>A Simple HTML Link Example</h2>\r\n        <p>In this example, we contains a paragraph instructing users to click on the link labeled \"Google,\" which\r\n          directs to the website\r\n          \"https://www.google.com/\".</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <title>HTML Links</title>\r\n</head>\r\n\r\n<body>\r\n    <p>Click on the following link</p>\r\n    <a href=\"https://www.google.com/\">\r\n        Google\r\n    </a>\r\n</body>\r\n\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <p>By default, links will appear as follows in all browsers:</p>\r\n        <ul>\r\n          <li>An unvisited link is underlined and blue.</li>\r\n          <li>A visited link is underlined and purple.</li>\r\n          <li>An active link is underlined and red.</li>\r\n        </ul>\r\n        <h2>HTML Links - Target Attribute</h2>\r\n        <p>The target attribute in the &lt;a&gt; tag specifies where to open the\r\n          linked document. It controls whether the link opens in the same window,\r\n          a new window, or a specific frame.</p>\r\n        <div class=\"scroll-wrapper\">\r\n          <table border=\"1\">\r\n            <thead>\r\n              <tr>\r\n                <th>Attribute</th>\r\n                <th>Description</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td><code>_blank</code></td>\r\n                <td>Opens the linked document in a new window or tab.</td>\r\n              </tr>\r\n              <tr>\r\n                <td><code>_self</code></td>\r\n                <td>Opens the linked document in the same frame or window as the link. (Default behavior)</td>\r\n              </tr>\r\n              <tr>\r\n                <td><code>_parent</code></td>\r\n                <td>Opens the linked document in the parent frame.</td>\r\n              </tr>\r\n              <tr>\r\n                <td><code>_top</code></td>\r\n                <td>Opens the linked document in the full body of the window.</td>\r\n              </tr>\r\n              <tr>\r\n                <td><code>framename</code></td>\r\n                <td>Opens the linked document in a specified frame. The frame’s name is specified in the attribute.</td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        <h2>Linking Different HTML Elements</h2>\r\n        <p>Below are examples of how to link different HTML elements with their respective code snippets</p>\r\n        <div class=\"scroll-wrapper\">\r\n          <table border=\"1\">\r\n            <thead>\r\n              <tr>\r\n                <th>Element to Interlink</th>\r\n                <th>Specific Code</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td>Linking to an image</td>\r\n                <td>\r\n                  &lt;a href=\"image.jpg\"&gt;&lt;img src=\"image.jpg\" alt=\"Image\"&gt;&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n              <tr>\r\n                <td>Link to an Email Address</td>\r\n                <td>\r\n                  &lt;a href=\"mailto:someone@example.com\"&gt;Send Email&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n              <tr>\r\n                <td>Phone Number</td>\r\n                <td>\r\n                  &lt;a href=\"tel:+1234567890\"&gt;Call Now&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n              <tr>\r\n                <td>Button</td>\r\n                <td>\r\n                  &lt;a href=\"https://www.example.com///\"&gt;&lt;button&gt;Visit Example&lt;/button&gt;&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n              <tr>\r\n                <td>Link to Download File</td>\r\n                <td>\r\n                  &lt;a href=\"file.pdf\" download&gt;Download File&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n              <tr>\r\n                <td>Link Title</td>\r\n                <td>\r\n                  &lt;a href=\"https://www.example.com///\" title=\"Visit Example\"&gt;Link Text&lt;/a&gt;\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "prev": "hyper",
+      "next": "types",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Lists</h1>\r\n        <p>An HTML List allows you to organize data on web pages into an ordered or\r\n          unordered format to make the information easier to read and visually appealing.\r\n          HTML Lists are very helpful for creating structured,\r\n          accessible content in web development.</p>\r\n        <h1>Types of HTML Lists</h1>\r\n        <p>There are three main types of lists in HTML:</p>\r\n        <ol>\r\n          <li>Unordered Lists (&lt;ul&gt;): These lists are used for items that do not need to be in any specific order.\r\n            The list items are typically marked with bullets.</li>\r\n          <li>Ordered Lists (&lt;ol&gt;): These lists are used when the order of the items is important.\r\n            Each item in an ordered list is\r\n            typically marked with numbers or letters.</li>\r\n          <li>Description Lists (&lt;dl&gt;): These lists are used to contain terms and\r\n            their corresponding descriptions.</li>\r\n          <h2>Basic Example of HTML Lists</h2>\r\n        </ol>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<h5>List of available courses</h5>\r\n    <ul>\r\n        <li>Data Structures and Algorithm</li>\r\n        <li>Web Technology</li>\r\n    </ul>\r\n <h5>Data Structures topics</h5>\r\n    <ol>\r\n        <li>Array</li>\r\n        <li>Linked List</li>\r\n        <li>Stacks</li>\r\n     </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h2>HTML List Tags</h2>\r\n        <div class=\"scroll-wrapper\">\r\n          <table border=\"1\">\r\n            <thead>\r\n              <tr>\r\n                <th>Tag</th>\r\n                <th>Description</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td>&lt;ul&gt;</td>\r\n                <td>Defines an unordered list.</td>\r\n              </tr>\r\n              <tr>\r\n                <td>&lt;ol&gt;</td>\r\n                <td>Defines an ordered list.</td>\r\n              </tr>\r\n              <tr>\r\n                <td>&lt;li&gt;</td>\r\n                <td>Defines a list item.</td>\r\n              </tr>\r\n              <tr>\r\n                <td>&lt;dl&gt;</td>\r\n                <td>Defines a description list.</td>\r\n              </tr>\r\n              <tr>\r\n                <td>&lt;dt&gt;</td>\r\n                <td>Defines a term in a description list.</td>\r\n              </tr>\r\n              <tr>\r\n                <td>&lt;dd&gt;</td>\r\n                <td>Details the term in a description list.</td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n        <h2>1. Using HTML Unordered List or Bulleted List</h2>\r\n        <p>Unordered lists are ideal for scenarios where the sequence\r\n          of the items is not important.</p>\r\n        <p>The unordered list items are marked with bullets, also known as bulleted lists. An unordered list starts with\r\n          the &lt;ul&gt; tag,\r\n          and each list item begins with the &lt;li&gt; tag.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;ul&gt;<br>\r\n            &lt;li&gt;Item 1&lt;/li&gt;<br>\r\n            &lt;li&gt;Item 2&lt;/li&gt;<br>\r\n            &lt;li&gt;Item 3&lt;/li&gt;<br>\r\n            &lt;/ul&gt;\r\n          </p>\r\n        </div>\r\n        <p>Attribute: This tag contains two attributes which are listed below: </p>\r\n        <ul>\r\n          <li>compact: It will render the list smaller.</li>\r\n          <li>type: It specifies which kind of marker is used in the list.</li>\r\n        </ul>\r\n        <h2>2. Using HTML Ordered List</h2>\r\n        <p>Ordered lists are used when the items need to follow a specific sequence.</p>\r\n        <p>In an ordered list, all list items are marked with numbers by default. An ordered list starts with the\r\n          &lt;ol&gt; tag, and\r\n          each list item begins with the &lt;li&gt; tag.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          &lt;ol&gt;\r\n          &lt;li&gt;Item1&lt;/li&gt;\r\n          &lt;li&gt;Item2&lt;/li&gt;\r\n          &lt;li&gt;Item3&lt;/li&gt;\r\n          &lt;/ol&gt;\r\n        </div>\r\n        <h3>Attributes:</h3>\r\n        <ul>\r\n          <li>compact: It defines the list should be compacted\r\n            (compact attribute is not supported in HTML5. Use CSS instead.).</li>\r\n          <li>reversed: It defines that the order will be descending.</li>\r\n          <li>start: It defines from which number or alphabet the order will start.</li>\r\n          <li>type: It defines which type(1, A, a, I, and i) of the order you want in your list of numeric, alphabetic,\r\n            or roman numbers.</li>\r\n        </ul>\r\n        <h2>3. Using HTML Description List</h2>\r\n        <p>A description list is a list of terms, with a description of each term. Description lists are less common but\r\n          very useful for definitions, glossaries,\r\n          or any other key-value pairs of items.</p>\r\n        <p>The &lt;dl&gt; tag defines the description list, the &lt;dt&gt; tag defines the term name, and the &lt;dd&gt;\r\n          tag describes each term.</p>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          &lt;dl&gt;\r\n          &lt;dt&gt;Item 1&lt;/dt&gt;\r\n          &lt;dd&gt;Description of Item 1&lt;/dd&gt;\r\n          &lt;dt&gt;Item 2&lt;/dt&gt;\r\n          &lt;dd&gt;Description of Item 2&lt;/dd&gt;\r\n          &lt;/dl&gt;\r\n        </div>\r\n        <p>Here, &lt;dt&gt; (description term) is used for the term being defined, and &lt;dd&gt;(description details)\r\n          is used for the description.</p>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "prev": "lists",
+      "next": "ifram",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Ordered Lists</h1>\r\n        <p>An HTML Ordered List is created using the &lt;ol&gt; tag to display items in a specific sequence,\r\n          typically numbered or alphabetically ordered. Each list item is defined using the &lt;ol&gt; (list item) tag.\r\n          Ordered lists are widely used for instructions, rankings, and step-by-step guides—appearing in over 60% of\r\n          structured\r\n          web content that requires clear, sequential formatting.</p>\r\n        <p>This is how the HTML Ordered list will be displayed in a browser:</p>\r\n        <ul>\r\n          <li>Item a</li>\r\n          <li>Item b</li>\r\n          <li>Item c</li>\r\n        </ul>\r\n        <p>The list is automatically numbered by the browser, but the style of numbering can be adjusted using\r\n          attributes and CSS.</p>\r\n        <h2>Basic Ordered List</h2>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<h2>My To-Do List</h2>\r\n    <ol>\r\n        <li>Go grocery shopping</li>\r\n        <li>Pay utility bills</li>\r\n        <li>Prepare dinner</li>\r\n    </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h2>Different Type Attributes in HTML Ordered List</h2>\r\n        <p>The type attribute of &lt;ol&gt; tag specifies the order we want to create.</p>\r\n        <div class=\"scroll-wrapper\">\r\n          <table border=\"1\">\r\n            <tr>\r\n              <th>Type</th>\r\n              <th>Description</th>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <ol type=\"1\">\r\n                  <li>Item</li>\r\n                </ol>\r\n              </td>\r\n              <td>Numbered list (default)</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <ol type=\"A\">\r\n                  <li>Item</li>\r\n                </ol>\r\n              </td>\r\n              <td>Uppercase letters</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <ol type=\"a\">\r\n                  <li>Item</li>\r\n                </ol>\r\n              </td>\r\n              <td>Lowercase letters</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <ol type=\"I\">\r\n                  <li>Item</li>\r\n                </ol>\r\n              </td>\r\n              <td>Uppercase Roman numerals</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <ol type=\"i\">\r\n                  <li>Item</li>\r\n                </ol>\r\n              </td>\r\n              <td>Lowercase Roman numerals</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n        <h3>Nested Ordered Lists</h3>\r\n        <p>Nested ordered lists use &lt;ol&gt; inside &lt;li&gt; tags to create sublists,\r\n          making content more organized.</p>\r\n        <p>Example: In this example we are creating nested ordered list,\r\n          listing programming languages with their respective frameworks as subitems</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<ol>\r\n        <li>\r\n            JavaScript\r\n            <ol>\r\n                <li>React</li>\r\n                <li>Angular</li>\r\n            </ol>\r\n        </li>\r\n        <li>\r\n            Python\r\n            <ol>\r\n                <li>Django</li>\r\n                <li>Flask</li>\r\n            </ol>\r\n        </li>\r\n    </ol>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Unordered Lists</h1>\r\n        <p>An unordered list in HTML is used to group a set of list items that don't need to be in a specific order. The\r\n          items in an unordered list are usually displayed with bullet points by default.\r\n          Here are the some key features of HTML unordered lists:</p>\r\n        <ul>\r\n          <li>No Order: Lists items without a specific sequence.</li>\r\n          <li>Customizable Bullets: Bullets can be changed with CSS.</li>\r\n          <li>Nesting: Allows lists within lists.</li>\r\n          <li>Simple Syntax: Created with &lt;ul&gt; and &lt;li&gt;.</li>\r\n        </ul>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<ul>\r\n    <li>HTML</li>\r\n    <li>CSS</li>\r\n    <li>Javascript</li>\r\n    <li>React</li>\r\n</ul>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h2>Unordered Lists Style Types</h2>\r\n        <p>In HTML, unordered lists (&lt;ul&gt;) are used to display items without any specific order,\r\n          and by default, they show bullet points. However, the appearance of these bullets\r\n          can be changed using CSS with different styles.</p>\r\n        <p>Here are some common list-style-type values that you can apply to unordered lists\r\n          to change the bullet style.</p>\r\n        <ol>\r\n          <li>Square Bullet Style</li>\r\n          <li>Circle Bullet Style</li>\r\n          <li>Removing Bullets</li>\r\n        </ol>\r\n        <h1>HTML Description Lists</h1>\r\n        <p>An HTML Description List is not as commonly used as unordered or ordered lists but serves an\r\n          important purpose for displaying name-value pairs. This type of list\r\n          is marked up using three tags: &lt;dl&gt;, &lt;dt&gt;, and &lt;dd&gt;.</p>\r\n        <ul>\r\n          <li>&lt;dl&gt;(Description List): This tag defines the description list itself and acts as a container for the\r\n            list items.</li>\r\n          <li>&lt;dt&gt; (Description Term): Represents a term or a name within the list.</li>\r\n          <li>&lt;dd&gt; (Description Details): Provides the description or definition of the term.</li>\r\n        </ul>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n<dl>\r\n        <dt>HTML</dt>\r\n        <dd>\r\n            HyperText Markup Language\r\n        </dd>\r\n\r\n        <dt>CSS</dt>\r\n        <dd>\r\n            Cascading Style Sheets\r\n        </dd>\r\n\r\n        <dt>JavaScript</dt>\r\n        <dd>\r\n           Scripting language for Web pages\r\n        </dd>\r\n    </dl>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "ifram",
+      "prev": "types",
+      "next": "forms",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Iframes</h1>\r\n        <p>An iframe, or Inline Frame, is an HTML element represented by the &lt;iframe&gt; tag.\r\n          It functions as a 'window' on your webpage through which visitors can view and interact with another\r\n          webpage from a different source.</p>\r\n        <p>Iframes are used for various purposes like:</p>\r\n        <ul>\r\n          <li>Embedding Multimedia: Easily integrate videos, audio, or animations from platforms like YouTube, etc.</li>\r\n          <li>Including Maps: Embed maps from services like Google Maps directly into your site.</li>\r\n          <li>Loading Forms and Widgets: Incorporate forms or widgets from other sources without writing complex code.\r\n          </li>\r\n        </ul>\r\n        <h3>Syntax:</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;iframe src=\"URL\" title=\"description\"&gt;&lt;/iframe&gt;</p>\r\n        </div>\r\n        <ul>\r\n          <li>The src attribute specifies the URL of the document you want to embed.</li>\r\n          <li>Iframes can include videos, maps, or entire web pages from other sources.</li>\r\n        </ul>\r\n        <h2>HTML Iframes Examples</h2>\r\n        <p>Example 1: Basic Iframe Embedding</p>\r\n        <p>In this example, an iframe is used to display another webpage within\r\n          the current webpage.</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<h2>HTML iframe Tag</h2>\r\n   <iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\"\r\n           height=\"370\"\r\n           width=\"400\">\r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <p>Example 2: Using Height and Width attribute</p>\r\n        <p>The height and width attributes are used to specify the size of the iframe.\r\n          The attribute values are specified in pixels by default.\r\n          You can use pixels or percentages (e.g., “80%”).</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\"\r\n           height=\"395\" \r\n           width=\"400\">\r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <p>Example 3: Removing Borders from Iframe</p>\r\n        <p>By default, iframe has a border around it. To remove the border,\r\n          we must use the style attribute\r\n          and use the CSS border property.</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20231227155729/jsonPrac3.html\" \r\n           height=\"300\" \r\n           width=\"400\" \r\n           style=\"border: none\"> \r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <p>Example 4: Styling Iframe Border Using CSS</p>\r\n        <p>You can change the size, style, and color of the iframe border using CSS.</p>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\n<iframe src=\r\n   \"https://media.geeksforgeeks.org/wp-content/uploads/20240206111438/uni2.html\" \r\n           height=\"400\" \r\n           width=\"400\" \r\n           style=\"border: 4px solid orange\"> \r\n   </iframe>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h3>Best Practices for Using Iframes</h3>\r\n        <p>While iframes offer significant flexibility, they should be used wisely to ensure they enhance rather\r\n          than detract from the user experience.</p>\r\n        <ul>\r\n          <li>Security: Always use the sandbox attribute to restrict the iframe's capabilities unless you fully trust\r\n            the content.\r\n            This can prevent malicious scripts from running.</li>\r\n          <li>Performance: Iframes can slow down your page loading times.\r\n            Only use them when necessary and ensure the embedded content is optimized for fast loading.</li>\r\n          <li>Accessibility: Provide alternative content for users who might not be able to interact with iframes.\r\n            This can be done by placing text or links inside the &lt;iframe&gt; tags,\r\n            which will only display if iframes are not supported.</li>\r\n        </ul>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          \r\n        </div>\r\n      "
+        }
+      ]
+    },
+    {
+      "id": "forms",
+      "prev": "ifram",
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n        <h1>HTML Forms</h1>\r\n        <p>HTML forms, defined using the &lt;form&gt;Tags are essential for collecting user input on web pages.\r\n          They incorporate a variety of interactive controls such as text fields, numeric inputs, email fields, password\r\n          fields, checkboxes, radio buttons, and submit buttons.\r\n          Over 85% of websites rely on forms to gather data from users, making them a fundamental\r\n          component of modern web development.</p>\r\n        <h3>Syntax</h3>\r\n        <div class=\"syntax\">\r\n          <p>&lt;form&gt;<br>\r\n            form elements..<br>\r\n            &lt;/form&gt;</p>\r\n        </div>\r\n        <h3>Basic HTML Forms Example</h3>\r\n        "
+        },
+        {
+          "type": "editor",
+          "code": "\r\n <form>\r\n    <label for=\"username\">Username:</label><br>\r\n    <input type=\"text\" id=\"username\" name=\"username\"><br><br>\r\n    \r\n    <label for=\"password\">Password:</label><br>\r\n    <input type=\"password\" id=\"password\" name=\"password\"><br><br>\r\n    \r\n    <input type=\"submit\" value=\"Submit\">\r\n</form>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n        <h3>Code Overview:</h3>\r\n        <ul>\r\n          <li>HTML Structure:The code has a basic HTML structure with a title \"HTML Forms.\"</li>\r\n          <li>Heading: The &lt;h2&gt;tag displays \"HTML Forms\" as the main heading on the page.</li>\r\n          <li>Form Tag: The &lt;form&gt; tag defines a form for user input.</li>\r\n          <li>Username Field: A text input field for the username with a label.</li>\r\n          <li>Password Field & Submit: A password input field and a submit button to send the form data.</li>\r\n        </ul>\r\n        <h3>Advance HTML Forms</h3>\r\n        <p>This HTML form collects users personal information, including name, email, password,\r\n          gender, date of birth, and address. It features proper styling for\r\n          input fields and submission buttons.</p>\r\n        <center><img src=\"/images/html_form.gif\" /></center>\r\n        <h3>Form Elements</h3>\r\n        <div class=\"scroll-wrapper\">\r\n          <table border=\"1\">\r\n            <tr>\r\n              <th>Elements</th>\r\n              <th>Descriptions</th>\r\n            </tr>\r\n            <tr>\r\n              <td><label></label></td>\r\n              <td>Defines labels for form elements.</td>\r\n            </tr>\r\n            <tr>\r\n              <td><input></td>\r\n              <td>Takes user input like text, password, email, etc. (via type attribute).</td>\r\n            </tr>\r\n            <tr>\r\n              <td><button></button></td>\r\n              <td>Creates a clickable button to trigger actions.</td>\r\n            </tr>\r\n            <tr>\r\n              <td><select></select></td>\r\n              <td>Creates a drop-down list.</td>\r\n            </tr>\r\n            <tr>\r\n              <td><textarea></textarea></td>\r\n              <td>Collects longer blocks of text from users.</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <fieldset></fieldset>\r\n              </td>\r\n              <td>Groups related form elements and draws a visual box.</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <legend></legend>\r\n              </td>\r\n              <td>Provides a caption for a fieldset group.</td>\r\n            </tr>\r\n            <tr>\r\n              <td><datalist></datalist></td>\r\n              <td>Provides pre-defined suggestions for an input field.</td>\r\n            </tr>\r\n            <tr>\r\n              <td><output></output></td>\r\n              <td>Displays the result of a calculation or dynamic data.</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <option></option>\r\n              </td>\r\n              <td>Defines an item in a drop-down list.</td>\r\n            </tr>\r\n            <tr>\r\n              <td>\r\n                <optgroup></optgroup>\r\n              </td>\r\n              <td>Groups related options in a drop-down list.</td>\r\n            </tr>\r\n          </table>\r\n        </div>\r\n        <div class=\"nav-buttons\">\r\n          <!-- <button>Previous</button> -->\r\n          \r\n          <!-- <button >Next &gt;</button> -->\r\n          <!--  -->\r\n        </div>\r\n      </div>\r\n    </div>\r\n  "
+        }
+      ]
+    }
+  ]
+}

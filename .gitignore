@@ -23,3 +23,6 @@ build
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright MCP session artefacts
+.playwright-mcp/

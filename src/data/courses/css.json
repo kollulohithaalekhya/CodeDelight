@@ -1,0 +1,574 @@
+{
+  "key": "css",
+  "title": "Learn CSS in the Right Way",
+  "subtitle": "The only CSS guide you'll ever need.",
+  "quizPath": "/css-levels",
+  "sidebar": {
+    "entries": [
+      {
+        "type": "group",
+        "label": "Structure and Basic Styles",
+        "items": [
+          {
+            "id": "introduction",
+            "label": "CSS Syntax"
+          },
+          {
+            "id": "basic_style",
+            "label": "Basic Style Application"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Inline, Internal, External CSS and Selectors",
+        "items": [
+          {
+            "id": "css_inclusion",
+            "label": "CSS Inclusion Methods"
+          },
+          {
+            "id": "css_selectors",
+            "label": "CSS Selectors"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Basic Styles",
+        "items": [
+          {
+            "id": "text-formatting",
+            "label": "Text Formatting"
+          },
+          {
+            "id": "color-properties",
+            "label": "Color Properties"
+          },
+          {
+            "id": "box-model-basics",
+            "label": "Box Model Basics"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Box Model, Height and Width",
+        "items": [
+          {
+            "id": "box-model-details",
+            "label": "Box Model Details"
+          },
+          {
+            "id": "element-dimensions",
+            "label": "Element Dimensions"
+          },
+          {
+            "id": "box-sizing",
+            "label": "Box Sizing"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Display and Position",
+        "items": [
+          {
+            "id": "display-properties",
+            "label": "Display Properties"
+          },
+          {
+            "id": "positioning-elements",
+            "label": "Positioning Elements"
+          },
+          {
+            "id": "z-index",
+            "label": "Z-index"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Flexbox and Grid Layout",
+        "items": [
+          {
+            "id": "flexbox-intro",
+            "label": "Flexbox Introduction"
+          },
+          {
+            "id": "grid-intro",
+            "label": "CSS Grid Introduction"
+          },
+          {
+            "id": "flex-vs-grid",
+            "label": "Flex vs. Grid"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Transforms and Animations",
+        "items": [
+          {
+            "id": "css-transforms",
+            "label": "CSS Transforms"
+          },
+          {
+            "id": "css-transitions",
+            "label": "CSS Transitions"
+          },
+          {
+            "id": "css-animations",
+            "label": "CSS Animations"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Media Queries",
+        "items": [
+          {
+            "id": "responsive-design",
+            "label": "Responsive Design Intro"
+          },
+          {
+            "id": "media-query-usage",
+            "label": "Media Query Usage"
+          },
+          {
+            "id": "device-specific-styles",
+            "label": "Device-Specific Styles"
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "id": "tasks",
+        "label": "Tasks"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "prev": null,
+      "next": "basic_style",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Structure and Basic Styles</h1>\r\n          <h2>➤ CSS Syntax</h2>\r\n          <p>CSS (Cascading Style Sheets) is used to style and visually format HTML elements. It controls how content appears: colors, fonts, spacing, layout, etc.</p>\r\n          <h3>Explanation of CSS Syntax:</h3>\r\n          <p>CSS syntax is made up of <b>selectors</b> and <b>declaration blocks</b>. A declaration block contains one or more declarations separated by semicolons.</p>\r\n          <div class=\"syntax\">\r\n            selector { <br>\r\n            property: value;<br>\r\n          }\r\n          </div>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    h1 {\r\n      color: blue;\r\n      font-size: 24px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <h1>CSS Syntax Demo</h1>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>h1</code> is the selector — it targets all &lt;h1&gt; elements.</li>\r\n            <li><code>color: blue;</code> changes the text color to blue.</li>\r\n            <li><code>font-size: 24px;</code> sets the font size to 24 pixels.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Each declaration ends with a semicolon <code>;</code>.</li>\r\n            <li>The selector is followed by curly braces <code>{ }</code>.</li>\r\n            <li>Each property-value pair is a rule applied to the selector.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "basic_style",
+      "prev": "introduction",
+      "next": "css_inclusion",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Structure and Basic Styles</h1>\r\n          <h2>➤ Basic Style Application</h2>\r\n          <p>CSS can be used to apply basic visual styles to HTML elements such as fonts, colors, spacing, alignment, and borders.\r\n            To apply CSS, you write styles using selectors and properties , then connect them to HTML using: Inline,Internal, and External.\r\n          </p>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    p {\r\n      color: green;\r\n      font-family: Arial, sans-serif;\r\n      text-align: justify;\r\n      background-color: #f0f0f0;\r\n      padding: 10px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <p>This paragraph is styled using basic CSS properties.</p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>color: green;</code> — sets the text color to green.</li>\r\n            <li><code>font-family: Arial;</code> — applies the specified font.</li>\r\n            <li><code>text-align: justify;</code> — aligns text evenly on both sides.</li>\r\n            <li><code>background-color:</code> — sets a light background color.</li>\r\n            <li><code>padding:</code> — adds space inside the paragraph box.</li>\r\n          </ul>\r\n\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Basic styles enhance readability and layout.</li>\r\n            <li>You can apply multiple styles to one selector.</li>\r\n            <li>Use internal styles (as above) or external stylesheets for larger projects.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "css_inclusion",
+      "prev": "basic_style",
+      "next": "css_selectors",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Inline, Internal, External CSS and Selectors</h1>\r\n          <h2>➤ CSS Inclusion Methods</h2>\r\n\r\n          <p>CSS can be applied to HTML in three ways: <b>Inline, Internal</b>, and <b>External</b>. Each method serves different use cases based on the scope and maintainability of styles.</p>\r\n\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><b>Inline CSS:</b> Applied directly within an element using the <code>style</code> attribute. Best for quick, one-off styling.</li>\r\n            <li><b>Internal CSS:</b> Written inside a <code>&lt;style&gt;</code> tag in the HTML <code>&lt;head&gt;</code>. Useful for single-page projects.</li>\r\n            <li><b>External CSS:</b> Stored in a separate <code>.css</code> file and linked using <code>&lt;link&gt;</code>. Ideal for maintaining large websites.</li>\r\n          </ul>\r\n\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <!-- Internal CSS -->\r\n  <style>\r\n    h1 {\r\n      color: blue;\r\n    }\r\n  </style>\r\n\n  <!-- External CSS -->\r\n  <link rel=\"stylesheet\" href=\"styles.css\">\r\n</head>\r\n<body>\r\n\n  <!-- Inline CSS -->\r\n  <p style=\"color: red;\">This is red using inline CSS</p>\r\n\n  <h1>This is blue using internal CSS</h1>\r\n\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>style=\"color: red;\"</code> changes the paragraph color using inline CSS.</li>\r\n            <li><code>&lt;style&gt;</code> block inside the <code>&lt;head&gt;</code> applies internal CSS to <code>&lt;h1&gt;</code>.</li>\r\n            <li><code>&lt;link rel=\"stylesheet\"&gt;</code> is how you include external CSS (assumed to be in a file named <code>styles.css</code>).</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Use inline CSS only when necessary.</li>\r\n            <li>Internal CSS is good for small or single-page projects.</li>\r\n            <li>External CSS is preferred for modularity and reusability.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "css_selectors",
+      "prev": "css_inclusion",
+      "next": "text-formatting",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Inline, Internal, External CSS and Selectors</h1>\r\n          <h2>➤ CSS Selectors</h2>\r\n          <p>CSS selectors are patterns used to select and style HTML elements. They allow you to target elements by tag name, class, ID, or relationships.</p>\r\n          <h3>Common Types of Selectors:</h3>\r\n          <ul>\r\n            <li><b>Universal Selector</b> (<code>*</code>): Targets all elements.</li>\r\n            <li><b>Element Selector</b> (<code>p</code>, <code>div</code>): Targets elements by tag name.</li>\r\n            <li><b>Class Selector</b> (<code>.classname</code>): Targets elements with a specific class.</li>\r\n            <li><b>ID Selector</b> (<code>#idname</code>): Targets an element with a specific ID.</li>\r\n            <li><b>Group Selector</b> (<code>h1, p</code>): Targets multiple elements together.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    * {\r\n      font-family: Arial;\r\n    }\r\n    p {\r\n      color: green;\r\n    }\r\n    .highlight {\r\n      background-color: yellow;\r\n    }\r\n    #main-title {\r\n      font-size: 28px;\r\n      color: blue;\r\n    }\r\n    h1, h2 {\r\n      text-align: center;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <h1 id=\"main-title\">Main Title</h1>\r\n  <h2>Subheading</h2>\r\n  <p>Normal paragraph</p>\r\n  <p class=\"highlight\">Highlighted paragraph</p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>*</code>: Applies Arial font to all elements.</li>\r\n            <li><code>p</code>: Styles all paragraphs with green text.</li>\r\n            <li><code>.highlight</code>: Targets paragraphs with class \"highlight\" to add background color.</li>\r\n            <li><code>#main-title</code>: Applies blue color and large font to the element with ID \"main-title\".</li>\r\n            <li><code>h1, h2</code>: Aligns both headings to the center.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li><code>#</code> targets by ID (unique), <code>.</code> targets by class (reusable).</li>\r\n            <li>Use meaningful and unique IDs and classes for maintainability.</li>\r\n            <li>Selectors let you apply styles efficiently without repeating code.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "text-formatting",
+      "prev": "css_selectors",
+      "next": "color-properties",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Basic Styles</h1>\r\n          <h2>➤ Text Formatting</h2>\r\n          <p>CSS allows you to control how text appears on your web page, including font styles, size, spacing, alignment, and decoration.</p>\r\n          <h3>Common Properties:</h3>\r\n          <ul>\r\n            <li><code>font-family</code>: Sets the font type.</li>\r\n            <li><code>font-size</code>: Controls the size of the text.</li>\r\n            <li><code>font-weight</code>: Specifies boldness (e.g., <code>normal</code>, <code>bold</code>, <code>400</code>, <code>700</code>).</li>\r\n            <li><code>text-align</code>: Aligns text (e.g., <code>left</code>, <code>center</code>, <code>right</code>).</li>\r\n            <li><code>text-decoration</code>: Adds lines to text (e.g., <code>underline</code>, <code>line-through</code>).</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    p {\r\n      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\r\n      font-size: 18px;\r\n      font-weight: 600;\r\n      text-align: justify;\r\n      text-decoration: underline;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <p>CSS lets you control the visual appearance of text including font, size, and alignment.</p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li>The <code>font-family</code> defines a stack of preferred fonts.</li>\r\n            <li><code>font-weight</code> of <code>600</code> makes the text semi-bold.</li>\r\n            <li><code>text-align: justify</code> aligns both edges of the paragraph.</li>\r\n            <li><code>text-decoration: underline</code> adds an underline to the text.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Use font stacks for fallback options.</li>\r\n            <li>Text alignment improves readability based on design context.</li>\r\n            <li>Use relative units like <code>em</code> or <code>rem</code> for responsive text sizes.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "color-properties",
+      "prev": "text-formatting",
+      "next": "box-model-basics",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Color Properties</h2>\r\n          <p>CSS provides flexible ways to define color for text, backgrounds, and borders using keywords, HEX codes, RGB, RGBA, or HSL.</p>\r\n          <h3>Common Properties:</h3>\r\n          <ul>\r\n            <li><code>color</code>: Sets the color of the text.</li>\r\n            <li><code>background-color</code>: Applies color behind the element.</li>\r\n            <li><code>border-color</code>: Defines color for the border.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    body {\r\n      background-color: #f0f8ff;\r\n    }\r\n    h1 {\r\n      color: navy;\r\n    }\r\n    p {\r\n      background-color: #e0ffff;\r\n      border: 1px solid #0077b6;\r\n      color: #333;\r\n      padding: 10px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <h1>Color Properties in CSS</h1>\r\n  <p>Colors improve user experience and visual hierarchy in design.</p>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>background-color</code> on <code>body</code> adds a soft tone to the whole page.</li>\r\n            <li><code>color: navy</code> styles the heading text color.</li>\r\n            <li>HEX and named values are both valid. You can also use <code>rgba()</code> for transparency.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Use accessible color combinations for readability.</li>\r\n            <li>HEX is compact and widely supported; <code>rgba</code> is useful for transparency effects.</li>\r\n            <li>Background and border colors define visual sections clearly.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "box-model-basics",
+      "prev": "color-properties",
+      "next": "box-model-details",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Box Model Basics</h2>\r\n          <p>Every HTML element is a rectangular box consisting of content, padding, border, and margin. This is known as the <b>Box Model</b>.</p>\r\n          <h3> Structure:</h3>\r\n          <pre>\r\n        Content → Padding → Border → Margin\r\n          </pre>\r\n          <h3>Box Model Properties:</h3>\r\n          <ul>\r\n            <li><code>content</code>: The actual text/image or content.</li>\r\n            <li><code>padding</code>: Space between content and border.</li>\r\n            <li><code>border</code>: The boundary around the padding.</li>\r\n            <li><code>margin</code>: Space outside the element’s border.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .box {\r\n      width: 200px;\r\n      padding: 20px;\r\n      border: 3px solid #4a90e2;\r\n      margin: 30px;\r\n      background-color: #f7f7f7;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"box\">This box demonstrates the CSS box model.</div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation of the Example:</h3>\r\n          <ul>\r\n            <li><code>padding</code> adds space between the text and the border.</li>\r\n            <li><code>border</code> visually defines the box.</li>\r\n            <li><code>margin</code> creates space outside the box (from other elements).</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Understand the difference between margin and padding.</li>\r\n            <li>Use developer tools to inspect box model dimensions in the browser.</li>\r\n            <li><code>box-sizing: border-box;</code> helps keep width predictable by including border/padding in width.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "box-model-details",
+      "prev": "box-model-basics",
+      "next": "element-dimensions",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Box Model, Height and Width</h1>\r\n          <h2>➤ Box Model Details</h2>\r\n          <p>\r\n            The CSS Box Model is the foundation of layout design. It treats each HTML element as a rectangular box made up of 4 layers:\r\n          </p>\r\n          <ul>\r\n            <li><b>Content:</b> The actual text or image inside the box.</li>\r\n            <li><b>Padding:</b> Clears space around the content inside the box.</li>\r\n            <li><b>Border:</b> Wraps around the padding (if any) and content.</li>\r\n            <li><b>Margin:</b> Clears space outside the border, separating elements.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .box {\r\n      background-color: #fff3cd;\r\n      border: 4px solid #ffa500;\r\n      padding: 20px;\r\n      margin: 30px;\r\n      width: 250px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"box\">\r\n    This box includes content, padding, a border, and margin.\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>padding: 20px</code> creates space inside the box, around content.</li>\r\n            <li><code>border: 4px solid</code> adds a visible edge.</li>\r\n            <li><code>margin: 30px</code> separates this box from other elements.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Box Model dimensions affect spacing and layout heavily.</li>\r\n            <li>Always account for padding and border when setting width/height.</li>\r\n            <li>Inspect using browser dev tools to visualize the box model.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "element-dimensions",
+      "prev": "box-model-details",
+      "next": "box-sizing",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Element Dimensions</h2>\r\n          <p>\r\n            CSS allows you to define the width and height of elements in absolute or relative units.\r\n          </p>\r\n          <h3>Properties:</h3>\r\n          <ul>\r\n            <li><code>width</code>: Horizontal size of the content box.</li>\r\n            <li><code>height</code>: Vertical size of the content box.</li>\r\n            <li><code>min-width</code> / <code>max-width</code>: Set boundary limits.</li>\r\n            <li><code>min-height</code> / <code>max-height</code>: Restrict height range.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .container {\r\n      width: 300px;\r\n      height: 150px;\r\n      background-color: #d1e7dd;\r\n      padding: 10px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    This element has fixed width and height.\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>width</code> and <code>height</code> directly set dimensions.</li>\r\n            <li>Units like <code>px</code>, <code>%</code>, <code>em</code> or <code>vh</code>/<code>vw</code> are commonly used.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Relative units scale better for responsive design.</li>\r\n            <li>Absolute units (like px) are useful for fixed layout control.</li>\r\n            <li>Combine with media queries to adapt size to different devices.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "box-sizing",
+      "prev": "element-dimensions",
+      "next": "display-properties",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Box Sizing</h2>\r\n          <p>\r\n            By default, width and height only apply to the content box. Padding and border are added on top, increasing total size. \r\n            <br>To avoid that, use <code>box-sizing: border-box</code>.\r\n          </p>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .default-box {\r\n      width: 200px;\r\n      padding: 20px;\r\n      border: 4px solid #000;\r\n      background-color: #f8d7da;\r\n    }\r\n\n    .boxed {\r\n      box-sizing: border-box;\r\n      width: 200px;\r\n      padding: 20px;\r\n      border: 4px solid #000;\r\n      background-color: #d1c4e9;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"default-box\">Without border-box</div>\r\n  <br>\r\n  <div class=\"boxed\">With border-box</div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li>In the first box, padding and border are added outside the 200px width → actual box is larger.</li>\r\n            <li>With <code>box-sizing: border-box</code>, padding & border are included within the specified width.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li><code>border-box</code> makes layout more predictable and avoids layout overflow.</li>\r\n            <li>Common practice: apply <code>box-sizing: border-box</code> globally via <code>*</code> selector.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "display-properties",
+      "prev": "box-sizing",
+      "next": "positioning-elements",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Display and Position</h1>\r\n          <h2>➤ Display Properties</h2>\r\n          <p>\r\n            The <code>display</code> property determines how an HTML element is rendered in the document flow.<br>\r\n            It controls whether the element behaves like a block, inline, or other layout types.\r\n          </p>\r\n          <h3>Common Values:</h3>\r\n          <ul>\r\n            <li><code>block</code>: Takes full width; starts on a new line (e.g., &lt;div&gt;, &lt;p&gt;).</li>\r\n            <li><code>inline</code>: Takes only the required width; sits within line (e.g., &lt;span&gt;, &lt;a&gt;).</li>\r\n            <li><code>inline-block</code>: Like inline but supports width/height.</li>\r\n            <li><code>none</code>: Hides the element completely (no space).</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .block {\r\n      display: block;\r\n      background-color: #ffc107;\r\n      padding: 10px;\r\n    }\r\n\n    .inline {\r\n      display: inline;\r\n      background-color: #4caf50;\r\n      color: white;\r\n      padding: 5px;\r\n    }\r\n\n    .inline-block {\r\n      display: inline-block;\r\n      width: 100px;\r\n      background-color: #17a2b8;\r\n      color: white;\r\n      padding: 10px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"block\">Block Element</div>\r\n  <span class=\"inline\">Inline 1</span>\r\n  <span class=\"inline\">Inline 2</span>\r\n  <div class=\"inline-block\">Inline-Block</div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>block</code> takes the full line and forces the next element down.</li>\r\n            <li><code>inline</code> allows elements to sit side by side, without block-level spacing.</li>\r\n            <li><code>inline-block</code> behaves inline but lets you set width/height.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li><code>display: none</code> removes an element from layout and screen.</li>\r\n            <li>Use <code>inline-block</code> for button rows or aligned boxes with fixed sizes.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "positioning-elements",
+      "prev": "display-properties",
+      "next": "z-index",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Positioning Elements</h2>\r\n          <p>\r\n            The <code>position</code> property controls how an element is placed in the document.<br>\r\n            Combined with <code>top</code>, <code>left</code>, <code>right</code>, and <code>bottom</code> properties.\r\n          </p>\r\n          <h3>Types of Position:</h3>\r\n          <ul>\r\n            <li><code>static</code>: Default flow (no offset).</li>\r\n            <li><code>relative</code>: Offset from its normal position.</li>\r\n            <li><code>absolute</code>: Positioned relative to nearest non-static ancestor.</li>\r\n            <li><code>fixed</code>: Positioned relative to the viewport (always stays in place).</li>\r\n            <li><code>sticky</code>: Acts like relative until scroll, then sticks.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .box {\r\n      width: 120px;\r\n      height: 80px;\r\n      color: white;\r\n      padding: 10px;\r\n      margin: 10px;\r\n    }\r\n\n    .relative {\r\n      position: relative;\r\n      top: 20px;\r\n      background: #28a745;\r\n    }\r\n\n    .absolute-container {\r\n      position: relative;\r\n      height: 200px;\r\n      background: #f8f9fa;\r\n    }\r\n\n    .absolute {\r\n      position: absolute;\r\n      top: 30px;\r\n      left: 50px;\r\n      background: #dc3545;\r\n    }\r\n\n    .fixed {\r\n      position: fixed;\r\n      top: 10px;\r\n      right: 10px;\r\n      background: #007bff;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"box relative\">Relative</div>\r\n\n  <div class=\"absolute-container\">\r\n    <div class=\"box absolute\">Absolute</div>\r\n  </div>\r\n\n  <div class=\"box fixed\">Fixed</div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>relative</code> moves from its normal spot, keeping its space.</li>\r\n            <li><code>absolute</code> is removed from flow and placed based on parent.</li>\r\n            <li><code>fixed</code> stays visible even when scrolling.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Use <code>relative</code> to adjust position while keeping flow.</li>\r\n            <li><code>absolute</code> is useful for dropdowns, modals, or overlays.</li>\r\n            <li><code>fixed</code> is perfect for sticky navbars or \"back to top\" buttons.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "z-index",
+      "prev": "positioning-elements",
+      "next": "flexbox-intro",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Z-index</h2>\r\n          <p>\r\n            <code>z-index</code> controls stacking order of overlapping elements.<br>\r\n            A higher <code>z-index</code> means the element appears in front of lower ones.\r\n          </p>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .z-container {\r\n      position: relative;\r\n      height: 200px;\r\n    }\r\n\n    .box1, .box2 {\r\n      width: 100px;\r\n      height: 100px;\r\n      position: absolute;\r\n    }\r\n\n    .box1 {\r\n      background: #ffc107;\r\n      top: 20px;\r\n      left: 40px;\r\n      z-index: 1;\r\n    }\r\n\n    .box2 {\r\n      background: #17a2b8;\r\n      top: 40px;\r\n      left: 60px;\r\n      z-index: 2;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"z-container\">\r\n    <div class=\"box1\">z-index: 1</div>\r\n    <div class=\"box2\">z-index: 2</div>\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>z-index: 2</code> makes <code>.box2</code> appear above <code>.box1</code>.</li>\r\n            <li>Only works on elements with <code>position</code> set (relative, absolute, fixed).</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Use for overlays, modals, dropdowns, or layered UIs.</li>\r\n            <li>Keep z-index simple and avoid large numbers unless necessary.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "flexbox-intro",
+      "prev": "z-index",
+      "next": "grid-intro",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Flexbox and Grid Layout</h1>\r\n          <h2>➤ Flexbox Introduction</h2>\r\n\r\n          <p>\r\n            <b>Flexbox</b> is a one-dimensional layout method used to align and distribute space among items inside a container.\r\n            It works in rows or columns, making it perfect for responsive layouts.\r\n          </p>\r\n          <h3>Flex Container Properties:</h3>\r\n          <ul>\r\n            <li><code>display: flex</code> – Activates flex mode for the container.</li>\r\n            <li><code>flex-direction</code> – Direction of items: <code>row</code>, <code>column</code>, etc.</li>\r\n            <li><code>justify-content</code> – Horizontal alignment (main axis).</li>\r\n            <li><code>align-items</code> – Vertical alignment (cross axis).</li>\r\n            <li><code>gap</code> – Space between flex items.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .flex-container {\r\n      display: flex;\r\n      flex-direction: row;\r\n      justify-content: space-around;\r\n      align-items: center;\r\n      height: 200px;\r\n      background-color: #f0f0f0;\r\n    }\r\n\n    .flex-item {\r\n      background: #007bff;\r\n      color: white;\r\n      padding: 20px;\r\n      font-size: 18px;\r\n      border-radius: 8px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"flex-container\">\r\n    <div class=\"flex-item\">Box 1</div>\r\n    <div class=\"flex-item\">Box 2</div>\r\n    <div class=\"flex-item\">Box 3</div>\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>display: flex</code> activates Flexbox layout for the container.</li>\r\n            <li><code>justify-content: space-around</code> evenly distributes space between items.</li>\r\n            <li><code>align-items: center</code> vertically centers them inside the container.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>Flexbox is best for one-dimensional layouts (row or column).</li>\r\n            <li>Great for navigation bars, item alignment, and simple layouts.</li>\r\n            <li>Flexible and responsive by default.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "grid-intro",
+      "prev": "flexbox-intro",
+      "next": "flex-vs-grid",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ CSS Grid Introduction</h2>\r\n          <p>\r\n            <b>CSS Grid</b> is a two-dimensional layout system. It allows you to design layouts using rows and columns.\r\n            It's ideal for complete page layouts and dashboard-type structures.\r\n          </p>\r\n          <h3>Grid Container Properties:</h3>\r\n          <ul>\r\n            <li><code>display: grid</code> – Activates Grid layout.</li>\r\n            <li><code>grid-template-columns</code> – Defines number and size of columns.</li>\r\n            <li><code>grid-template-rows</code> – Defines row sizes.</li>\r\n            <li><code>gap</code> – Adds spacing between rows and columns.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .grid-container {\r\n      display: grid;\r\n      grid-template-columns: repeat(3, 1fr);\r\n      gap: 15px;\r\n      background-color: #f8f9fa;\r\n      padding: 20px;\r\n    }\r\n    .grid-item {\r\n      background-color: #28a745;\r\n      color: white;\r\n      padding: 20px;\r\n      font-size: 18px;\r\n      text-align: center;\r\n      border-radius: 6px;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"grid-container\">\r\n    <div class=\"grid-item\">1</div>\r\n    <div class=\"grid-item\">2</div>\r\n    <div class=\"grid-item\">3</div>\r\n    <div class=\"grid-item\">4</div>\r\n    <div class=\"grid-item\">5</div>\r\n    <div class=\"grid-item\">6</div>\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>grid-template-columns: repeat(3, 1fr)</code> creates 3 equal-width columns.</li>\r\n            <li><code>gap: 15px</code> adds space between the grid items.</li>\r\n          </ul>\r\n          <h3>Key Points to Note:</h3>\r\n          <ul>\r\n            <li>CSS Grid is two-dimensional – controls both rows and columns.</li>\r\n            <li>Best for overall layout structures like websites and dashboards.</li>\r\n            <li>Supports advanced placement and alignment with minimal code.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "flex-vs-grid",
+      "prev": "grid-intro",
+      "next": "css-transforms",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Flexbox vs Grid: Comparison</h2>\r\n          <table border=\"1\" cellpadding=\"8\" cellspacing=\"0\" style=\"width:100%; border-collapse:collapse;\">\r\n            <thead>\r\n              <tr style=\"background:#efefef;\">\r\n                <th>Feature</th>\r\n                <th>Flexbox</th>\r\n                <th>Grid</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr>\r\n                <td>Layout Type</td>\r\n                <td>One-dimensional (row OR column)</td>\r\n                <td>Two-dimensional (row AND column)</td>\r\n              </tr>\r\n              <tr>\r\n                <td>Best Use Case</td>\r\n                <td>Navbars, cards in a row, simple alignment</td>\r\n                <td>Complex layouts, dashboards, full page designs</td>\r\n              </tr>\r\n              <tr>\r\n                <td>Control Over Items</td>\r\n                <td>Item-level control</td>\r\n                <td>Container-level grid layout control</td>\r\n              </tr>\r\n              <tr>\r\n                <td>Learning Curve</td>\r\n                <td>Easy to learn and apply</td>\r\n                <td>More advanced concepts (areas, spans)</td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n          <h3>Summary:</h3>\r\n          <ul>\r\n            <li><b>Use Flexbox</b> when you only need layout in one direction (horizontal or vertical).</li>\r\n            <li><b>Use Grid</b> when working with rows and columns simultaneously.</li>\r\n            <li>You can combine both in complex layouts (e.g., Grid outer structure, Flex inside items).</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "css-transforms",
+      "prev": "flex-vs-grid",
+      "next": "css-transitions",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Transforms and Animations</h1>\r\n          <h2>➤ CSS Transforms</h2>\r\n          <p>\r\n            <b>CSS Transforms</b> allow elements to be visually manipulated using functions such as rotate, scale, translate, and skew. It doesn’t affect document flow—only appearance.\r\n          </p>\r\n          <h3>Common Transform Functions:</h3>\r\n          <ul>\r\n            <li><code>translate(x, y)</code> – Moves element horizontally/vertically.</li>\r\n            <li><code>rotate(angle)</code> – Rotates element by degrees.</li>\r\n            <li><code>scale(x, y)</code> – Enlarges or shrinks the element.</li>\r\n            <li><code>skew(x, y)</code> – Slants the element along axes.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .transform-box {\r\n      width: 150px;\r\n      height: 150px;\r\n      background-color: #ff5733;\r\n      color: white;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: center;\r\n      margin: 50px auto;\r\n      transform: rotate(15deg);\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"transform-box\">Rotated Box</div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>transform: rotate(15deg)</code> rotates the box by 15 degrees clockwise.</li>\r\n            <li>The element appears rotated, but still occupies the same original space in layout.</li>\r\n          </ul>\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Transforms are useful for effects like flipping cards, zooming, or rotating items.</li>\r\n            <li>They can be combined: <code>transform: rotate(15deg) scale(1.2);</code></li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "css-transitions",
+      "prev": "css-transforms",
+      "next": "css-animations",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ CSS Transitions</h2>\r\n          <p>\r\n            <b>Transitions</b> allow you to smoothly animate property changes (like color, size, etc.) over a specific duration.\r\n          </p>\r\n          <h3>Key Properties:</h3>\r\n          <ul>\r\n            <li><code>transition-property</code> – Which property to animate.</li>\r\n            <li><code>transition-duration</code> – How long the transition takes.</li>\r\n            <li><code>transition-timing-function</code> – Easing function (e.g., ease-in, linear).</li>\r\n            <li><code>transition-delay</code> – Wait time before starting transition.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    .transition-box {\r\n      width: 150px;\r\n      height: 150px;\r\n      background-color: #28a745;\r\n      transition: background-color 0.5s ease;\r\n      margin: 50px auto;\r\n    }\r\n\n    .transition-box:hover {\r\n      background-color: #218838;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"transition-box\"></div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li>When you hover over the box, the background smoothly changes color in 0.5s.</li>\r\n            <li>Transition is triggered by hover (state change).</li>\r\n          </ul>\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Only animates numeric/interpolable properties (e.g., color, width).</li>\r\n            <li>You can transition multiple properties with commas.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "css-animations",
+      "prev": "css-transitions",
+      "next": "responsive-design",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ CSS Animations</h2>\r\n          <p>\r\n            <b>CSS Animations</b> define keyframes that describe how elements change at various points in time. They can loop and run automatically.\r\n          </p>\r\n          <h3>Main Properties:</h3>\r\n          <ul>\r\n            <li><code>@keyframes</code> – Defines the animation steps.</li>\r\n            <li><code>animation-name</code> – Binds the keyframes to element.</li>\r\n            <li><code>animation-duration</code> – Time the animation takes.</li>\r\n            <li><code>animation-iteration-count</code> – Number of loops.</li>\r\n            <li><code>animation-timing-function</code> – Speed curve (ease, linear, etc.).</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    @keyframes slide {\r\n      from {\r\n        transform: translateX(0);\r\n      }\r\n      to {\r\n        transform: translateX(100px);\r\n      }\r\n    }\r\n\n    .animate-box {\r\n      width: 100px;\r\n      height: 100px;\r\n      background: #007bff;\r\n      animation: slide 2s infinite alternate;\r\n      margin: 60px auto;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"animate-box\"></div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>@keyframes slide</code> defines a movement from left to right.</li>\r\n            <li><code>animation: slide 2s infinite alternate</code> animates it every 2 seconds, back and forth.</li>\r\n          </ul>\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Animations can run automatically or be triggered.</li>\r\n            <li>You can use multiple keyframes for complex effects.</li>\r\n            <li>Great for loading indicators, motion UI, attention effects.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "responsive-design",
+      "prev": "css-animations",
+      "next": "media-query-usage",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>Media Queries</h1>\r\n          <h2>➤ Responsive Design Intro</h2>\r\n          <p>\r\n            <b>Responsive Design</b> ensures your website looks good on all devices—desktops, tablets, and mobile phones—by adapting layout and styles based on screen size.\r\n          </p>\r\n          <h3>Why Responsive Design Matters:</h3>\r\n          <ul>\r\n            <li>Improves user experience across devices.</li>\r\n            <li>Reduces need for separate mobile websites.</li>\r\n            <li>Important for SEO and accessibility.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <style>\r\n    body {\r\n      font-family: Arial;\r\n    }\r\n\n    .container {\r\n      width: 80%;\r\n      margin: auto;\r\n      background: #eee;\r\n      padding: 20px;\r\n    }\r\n\n    @media (max-width: 600px) {\r\n      .container {\r\n        width: 95%;\r\n        background: #cce5ff;\r\n      }\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"container\">\r\n    This box resizes and changes color on smaller screens.\r\n  </div>\r\n</body>\r\n</html>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li>Default style sets <code>.container</code> to 80% width.</li>\r\n            <li>For screens ≤ 600px, it uses 95% width and a different background color.</li>\r\n            <li>This helps adapt design for phones or small devices.</li>\r\n          </ul>\r\n\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Responsive design uses flexible units, media queries, and fluid layouts.</li>\r\n            <li>Helps you build a single site for all devices.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "media-query-usage",
+      "prev": "responsive-design",
+      "next": "device-specific-styles",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Media Query Usage</h2>\r\n          <p>\r\n            <b>Media Queries</b> apply different CSS rules based on the characteristics of the user’s device (screen width, orientation, resolution).\r\n          </p>\r\n          <h3>Syntax:</h3>\r\n          <code>\r\n            @media media-type and (condition) { <br>\r\n            &nbsp;&nbsp;/* CSS Rules */ <br>\r\n            }\r\n          </code>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<style>\r\n  body {\r\n    background-color: white;\r\n  }\r\n\n  @media screen and (max-width: 768px) {\r\n    body {\r\n      background-color: lightyellow;\r\n    }\r\n  }\r\n\n  @media screen and (max-width: 480px) {\r\n    body {\r\n      background-color: lightcoral;\r\n    }\r\n  }\r\n</style>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li>Default background is white.</li>\r\n            <li>On devices ≤ 768px (like tablets), it changes to light yellow.</li>\r\n            <li>On devices ≤ 480px (like phones), it changes to light coral.</li>\r\n          </ul>\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Use <code>min-width</code> for mobile-first design (scale up).</li>\r\n            <li>Use <code>max-width</code> for desktop-first design (scale down).</li>\r\n            <li>You can combine multiple conditions using <code>and</code>.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "device-specific-styles",
+      "prev": "media-query-usage",
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h2>➤ Device-Specific Styles</h2>\r\n          <p>\r\n            Media queries can also target specific **devices or orientations**, not just widths.\r\n          </p>\r\n          <h3>Common Use Cases:</h3>\r\n          <ul>\r\n            <li><b>Print styles:</b> for print-friendly versions.</li>\r\n            <li><b>Landscape/portrait:</b> detect device orientation.</li>\r\n            <li><b>High-resolution:</b> for retina displays.</li>\r\n          </ul>\r\n          <h3>Example:</h3>\r\n          "
+        },
+        {
+          "type": "editor",
+          "code": "\n<style>\r\n  @media print {\r\n    body {\r\n      font-size: 12pt;\r\n      color: black;\r\n    }\r\n  }\r\n\n  @media (orientation: landscape) {\r\n    body {\r\n      background-color: lightgreen;\r\n    }\r\n  }\r\n\n  @media (min-resolution: 2dppx) {\r\n    body {\r\n      font-weight: bold;\r\n    }\r\n  }\r\n</style>"
+        },
+        {
+          "type": "html",
+          "value": "\r\n          <h3>Explanation:</h3>\r\n          <ul>\r\n            <li><code>@media print</code> styles apply only when printing the page.</li>\r\n            <li><code>orientation: landscape</code> applies if device is held horizontally.</li>\r\n            <li><code>min-resolution: 2dppx</code> targets retina/high-DPI screens.</li>\r\n          </ul>\r\n          <h3>Key Points:</h3>\r\n          <ul>\r\n            <li>Use media types like <code>screen</code>, <code>print</code>, <code>all</code>.</li>\r\n            <li>Combine with features like width, resolution, orientation.</li>\r\n            <li>Helps optimize UX for specific hardware environments.</li>\r\n          </ul>\r\n          \r\n        "
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "prev": null,
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n          <h1>CSS Tasks</h1>\r\n          <div class=\"tasks-container\">\r\n            <a href=\"/pdf/csstask1.pdf\" target=\"_blank\"><div class=\"task-item\">Task 1</div></a>\r\n            <a href=\"/pdf/csstask2.pdf\" target=\"_blank\"><div class=\"task-item\">Task 2</div></a>\r\n            <a href=\"/pdf/csstask3.pdf\" target=\"_blank\"><div class=\"task-item\">Task 3</div></a>\r\n            <a href=\"/pdf/csstask4.pdf\" target=\"_blank\"><div class=\"task-item\">Task 4</div></a>\r\n            <a href=\"/pdf/csstask5.pdf\" target=\"_blank\"><div class=\"task-item\">Task 5</div></a>\r\n          </div>\r\n          <div class=\"nav-buttons\">\r\n            <a href=\"#\"><button>🏁 End of Module</button></a>\r\n             <a href=\"/css-levels\"><button >Take Test</button></a>\r\n          </div>\r\n      </div>\r\n      "
+        }
+      ]
+    }
+  ]
+}

@@ -1,53 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/ActionBar.css";
 
 const Action = () => {
-  const actions = [
-    {
-      type: "coin",
-      icon: "/images/react_coin.png",
-      value: 0,
-      alt: "Coin",
-    },
-    {
-      type: "user",
-      iconClass: "fa-solid fa-circle-user fa-xl",
-      link: "../html/signin.html",
-      label: "Login",
-    },
-  ];
+  // The coin balance is shared with the quizzes and the Fun Zone.
+  const [coins, setCoins] = useState(
+    () => parseInt(localStorage.getItem("coins"), 10) || 0
+  );
+
+  useEffect(() => {
+    const sync = () => setCoins(parseInt(localStorage.getItem("coins"), 10) || 0);
+    window.addEventListener("storage", sync);
+    return () => window.removeEventListener("storage", sync);
+  }, []);
 
   return (
     <div className="action_bar">
-      {actions.map((action, index) => (
-        <div
-          key={index}
-          className={action.type === "coin" ? "action_container1" : "action_container"}
-        >
-          {action.type === "coin" ? (
-            <>
-              <img src={action.icon} alt={action.alt} className="icon_coin" />
-              <span className="action_name1">{action.value}</span>
-            </>
-          ) : (
-            <>
-              <i className={action.iconClass} style={{ color: "white" }}></i>
-              <span className="action_name">
-                <a
-                  href={action.link}
-                  style={{
-                    color: "white",
-                    textDecoration: "none",
-                    fontWeight: 500,
-                  }}
-                >
-                  {action.label}
-                </a>
-              </span>
-            </>
-          )}
-        </div>
-      ))}
+      <div className="action_container1">
+        <img src="/images/react_coin.png" alt="Coin" className="icon_coin" />
+        <span className="action_name1">{coins}</span>
+      </div>
+
+      <div className="action_container">
+        <i className="fa-solid fa-circle-user fa-xl" style={{ color: "white" }}></i>
+        <span className="action_name">
+          <Link
+            to="/signin"
+            style={{ color: "white", textDecoration: "none", fontWeight: 500 }}
+          >
+            Login
+          </Link>
+        </span>
+      </div>
     </div>
   );
 };

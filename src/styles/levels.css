@@ -129,9 +129,8 @@
 }
 
 .level-card.locked {
-  /* opacity: 0.6; */
-  pointer-events: none;
-  cursor: default;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .level-title {
@@ -205,4 +204,15 @@
     width: 30px;
     height: 30px;
   }
+}
+
+/* Inline notice shown when a locked level is tapped (replaces the old alert). */
+.quiz-levels-container .levels-notice {
+  margin: 0 0 18px;
+  color: #ffd6d6;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.5);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
 }

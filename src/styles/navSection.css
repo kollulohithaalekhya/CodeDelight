@@ -1,7 +1,10 @@
-.nav__bar {
+.nav_bar {
   display: flex;
-  justify-content: space-evenly;
-  min-width: 500px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;   /* the bar has room for four links; wrapping just
+                          pushed "Fun Zone" onto a second line */
+  flex-shrink: 0;
 }
 
 .nav__link {
@@ -9,8 +12,9 @@
   letter-spacing: 0.7px;
   color: white;
   font-weight: 600;
-  padding: 10px 18px;
-  margin: 0 8px;
+  white-space: nowrap;
+  padding: 10px 14px;
+  margin: 0 4px;
   border-radius: 8px;
   position: relative;
   text-decoration: none;
@@ -42,9 +46,8 @@
 .nav__link:hover::after {
   width: 70%;
 }
-.nav__bar {
-  flex-wrap: wrap;
-  gap: 1rem;
+.nav_bar {
+  gap: 0.25rem;
 }
 .nav__link {
   transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;

@@ -1,63 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/FooterSection.css";
 
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "Courses", to: "/course" },
+  { label: "Compilers", to: "/compiler" },
+  { label: "Funzone", to: "/funzone" },
+  { label: "Profile", to: "/profile" },
+];
+
+const socialLinks = [
+  { href: "https://facebook.com", label: "Facebook", icon: "fab fa-facebook fa-lg" },
+  { href: "https://instagram.com", label: "Instagram", icon: "fab fa-instagram fa-lg" },
+  { href: "https://google.com", label: "Google", icon: "fab fa-google fa-lg" },
+];
+
 const Footer = () => {
-  const quickLinks = ["Home", "Courses", "Compilers", "Funzone", "Profile"];
-
-  const socialLinks = [
-    {
-      href: "https://facebook.com",
-      label: "Facebook",
-      icon: "fab fa-facebook fa-lg",
-    },
-    {
-      href: "https://instagram.com",
-      label: "Instagram",
-      icon: "fab fa-instagram fa-lg",
-    },
-    {
-      href: "https://google.com",
-      label: "Google",
-      icon: "fab fa-google fa-lg",
-    },
-  ];
-
   return (
     <footer>
       <div className="footer-container">
-        {/* Left Section */}
-        <div className="footer-section">
+        {/* Left */}
+        <div className="footer-section footer-about">
           <div className="footer-logo">Code Delight</div>
           <p>Learn. Play. Code. A fun way to become a coding pro!</p>
         </div>
 
-        {/* Middle Section */}
-        <div className="footer-section">
-          <h4>Quick Links</h4>
-          <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
-            {quickLinks.map((link, index) => (
-              <a href="#" key={index}>{link}</a>
-            ))}
+        {/* Middle: Quick Links and Follow Us sit side by side */}
+        <div className="footer-section footer-middle">
+          <div className="footer-links">
+            <h4>Quick Links</h4>
+            <nav className="footer-links-list">
+              {quickLinks.map((link) => (
+                <Link key={link.to} to={link.to}>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
-          <div style={{ marginTop: "1rem" }}>
+          <div className="footer-social">
             <h4>Follow Us</h4>
-            <div
-              style={{
-                display: "flex",
-                gap: "1rem",
-                marginTop: "0.5rem",
-                alignContent: "center",
-                justifyContent: "center",
-              }}
-            >
-              {socialLinks.map((social, index) => (
+            <div className="footer-social-icons">
+              {socialLinks.map((social) => (
                 <a
-                  key={index}
+                  key={social.label}
                   href={social.href}
                   target="_blank"
+                  rel="noreferrer"
                   aria-label={social.label}
-                  style={{ color: "#ccc" }}
                 >
                   <i className={social.icon}></i>
                 </a>
@@ -66,8 +57,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="footer-section">
+        {/* Right */}
+        <div className="footer-section footer-contact">
           <h4>Contact</h4>
           <p>Email: support@codedelight.com</p>
           <p>Phone: +91 98765 43210</p>

@@ -1,5 +1,5 @@
 
-* {
+.auth-page, .auth-page * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -38,18 +38,18 @@
       padding: 30px;
     }
 
-    form {
+    .auth-page form {
       width: 100%;
       max-width: 330px;
       color: #fff;
     }
 
-    form h2 {
+    .auth-page form h2 {
       font-size: 26px;
       margin-bottom: 20px;
     }
 
-    form label {
+    .auth-page form label {
       display: block;
       margin: 15px 0 5px;
       font-size: 14px;
@@ -206,7 +206,7 @@ color: white;
         display: none;
       }
 
-      form h2 {
+      .auth-page form h2 {
         font-size: 22px;
       }
 

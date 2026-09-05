@@ -47,10 +47,12 @@ canvas {
    the old global `body { display:flex }` centring (which now lives only on
    pages that opt in). Two-class selector keeps specificity above the generic
    `.container` rules shared with the levels pages. */
-.container.traversal-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px 20px;
+/* The traversal pages carry their own dark background; the app background
+   behind them comes from index.html. */
+.traversal-page {
+  background: linear-gradient(135deg, #061829, #0b1e3d);
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* Traversal tree/drop-zone responsiveness (source files have no media
@@ -99,4 +101,22 @@ canvas {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+/* Header row: fixed-size logo and actions, flexible search, non-wrapping nav.
+   Without this the nav links wrapped onto a second line on wide screens. */
+.head > .logo-container,
+.head > .action_bar,
+.head > .menu_toggle {
+  flex: 0 0 auto;
+}
+
+.head > .search_bar {
+  margin: 0 16px;
+}
+
+@media (max-width: 1600px) {
+  .head {
+    gap: 8px;
+    padding: 0 2%;
+  }
 }

@@ -1,0 +1,265 @@
+{
+  "key": "dsa",
+  "title": "Learn DSA the Right Way",
+  "subtitle": "Structures, algorithms and the thinking behind them.",
+  "quizPath": "/dsa-levels",
+  "sidebar": {
+    "entries": [
+      {
+        "type": "link",
+        "id": "introduction",
+        "label": "Introduction to DSA"
+      },
+      {
+        "type": "group",
+        "label": "Arrays",
+        "items": [
+          {
+            "id": "basics",
+            "label": "Introduction to Arrays"
+          },
+          {
+            "id": "editors",
+            "label": "Sorting algorithms"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Strings",
+        "items": [
+          {
+            "id": "attributes",
+            "label": "Introduction to Strings"
+          },
+          {
+            "id": "block_inline",
+            "label": "String Algorithms"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Linked Lists",
+        "items": [
+          {
+            "id": "headings",
+            "label": "Intro to Linked List"
+          },
+          {
+            "id": "parag",
+            "label": "Linked List Concepts"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Stacks & Queues",
+        "items": [
+          {
+            "id": "lists",
+            "label": "Stacks"
+          },
+          {
+            "id": "types",
+            "label": "Queues"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Trees",
+        "items": [
+          {
+            "id": "hyper",
+            "label": "Introduction to Trees"
+          },
+          {
+            "id": "tree-types",
+            "label": "Tree Concepts"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Graphs",
+        "items": [
+          {
+            "id": "graphs",
+            "label": "Introduction to Graphs"
+          },
+          {
+            "id": "graph-concepts",
+            "label": "Graph Concepts"
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "label": "Top Questions",
+        "items": [
+          {
+            "id": "Questions",
+            "label": "Practice Questions"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "prev": null,
+      "next": "basics",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n                   <h1>What is Data Structure</h1>\r\n                   <p>A data structure is a systematic way of organizing and storing data in a computer so that it can be accessed and used efficiently. It defines the relationship between the data and the operations that can be performed on it. Common data structures include arrays, linked lists, stacks, queues, trees, graphs, and hash tables. Each of these structures is suited for specific kinds of tasks—such as fast searching, efficient insertion or deletion, or managing hierarchical data. Choosing the right data structure is crucial for writing efficient programs and solving computational problems effectively.\r\n</p>\r\n              <h1>What is Algorithm</h1>\r\n              <p>An algorithm is a step-by-step procedure or a set of rules designed to solve a specific problem or perform a task. It is like a recipe in cooking—clearly defined instructions that, when followed, lead to the desired outcome. In computer science, algorithms are used to process data, perform calculations, automate reasoning, and make decisions. A good algorithm is not only correct but also efficient, meaning it uses the least possible time and resources to get the result. Algorithms are the foundation of programming and are essential for tasks such as searching, sorting, and optimization.\r\n</p>\r\n                   \r\n\r\n                  \r\n             <h2>Data Structure together with Algorithms</h2>\r\n             <p>Data structures and algorithms (DSA) go hand in hand. A data structure is not worth much if you cannot search through it or manipulate it efficiently using algorithms, and the algorithms in this tutorial are not worth much without a data structure to work on.\r\n\r\nDSA is about finding efficient ways to store and retrieve data, to perform operations on data, and to solve specific problems.</p>\r\n               <center><img src=\"/images/intro.png\"/></center>\r\n              \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "basics",
+      "prev": "introduction",
+      "next": "editors",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n            <h1>Arrays</h1>\r\n            <p>An array is a data structure used to store multiple elements.\r\n\r\n            Arrays are used by many algorithms.Arrays are indexed, meaning that each element in the array has an index, a number that says where in the array the element is located. The programming languages in this tutorial (Python, Java, and C) use zero-based indexing for arrays, meaning that the first element in an array can be accessed at index 0.</p>\r\n           \r\n\r\n            <h1>Types of Arrays</h1>\r\n            <ol>\r\n              <li>One-Dimensional Array – A simple list of elements.\r\n                <ul>Example: int arr[5];</ul>\r\n              </li>\r\n              <li>Two-Dimensional Array – Used like a matrix or table.\r\n                <ul>Example: int matrix[3][3];</ul>\r\n              </li>\r\n              <li>Multi-Dimensional Array – Arrays with more than two dimensions.\r\n                <ul>Example: int arr[2][3][4];</ul>\r\n              </li>\r\n            </ol>\r\n            <br>\r\n            <center><img src=\"/images/array_syntax.png\"></center>\r\n             <h1>Common Operations on Arrays</h1>\r\n             <ul>\r\n              <li>Traverse all elements</li>\r\n              <li>Insert or update an element</li>\r\n              <li>Delete an element (not directly possible in static arrays)</li>\r\n              <li>Search for an element</li>\r\n              <li>Sort the array</li>\r\n             </ul>\r\n            \r\n             <h2>Advantages of Arrays</h2>\r\n             <ul>\r\n              <li>Fast access using index</li>\r\n              <li>Efficient storage and retrieval of data</li>\r\n              <li>Helpful for creating complex data structures like matrices, stacks, and queues</li>\r\n             </ul>\r\n            <h1>Limitations of Arrays</h1>\r\n            <ul>\r\n              <li>Fixed size (can’t grow or shrink)</li>\r\n              <li>Difficult to insert/delete elements in the middle</li>\r\n              <li>All elements must be of the same type</li>\r\n            </ul>\r\n\r\n             <h1>When to use Arrays</h1>\r\n\r\n             <ul>\r\n              <li>Know the number of elements in advance</li>\r\n              <li>Need fast access using index</li>\r\n              <li>Want to store similar types of data</li>\r\n             </ul>\r\n              \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "editors",
+      "prev": "basics",
+      "next": "attributes",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n              <h1>Array Sorting</h1>\r\n  <p>Array sorting is the process of arranging elements of an array in a particular order such as ascending or descending. Sorting helps in improving the efficiency of searching, displaying, and analyzing data.</p>\r\n\r\n  <p>Sorting techniques are mainly divided into two categories:</p>\r\n  <ol>\r\n    <li><strong>Built-in Sorting</strong> – Most programming languages provide inbuilt methods to sort arrays easily.</li>\r\n    <li><strong>Manual Sorting (Algorithm-based)</strong> – These require custom code using popular sorting algorithms.</li>\r\n  </ol>\r\n\r\n  <h2>Sorting Algorithms List</h2>\r\n  <p>Below are some commonly used array sorting algorithms that are helpful for both beginners and advanced learners:</p>\r\n  <div class=\"content\">\r\n    <h3>Table of Content</h3>\r\n    <ul>\r\n      <li>1. Bubble Sort</li>\r\n      <li>2. Selection Sort</li>\r\n      <li>3. Insertion Sort</li>\r\n      <li>4. Merge Sort</li>\r\n      <li>5. Quick Sort</li>\r\n    </ul>\r\n  </div>\r\n\r\n  <h2>1. Bubble Sort</h2>\r\n  <p>Bubble Sort repeatedly compares and swaps adjacent elements if they are in the wrong order. This process is repeated until the array is sorted.</p>\r\n  <h3>Example (C++):</h3>\r\n  <pre><code>\r\nvoid bubbleSort(int arr[], int n) {\r\n  for (int i = 0; i &lt; n-1; i++) {\r\n    for (int j = 0; j &lt; n-i-1; j++) {\r\n      if (arr[j] &gt; arr[j+1]) {\r\n        swap(arr[j], arr[j+1]);\r\n      }\r\n    }\r\n  }\r\n}\r\n  </code></pre>\r\n  <center><img src=\"/images/bubble-sort.png\"/></center>\r\n\r\n  <h2>2. Selection Sort</h2>\r\n  <p>This algorithm finds the minimum value from the unsorted part of the array and places it at the correct position in each iteration.</p>\r\n  <center><img src=\"/images/selection-sort.png\"/></center>\r\n\r\n  <h2>3. Insertion Sort</h2>\r\n  <p>Insertion Sort builds the final sorted array one element at a time by inserting each element into its correct position in a growing sorted portion.</p>\r\n  <center><img src=\"/images/insertion-sort.png\"/></center>\r\n\r\n  <h2>4. Merge Sort</h2>\r\n  <p>Merge Sort is a divide-and-conquer algorithm. It divides the array into halves, recursively sorts them, and then merges the sorted halves into one.</p>\r\n  <center><img src=\"/images/merge-sort.png\"/></center>\r\n\r\n  <h2>5. Quick Sort</h2>\r\n  <p>Quick Sort picks a pivot element and partitions the array such that elements smaller than the pivot come before it and larger come after. It then recursively sorts both parts.</p>\r\n  <center><img src=\"/images/quick-sort.png\"/></center>\r\n\r\n  <h2>Sorting Algorithms Comparison</h2>\r\n  <div class=\"scroll-wrapper\">\r\n    <table class=\"comparison-table\">\r\n      <thead>\r\n        <tr>\r\n          <th>Algorithm</th>\r\n          <th>Best Case</th>\r\n          <th>Worst Case</th>\r\n          <th>Time Complexity</th>\r\n          <th>Space Complexity</th>\r\n          <th>Stable</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td><b>Bubble Sort</b></td>\r\n          <td>O(n)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(1)</td>\r\n          <td>Yes</td>\r\n        </tr>\r\n        <tr>\r\n          <td><b>Selection Sort</b></td>\r\n          <td>O(n²)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(1)</td>\r\n          <td>No</td>\r\n        </tr>\r\n        <tr>\r\n          <td><b>Insertion Sort</b></td>\r\n          <td>O(n)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(1)</td>\r\n          <td>Yes</td>\r\n        </tr>\r\n        <tr>\r\n          <td><b>Merge Sort</b></td>\r\n          <td>O(n log n)</td>\r\n          <td>O(n log n)</td>\r\n          <td>O(n log n)</td>\r\n          <td>O(n)</td>\r\n          <td>Yes</td>\r\n        </tr>\r\n        <tr>\r\n          <td><b>Quick Sort</b></td>\r\n          <td>O(n log n)</td>\r\n          <td>O(n²)</td>\r\n          <td>O(n log n)</td>\r\n          <td>O(log n)</td>\r\n          <td>No</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n  <h2>How to Choose the Right Sorting Algorithm?</h2>\r\n  <p>When deciding which sorting technique to use, consider these factors:</p>\r\n  <p>1. <strong>Data Size:</strong> For small arrays, simple algorithms like Bubble or Insertion Sort work well.</p>\r\n  <p>2. <strong>Performance:</strong> For large datasets, prefer Merge or Quick Sort due to better time complexity.</p>\r\n  <p>3. <strong>Stability:</strong> Use stable algorithms if maintaining the order of equal elements is important.</p>\r\n\r\n  <h2>Conclusion</h2>\r\n  <p>Sorting arrays is an essential programming concept that helps organize data effectively. \r\n    Learning various sorting techniques gives a deeper understanding of how data behaves and how to \r\n    optimize programs for speed and memory. Choose the algorithm that best fits your data and requirements.</p>\r\n\r\n              <div class=\"nav-buttons\">\r\n  <a href=\"#\"><button onclick=\"showContent('basics')\">Previous</button></a>\r\n <a href=\"#\"><button onclick=\"showContent('attributes')\">Next &gt;</button></a>\r\n</div>\r\n\r\n               \r\n           "
+        }
+      ]
+    },
+    {
+      "id": "attributes",
+      "prev": "editors",
+      "next": "block_inline",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Strings</h1>\r\n  <p><b>Strings</b> are a basic data type used in almost every programming language. A string is a sequence of characters that represent text, such as words, sentences, or symbols. They are enclosed in quotes — either single, double, or backticks, depending on the language.</p>\r\n  <p>Strings can include letters, digits, whitespace, and special characters. They are widely used for displaying messages, processing input, storing data, and working with text files.</p>\r\n\r\n  <h3>Syntax:</h3>\r\n  <div class=\"syntax\">\r\n    <p>Example: In Python, <code>name = \"Hello World\"</code> or in C++, <code>string name = \"Hello\";</code></p>\r\n  </div>\r\n\r\n  <h2>Code Example of Using Strings</h2>\r\n  <p>In most languages, you declare a string using a variable and then use it in various operations.</p>\r\n  <p>Example: A string like \"Welcome to Programming\" can be stored in a variable and printed using <code>print()</code> in Python, <code>cout</code> in C++, or <code>System.out.println()</code> in Java.</p>\r\n\r\n  <h4>In this example:</h4>\r\n  <ul>\r\n    <li><b>Tag:</b> Refers to the portion of code where operations are written, such as inside a function or method.</li>\r\n    <li><b>Variable:</b> Stores the string value, like <code>greeting = \"Hello\"</code>.</li>\r\n    <li><b>Purpose:</b> Demonstrates how text can be stored, manipulated, and displayed using programming syntax.</li>\r\n  </ul>\r\n\r\n  <h2>1. String Concatenation</h2>\r\n  <p>String concatenation is the process of joining two or more strings into one.</p>\r\n  <p><b>Example:</b> If <code>first = \"Hello\"</code> and <code>second = \"World\"</code>, then <code>first + \" \" + second</code> will give \"Hello World\".</p>\r\n  <p>In Python, use <code>+</code>. In C++, you can use <code>+</code> with <code>string</code> types. In Java, use <code>+</code> as well.</p>\r\n\r\n  <h2>2. String Length</h2>\r\n  <p>The length of a string refers to how many characters it contains, including spaces.</p>\r\n  <p><b>Example:</b> The string \"OpenAI\" has a length of 6. In Python, use <code>len(\"OpenAI\")</code>. In C++, use <code>name.length()</code>. In Java, use <code>name.length()</code>.</p>\r\n\r\n  <h2>3. String Templates or Interpolation</h2>\r\n  <p>Interpolation means embedding variables inside a string, making the string dynamic.</p>\r\n  <p><b>Example:</b> If <code>name = \"Alex\"</code>, then using a template like <code>\"Hello, \" + name</code> or <code>f\"Hello, {name}\"</code> (in Python) will return \"Hello, Alex\".</p>\r\n  <p>In C++, you concatenate manually; in JavaScript or Python, template syntax makes it easier to read and manage.</p>\r\n\r\n  <h2>4. Escape Characters</h2>\r\n  <p>Escape characters are used when you want to include quotes, new lines, or tabs within a string.</p>\r\n  <p><b>Example:</b> To include double quotes inside a string like <code>\"He said, \\\"Hi!\\\"\"</code>, use the backslash <code>\\</code> before the quote.</p>\r\n  <p>For new lines, use <code>\\n</code>. For tabs, use <code>\\t</code>.</p>\r\n\r\n  <h2>Important Points About Strings</h2>\r\n  <h3>1. Strings Must Be Quoted:</h3>\r\n  <p>All strings must be enclosed in quotation marks. This tells the compiler or interpreter that it's text and not code.</p>\r\n\r\n  <h3>2. Strings Are Immutable:</h3>\r\n  <p>Once a string is created, it cannot be modified. Instead, any change creates a new string. For example, converting \"Hello\" to uppercase returns a new string \"HELLO\" without changing the original.</p>\r\n\r\n  <h3>3. Templates Improve Readability:</h3>\r\n  <p>Using templates or interpolation makes code cleaner and avoids repetitive concatenation operations.</p>\r\n\r\n  <h2>Summing up!</h2>\r\n  <p>Strings are a fundamental part of programming. They are used for displaying messages, processing input, and storing or transferring textual data. Understanding how to manipulate strings efficiently is essential for writing clean and effective code.</p>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "block_inline",
+      "prev": "attributes",
+      "next": "headings",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>String Algorithms</h1>\r\n  <p>String algorithms are used to solve problems involving sequences of characters. These algorithms help in searching, comparing, matching, and transforming strings efficiently. Mastery of string algorithms is crucial for solving real-world problems in text processing, pattern matching, and computational biology.</p>\r\n\r\n  \r\n\r\n  <p>String problems often involve operations such as checking prefixes/suffixes, finding substrings, comparing strings, and transforming or analyzing the text.</p>\r\n\r\n  <h3>Algorithm Overview:</h3>\r\n  <p>String algorithms rely on character indexing, pattern recognition, and advanced techniques such as hashing or prefix trees. Efficient string handling is important in web development, compilers, bioinformatics, and search engines.</p>\r\n\r\n  <h2>Common String Algorithms</h2>\r\n  <p>These algorithms are frequently used for substring search, pattern matching, text processing, and string manipulation tasks.</p>\r\n\r\n  <ul>\r\n    <li>Naive Pattern Searching</li>\r\n    <li>KMP (Knuth-Morris-Pratt) Algorithm</li>\r\n    <li>Rabin-Karp Algorithm</li>\r\n    <li>Manacher's Algorithm (for longest palindromic substring)</li>\r\n    <li>Z-Algorithm (pattern searching)</li>\r\n    <li>Suffix Array and LCP Array</li>\r\n    <li>Trie (Prefix Tree)</li>\r\n    <li>Boyer-Moore Algorithm</li>\r\n    <li>Aho-Corasick Algorithm (multiple pattern matching)</li>\r\n    <li>Rolling Hash (used in Rabin-Karp)</li>\r\n    <li>Levenshtein Distance (edit distance)</li>\r\n    <li>Knuth's Shuffle (Fisher-Yates)</li>\r\n  </ul>\r\n\r\n  <h3>KMP Algorithm:</h3>\r\n  <p>The KMP algorithm is used for efficient pattern searching. It preprocesses the pattern using a longest prefix-suffix (LPS) array and skips unnecessary character comparisons.</p>\r\n\r\n  <h3>Syntax:</h3>\r\n  <div class=\"syntax\">\r\n    Input format: a main text string and a pattern string to search\r\n  </div>\r\n\r\n  <h2>Trie and Pattern Matching</h2>\r\n  <p>Trie is a special tree-based data structure used to store a dynamic set of strings. It is particularly efficient for tasks like prefix matching, autocomplete, and dictionary word lookup.</p>\r\n\r\n  <ul>\r\n    <li>Insert</li>\r\n    <li>Search</li>\r\n    <li>Prefix Check</li>\r\n    <li>Autocomplete Suggestions</li>\r\n    <li>Count Words with a Given Prefix</li>\r\n  </ul>\r\n\r\n  <h3>Manacher’s Algorithm:</h3>\r\n  <p>Used for finding the longest palindromic substring in linear time. It works by transforming the original string and expanding around each character as a potential center.</p>\r\n\r\n  <h3>Syntax:</h3>\r\n  <div class=\"syntax\">\r\n    Input format: a string for which the longest palindromic substring is to be found\r\n  </div>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "headings",
+      "prev": "block_inline",
+      "next": "parag",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h2>Introduction to Linked Lists</h2>\r\n  <p>\r\n    <b>Linked Lists</b> are a fundamental data structure used to store collections of elements. \r\n    Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, each element (called a node) contains data and a reference (or link) to the next node in the sequence.\r\n  </p>\r\n  <ul>\r\n    <li>Linked lists are dynamic in nature, allowing efficient insertion and deletion of elements without shifting.</li>\r\n    <li>They are widely used in scenarios where memory reallocation is expensive or frequent modifications are required.</li>\r\n  </ul>\r\n\r\n  <h3>Key Components of a Linked List:</h3>\r\n  <ul>\r\n    <li><b>Node:</b> The basic building block that contains data and a pointer to the next node.</li>\r\n    <li><b>Head:</b> A reference to the first node in the list.</li>\r\n    <li><b>Pointer (next):</b> A reference within each node that points to the next node in the sequence.</li>\r\n  </ul>\r\n\r\n  <h2>Types of Linked Lists</h2>\r\n  <p>Linked lists come in different variations based on how the nodes are connected:</p>\r\n\r\n  <div>\r\n    <h2>Singly Linked List</h2>\r\n    <ul>\r\n      <li>Each node contains data and a reference to the next node only.</li>\r\n      <li>Traversal is one-way, starting from the head and moving forward.</li>\r\n      <li>Simple to implement and requires less memory per node.</li>\r\n    </ul>\r\n  </div>\r\n\r\n  <div>\r\n    <h2>Doubly Linked List</h2>\r\n    <ul>\r\n      <li>Each node contains data, a reference to the next node, and a reference to the previous node.</li>\r\n      <li>Allows traversal in both forward and backward directions.</li>\r\n      <li>Uses more memory but provides more flexibility in operations.</li>\r\n    </ul>\r\n  </div>\r\n\r\n  <div>\r\n    <h2>Circular Linked List</h2>\r\n    <ul>\r\n      <li>The last node of the list points back to the first node.</li>\r\n      <li>Can be singly or doubly circular.</li>\r\n      <li>Useful for applications requiring continuous looping through the list.</li>\r\n    </ul>\r\n  </div>\r\n\r\n  <h2>Why Use Linked Lists?</h2>\r\n  <ul>\r\n    <li><b>Dynamic Size:</b> Linked lists can grow or shrink at runtime, unlike arrays with fixed size.</li>\r\n    <li><b>Efficient Insert/Delete:</b> Inserting or deleting elements (especially in the middle) is faster than arrays since no shifting is needed.</li>\r\n    <li><b>Memory Utilization:</b> Memory is allocated as needed, avoiding unused space as in static arrays.</li>\r\n  </ul>\r\n\r\n  <h2>Limitations of Linked Lists</h2>\r\n  <ul>\r\n    <li><b>No Direct Access:</b> Elements must be accessed sequentially from the head, making it slower than arrays for random access.</li>\r\n    <li><b>Extra Memory:</b> Each node stores additional pointer(s), consuming more memory.</li>\r\n    <li><b>More Complex Implementation:</b> Managing pointers during insertions and deletions requires careful handling to avoid broken links.</li>\r\n  </ul>\r\n\r\n  <h2>Applications of Linked Lists</h2>\r\n  <ul>\r\n    <li>Implementing stacks and queues</li>\r\n    <li>Undo/Redo functionality in editors</li>\r\n    <li>Navigation systems (forward/backward)</li>\r\n    <li>Hash tables using chaining</li>\r\n    <li>Dynamic memory allocation</li>\r\n  </ul>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "parag",
+      "prev": "headings",
+      "next": "lists",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Linked List Concepts</h1>\r\n  <p>\r\n    A <b>Linked List</b> is a linear data structure where each element is a separate object, called a node. \r\n    Each node contains two parts: the data and a reference (or pointer) to the next node in the sequence.\r\n  </p>\r\n\r\n  <h3>Structure of a Linked List</h3>\r\n  <div class=\"syntax\">\r\n    <p>Node → Data | Next</p>\r\n  </div>\r\n\r\n  <h3>How Linked Lists Work?</h3>\r\n  <p>Linked Lists store elements in nodes, and each node links to the next one, creating a chain-like structure:</p>\r\n  <ul>\r\n    <li>The first node is called the <b>head</b>. It is the entry point of the list.</li>\r\n    <li>Each node stores its own data and a pointer to the next node.</li>\r\n    <li>The last node’s pointer is <b>null</b>, indicating the end of the list.</li>\r\n  </ul>\r\n\r\n  <h2>Why Use Linked Lists?</h2>\r\n  <p>Linked Lists offer flexibility in memory usage and ease of inserting/removing nodes compared to arrays:</p>\r\n  <ul>\r\n    <li>Dynamic size — memory is allocated as needed.</li>\r\n    <li>Efficient insertions/deletions without shifting elements.</li>\r\n    <li>Better performance in applications that require frequent additions or removals.</li>\r\n  </ul>\r\n\r\n  <h3>Properties of Linked Lists</h3>\r\n  <ul>\r\n    <li>Sequential access — elements must be traversed one by one from the head.</li>\r\n    <li>Memory efficient for unpredictable list sizes.</li>\r\n    <li>Can be extended into various forms like circular or doubly linked lists.</li>\r\n  </ul>\r\n\r\n  <h2>\r\n    Singly Linked List\r\n  </h2>\r\n  <p>A <b>Singly Linked List</b> allows traversal in one direction. Each node points to the next node.</p>\r\n\r\n  <h3>Structure:</h3>\r\n  <div class=\"syntax\">\r\n    <p>Head → Node1 → Node2 → Node3 → null</p>\r\n  </div>\r\n\r\n  <h2>\r\n    Doubly Linked List\r\n  </h2>\r\n  <p>A <b>Doubly Linked List</b> allows traversal in both directions. Each node has pointers to both the next and previous nodes.</p>\r\n\r\n  <h3>Structure:</h3>\r\n  <div class=\"syntax\">\r\n    <p>null ← Node1 ⇄ Node2 ⇄ Node3 → null</p>\r\n  </div>\r\n\r\n  <h2>\r\n    Circular Linked List\r\n  </h2>\r\n  <p>In a <b>Circular Linked List</b>, the last node connects back to the head node, forming a circle. It can be singly or doubly circular.</p>\r\n\r\n  <h3>Structure:</h3>\r\n  <div class=\"syntax\">\r\n    <p>Node1 → Node2 → Node3 → ... → Node1 (repeats)</p>\r\n  </div>\r\n\r\n  <h3>Common Mistakes to Avoid</h3>\r\n  <ol>\r\n    <li>Not updating head/tail pointers when inserting or deleting nodes.</li>\r\n    <li>Breaking links during node manipulation leading to data loss.</li>\r\n    <li>Forgetting to handle null references during traversal.</li>\r\n  </ol>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "prev": "parag",
+      "next": "types",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Stacks in Data Structures</h1>\r\n  <p>\r\n    A <b>Stack</b> is a linear data structure that stores elements in a sequential manner and follows the \r\n    <b>LIFO (Last In First Out)</b> principle. This means the last element inserted is the first one to be removed.\r\n    Imagine a stack of plates — you add to the top and also remove from the top.\r\n  </p>\r\n\r\n  <h1>Characteristics of a Stack</h1>\r\n  <p>Stacks have several defining characteristics that make them useful in many applications:</p>\r\n  <ol>\r\n    <li><b>LIFO Behavior:</b> Last item added is the first to be removed.</li>\r\n    <li><b>Top Access Only:</b> Only the topmost item can be accessed at any time.</li>\r\n    <li><b>Simple Operations:</b> Primary operations are push (add), pop (remove), peek (view top), and isEmpty.</li>\r\n  </ol>\r\n\r\n  <h2>Stack Operations</h2>\r\n  <p>Here are the common operations associated with a stack:</p>\r\n  <ul>\r\n    <li><b>push(x):</b> Adds element <code>x</code> to the top of the stack.</li>\r\n    <li><b>pop():</b> Removes the topmost element from the stack.</li>\r\n    <li><b>peek():</b> Returns the top element without removing it.</li>\r\n    <li><b>isEmpty():</b> Returns true if the stack has no elements.</li>\r\n  </ul>\r\n\r\n  <h2>Stack Implementation</h2>\r\n  <p>A stack can be implemented using:</p>\r\n  <ul>\r\n    <li><b>Arrays:</b> Simple and fast, but fixed in size.</li>\r\n    <li><b>Linked List:</b> Flexible and dynamic size, better for unknown limits.</li>\r\n  </ul>\r\n\r\n  <h2>Applications of Stacks</h2>\r\n  <p>Stacks are widely used in many real-world and technical problems:</p>\r\n  <ul>\r\n    <li>Reversing a word or string</li>\r\n    <li>Expression evaluation (Infix, Postfix, Prefix)</li>\r\n    <li>Backtracking problems (e.g., maze solving)</li>\r\n    <li>Undo/Redo functionality in text editors</li>\r\n    <li>Function call stack in programming languages</li>\r\n    <li>Checking for balanced parentheses in expressions</li>\r\n  </ul>\r\n\r\n  <h2>Stack Visualization</h2>\r\n  <div class=\"syntax\">\r\n    <p>\r\n      Top → [ 9 ]<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 6 ]<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 3 ]<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 1 ] ← Bottom\r\n    </p>\r\n  </div>\r\n\r\n  <h2>Advantages of Stack</h2>\r\n  <ul>\r\n    <li>Easy to implement and use with limited operations</li>\r\n    <li>Efficient memory use in recursive functions</li>\r\n    <li>Provides a structured way to solve expression-based problems</li>\r\n  </ul>\r\n\r\n  <h2>Limitations</h2>\r\n  <ul>\r\n    <li>Restricted access — only the top is available</li>\r\n    <li>Stack Overflow if it grows beyond the memory limit (especially in static arrays)</li>\r\n  </ul>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "prev": "lists",
+      "next": "hyper",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Queues in Data Structures</h1>\r\n  <p>\r\n    A <b>Queue</b> is a linear data structure that follows the <b>FIFO</b> (First In First Out) principle.\r\n    This means that the element inserted first will be the one to be removed first — similar to a queue\r\n    of people at a ticket counter.\r\n  </p>\r\n\r\n  <h2>Real-World Analogy</h2>\r\n  <p>\r\n    Think of a queue like a line at a grocery store. The first person who arrives is served first,\r\n    and new people join at the end of the line.\r\n  </p>\r\n\r\n  <h2>Key Operations in a Queue</h2>\r\n  <ul>\r\n    <li><b>Enqueue:</b> Adds an element to the rear (end) of the queue.</li>\r\n    <li><b>Dequeue:</b> Removes an element from the front of the queue.</li>\r\n    <li><b>Front:</b> Returns the first element of the queue without removing it.</li>\r\n    <li><b>isEmpty:</b> Checks if the queue is empty.</li>\r\n    <li><b>isFull:</b> Checks if the queue is full (in case of bounded implementation).</li>\r\n  </ul>\r\n\r\n  <h2>Types of Queues</h2>\r\n  <ul>\r\n    <li><b>Simple Queue:</b> Basic queue with FIFO operations.</li>\r\n    <li><b>Circular Queue:</b> The last position is connected back to the first to make a circle, efficient for memory use.</li>\r\n    <li><b>Priority Queue:</b> Elements are dequeued based on priority, not just insertion order.</li>\r\n    <li><b>Deque (Double-Ended Queue):</b> Elements can be added or removed from both the front and the rear.</li>\r\n  </ul>\r\n\r\n  <h2>Queue Implementation</h2>\r\n  <p>Queues can be implemented in different ways:</p>\r\n  <ul>\r\n    <li><b>Array:</b> Simple and fast but fixed in size and may lead to unused space.</li>\r\n    <li><b>Linked List:</b> More dynamic and flexible in size; no wasted space.</li>\r\n  </ul>\r\n\r\n  <h2>Applications of Queues</h2>\r\n  <ul>\r\n    <li>Task Scheduling in Operating Systems</li>\r\n    <li>Managing Printer Tasks</li>\r\n    <li>Handling Requests in Web Servers</li>\r\n    <li>Call Center or Helpdesk Systems</li>\r\n    <li>Breadth-First Search in Graphs</li>\r\n  </ul>\r\n\r\n  <h2>Queue Visualization</h2>\r\n  <div class=\"syntax\">\r\n    <p>\r\n      Front → [ 3 ] [ 5 ] [ 7 ] [ 9 ] ← Rear<br>\r\n      <i>Dequeue from front, enqueue at rear</i>\r\n    </p>\r\n  </div>\r\n\r\n  <h2>Advantages of Queues</h2>\r\n  <ul>\r\n    <li>Maintains order of processing (FIFO)</li>\r\n    <li>Useful in asynchronous data transfer (e.g., IO Buffers)</li>\r\n    <li>Fair resource allocation</li>\r\n  </ul>\r\n\r\n  <h2>Limitations</h2>\r\n  <ul>\r\n    <li>Fixed size in array implementation unless circular or dynamic queue is used</li>\r\n    <li>May require shifting elements if not circular</li>\r\n  </ul>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "hyper",
+      "prev": "types",
+      "next": "tree-types",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Introduction to Trees</h1>\r\n  <p>\r\n    In data structures, a <b>Tree</b> is a non-linear hierarchical data structure consisting of nodes,\r\n    where each node can have multiple child nodes. Unlike linear structures like arrays and linked lists, trees are used to represent\r\n    data with a hierarchical relationship.\r\n  </p>\r\n\r\n  <h2>Key Terminologies</h2>\r\n  <ul>\r\n    <li><b>Root:</b> The topmost node in a tree. It has no parent.</li>\r\n    <li><b>Node:</b> Each element in a tree.</li>\r\n    <li><b>Parent:</b> A node that has child nodes connected below it.</li>\r\n    <li><b>Child:</b> A node that descends from another node.</li>\r\n    <li><b>Leaf:</b> A node with no children.</li>\r\n    <li><b>Edge:</b> The connection between two nodes.</li>\r\n    <li><b>Subtree:</b> A tree formed by a node and its descendants.</li>\r\n    <li><b>Height:</b> The number of edges on the longest path from the root to a leaf.</li>\r\n  </ul>\r\n\r\n  <h2>Why Use Trees?</h2>\r\n  <ul>\r\n    <li>Efficient for hierarchical data representation like file systems, HTML DOM, etc.</li>\r\n    <li>Enables faster search, insert, and delete operations compared to linear data structures.</li>\r\n    <li>Used in databases, networking (routing algorithms), and compilers.</li>\r\n  </ul>\r\n\r\n  <h2>Types of Trees</h2>\r\n  <ul>\r\n    <li><b>Binary Tree:</b> Each node has at most two children.</li>\r\n    <li><b>Binary Search Tree (BST):</b> A binary tree where the left child is smaller and the right child is larger than the parent.</li>\r\n    <li><b>AVL Tree:</b> A self-balancing BST.</li>\r\n    <li><b>Heap:</b> A complete binary tree used to implement priority queues.</li>\r\n    <li><b>B-Tree:</b> A self-balancing tree used in databases and file systems.</li>\r\n  </ul>\r\n\r\n  <h2>Tree Representation</h2>\r\n  <p>Trees can be represented in two main ways:</p>\r\n  <ul>\r\n    <li><b>Linked Representation:</b> Each node contains data and pointers to its children.</li>\r\n    <li><b>Array Representation:</b> Used for complete binary trees, stored based on node positions.</li>\r\n  </ul>\r\n\r\n  <h2>Tree Traversals</h2>\r\n  <p>Tree traversal means visiting all the nodes in a specific order:</p>\r\n  <ul>\r\n    <li><b>Inorder (Left → Root → Right)</b></li>\r\n    <li><b>Preorder (Root → Left → Right)</b></li>\r\n    <li><b>Postorder (Left → Right → Root)</b></li>\r\n    <li><b>Level Order (Breadth-First)</b></li>\r\n  </ul>\r\n\r\n  <h2>Applications of Trees</h2>\r\n  <ul>\r\n    <li>Database Indexing</li>\r\n    <li>Parsing Expressions (Expression Trees)</li>\r\n    <li>Routing Tables</li>\r\n    <li>File Systems and Folder Hierarchies</li>\r\n    <li>Autocomplete and Search Engines (Tries)</li>\r\n  </ul>\r\n\r\n  <div class=\"syntax\">\r\n    <p>\r\n      Example structure:\r\n      <br>\r\n      └── A (Root)<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;├── B<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;├── D<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;└── E<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;└── C<br>\r\n      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── F\r\n    </p>\r\n  </div>\r\n\r\n  <h2>Advantages of Trees</h2>\r\n  <ul>\r\n    <li>Efficient insertion and deletion</li>\r\n    <li>Hierarchical storage of data</li>\r\n    <li>Supports dynamic data structures</li>\r\n  </ul>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "tree-types",
+      "prev": "hyper",
+      "next": "graphs",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Tree Traversals: Inorder, Preorder, Postorder</h1>\r\n  <p>\r\n    Tree traversal refers to the process of visiting each node in a tree data structure in a specific order.\r\n    There are three primary types of depth-first traversal techniques:\r\n    <b>Inorder, Preorder, and Postorder</b>.\r\n  </p>\r\n\r\n  <h2>Sample Binary Tree</h2>\r\n  <div class=\"syntax\">\r\n    <pre>\r\n         A\r\n        / \\\r\n       B   C\r\n      / \\   \\\r\n     D   E   F\r\n    </pre>\r\n  </div>\r\n\r\n  <h2>1. Inorder Traversal (Left → Root → Right)</h2>\r\n  <p>\r\n    In this traversal, we visit the left subtree first, then the root node, and finally the right subtree.\r\n  </p>\r\n  <p><b>Order:</b> D → B → E → A → C → F</p>\r\n  <ul>\r\n    <li>Useful in binary search trees to get sorted order of values.</li>\r\n    <li>Follows the natural \"reading\" order for binary expressions.</li>\r\n  </ul>\r\n\r\n  <h2>2. Preorder Traversal (Root → Left → Right)</h2>\r\n  <p>\r\n    In preorder traversal, we first visit the root node, then the left subtree, and finally the right subtree.\r\n  </p>\r\n  <p><b>Order:</b> A → B → D → E → C → F</p>\r\n  <ul>\r\n    <li>Used to create a copy of the tree.</li>\r\n    <li>Can be used to generate prefix expressions.</li>\r\n  </ul>\r\n\r\n  <h2>3. Postorder Traversal (Left → Right → Root)</h2>\r\n  <p>\r\n    In this traversal, we first visit the left subtree, then the right subtree, and finally the root node.\r\n  </p>\r\n  <p><b>Order:</b> D → E → B → F → C → A</p>\r\n  <ul>\r\n    <li>Used to delete the tree (free memory in bottom-up manner).</li>\r\n    <li>Can be used to generate postfix expressions.</li>\r\n  </ul>\r\n\r\n  <h2>Summary Table</h2>\r\n  <div class=\"scroll-wrapper\">\r\n    <table border=\"1\">\r\n      <thead>\r\n        <tr>\r\n          <th>Traversal Type</th>\r\n          <th>Visiting Order</th>\r\n          <th>Example Output (on tree above)</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>Inorder</td>\r\n          <td>Left → Root → Right</td>\r\n          <td>D B E A C F</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Preorder</td>\r\n          <td>Root → Left → Right</td>\r\n          <td>A B D E C F</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Postorder</td>\r\n          <td>Left → Right → Root</td>\r\n          <td>D E B F C A</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n  <h2>When to Use Which Traversal?</h2>\r\n  <ul>\r\n    <li><b>Inorder:</b> When you want to process nodes in ascending order (used in BST).</li>\r\n    <li><b>Preorder:</b> When you want to duplicate a tree or serialize it.</li>\r\n    <li><b>Postorder:</b> When you need to delete nodes or evaluate postfix expressions.</li>\r\n  </ul>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "prev": "tree-types",
+      "next": "graph-concepts",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Introduction to Graphs</h1>\r\n  <p>\r\n    A <b>Graph</b> is a non-linear data structure consisting of a set of vertices (also called nodes) \r\n    and a set of edges that connect pairs of vertices. Graphs are used to represent networks, \r\n    such as social networks, computer networks, or pathfinding in maps.\r\n  </p>\r\n\r\n  <h2>Components of a Graph</h2>\r\n  <ul>\r\n    <li><b>Vertex (Node):</b> A point or position in the graph.</li>\r\n    <li><b>Edge:</b> A connection or link between two vertices.</li>\r\n    <li><b>Adjacency:</b> A vertex is said to be adjacent to another if they are connected directly by an edge.</li>\r\n  </ul>\r\n\r\n  <h2>Types of Graphs</h2>\r\n  <ul>\r\n    <li><b>Directed Graph (Digraph):</b> Edges have direction. For example, (A → B) means a one-way link from A to B.</li>\r\n    <li><b>Undirected Graph:</b> Edges do not have direction. (A — B) means a two-way connection.</li>\r\n    <li><b>Weighted Graph:</b> Edges carry weights (or costs), commonly used in shortest path algorithms like Dijkstra's.</li>\r\n    <li><b>Unweighted Graph:</b> All edges are considered equal.</li>\r\n    <li><b>Connected Graph:</b> There is a path between every pair of vertices.</li>\r\n    <li><b>Disconnected Graph:</b> Some vertices cannot be reached from others.</li>\r\n    <li><b>Cyclic and Acyclic Graphs:</b> Cyclic graphs contain at least one cycle. Acyclic graphs do not.</li>\r\n  </ul>\r\n\r\n  <h2>Graph Representations</h2>\r\n  <p>Graphs can be represented in two main ways:</p>\r\n  <ol>\r\n    <li><b>Adjacency Matrix:</b> A 2D array of size VxV where V is the number of vertices. \r\n        A cell (i, j) is true if there is an edge from vertex i to vertex j.</li>\r\n    <li><b>Adjacency List:</b> An array of lists. The list at index i stores the neighbors of vertex i.</li>\r\n  </ol>\r\n\r\n  <h2>Real-world Applications</h2>\r\n  <ul>\r\n    <li>Social networks (people as nodes, friendships as edges)</li>\r\n    <li>Web crawling (webpages and hyperlinks)</li>\r\n    <li>Google Maps (cities as nodes, roads as edges)</li>\r\n    <li>Network routing protocols</li>\r\n    <li>Scheduling problems and dependency resolution</li>\r\n  </ul>\r\n\r\n  <h2>Basic Graph Terms</h2>\r\n  <table border=\"1\">\r\n    <thead>\r\n      <tr>\r\n        <th>Term</th>\r\n        <th>Description</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <td>Degree</td>\r\n        <td>Number of edges connected to a vertex</td>\r\n      </tr>\r\n      <tr>\r\n        <td>Path</td>\r\n        <td>A sequence of vertices connected by edges</td>\r\n      </tr>\r\n      <tr>\r\n        <td>Cycle</td>\r\n        <td>A path where the first and last vertices are the same</td>\r\n      </tr>\r\n      <tr>\r\n        <td>Connected</td>\r\n        <td>All vertices are reachable from each other</td>\r\n      </tr>\r\n      <tr>\r\n        <td>Component</td>\r\n        <td>A subgraph in which any two vertices are connected</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n\r\n  <h2>Visual Example</h2>\r\n  <div class=\"syntax\">\r\n    <pre>\r\n        A --- B\r\n        |     |\r\n        D --- C\r\n    </pre>\r\n  </div>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "graph-concepts",
+      "prev": "graphs",
+      "next": "Questions",
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n  <h1>Concepts of Graphs</h1>\r\n  <p>\r\n    A <b>Graph</b> is a powerful data structure used to represent relationships between pairs of elements. \r\n    Graphs are made up of two main components — <b>vertices (nodes)</b> and <b>edges (links)</b>.\r\n  </p>\r\n\r\n  <h2>1. Basic Terminologies</h2>\r\n  <ul>\r\n    <li><b>Vertex (Node):</b> A fundamental unit that represents an entity in the graph.</li>\r\n    <li><b>Edge:</b> A connection between two vertices.</li>\r\n    <li><b>Adjacent Vertices:</b> Two vertices connected directly by an edge.</li>\r\n    <li><b>Degree of a Vertex:</b> The number of edges incident to a vertex.</li>\r\n    <li><b>Path:</b> A sequence of vertices where each adjacent pair is connected by an edge.</li>\r\n    <li><b>Cycle:</b> A path where the starting and ending vertex is the same.</li>\r\n  </ul>\r\n\r\n  <h2>2. Types of Graphs</h2>\r\n  <ul>\r\n    <li><b>Directed Graph (Digraph):</b> Edges have a direction (u → v).</li>\r\n    <li><b>Undirected Graph:</b> Edges have no direction (u — v).</li>\r\n    <li><b>Weighted Graph:</b> Edges carry weights or costs.</li>\r\n    <li><b>Unweighted Graph:</b> All edges are treated equally.</li>\r\n    <li><b>Connected Graph:</b> Every pair of vertices has a path between them.</li>\r\n    <li><b>Disconnected Graph:</b> Some vertices are isolated from others.</li>\r\n    <li><b>Cyclic Graph:</b> Contains at least one cycle.</li>\r\n    <li><b>Acyclic Graph:</b> Contains no cycles.</li>\r\n  </ul>\r\n\r\n  <h2>3. Graph Representations</h2>\r\n  <p>Graphs can be implemented using two main representations:</p>\r\n  <ol>\r\n    <li><b>Adjacency Matrix:</b> A 2D array where a[i][j] = 1 indicates an edge from i to j.</li>\r\n    <li><b>Adjacency List:</b> An array of lists, where each list contains the neighbors of a vertex.</li>\r\n  </ol>\r\n\r\n  <h2>4. Special Graphs</h2>\r\n  <ul>\r\n    <li><b>Tree:</b> A connected acyclic graph.</li>\r\n    <li><b>Complete Graph:</b> Every pair of distinct vertices is connected by an edge.</li>\r\n    <li><b>Null Graph:</b> A graph with no edges.</li>\r\n    <li><b>Dense Graph:</b> Has many edges (close to maximum possible).</li>\r\n    <li><b>Sparse Graph:</b> Has relatively few edges.</li>\r\n  </ul>\r\n\r\n  <h2>5. Common Graph Traversals</h2>\r\n  <ul>\r\n    <li><b>BFS (Breadth-First Search):</b> Explores neighbors level by level, uses a queue.</li>\r\n    <li><b>DFS (Depth-First Search):</b> Explores as far as possible before backtracking, uses a stack or recursion.</li>\r\n  </ul>\r\n\r\n  <h2>6. Applications of Graphs</h2>\r\n  <ul>\r\n    <li>Social Networks</li>\r\n    <li>Web Crawlers</li>\r\n    <li>GPS Navigation (Shortest Paths)</li>\r\n    <li>Network Routing</li>\r\n    <li>Dependency Resolution (e.g., course scheduling)</li>\r\n  </ul>\r\n\r\n  <h2>Quick Comparison: Adjacency Matrix vs Adjacency List</h2>\r\n  <div class=\"scroll-wrapper\">\r\n    <table border=\"1\">\r\n      <thead>\r\n        <tr>\r\n          <th>Aspect</th>\r\n          <th>Adjacency Matrix</th>\r\n          <th>Adjacency List</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr>\r\n          <td>Space Complexity</td>\r\n          <td>O(V²)</td>\r\n          <td>O(V + E)</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Edge Lookup</td>\r\n          <td>O(1)</td>\r\n          <td>O(k) where k is degree</td>\r\n        </tr>\r\n        <tr>\r\n          <td>Suitable for</td>\r\n          <td>Dense Graphs</td>\r\n          <td>Sparse Graphs</td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n\r\n  <h2>Visual Representation</h2>\r\n  <div class=\"syntax\">\r\n    <pre>\r\n        A ----- B\r\n         \\     /\r\n           C\r\n         /   \\\r\n        D     E\r\n    </pre>\r\n  </div>\r\n\r\n  \r\n"
+        }
+      ]
+    },
+    {
+      "id": "Questions",
+      "prev": "graph-concepts",
+      "next": null,
+      "blocks": [
+        {
+          "type": "html",
+          "value": "\r\n\r\n  <h1>Practice DSA Questions on LeetCode</h1>\r\n  <p>Click the links below to solve real-world coding problems on LeetCode and strengthen your DSA skills.</p>\r\n\r\n  <h2>1. Arrays</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/maximum-subarray/\" target=\"_blank\">Maximum Subarray (Kadane’s Algorithm)</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/rotate-array/\" target=\"_blank\">Rotate Array</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/find-all-duplicates-in-an-array/\" target=\"_blank\">Find All Duplicates in an Array</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/merge-sorted-array/\" target=\"_blank\">Merge Sorted Array</a></li>\r\n  </ul>\r\n\r\n  <h2>2. Linked Lists</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/reverse-linked-list/\" target=\"_blank\">Reverse Linked List</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/linked-list-cycle/\" target=\"_blank\">Detect Cycle in Linked List</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/merge-two-sorted-lists/\" target=\"_blank\">Merge Two Sorted Lists</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/palindrome-linked-list/\" target=\"_blank\">Palindrome Linked List</a></li>\r\n  </ul>\r\n\r\n  <h2>3. Trees</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/binary-tree-inorder-traversal/\" target=\"_blank\">Binary Tree Inorder Traversal</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/balanced-binary-tree/\" target=\"_blank\">Check if Tree is Balanced</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/diameter-of-binary-tree/\" target=\"_blank\">Diameter of Binary Tree</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/\" target=\"_blank\">Lowest Common Ancestor</a></li>\r\n  </ul>\r\n\r\n  <h2>4. Graphs</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/number-of-islands/\" target=\"_blank\">Number of Islands (DFS/BFS)</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/course-schedule/\" target=\"_blank\">Course Schedule (Cycle Detection)</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/clone-graph/\" target=\"_blank\">Clone Graph</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/network-delay-time/\" target=\"_blank\">Network Delay Time (Dijkstra)</a></li>\r\n  </ul>\r\n\r\n  <h2>5. Searching & Sorting</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/binary-search/\" target=\"_blank\">Binary Search</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/search-in-rotated-sorted-array/\" target=\"_blank\">Search in Rotated Sorted Array</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/kth-largest-element-in-an-array/\" target=\"_blank\">Kth Largest Element</a></li>\r\n  </ul>\r\n\r\n  <h2>6. Recursion & Backtracking</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/subsets/\" target=\"_blank\">Subsets</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/permutations/\" target=\"_blank\">Permutations</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/n-queens/\" target=\"_blank\">N-Queens</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/sudoku-solver/\" target=\"_blank\">Sudoku Solver</a></li>\r\n  </ul>\r\n\r\n  <h2>7. Dynamic Programming</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/partition-equal-subset-sum/\" target=\"_blank\">0/1 Knapsack (Subset Sum)</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/longest-common-subsequence/\" target=\"_blank\">Longest Common Subsequence</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/longest-increasing-subsequence/\" target=\"_blank\">Longest Increasing Subsequence</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/coin-change/\" target=\"_blank\">Coin Change</a></li>\r\n  </ul>\r\n\r\n  <h2>8. Hashing / Maps</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/two-sum/\" target=\"_blank\">Two Sum</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/group-anagrams/\" target=\"_blank\">Group Anagrams</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/subarray-sum-equals-k/\" target=\"_blank\">Subarray Sum Equals K</a></li>\r\n  </ul>\r\n\r\n  <h2>9. Heaps & Greedy</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problems/top-k-frequent-elements/\" target=\"_blank\">Top K Frequent Elements</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/merge-k-sorted-lists/\" target=\"_blank\">Merge K Sorted Lists</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/task-scheduler/\" target=\"_blank\">Task Scheduler</a></li>\r\n    <li><a href=\"https://leetcode.com/problems/jump-game/\" target=\"_blank\">Jump Game</a></li>\r\n  </ul>\r\n\r\n  <h2>Bonus</h2>\r\n  <ul>\r\n    <li><a href=\"https://leetcode.com/problemset/all/\" target=\"_blank\">View All LeetCode Problems</a></li>\r\n    <li><a href=\"https://leetcode.com/explore/\" target=\"_blank\">LeetCode Explore (Topic-wise Guided Paths)</a></li>\r\n    <li><a href=\"https://leetcode.com/contest/\" target=\"_blank\">Weekly & Biweekly Contests</a></li>\r\n  </ul>\r\n  <div class=\"nav-buttons\">\r\n    <a href=\"#\"><button>🏁 End of Module</button></a>\r\n             <a href=\"/dsa-levels\"><button >Take Test</button></a>\r\n   \r\n  </div>\r\n</div>\r\n\r\n</div>\r\n"
+        }
+      ]
+    }
+  ]
+}
