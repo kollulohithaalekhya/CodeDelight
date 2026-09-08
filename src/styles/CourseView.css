@@ -297,6 +297,20 @@ html[data-theme="light"] .cv-kc-reward-won { color: #a15c00; }
 .cv-btn.ghost { background: rgba(255, 255, 255, 0.08); color: #dfeafc; border: 1px solid rgba(255, 255, 255, 0.14); }
 .cv-kc-submit { margin-top: 6px; }
 
+/* Fresh set is fetched per attempt, so the check has a loading state now. */
+.cv-kc-loading { color: #a9bad3; font-size: 14px; padding: 12px 0; }
+/* Question prompts can carry code fences, so they render through QuestionText:
+   the number sits beside the rendered block rather than inline in the text. */
+.cv-kc-question { display: flex; gap: 8px; align-items: baseline; }
+.cv-kc-qnum { flex: none; }
+.cv-kc-question .qt { flex: 1; min-width: 0; }
+.cv-kc-opt .qt { flex: 1; min-width: 0; }
+.cv-kc-fresh { font-size: 12.5px; color: #a9bad3; }
+.cv-kc-fresh i { color: #38bdf8; margin-right: 6px; }
+.cv-kc-result-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+/* The "already passed" box carries a practice button, so keep them apart. */
+.cv-complete-box.done:has(.cv-btn) { justify-content: space-between; }
+
 .cv-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 34px; }
 
 /* ---------- Light theme ---------- */

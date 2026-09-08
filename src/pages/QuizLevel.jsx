@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { get, post } from "../api/client";
 import { useAuth } from "../context/AuthContext";
 import QuestionText from "../components/QuestionText";
+import AnswerReview from "../components/AnswerReview";
 import "../styles/QuizLevel.css";
 
 const TRACKS = {
@@ -181,6 +182,10 @@ function QuizLevel() {
                 <i className="fas fa-shuffle" /> Every attempt draws a different set of questions.
               </p>
             )}
+
+            {/* The next attempt asks different questions, so this is the only
+                place a player gets to see what they actually got wrong. */}
+            <AnswerReview review={result.review} />
           </div>
         ) : (
           <>

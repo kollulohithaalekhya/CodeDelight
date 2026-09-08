@@ -1,0 +1,131 @@
+/* Post-submission answer review. Shared by the quiz, challenge and daily
+   result screens, so it styles itself rather than inheriting from any one of
+   them, and it sits comfortably on both the page background and the darker
+   Fun Zone reward overlay. */
+
+.arv {
+  margin-top: 18px;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.arv-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  background: transparent;
+  color: #eef4ff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+.arv-toggle:hover { background: rgba(255, 255, 255, 0.05); }
+.arv-toggle > i { color: #7dd3fc; font-size: 12px; }
+.arv-badge {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(248, 113, 113, 0.18);
+  color: #fca5a5;
+}
+.arv-badge.ok { background: rgba(74, 222, 128, 0.18); color: #86efac; }
+.arv.open .arv-toggle { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+
+.arv-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 16px 16px;
+  /* Long sets stay reviewable inside the Fun Zone reward card. */
+  max-height: 55vh;
+  overflow-y: auto;
+}
+
+.arv-item { padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.arv-item:last-child { border-bottom: none; }
+
+.arv-head { display: flex; gap: 10px; align-items: flex-start; }
+.arv-mark {
+  flex: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  margin-top: 2px;
+}
+.arv-mark.ok { background: rgba(74, 222, 128, 0.18); color: #4ade80; }
+.arv-mark.bad { background: rgba(248, 113, 113, 0.18); color: #f87171; }
+.arv-prompt { flex: 1; min-width: 0; font-weight: 600; color: #eef4ff; font-size: 14.5px; }
+
+.arv-options { list-style: none; margin: 10px 0 0; padding: 0 0 0 32px; }
+.arv-opt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 11px;
+  margin-bottom: 6px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  color: #b9c6db;
+  font-size: 13.5px;
+}
+.arv-opt .qt { flex: 1; min-width: 0; }
+.arv-opt-key {
+  flex: none;
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+}
+.arv-opt.correct {
+  border-color: rgba(74, 222, 128, 0.45);
+  background: rgba(74, 222, 128, 0.12);
+  color: #dcfce7;
+}
+.arv-opt.correct .arv-opt-key { background: rgba(74, 222, 128, 0.3); color: #bbf7d0; }
+.arv-opt.wrong {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(248, 113, 113, 0.12);
+  color: #fee2e2;
+}
+.arv-opt.wrong .arv-opt-key { background: rgba(248, 113, 113, 0.3); color: #fecaca; }
+.arv-tag {
+  flex: none;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.arv-plain, .arv-skipped { margin: 8px 0 0 32px; font-size: 13px; color: #b9c6db; }
+.arv-skipped { color: #fbbf24; }
+.arv-explain { margin: 9px 0 0 32px; font-size: 13px; color: #a9bad3; }
+.arv-explain i { color: #38bdf8; margin-right: 6px; }
+
+/* ---------- Light theme ---------- */
+html[data-theme="light"] .arv { background: #f6f9fe; border-color: #dbe4f0; }
+html[data-theme="light"] .arv-toggle { color: #16233b; }
+html[data-theme="light"] .arv-toggle:hover { background: #eef4fd; }
+html[data-theme="light"] .arv.open .arv-toggle { border-bottom-color: #e3e9f2; }
+html[data-theme="light"] .arv-item { border-bottom-color: #e6ecf5; }
+html[data-theme="light"] .arv-prompt { color: #16233b; }
+html[data-theme="light"] .arv-opt { color: #4a5b73; }
+html[data-theme="light"] .arv-opt-key { background: #e4ebf5; color: #4a5b73; }
+html[data-theme="light"] .arv-opt.correct { background: #e8f9ef; color: #146c3a; }
+html[data-theme="light"] .arv-opt.correct .arv-opt-key { background: #bbf7d0; color: #146c3a; }
+html[data-theme="light"] .arv-opt.wrong { background: #fdecec; color: #9b1c1c; }
+html[data-theme="light"] .arv-opt.wrong .arv-opt-key { background: #fecaca; color: #9b1c1c; }
+html[data-theme="light"] .arv-explain, html[data-theme="light"] .arv-plain { color: #55657e; }
+html[data-theme="light"] .arv-skipped { color: #a16207; }

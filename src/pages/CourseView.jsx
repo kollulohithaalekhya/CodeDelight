@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import CourseBlock from "../components/CourseBlock";
+import QuestionText from "../components/QuestionText";
 import Header from "../components/HeaderSection";
 import { get, post } from "../api/client";
 import { useAuth } from "../context/AuthContext";
@@ -360,16 +361,44 @@ function MarkRead({ courseId, lesson, onDone }) {
 }
 
 // -------- Knowledge check (lessons with a quiz) --------
+//
+// The questions are NOT part of the course payload any more: each attempt draws
+// a fresh set from the server, so they are fetched here and submitted with the
+// sessionId that identifies the served set. "Try Again" therefore means "new
+// questions", not "the same five again".
 function KnowledgeCheck({ courseId, lesson, onPassed, onContinue, hasNext }) {
   const { refresh } = useAuth();
-  const questions = lesson.quiz?.questions || [];
-  const rewardCoins = lesson.quiz?.rewardCoins ?? questions.length;
-  // Eligible for the first-try coin reward until this check has been attempted.
-  const rewardEligible = (lesson.quiz?.rewardEligible ?? true) && !lesson.completed;
+  const [quiz, setQuiz] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  // Bumped to draw a brand-new set (first load, "Try Again", "Practice again").
+  const [attempt, setAttempt] = useState(lesson.completed ? -1 : 0);
+
+  const questions = quiz?.questions || [];
+  const rewardCoins = quiz?.rewardCoins ?? lesson.quiz?.rewardCoins ?? 0;
+  // Eligible for the first-try coin reward until this check has been attempted.
+  const rewardEligible = (quiz?.rewardEligible ?? lesson.quiz?.rewardEligible ?? true) && !lesson.completed;
+
+  // attempt < 0 means "already passed — don't burn a fresh set unless asked".
+  useEffect(() => {
+    if (attempt < 0) return;
+    let alive = true;
+    setLoading(true);
+    setError("");
+    setResult(null);
+    setAnswers({});
+    get(`/api/courses/${courseId}/lessons/${lesson.id}/quiz`)
+      .then((d) => { if (alive) setQuiz(d.quiz); })
+      .catch((e) => { if (alive) setError(e.message); })
+      .finally(() => { if (alive) setLoading(false); });
+    return () => { alive = false; };
+    // `lesson` is re-created whenever progress reloads, so key on its id only —
+    // otherwise passing the check would immediately discard the review.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [courseId, lesson.id, attempt]);
 
   const submit = async () => {
     if (Object.keys(answers).length < questions.length) {
@@ -380,7 +409,10 @@ function KnowledgeCheck({ courseId, lesson, onPassed, onContinue, hasNext }) {
     setBusy(true);
     try {
       const payload = questions.map((_, i) => answers[i]);
-      const { result } = await post(`/api/courses/${courseId}/lessons/${lesson.id}/quiz`, { answers: payload });
+      const { result } = await post(`/api/courses/${courseId}/lessons/${lesson.id}/quiz`, {
+        answers: payload,
+        sessionId: quiz.sessionId,
+      });
       setResult(result);
       // Sync the coin balance in the header if a first-try reward was earned.
       if (result.kcReward) refresh();
@@ -394,7 +426,7 @@ function KnowledgeCheck({ courseId, lesson, onPassed, onContinue, hasNext }) {
     }
   };
 
-  const retry = () => { setResult(null); setAnswers({}); };
+  const retry = () => setAttempt((a) => (a < 0 ? 0 : a + 1));
 
   return (
     <div className="cv-kc">
@@ -406,78 +438,95 @@ function KnowledgeCheck({ courseId, lesson, onPassed, onContinue, hasNext }) {
         </div>
       </div>
 
-      {rewardEligible && (
-        <div className="cv-kc-note">
-          <i className="fa-solid fa-coins" />
-          <span>
-            Answer all {questions.length} question{questions.length === 1 ? "" : "s"} correctly on your
-            <b> first attempt</b> to earn <b>{rewardCoins} coin{rewardCoins === 1 ? "" : "s"}</b>. Get one wrong and the reward is gone for this check.
-          </span>
+      {attempt < 0 && !result ? (
+        <div className="cv-complete-box done">
+          <span><i className="fa-solid fa-circle-check" /> You've already passed this check.</span>
+          <button className="cv-btn" onClick={retry}>Practice with new questions</button>
         </div>
-      )}
-
-      {questions.map((q, i) => {
-        const chosen = answers[i];
-        const verdict = result?.review?.[i];
-        return (
-          <div className="cv-kc-q" key={i}>
-            <div className="cv-kc-question">{i + 1}. {q.question}</div>
-            {q.options.map((opt, oi) => {
-              let cls = "cv-kc-opt";
-              if (result) {
-                if (oi === verdict.correctIndex) cls += " correct";
-                else if (oi === chosen) cls += " wrong";
-              } else if (chosen === oi) cls += " selected";
-              return (
-                <label className={cls} key={oi}>
-                  <input type="radio" name={`q-${i}`} disabled={!!result}
-                    checked={chosen === oi}
-                    onChange={() => setAnswers((a) => ({ ...a, [i]: oi }))} />
-                  {opt}
-                </label>
-              );
-            })}
-            {result && verdict.explanation && (
-              <div className="cv-kc-explain"><i className="fa-solid fa-circle-info" /> {verdict.explanation}</div>
-            )}
-          </div>
-        );
-      })}
-
-      {error && <div className="cv-kc-error">{error}</div>}
-
-      {result ? (
-        <div className={`cv-kc-result ${result.passed ? "pass" : "fail"}`}>
-          <strong>
-            {result.passed ? "🎉 Passed!" : "Not quite."} You scored {result.score}/{result.total} (need {result.passMark}).
-          </strong>
-          {result.kcReward ? (
-            <span className="cv-kc-reward-won"><i className="fa-solid fa-coins" /> Perfect first try! +{result.kcReward.coinsAwarded} coins earned 🪙</span>
-          ) : result.allCorrect && !result.firstAttempt ? (
-            <span className="cv-kc-reward-miss">All correct — but the first-try coin reward was already used for this check.</span>
-          ) : null}
-          {result.passed ? (
-            <>
-              <span>Review the answers above, then continue when you're ready.</span>
-              <button className="cv-btn cv-kc-continue" onClick={onContinue}>
-                {hasNext ? <>Continue to Next Lesson <i className="fa-solid fa-arrow-right" /></>
-                         : <>Finish Course <i className="fa-solid fa-flag-checkered" /></>}
-              </button>
-            </>
-          ) : (
-            <button className="cv-btn" onClick={retry}>Try Again</button>
-          )}
-        </div>
+      ) : loading ? (
+        <div className="cv-kc-loading">Drawing a fresh set of questions…</div>
       ) : (
-        <button className="cv-btn cv-kc-submit" onClick={submit} disabled={busy || lesson.completed}>
-          {busy ? "Checking…" : "Submit Answers"}
-        </button>
-      )}
+        <>
+          {rewardEligible && (
+            <div className="cv-kc-note">
+              <i className="fa-solid fa-coins" />
+              <span>
+                Answer all {questions.length} question{questions.length === 1 ? "" : "s"} correctly on your
+                <b> first attempt</b> to earn <b>{rewardCoins} coin{rewardCoins === 1 ? "" : "s"}</b>. Get one wrong and the reward is gone for this check.
+              </span>
+            </div>
+          )}
 
-      {lesson.completed && !result && (
-        <div className="cv-complete-box done" style={{ marginTop: 12 }}>
-          <i className="fa-solid fa-circle-check" /> You've already passed this check.
-        </div>
+          {questions.map((q, i) => {
+            const chosen = answers[i];
+            const verdict = result?.review?.[i];
+            return (
+              <div className="cv-kc-q" key={`${attempt}-${i}`}>
+                <div className="cv-kc-question">
+                  <span className="cv-kc-qnum">{i + 1}.</span>
+                  <QuestionText text={q.question ?? q.prompt} />
+                </div>
+                {q.options.map((opt, oi) => {
+                  let cls = "cv-kc-opt";
+                  if (verdict) {
+                    if (oi === verdict.correctIndex) cls += " correct";
+                    else if (oi === chosen) cls += " wrong";
+                  } else if (chosen === oi) cls += " selected";
+                  return (
+                    <label className={cls} key={oi}>
+                      <input type="radio" name={`q-${attempt}-${i}`} disabled={!!result}
+                        checked={chosen === oi}
+                        onChange={() => setAnswers((a) => ({ ...a, [i]: oi }))} />
+                      <QuestionText text={opt} className="qt-inline" />
+                    </label>
+                  );
+                })}
+                {verdict && verdict.explanation && (
+                  <div className="cv-kc-explain"><i className="fa-solid fa-circle-info" /> {verdict.explanation}</div>
+                )}
+              </div>
+            );
+          })}
+
+          {error && <div className="cv-kc-error">{error}</div>}
+
+          {result ? (
+            <div className={`cv-kc-result ${result.passed ? "pass" : "fail"}`}>
+              <strong>
+                {result.passed ? "🎉 Passed!" : "Not quite."} You scored {result.score}/{result.total} (need {result.passMark}).
+              </strong>
+              {result.kcReward ? (
+                <span className="cv-kc-reward-won"><i className="fa-solid fa-coins" /> Perfect first try! +{result.kcReward.coinsAwarded} coins earned 🪙</span>
+              ) : result.allCorrect && !result.firstAttempt ? (
+                <span className="cv-kc-reward-miss">All correct — but the first-try coin reward was already used for this check.</span>
+              ) : null}
+              {result.randomized && (
+                <span className="cv-kc-fresh"><i className="fa-solid fa-shuffle" /> Every attempt draws a different set of questions.</span>
+              )}
+              {result.passed ? (
+                <>
+                  <span>Review the answers above, then continue when you're ready.</span>
+                  <div className="cv-kc-result-actions">
+                    <button className="cv-btn ghost" onClick={retry}>Try new questions</button>
+                    <button className="cv-btn cv-kc-continue" onClick={onContinue}>
+                      {hasNext ? <>Continue to Next Lesson <i className="fa-solid fa-arrow-right" /></>
+                               : <>Finish Course <i className="fa-solid fa-flag-checkered" /></>}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <span>Read the correct answers above, then try a fresh set.</span>
+                  <button className="cv-btn" onClick={retry}>Try Again</button>
+                </>
+              )}
+            </div>
+          ) : (
+            <button className="cv-btn cv-kc-submit" onClick={submit} disabled={busy || !questions.length}>
+              {busy ? "Checking…" : "Submit Answers"}
+            </button>
+          )}
+        </>
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import AnswerReview from "./AnswerReview";
 import "../styles/GameResult.css";
 
 // Reward/result overlay shown when a FunZone game ends.
@@ -7,11 +8,12 @@ export default function GameResult({ result, onPlayAgain }) {
   const navigate = useNavigate();
   if (!result) return null;
 
-  const { won, coinsAwarded = 0, starsAwarded = 0, entryRefunded = 0, newBalance, practice, error, score, daily, dailyStreak, alreadyDone } = result;
+  const { won, coinsAwarded = 0, starsAwarded = 0, entryRefunded = 0, newBalance, practice, error, score, daily, dailyStreak, alreadyDone, review } = result;
+  const hasReview = Array.isArray(review) && review.length > 0;
 
   return (
     <div className="gr-overlay">
-      <div className={`gr-card ${won ? "win" : "lose"}`}>
+      <div className={`gr-card ${won ? "win" : "lose"}${hasReview ? " has-review" : ""}`}>
         <div className="gr-emoji">{won ? "🎉" : "💪"}</div>
         <h2>{won ? "You Win!" : "Nice try!"}</h2>
 
@@ -47,6 +49,10 @@ export default function GameResult({ result, onPlayAgain }) {
         {!practice && !error && newBalance != null && (
           <p className="gr-balance">Balance: <strong>{newBalance}</strong> 🪙</p>
         )}
+
+        {/* Replaying draws a different set of questions, so the only chance to
+            see what went wrong is right here. */}
+        <AnswerReview review={review} />
 
         <div className="gr-actions">
           {onPlayAgain && <button className="gr-btn ghost" onClick={onPlayAgain}>Play Again</button>}
