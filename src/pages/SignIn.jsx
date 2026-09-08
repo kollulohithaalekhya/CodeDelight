@@ -1,25 +1,33 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Signin.css";
 
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login } = useAuth();
 
-  const handleSignin = (e) => {
+  // Where to go after a successful login: back to the gated page they came from.
+  const redirectTo = location.state?.from || "/";
+
+  const handleSignin = async (e) => {
     e.preventDefault();
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const validUser = users.find(
-      (user) => user.email === email && user.password === password
-    );
-
-    if (validUser) {
-      alert("Login successful!");
-      navigate("/"); // You can create this route later
-    } else {
-      alert("Invalid email or password");
+    setSubmitting(true);
+    try {
+      // The identifier field accepts either email or username.
+      await login(email, password);
+      navigate(redirectTo, { replace: true });
+    } catch (err) {
+      alert(err.message || "Invalid email or password");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -30,12 +38,12 @@ function Signin() {
           <form onSubmit={handleSignin}>
           <h2>Login</h2>
 
-          <label>Email Address</label>
+          <label>Email or Username</label>
           <div className="input-icon">
-            <i className="fas fa-envelope"></i>
+            <FontAwesomeIcon icon={faEnvelope} />
             <input
-              type="email"
-              placeholder="Enter Your Email"
+              type="text"
+              placeholder="Enter Your Email or Username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -44,7 +52,7 @@ function Signin() {
 
           <label>Password</label>
           <div className="input-icon">
-            <i className="fas fa-lock"></i>
+            <FontAwesomeIcon icon={faLock} />
             <input
               type="password"
               placeholder="Password"
@@ -61,7 +69,9 @@ function Signin() {
             <a href="/forgot" className="forgot-link">Forgot Password?</a>
           </div>
 
-          <button type="submit" className="login-btn">LOGIN</button>
+          <button type="submit" className="login-btn" disabled={submitting}>
+            {submitting ? "LOGGING IN…" : "LOGIN"}
+          </button>
 
           <p className="signup-text">
             Doesn’t have an account yet? <a href="/signup">Sign Up</a>
@@ -71,10 +81,10 @@ function Signin() {
 
           <div className="social-buttons">
             <button type="button" className="google-btn">
-              <i className="fab fa-google"></i> Google
+              <FontAwesomeIcon icon={faGoogle} /> Google
             </button>
             <button type="button" className="facebook-btn">
-              <i className="fab fa-facebook-f"></i> Facebook
+              <FontAwesomeIcon icon={faFacebookF} /> Facebook
             </button>
           </div>
         </form>

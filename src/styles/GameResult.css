@@ -1,0 +1,49 @@
+.gr-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  display: grid; place-items: center; padding: 20px;
+  background: rgba(5, 10, 22, 0.7); backdrop-filter: blur(6px);
+  animation: grFade 0.2s ease;
+}
+@keyframes grFade { from { opacity: 0; } to { opacity: 1; } }
+
+.gr-card {
+  width: 100%; max-width: 380px; text-align: center;
+  padding: 32px 28px; border-radius: 22px;
+  background: linear-gradient(160deg, #14243d, #0d1a2e);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  color: #e8eefb;
+  animation: grPop 0.28s cubic-bezier(.2,.9,.3,1.3);
+}
+@keyframes grPop { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.gr-card.win { border-color: rgba(74,222,128,0.5); }
+.gr-card.lose { border-color: rgba(251,146,60,0.4); }
+
+.gr-emoji { font-size: 54px; line-height: 1; margin-bottom: 8px; }
+.gr-card h2 { margin: 0 0 6px; font-size: 26px; }
+.gr-score { margin: 0 0 10px; color: #a9bad3; }
+.gr-note { color: #9fb3ce; font-size: 14px; margin: 8px 0; }
+.gr-note.gr-err { color: #fca5a5; }
+.gr-note i { color: #38bdf8; margin-right: 6px; }
+
+.gr-rewards { display: flex; gap: 12px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+.gr-reward {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 18px; border-radius: 999px; font-weight: 800; font-size: 18px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+}
+.gr-reward.coin { color: #fbbf24; }
+.gr-reward.star { color: #38bdf8; }
+.gr-reward.refund { color: #86efac; font-size: 15px; }
+.gr-total { font-size: 13px; margin-top: 2px; }
+.gr-total strong { color: #fde68a; }
+
+.gr-balance { color: #cdd9ec; margin: 6px 0 0; }
+.gr-actions { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+.gr-btn {
+  padding: 11px 22px; border: none; border-radius: 11px; cursor: pointer; font-weight: 700; font-size: 14px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe); color: #04283a;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.gr-btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.gr-btn.ghost { background: rgba(255,255,255,0.08); color: #dfeafc; border: 1px solid rgba(255,255,255,0.15); }

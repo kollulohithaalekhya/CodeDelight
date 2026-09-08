@@ -2,10 +2,21 @@
   width: 390px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   padding: 20px;
-  /* height: 100%; */
-  color: white;
-  background-color: #102944;
-  /* border-radius: 10px; */
+  color: #e8eefb;
+  background: transparent;
+}
+
+/* Unified glass cards for every panel in the right sidebar. */
+.profile-sidebar-right > .extra-heading,
+.profile-sidebar-right > .coins,
+.profile-sidebar-right > .badges,
+.profile-sidebar-right > .interests,
+.profile-sidebar-right > .waiting-wrapper {
+  margin: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(3, 10, 26, 0.35);
 }

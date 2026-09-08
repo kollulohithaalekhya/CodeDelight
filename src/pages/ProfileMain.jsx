@@ -6,6 +6,7 @@ import ProfileImage from "../components/ProfileImage";
 import ProfileStats from "../components/ProfileStats";
 import ProfileAchievements from "../components/ProfileAchievements";
 import SubmissionsHeatMap from "../components/SubmissionsHeatMap";
+import CoinsHistory from "../components/CoinsHistory";
 
 function ProfileMain() {
   return (
@@ -20,6 +21,8 @@ function ProfileMain() {
       <ProfileStats />
 
       <SubmissionsHeatMap />
+
+      <CoinsHistory />
 
       <ProfileAchievements />
 

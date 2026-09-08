@@ -33,7 +33,7 @@
 
 @media (max-width: 1395px) {
   .nav_bar,
-  .search_bar,
+  .search_bar_wrap,
   .action_bar {
     display: none;
   }

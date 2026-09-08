@@ -1,36 +1,51 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "../styles/ActionBar.css";
 
 const Action = () => {
-  // The coin balance is shared with the quizzes and the Fun Zone.
-  const [coins, setCoins] = useState(
-    () => parseInt(localStorage.getItem("coins"), 10) || 0
-  );
-
-  useEffect(() => {
-    const sync = () => setCoins(parseInt(localStorage.getItem("coins"), 10) || 0);
-    window.addEventListener("storage", sync);
-    return () => window.removeEventListener("storage", sync);
-  }, []);
+  const { user } = useAuth();
 
   return (
     <div className="action_bar">
-      <div className="action_container1">
-        <img src="/images/react_coin.png" alt="Coin" className="icon_coin" />
-        <span className="action_name1">{coins}</span>
-      </div>
+      {/* Show the live coin balance only when signed in. */}
+      {user && (
+        <div className="action_container1">
+          <img src="/images/react_coin.png" alt="Coin" className="icon_coin" />
+          <span className="action_name1">{user.coins ?? 0}</span>
+        </div>
+      )}
 
       <div className="action_container">
-        <i className="fa-solid fa-circle-user fa-xl" style={{ color: "white" }}></i>
-        <span className="action_name">
+        {user ? (
           <Link
-            to="/signin"
-            style={{ color: "white", textDecoration: "none", fontWeight: 500 }}
+            to="/profile"
+            style={{ color: "white", textDecoration: "none", fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}
           >
-            Login
+            {user.profileImage ? (
+              <img
+                src={user.profileImage}
+                alt="Profile"
+                style={{ width: 28, height: 28, borderRadius: "50%", objectFit: "cover" }}
+              />
+            ) : (
+              <i className="fa-solid fa-circle-user fa-xl" style={{ color: "white" }}></i>
+            )}
+            <span className="action_name">{user.username}</span>
           </Link>
-        </span>
+        ) : (
+          <>
+            <i className="fa-solid fa-circle-user fa-xl" style={{ color: "white" }}></i>
+            <span className="action_name">
+              <Link
+                to="/signin"
+                style={{ color: "white", textDecoration: "none", fontWeight: 500 }}
+              >
+                Login
+              </Link>
+            </span>
+          </>
+        )}
       </div>
     </div>
   );

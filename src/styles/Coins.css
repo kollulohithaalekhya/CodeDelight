@@ -1,32 +1,43 @@
 .coins {
-  margin-top: 20px;
   padding: 20px;
-  border-radius: 20px;
-  border: 2px solid #00f2fe;
-  background-color: #0a1d3a;
+  border-radius: 18px;
 }
 
 .how-many-coins {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
+
+.coin-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  color: #3a2a00;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+  flex: 0 0 auto;
+}
+
+.coin-meta { display: flex; flex-direction: column; }
 
 .coins h1 {
-  font-family:Orbiton;
-  font-size:60px;
-  color: #00f2fe;
-  margin-left: 15px;
+  font-size: 42px;
+  font-weight: 800;
+  color: #fbbf24;
+  margin: 0;
+  line-height: 1;
 }
 
-.tot-coins {
-  width: 130px;
-  height: 140px;
-  position: relative;
-  margin-top: 20px;
+.coin-label {
+  font-size: 13px;
+  color: #9fb3c8;
+  margin-top: 4px;
 }
 
 @media (max-width: 768px) {
-  .coins {
-    justify-content: center;
-  }
+  .how-many-coins { justify-content: center; }
 }

@@ -1,6 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import quizzes from "../data/quizzes.json";
+import { get, post } from "../api/client";
+import { useAuth } from "../context/AuthContext";
+import QuestionText from "../components/QuestionText";
 import "../styles/QuizLevel.css";
 
 const TRACKS = {
@@ -10,53 +12,72 @@ const TRACKS = {
   dsa: { label: "DSA", levelsPath: "/dsa-levels" },
 };
 
-const COINS_PER_STAR = 10;
-
-// The original quizzes used different pass marks per track: the 20-question
-// HTML/CSS/JS levels needed 18/14/7, the 10-question DSA levels 8/5/3.
-function starsFor(score, total) {
-  const thresholds = total >= 20 ? [18, 14, 7] : [8, 5, 3];
-  if (score >= thresholds[0]) return 3;
-  if (score >= thresholds[1]) return 2;
-  if (score >= thresholds[2]) return 1;
-  return 0;
-}
-
-function completeLevel(levelNum, starsEarned) {
-  localStorage.setItem(
-    `level${levelNum}`,
-    JSON.stringify({ unlocked: true, stars: starsEarned })
-  );
-
-  const starData = JSON.parse(localStorage.getItem("stars") || "{}");
-  if (!starData[levelNum] || starData[levelNum] < starsEarned) {
-    starData[levelNum] = starsEarned;
-    localStorage.setItem("stars", JSON.stringify(starData));
-  }
-
-  const currentUnlocked = parseInt(localStorage.getItem("unlockedLevel"), 10) || 1;
-  if (starsEarned >= 1 && levelNum + 1 > currentUnlocked) {
-    localStorage.setItem("unlockedLevel", String(levelNum + 1));
-  }
-}
-
 function QuizLevel() {
   const { track = "dsa", level = "1" } = useParams();
   const navigate = useNavigate();
+  const { user, refresh } = useAuth();
 
   const levelNum = parseInt(level, 10) || 1;
   const trackInfo = TRACKS[track] || TRACKS.dsa;
-  const quiz = quizzes[track] ? quizzes[track][levelNum] : null;
 
-  const questions = useMemo(() => (quiz ? quiz.questions : []), [quiz]);
+  const [quiz, setQuiz] = useState(null);
+  const [loadError, setLoadError] = useState("");
+  const [loading, setLoading] = useState(true);
+  // Bumped to re-request the quiz, which draws a brand-new question set.
+  const [attemptKey, setAttemptKey] = useState(0);
 
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState(null);
-  const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState([]); // selected index per question
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  if (!quiz) {
+  // Each load draws a fresh, randomised question set from the server, so a
+  // retry never replays the same questions in the same order.
+  useEffect(() => {
+    let alive = true;
+    setLoading(true);
+    setLoadError("");
+    setResult(null);
+    setCurrent(0);
+    setSelected(null);
+    setError("");
+    get(`/api/quizzes/${track}/${levelNum}`)
+      .then((d) => { if (alive) { setQuiz(d.quiz); setAnswers(new Array(d.quiz.questions.length).fill(null)); } })
+      .catch((e) => { if (alive) setLoadError(e.message); })
+      .finally(() => { if (alive) setLoading(false); });
+    return () => { alive = false; };
+  }, [track, levelNum, attemptKey]);
+
+  const questions = useMemo(() => (quiz ? quiz.questions : []), [quiz]);
+
+  if (loading) {
+    return <div className="quiz-page"><div className="quiz-container"><h2>Loading…</h2></div></div>;
+  }
+
+  // Require sign-in up front so a logged-out user never wastes a full attempt.
+  if (!user) {
+    return (
+      <div className="quiz-page">
+        <div className="quiz-container">
+          <h2>{trackInfo.label} Quiz</h2>
+          <p className="quiz-question">Please sign in to take this quiz and earn stars &amp; coins.</p>
+          <div className="quiz-actions">
+            <button className="back-btn" onClick={() => navigate(trackInfo.levelsPath)}>Back</button>
+            <button
+              className="submit-btn"
+              onClick={() => navigate("/signin", { state: { from: `/quiz/${track}/${levelNum}` } })}
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (loadError || !quiz) {
     return (
       <div className="quiz-page">
         <div className="quiz-container">
@@ -64,25 +85,31 @@ function QuizLevel() {
           <p className="quiz-question">
             There is no level {levelNum} in the {trackInfo.label} quiz.
           </p>
-          <Link className="ok-btn" to={trackInfo.levelsPath}>
-            Back to levels
-          </Link>
+          <Link className="ok-btn" to={trackInfo.levelsPath}>Back to levels</Link>
         </div>
       </div>
     );
   }
 
-  const finish = (finalScore) => {
-    const starsEarned = starsFor(finalScore, questions.length);
-    if (starsEarned > 0) {
-      const coinsEarned = starsEarned * COINS_PER_STAR;
-      const totalCoins =
-        (parseInt(localStorage.getItem("coins"), 10) || 0) + coinsEarned;
-      localStorage.setItem("coins", String(totalCoins));
-      completeLevel(levelNum, starsEarned);
-      setResult({ passed: true, score: finalScore, starsEarned, coinsEarned });
-    } else {
-      setResult({ passed: false, score: finalScore, starsEarned: 0, coinsEarned: 0 });
+  const submitFinal = async (finalAnswers) => {
+    if (!user) {
+      setError("Please sign in to submit the quiz.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      // sessionId identifies the exact set that was served, so the server can
+      // score it — the client never receives an answer key.
+      const { result } = await post(`/api/quizzes/${quiz.id}/submit`, {
+        answers: finalAnswers,
+        sessionId: quiz.sessionId,
+      });
+      setResult(result);
+      refresh(); // update coins/stars in the header/profile
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -92,14 +119,15 @@ function QuizLevel() {
       return;
     }
     setError("");
-    const nextScore = selected === questions[current].answer ? score + 1 : score;
-    setScore(nextScore);
+    const nextAnswers = [...answers];
+    nextAnswers[current] = selected;
+    setAnswers(nextAnswers);
     setSelected(null);
 
     if (current + 1 < questions.length) {
       setCurrent(current + 1);
     } else {
-      finish(nextScore);
+      submitFinal(nextAnswers);
     }
   };
 
@@ -108,9 +136,7 @@ function QuizLevel() {
   return (
     <div className="quiz-page">
       <div className="quiz-container">
-        <h2>
-          {trackInfo.label} &mdash; Level {levelNum} Quiz
-        </h2>
+        <h2>{trackInfo.label} &mdash; Level {levelNum} Quiz</h2>
 
         <div className="quiz-progress-bar">
           <div className="quiz-progress-fill" style={{ width: `${progress}%` }} />
@@ -119,9 +145,7 @@ function QuizLevel() {
         {result ? (
           <div className="quiz-result">
             <i
-              className={`fas ${
-                result.passed ? "fa-check-circle pass-icon" : "fa-times-circle fail-icon"
-              }`}
+              className={`fas ${result.passed ? "fa-check-circle pass-icon" : "fa-times-circle fail-icon"}`}
               style={{ fontSize: "40px" }}
             />
             <h2 className={result.passed ? "pass-heading" : "fail-heading"}>
@@ -129,32 +153,40 @@ function QuizLevel() {
             </h2>
             <p className="score-text">
               {result.passed
-                ? `You passed! Score: ${result.score}/${questions.length}`
-                : `You scored ${result.score}/${questions.length}.`}
+                ? `You passed! Score: ${result.score}/${result.total}`
+                : `You scored ${result.score}/${result.total}.`}
             </p>
             {result.passed && (
               <>
                 <div className="stars">
                   {[1, 2, 3].map((i) => (
-                    <span
-                      key={i}
-                      className={`star${i <= result.starsEarned ? " filled" : ""}`}
-                    >
-                      &#9733;
-                    </span>
+                    <span key={i} className={`star${i <= result.stars ? " filled" : ""}`}>&#9733;</span>
                   ))}
                 </div>
-                <p className="coins-earned">Coins earned: {result.coinsEarned}</p>
+                <p className="coins-earned">
+                  {result.coinsAwarded > 0
+                    ? `Coins earned: ${result.coinsAwarded}`
+                    : "No new coins (you'd already earned these)."}
+                </p>
               </>
             )}
-            <button className="ok-btn" onClick={() => navigate(trackInfo.levelsPath)}>
-              OK
-            </button>
+            <div className="quiz-actions quiz-result-actions">
+              <button className="back-btn" onClick={() => navigate(trackInfo.levelsPath)}>Back to levels</button>
+              <button className="ok-btn" onClick={() => setAttemptKey((k) => k + 1)}>
+                Try new questions
+              </button>
+            </div>
+            {quiz.randomized && (
+              <p className="quiz-fresh-note">
+                <i className="fas fa-shuffle" /> Every attempt draws a different set of questions.
+              </p>
+            )}
           </div>
         ) : (
           <>
             <div className="quiz-question">
-              {current + 1}. {questions[current].question}
+              <span className="quiz-qnum">{current + 1}.</span>
+              <QuestionText text={questions[current].question} />
             </div>
 
             <form onSubmit={(e) => e.preventDefault()}>
@@ -165,12 +197,9 @@ function QuizLevel() {
                     name="option"
                     value={index}
                     checked={selected === index}
-                    onChange={() => {
-                      setSelected(index);
-                      setError("");
-                    }}
+                    onChange={() => { setSelected(index); setError(""); }}
                   />
-                  {option}
+                  <QuestionText text={option} className="qt-inline" />
                 </label>
               ))}
             </form>
@@ -178,11 +207,9 @@ function QuizLevel() {
             {error && <p className="quiz-error">{error}</p>}
 
             <div className="quiz-actions">
-              <button className="back-btn" onClick={() => navigate(trackInfo.levelsPath)}>
-                Back
-              </button>
-              <button className="submit-btn" onClick={submitAnswer}>
-                Submit
+              <button className="back-btn" onClick={() => navigate(trackInfo.levelsPath)}>Back</button>
+              <button className="submit-btn" onClick={submitAnswer} disabled={submitting}>
+                {submitting ? "Submitting…" : current + 1 < questions.length ? "Submit" : "Finish"}
               </button>
             </div>
           </>

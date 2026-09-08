@@ -160,3 +160,24 @@
     margin-top: 15px;
   }
 }
+
+/* --- Randomised question sets --- */
+/* Prompts can now include code samples, so the question block is left-aligned
+   and the number sits alongside rather than inline with wrapped text. */
+.quiz-question { display: flex; gap: 8px; align-items: flex-start; text-align: left; }
+.quiz-qnum { flex: 0 0 auto; font-weight: 700; line-height: 1.55; }
+.quiz-question .qt { flex: 1 1 auto; min-width: 0; }
+
+.option .qt { display: inline; }
+
+.quiz-result-actions { justify-content: center; gap: 10px; }
+
+.quiz-fresh-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}

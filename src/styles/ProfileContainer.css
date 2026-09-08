@@ -2,6 +2,14 @@
    PROFILE CONTAINER
    ========================================================= */
 
+.profile-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(90% 60% at 8% -5%, rgba(124, 58, 237, 0.20) 0%, transparent 55%),
+    radial-gradient(80% 50% at 100% 0%, rgba(0, 242, 254, 0.14) 0%, transparent 50%),
+    linear-gradient(180deg, #0a1524 0%, #081020 100%);
+}
+
 .profile-content-wrapper {
   display: flex;
 

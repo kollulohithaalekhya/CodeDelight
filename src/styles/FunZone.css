@@ -1,140 +1,150 @@
-/* Fun Zone, ported from the original funzone.css. Scoped under
-   .funzone-container so nothing leaks into the other routes. */
+/* =========================================================
+   FUN ZONE — gamified playground
+   ========================================================= */
 
-.funzone-container {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #0b1c2d;
-  color: white;
+.fz {
+  position: relative;
+  min-height: calc(100vh - 85px);
+  padding: clamp(28px, 5vw, 48px) clamp(16px, 5vw, 48px) 64px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(120% 120% at 0% 0%, #1a1442 0%, #12203b 45%, #0a1524 100%);
+  color: #e8eefb;
 }
+.fz-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.fz-orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.5; }
+.fz-orb.o1 { width: 420px; height: 420px; background: #7c3aed; top: -120px; left: -80px; }
+.fz-orb.o2 { width: 400px; height: 400px; background: #00f2fe; bottom: -140px; right: -70px; opacity: 0.4; }
 
-.funzone-title {
-  font-size: 3rem;
-  color: #00e5ff;
+/* Hero + stats */
+.fz-hero {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  flex-wrap: wrap; margin-bottom: 24px;
 }
+.fz-hero h1 { margin: 0; font-size: clamp(28px, 5vw, 42px); font-weight: 800; }
+.fz-hero p { margin: 8px 0 0; color: #c3d0e6; font-size: clamp(0.95rem, 2vw, 1.1rem); }
 
-.funzone-subtitle {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #cccccc;
+.fz-stats { display: flex; gap: 14px; }
+.fz-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  min-width: 82px; padding: 14px 18px; border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
 }
+.fz-stat i { font-size: 18px; }
+.fz-stat:nth-child(1) i { color: #fbbf24; }
+.fz-stat:nth-child(2) i { color: #38bdf8; }
+.fz-stat:nth-child(3) i { color: #fb7185; }
+.fz-stat span { font-size: 22px; font-weight: 800; }
+.fz-stat small { font-size: 11px; color: #9fb3ce; text-transform: uppercase; letter-spacing: 0.5px; }
 
-.coin-counter {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  background-color: #112233;
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 10px;
-  border: 2px solid #00e5ff;
+/* Messages */
+.fz-message { padding: 12px 16px; border-radius: 12px; margin-bottom: 18px; font-weight: 600; }
+.fz-message.error { background: rgba(239,68,68,0.14); border: 1px solid rgba(239,68,68,0.4); color: #fca5a5; }
+.fz-message.ok { background: rgba(34,197,94,0.14); border: 1px solid rgba(34,197,94,0.4); color: #86efac; }
+
+/* Daily challenge */
+.fz-daily {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; border-radius: 16px; margin-bottom: 30px;
+  background: linear-gradient(135deg, rgba(251,113,133,0.14), rgba(124,58,237,0.12));
+  border: 1px solid rgba(255,255,255,0.10);
 }
-
-.funzone-message {
-  margin: 18px auto 0;
-  max-width: 420px;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-size: 0.95rem;
+.fz-daily.done { opacity: 0.85; }
+.fz-daily-icon { font-size: 38px; line-height: 1; }
+.fz-daily-body { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.fz-daily-kicker { font-size: 11.5px; font-weight: 800; letter-spacing: 0.3px; color: #fecdd3; text-transform: uppercase; }
+.fz-daily-body strong { font-size: 17px; color: #f4f9ff; }
+.fz-daily-sub { font-size: 13px; color: #c3d0e6; }
+.fz-daily-sub b { color: #fff; }
+.fz-daily-badge { font-size: 12px; font-weight: 700; color: #cdd9ec; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,0.08); }
+.fz-daily-badge.done { color: #86efac; background: rgba(34,197,94,0.14); border: 1px solid rgba(34,197,94,0.3); }
+.fz-daily-btn {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 11px 22px; border: none; border-radius: 12px; cursor: pointer;
+  font-weight: 800; font-size: 14px; color: #4a0d1a;
+  background: linear-gradient(135deg, #fb7185, #f472b6);
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
+.fz-daily-btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
 
-.funzone-message.ok {
-  background: rgba(0, 229, 255, 0.12);
-  border: 1px solid #00e5ff;
-  color: #cffafe;
+html[data-theme="light"] .fz-daily-body strong { color: #16233b; }
+html[data-theme="light"] .fz-daily-sub { color: #55647a; }
+html[data-theme="light"] .fz-daily-sub b { color: #16233b; }
+
+/* Sections */
+.fz-section { margin-bottom: 34px; }
+.fz-section-title {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 16px;
+  font-size: 19px; font-weight: 800;
 }
+.fz-section-title i { color: #a78bfa; }
 
-.funzone-message.error {
-  background: rgba(248, 113, 113, 0.12);
-  border: 1px solid #f87171;
-  color: #fecaca;
+.fz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+
+.fz-card {
+  position: relative;
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 22px; border-radius: 18px; text-align: center;
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 12px 30px rgba(3,10,26,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-top: 40px;
-  padding: 0 20px;
+.fz-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,0.5); border-color: rgba(0,242,254,0.4); }
+.fz-card.locked { opacity: 0.72; }
+.fz-card.tier-locked { opacity: 0.82; border-color: rgba(148,163,184,0.25); }
+.fz-card.tier-locked:hover { transform: none; border-color: rgba(148,163,184,0.3); box-shadow: 0 12px 30px rgba(3,10,26,0.4); }
+.fz-lock-badge {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px;
+  padding: 4px 9px; border-radius: 999px;
+  color: #cbd5e1; background: rgba(30,41,59,0.7); border: 1px solid rgba(148,163,184,0.35);
 }
-
-.game-card {
-  background: linear-gradient(135deg, #112233, #0e1a2a);
-  border: 3px solid #00e5ff;
-  padding: 35px 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.25);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  text-align: center;
-  min-height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.fz-unlock-hint {
+  font-size: 12px; font-weight: 600; line-height: 1.4; color: #b6c2d6;
+  padding: 8px 10px; border-radius: 10px; margin: 2px 0;
+  background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.22);
 }
+.fz-unlock-hint i { margin-right: 5px; color: #94a3b8; }
+html[data-theme="light"] .fz-lock-badge { color: #475569; background: #eef2f8; border-color: #d3dcea; }
+html[data-theme="light"] .fz-unlock-hint { color: #55647a; background: #f1f5fb; border-color: #e0e7f1; }
 
-.game-card:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+.fz-card-icon {
+  width: 64px; height: 64px; margin: 0 auto; border-radius: 18px;
+  display: grid; place-items: center; font-size: 28px; color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #4facfe);
+  box-shadow: 0 8px 22px rgba(124,58,237,0.4);
 }
+.fz-card h3 { margin: 4px 0 0; font-size: 18px; }
+.fz-card p { margin: 0; font-size: 13.5px; color: #a9bad3; line-height: 1.55; flex: 1; }
 
-.game-card h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+.fz-card-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; font-size: 13px; font-weight: 700; }
+.fz-cost { color: #fbbf24; }
+.fz-win { color: #4ade80; }
+.fz-win.star { color: #38bdf8; }
+
+.fz-play {
+  margin-top: 6px; padding: 11px 18px; border: none; border-radius: 12px; cursor: pointer;
+  font-weight: 700; font-size: 14px; color: #04283a;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  transition: transform 0.15s ease, filter 0.15s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
 }
+.fz-play:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); }
+.fz-play:disabled { opacity: 0.6; cursor: not-allowed; background: rgba(255,255,255,0.12); color: #9fb3ce; }
 
-.game-card p {
-  font-size: 1rem;
-  color: #bbbbbb;
-}
+.fz-loading, .fz-empty { text-align: center; color: #9fb3ce; padding: 40px; }
 
-.game-card button {
-  margin-top: 12px;
-  padding: 10px 20px;
-  background-color: #00e5ff;
-  color: #0b1c2d;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
+/* Light theme */
+html[data-theme="light"] .fz { background: radial-gradient(120% 120% at 0% 0%, #eef1fb, #e3ecf9 55%, #dbe6f4); color: #16233b; }
+html[data-theme="light"] .fz-hero p { color: #4a5a72; }
+html[data-theme="light"] .fz-stat, html[data-theme="light"] .fz-card { background: #fff; border-color: #e3e9f2; box-shadow: 0 10px 24px rgba(30,50,90,0.08); }
+html[data-theme="light"] .fz-card p { color: #55647a; }
 
-.game-card button:hover {
-  background-color: #00c3ff;
-  transform: scale(1.05);
-}
-
-.game-icon {
-  font-size: 2.5rem;
-  color: #00e5ff;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 1000px) {
-  .game-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .funzone-title {
-    font-size: 2rem;
-  }
-  .funzone-subtitle {
-    font-size: 1rem;
-  }
-  .game-grid {
-    gap: 16px;
-    padding: 0;
-  }
-  .game-card {
-    padding: 22px 16px;
-    min-height: 260px;
-  }
-  .game-card h2 {
-    font-size: 1.15rem;
-  }
-  .game-card p {
-    font-size: 0.85rem;
-  }
+@media (max-width: 560px) {
+  .fz-hero { flex-direction: column; align-items: flex-start; }
+  .fz-stats { width: 100%; }
+  .fz-stat { flex: 1; min-width: 0; }
 }

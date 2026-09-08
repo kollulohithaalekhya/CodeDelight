@@ -61,13 +61,16 @@
       margin-bottom: 10px;
     }
 
-    .input-icon i {
+    .input-icon i,
+    .input-icon svg {
       position: absolute;
       top: 50%;
       left: 12px;
       transform: translateY(-50%);
       color: #999;
       font-size: 14px;
+      width: 14px;
+      height: 14px;
     }
 
     .input-icon input {

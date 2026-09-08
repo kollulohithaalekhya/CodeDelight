@@ -1,86 +1,124 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Editor from "@monaco-editor/react";
 import "../styles/WebCompiler.css";
 
-// automaticLayout lets Monaco re-measure when the flex track it sits in
-// changes width; without it the editors keep their first measured width and
-// push the page sideways at in-between breakpoints (851px, 958px).
+const STARTER = {
+  html: `<h1>Hello, Code Delight! 👋</h1>\n<p>Edit HTML, CSS & JS — the preview updates live.</p>\n<button id="btn">Click me</button>`,
+  css: `body {\n  font-family: system-ui, sans-serif;\n  text-align: center;\n  padding: 40px;\n  color: #0f2038;\n}\nbutton {\n  padding: 10px 20px;\n  border: none;\n  border-radius: 8px;\n  background: #4facfe;\n  color: #fff;\n  cursor: pointer;\n}`,
+  js: `document.getElementById("btn").addEventListener("click", () => {\n  alert("You clicked the button!");\n});`,
+};
+
 const EDITOR_OPTIONS = {
   minimap: { enabled: false },
   automaticLayout: true,
   scrollBeyondLastLine: false,
   wordWrap: "on",
-  fontSize: 14,
+  padding: { top: 12 },
+  fontSize: Number(localStorage.getItem("fontSize")) || 14,
 };
 
+const TABS = [
+  { key: "html", label: "HTML", icon: "fa-brands fa-html5", color: "#e34f26" },
+  { key: "css", label: "CSS", icon: "fa-brands fa-css3-alt", color: "#2965f1" },
+  { key: "js", label: "JS", icon: "fa-brands fa-js", color: "#e0c810" },
+];
+
 const WebCompiler = () => {
-  const [htmlCode, setHtmlCode] = useState("");
-  const [cssCode, setCssCode] = useState("");
-  const [jsCode, setJsCode] = useState("");
+  const [code, setCode] = useState({ html: STARTER.html, css: STARTER.css, js: STARTER.js });
+  const [activeTab, setActiveTab] = useState("html");
+  const [autoRun, setAutoRun] = useState(true);
+  const [view, setView] = useState("split"); // split | editor | preview (mobile)
   const outputRef = useRef(null);
 
+  const render = () => {
+    if (!outputRef.current) return;
+    const doc = outputRef.current.contentDocument;
+    const full = `<!DOCTYPE html><html><head><style>html,body{height:100%;margin:0;padding:0;overflow:auto;}${code.css}</style></head><body>${code.html}<script>${code.js}<\/script></body></html>`;
+    doc.open();
+    doc.write(full);
+    doc.close();
+  };
+
+  // Live auto-run (debounced).
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (!outputRef.current) return;
+    if (!autoRun) return;
+    const t = setTimeout(render, 300);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [code, autoRun]);
 
-      const outputDoc = outputRef.current.contentDocument;
-      const fullHTML = `
-        <html>
-          <head>
-            <style>
-              html, body { height: 100%; margin: 0; padding: 0; overflow: auto; }
-              ${cssCode}
-            </style>
-          </head>
-          <body>
-            ${htmlCode}
-            <script>${jsCode}<\/script>
-          </body>
-        </html>
-      `;
+  // Render once on mount even if autoRun is toggled off later.
+  useEffect(() => { render(); /* eslint-disable-next-line */ }, []);
 
-      outputDoc.open();
-      outputDoc.write(fullHTML);
-      outputDoc.close();
-    }, 300);
+  const update = (key, val) => setCode((c) => ({ ...c, [key]: val ?? "" }));
+  const reset = () => setCode({ html: STARTER.html, css: STARTER.css, js: STARTER.js });
 
-    return () => clearTimeout(timeout);
-  }, [htmlCode, cssCode, jsCode]);
-
-  const editors = [
-    { key: "html", label: "HTML", icon: "fa-brands fa-html5", language: "html", value: htmlCode, onChange: setHtmlCode },
-    { key: "css", label: "CSS", icon: "fa-brands fa-css3-alt", language: "css", value: cssCode, onChange: setCssCode },
-    { key: "js", label: "JavaScript", icon: "fa-brands fa-js", language: "javascript", value: jsCode, onChange: setJsCode },
-  ];
+  const active = TABS.find((t) => t.key === activeTab);
 
   return (
-    <div className="webcompiler-container">
-      <div className="editors-section">
-        {editors.map(({ key, label, icon, language, value, onChange }) => (
-          <div className="editor-card" key={key}>
-            <label>
-              <i className={icon}></i> {label}
-            </label>
-            <div className="editor-body">
-              <Editor
-                height="100%"
-                width="100%"
-                defaultLanguage={language}
-                theme="vs-dark"
-                value={value}
-                onChange={(next) => onChange(next || "")}
-                options={EDITOR_OPTIONS}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="wc">
+      {/* Toolbar */}
+      <header className="wc-toolbar">
+        <div className="wc-tb-left">
+          <Link to="/compiler" className="wc-back" title="Back to compilers"><i className="fa-solid fa-arrow-left" /></Link>
+          <span className="wc-brand"><i className="fa-solid fa-laptop-code" /> Web Compiler</span>
+        </div>
 
-      <div className="output-section">
-        <label>
-          <i className="fa-solid fa-play"></i> Output
-        </label>
-        <iframe title="output" ref={outputRef} />
+        <div className="wc-tb-right">
+          <label className="wc-toggle">
+            <input type="checkbox" checked={autoRun} onChange={(e) => setAutoRun(e.target.checked)} />
+            <span>Auto-run</span>
+          </label>
+          {!autoRun && (
+            <button className="wc-run" onClick={render}><i className="fa-solid fa-play" /> Run</button>
+          )}
+          <button className="wc-icon" onClick={reset} title="Reset to starter"><i className="fa-solid fa-rotate-left" /></button>
+
+          {/* Mobile view switch */}
+          <div className="wc-view-switch">
+            <button className={view === "editor" ? "active" : ""} onClick={() => setView("editor")} title="Editors"><i className="fa-solid fa-code" /></button>
+            <button className={view === "preview" ? "active" : ""} onClick={() => setView("preview")} title="Preview"><i className="fa-solid fa-eye" /></button>
+          </div>
+        </div>
+      </header>
+
+      <div className="wc-workspace">
+        {/* Editors */}
+        <section className={`wc-editors ${view === "preview" ? "hide-mobile" : ""}`}>
+          <div className="wc-tabs">
+            {TABS.map((t) => (
+              <button
+                key={t.key}
+                className={`wc-tab ${activeTab === t.key ? "active" : ""}`}
+                onClick={() => setActiveTab(t.key)}
+                style={activeTab === t.key ? { "--tab": t.color } : undefined}
+              >
+                <i className={t.icon} style={{ color: t.color }} /> {t.label}
+              </button>
+            ))}
+          </div>
+          <div className="wc-editor-body">
+            <Editor
+              height="100%"
+              width="100%"
+              language={active.key === "js" ? "javascript" : active.key}
+              path={active.key}
+              theme="vs-dark"
+              value={code[active.key]}
+              onChange={(v) => update(active.key, v)}
+              options={EDITOR_OPTIONS}
+            />
+          </div>
+        </section>
+
+        {/* Preview */}
+        <section className={`wc-preview ${view === "editor" ? "hide-mobile" : ""}`}>
+          <div className="wc-preview-head"><i className="fa-solid fa-eye" /> Live Preview</div>
+          <div className="wc-preview-frame">
+            <iframe title="output" ref={outputRef} />
+          </div>
+        </section>
       </div>
     </div>
   );

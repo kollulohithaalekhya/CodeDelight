@@ -1,396 +1,209 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import ProfileSidebar from "./ProfileSidebar";
-import "../styles/Dashboard.css";
-import Badge from "react-bootstrap/Badge";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCode,
-  faTasks,
-  faGamepad,
-  faFileAlt,
+  faCoins, faStar, faClipboardQuestion, faGamepad, faFire, faGraduationCap, faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
+import ProfileSidebar from "./ProfileSidebar";
 import ProfileHeader from "./ProfileHeader";
+import { get } from "../api/client";
+import { useAuth } from "../context/AuthContext";
+import "../styles/Dashboard.css";
 
-
-// Info Cards
-const cardData = [
-  { title: "Coding", value: "8", change: "+80 coins", color: "#0a1d3a", icon: faCode },
-  { title: "Tasks", value: "12", change: "+60 coins", color: "#0a1d3a", icon: faTasks },
-  { title: "Games", value: "18", change: "+180 coins", color: "#0a1d3a", icon: faGamepad },
-  { title: "Tests", value: "5", change: "+50 coins", color: "#0a1d3a", icon: faFileAlt },
-];
-
-// Line Chart (Revenue)
-const revenueChart = {
-  options: {
-    chart: { type: "line", background: "transparent" },
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-    },
-    grid: { show: false },
-    stroke: { curve: "smooth" },
-    theme: { mode: "dark" },
-    colors: ["#00f2fe", "#b3c8e1ff"], 
-  },
-  series: [
-    { name: "Primary", data: [10, 85, 60, 95, 60, 80, 70, 60, 95, 39, 60, 90] },
-    {
-      name: "Secondary",
-      data: [12, 23, 34, 26, 23, 41, 49, 30, 46, 14, 27, 52],
-      type: "line",
-      dashArray: 5,
-    },
-  ],
+const TYPE_LABEL = {
+  quiz_reward: "Quizzes",
+  game_reward: "Games",
+  game_entry: "Game entry",
+  signup_bonus: "Signup",
+  course_reward: "Courses",
+  quest_reward: "Quest",
+  admin_adjustment: "Admin",
 };
 
-const expensesChart = {
-  series: [
-    {
-      name: "Quizes",
-      data: [44, 55, 41, 67, 22, 43],
-    },
-    {
-      name: "Tasks",
-      data: [13, 23, 20, 8, 13, 27],
-    },
-  ],
-  options: {
-    chart: {
-      type: "bar",
-      height: 350,
-      stacked: true,
-      toolbar: {
-        show: true,
-      },
-      zoom: {
-        enabled: true,
-      },
-      colors: ["#1b3233ff", "#010509ff"],
-    },
-    tooltip: {
-      theme: "dark", // changes tooltip background to dark
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: "#2199d5ff", // 👈 Y-axis number color
-          fontSize: "12px",
-        },
-      },
-    },
-    colors: ["#00f2fe", "#ffffff89"],
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          legend: {
-            position: "bottom",
-            offsetX: -10,
-            offsetY: 0,
-          },
-        },
-      },
-    ],
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        borderRadius: 10,
-        borderRadiusApplication: "end", // 'around', 'end'
-        borderRadiusWhenStacked: "last", // 'all', 'last'
-        dataLabels: {
-          total: {
-            enabled: true,
-            style: {
-              fontSize: "13px",
-              fontWeight: 900,
-            },
-          },
-        },
-      },
-    },
-    xaxis: {
-      type: "datetime",
-      categories: [
-        "01/01/2011 GMT",
-        "01/02/2011 GMT",
-        "01/03/2011 GMT",
-        "01/04/2011 GMT",
-        "01/05/2011 GMT",
-        "01/06/2011 GMT",
-      ],
-      labels: {
-        style: {
-          colors: "#00E396", // 🎨 text color of the x-axis labels
-          fontSize: "12px",
-          fontWeight: 500,
-        },
-      },
-      // axisBorder: {
-      //   show: true,
-      //   color: '#00E396',     // 🎨 color of the bottom axis line
-      // },
-      // axisTicks: {
-      //   show: true,
-      //   color: '#00E396',     // 🎨 color of the small ticks under labels
-      // },
-    },
-    legend: {
-      position: "right",
-      offsetY: 40,
-    },
-    fill: {
-      opacity: 1,
-    },
-  },
-};
-// const expensesChart = {
-//   series: [
-//     { name: "PRODUCT A", data: [44, 55, 41, 67, 22, 43] },
-//     { name: "PRODUCT B", data: [13, 23, 20, 8, 13, 27] },
-//   ],
-//   yaxis: {
-//     labels: {
-//       style: {
-//         colors: "#2199d5ff", // 👈 Y-axis number color
-//         fontSize: "12px",
-//       },
-//     },
-//   },
-//   labels: {
-//     style: {
-//       colors: "#00E396", // 🎨 text color of the x-axis labels
-//       fontSize: "12px",
-//       fontWeight: 500,
-//     },
-//   },
-//   options: {
-//     chart: {
-//       type: "bar",
-//       height: 350,
-//       stacked: true,
-//       toolbar: { show: true },
-//       zoom: { enabled: true },
-//     },
-//     colors: ["#00f2fe", "#b3c8e1b7"],
-//     responsive: [
-//       {
-//         breakpoint: 480,
-//         options: {
-//           legend: { position: "bottom", offsetX: -10, offsetY: 0 },
-//         },
-//       },
-//     ],
-//     plotOptions: {
-//       bar: {
-//         horizontal: false,
-//         borderRadius: 10,
-//         borderRadiusApplication: "end",
-//         borderRadiusWhenStacked: "last",
-//         dataLabels: {
-//           total: {
-//             enabled: true,
-//             style: { fontSize: "13px", fontWeight: 900 },
-//           },
-//         },
-//       },
-//     },
-//     xaxis: {
-//       type: "datetime",
-//       categories: [
-//         "01/01/2011 GMT",
-//         "01/02/2011 GMT",
-//         "01/03/2011 GMT",
-//         "01/04/2011 GMT",
-//         "01/05/2011 GMT",
-//         "01/06/2011 GMT",
-//       ],
-//     },
-//     legend: { position: "right", offsetY: 40 },
-//     fill: { opacity: 1 },
-//   },
-// };
-
-// const expensesChart = {
-//   options: {
-//     chart: { type: "bar", background: "transparent" },
-//     xaxis: {
-//       categories: [
-//         "Jan",
-//         "Feb",
-//         "Mar",
-//         "Apr",
-//         "May",
-//         "Jun",
-//         "Jul",
-//         "Aug",
-//         "Sep",
-//         "Oct",
-//         "Nov",
-//         "Dec",
-//       ],
-//     },
-//     grid: { show: false },
-//     theme: { mode: "dark" },
-//     plotOptions: {
-//       bar: { horizontal: false, borderRadius: 4, columnWidth: "40%" },
-//     },
-//     colors: ["#00f2fe", "#417a85ff"],
-//   },
-//   series: [
-//     {
-//       name: "Primary",
-//       data: [
-//         2000, 1700, 1800, 2200, 1300, 1500, 1100, 2500, 2000, 2200, 3000, 2000,
-//       ],
-//     },
-//     {
-//       name: "Secondary",
-//       data: [
-//         1000, 700, 600, 1100, 1900, 2800, 600, 1800, 1600, 1400, 2000, 1000,
-//       ],
-//     },
-//   ],
-// };
-
-
-// Bottom Radial Charts
-const progressCharts = [
-  { title: "Games Played", series: [60], labels: ["Games Played"] },
-  { title: "Games Won", series: [45], labels: ["Games Won"] },
-  { title: "Games Lost", series: [55], labels: ["Games Lost"] },
-];
-
-
-
-
-
-
-const leaderboardChart = {
-  options: {
-    chart: { type: "bar", background: "transparent" },
-    xaxis: { categories: ["Ashrita", "Lakshan", "Charm"] },
-    theme: { mode: "dark" },
-    plotOptions: { bar: { borderRadius: 6, horizontal: true } },
-    colors: ["#00f2fe"], 
-  },
-  series: [{ name: "Coins", data: [320, 280, 250] }],
-};
-
-function InfoCard({ title, value, change, color, icon }) {
-  return (
-    <div className="info-card">
-      <div className="info-card-column">
-        <Badge bg="info" text="dark" className="info-title">{title}</Badge>
-        <div className="info-value">{value}</div>
-        <span className="info-badge" style={{ background: color }}>{change}</span>
-      </div>
-      <FontAwesomeIcon icon={icon} className="info-icon" />
-    </div>
-  );
-}
-
-// Main Dashboard Component
 function Dashboard() {
+  const { user } = useAuth();
+  const [profile, setProfile] = useState(null);
+  const [coins, setCoins] = useState(null);
+  const [leaders, setLeaders] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.allSettled([
+      get("/api/profile/me"),
+      get("/api/coins/me"),
+      get("/api/leaderboard?limit=8"),
+    ])
+      .then(([p, c, l]) => {
+        if (p.status === "fulfilled") setProfile(p.value.profile);
+        if (c.status === "fulfilled") setCoins(c.value);
+        if (l.status === "fulfilled") setLeaders(l.value.leaders);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  // ---- Stat cards (all real) ----
+  const stats = [
+    { title: "Coins", value: profile?.coins ?? 0, icon: faCoins, tint: "gold" },
+    { title: "Stars", value: profile?.stars ?? 0, icon: faStar, tint: "cyan" },
+    { title: "Quizzes Solved", value: profile?.quizzesSolved ?? 0, icon: faClipboardQuestion, tint: "violet" },
+    { title: "Games Played", value: profile?.gamesPlayed ?? 0, icon: faGamepad, tint: "green" },
+  ];
+
+  // ---- Activity area chart from the real heatmap data (last 30 days) ----
+  const activityChart = useMemo(() => {
+    const map = {};
+    (profile?.activity || []).forEach((a) => { map[a.date.replace(/\//g, "-")] = a.count; });
+    const days = [];
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const key = d.toISOString().slice(0, 10);
+      days.push({ label: d.toLocaleDateString(undefined, { month: "short", day: "numeric" }), value: map[key] || 0 });
+    }
+    return {
+      series: [{ name: "Activity", data: days.map((d) => d.value) }],
+      options: {
+        chart: { type: "area", background: "transparent", toolbar: { show: false }, sparkline: { enabled: false } },
+        theme: { mode: "dark" },
+        colors: ["#00f2fe"],
+        dataLabels: { enabled: false },
+        stroke: { curve: "smooth", width: 3 },
+        fill: { type: "gradient", gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.05, stops: [0, 90] } },
+        grid: { borderColor: "rgba(255,255,255,0.06)" },
+        xaxis: {
+          categories: days.map((d) => d.label),
+          labels: { style: { colors: "#7f92b3" }, rotate: 0, hideOverlappingLabels: true },
+          axisBorder: { show: false }, axisTicks: { show: false },
+          tickAmount: 6,
+        },
+        yaxis: { labels: { style: { colors: "#7f92b3" } } },
+        tooltip: { theme: "dark" },
+      },
+    };
+  }, [profile]);
+
+  // ---- Coins earned by source (real, from ledger) ----
+  const coinsDonut = useMemo(() => {
+    const byType = {};
+    (coins?.transactions || []).forEach((t) => {
+      if (t.amount > 0) byType[t.type] = (byType[t.type] || 0) + t.amount;
+    });
+    const labels = Object.keys(byType).map((k) => TYPE_LABEL[k] || k);
+    const series = Object.values(byType);
+    return {
+      hasData: series.length > 0,
+      series,
+      options: {
+        chart: { type: "donut", background: "transparent" },
+        theme: { mode: "dark" },
+        labels,
+        colors: ["#00f2fe", "#7c3aed", "#34d399", "#fbbf24", "#f472b6", "#60a5fa"],
+        stroke: { width: 0 },
+        legend: { position: "bottom", labels: { colors: "#c3d0e6" } },
+        dataLabels: { enabled: true, style: { fontSize: "11px" } },
+        plotOptions: { pie: { donut: { size: "62%", labels: { show: true, total: { show: true, label: "Earned", color: "#c3d0e6" } } } } },
+        tooltip: { theme: "dark" },
+      },
+    };
+  }, [coins]);
+
+  const name = user?.username || profile?.username || "Learner";
+
+  if (loading) {
+    return (
+      <div className="dashboard-wrapper">
+        <div className="profile-page"><ProfileHeader /></div>
+        <div className="dashboard-container">
+          <ProfileSidebar />
+          <div className="dashboard-dark"><p className="dash-loading">Loading your dashboard…</p></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="dashboard-wrapper">
-      <ProfileHeader />
+      {/* Header styles live under .profile-page */}
+      <div className="profile-page"><ProfileHeader /></div>
+
       <div className="dashboard-container">
         <ProfileSidebar />
+
         <div className="dashboard-dark">
-          {/* Top Cards */}
-          <div className="dashboard-cards">
-            {cardData.map((cd) => (
-              <InfoCard key={cd.title} {...cd} />
+          {/* Hero */}
+          <div className="dash-hero">
+            <div>
+              <h1>Welcome back, <span>{name}</span> 👋</h1>
+              <p>Here's your learning snapshot.</p>
+            </div>
+            <div className="dash-streak">
+              <FontAwesomeIcon icon={faFire} />
+              <div>
+                <strong>{profile?.streak?.current ?? 0}-day</strong>
+                <span>streak</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Stat cards */}
+          <div className="dash-stats">
+            {stats.map((s) => (
+              <div className={`dash-stat tint-${s.tint}`} key={s.title}>
+                <div className="dash-stat-icon"><FontAwesomeIcon icon={s.icon} /></div>
+                <div>
+                  <div className="dash-stat-value">{s.value}</div>
+                  <div className="dash-stat-title">{s.title}</div>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Line & Bar Charts */}
-          <div className="dashboard-charts-row">
-            <div className="dashboard-chart">
-              <h3>Daily Updates</h3>
-              <ReactApexChart
-                options={revenueChart.options}
-                series={revenueChart.series}
-                type="line"
-                height={250}
-              />
+          {/* Charts */}
+          <div className="dash-grid">
+            <div className="dash-card dash-col-2">
+              <div className="dash-card-head"><h3>Activity — last 30 days</h3></div>
+              <ReactApexChart options={activityChart.options} series={activityChart.series} type="area" height={260} />
             </div>
-            <div className="dashboard-chart">
-              <h3>Monthly Map</h3>
-              <ReactApexChart
-                options={expensesChart.options}
-                series={expensesChart.series}
-                type="bar"
-                height={250}
-              />
+
+            <div className="dash-card">
+              <div className="dash-card-head"><h3>Coins earned by source</h3></div>
+              {coinsDonut.hasData ? (
+                <ReactApexChart options={coinsDonut.options} series={coinsDonut.series} type="donut" height={260} />
+              ) : (
+                <div className="dash-empty">No coins earned yet — take a quiz to start!</div>
+              )}
             </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="dashboard-extra-sections">
-            
-            <div className="dashboard-progress">
-              <h3>
-                {" "}
-                <span class="badge badge-primary">Game Progress</span>
-              </h3>
-              <div
-                className="progress-charts"
-                style={{ display: "flex", gap: "20px" }}
-              >
-                {progressCharts.map((pc) => (
-                  <div key={pc.title} style={{ flex: 1 }}>
-                    <h4>{pc.title}</h4>
-                    <ReactApexChart
-                      options={{
-                        chart: { type: "radialBar" },
-                        labels: pc.labels,
-                        colors: ["#00f2fe"], 
-                        plotOptions: {
-                          radialBar: {
-                            hollow: { size: "70%" },
-                            dataLabels: {
-                              name: { show: true },
-                              value: { show: true },
-                            },
-                          },
-                        },
-                      }}
-                      series={pc.series}
-                      type="radialBar"
-                      height={200}
-                    />
+          {/* Bottom row */}
+          <div className="dash-grid">
+            {/* Leaderboard */}
+            <div className="dash-card dash-col-2">
+              <div className="dash-card-head"><h3><FontAwesomeIcon icon={faTrophy} /> Leaderboard</h3></div>
+              <div className="dash-leaders">
+                {leaders.length === 0 && <div className="dash-empty">No learners yet.</div>}
+                {leaders.map((l) => (
+                  <div className={`dash-leader ${l.isMe ? "me" : ""}`} key={l.rank}>
+                    <span className={`dash-rank rank-${l.rank}`}>{l.rank}</span>
+                    <img src={l.profileImage || "/images/user.png"} alt={l.username} className="dash-leader-avatar" />
+                    <span className="dash-leader-name">{l.username}{l.isMe && <em> (you)</em>}</span>
+                    <span className="dash-leader-stat"><FontAwesomeIcon icon={faStar} /> {l.stars}</span>
+                    <span className="dash-leader-stat gold"><FontAwesomeIcon icon={faCoins} /> {l.coins}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Leaderboard */}
-            <div className="dashboard-leaderboard-chart">
-              <h3>
-                <span class="badge badge-primary">Top users</span>
-              </h3>
-              <ReactApexChart
-                options={leaderboardChart.options}
-                series={leaderboardChart.series}
-                type="bar"
-                
-                height={180}
-              />
+            {/* Snapshot */}
+            <div className="dash-card">
+              <div className="dash-card-head"><h3>Snapshot</h3></div>
+              <ul className="dash-snapshot">
+                <li><span><FontAwesomeIcon icon={faGraduationCap} /> Courses completed</span><strong>{profile?.coursesCompleted ?? 0}</strong></li>
+                <li><span><FontAwesomeIcon icon={faClipboardQuestion} /> Quizzes solved</span><strong>{profile?.quizzesSolved ?? 0}</strong></li>
+                <li><span><FontAwesomeIcon icon={faGamepad} /> Games played</span><strong>{profile?.gamesPlayed ?? 0}</strong></li>
+                <li><span><FontAwesomeIcon icon={faStar} /> Total stars</span><strong>{profile?.stars ?? 0}</strong></li>
+                <li><span><FontAwesomeIcon icon={faTrophy} /> Badges</span><strong>{profile?.badges?.length ?? 0}</strong></li>
+              </ul>
             </div>
           </div>
         </div>

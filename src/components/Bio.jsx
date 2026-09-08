@@ -1,14 +1,16 @@
 import React from "react";
+import { useProfile } from "../context/ProfileContext";
 import "../styles/Bio.css";
 
 const Bio = () => {
+  const { profile } = useProfile();
+  const bio = profile?.bio?.trim();
+
   return (
     <div className="extra-heading">
       <h1>Bio</h1>
       <p>
-        I’m Lakshan, a passionate and self-taught web developer. I enjoy
-        creating beautiful websites and exploring new technologies. Apart from
-        coding, I love drawing and expressing creativity through design.
+        {bio || "You haven't added a bio yet. Head to Settings to tell others about yourself."}
       </p>
     </div>
   );

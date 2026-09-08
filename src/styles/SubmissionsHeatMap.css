@@ -1,32 +1,43 @@
 .submissions-heatmap-container {
   width: 100%;
   max-width: 100%;
-
   min-width: 0;
-
-  min-height: 300px;
-
+  min-height: 200px;
   margin-bottom: 30px;
-
   padding: 24px;
-
   box-sizing: border-box;
-
   overflow: hidden;
-
-  box-shadow: 0 2px 1px #00f2fe;
-
   border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 30px rgba(3, 10, 26, 0.35);
+}
+.submissions-heatmap-container.light {
+  background: #fff;
+  border-color: #e3e9f2;
+  box-shadow: 0 10px 24px rgba(30, 50, 90, 0.08);
 }
 
-
+.shm-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 16px; }
 .submissions-heatmap-container h2 {
-  margin: 0 0 18px 0;
-
-  color: white;
-
-  font-size: clamp(18px, 2vw, 26px);
+  margin: 0;
+  color: #f4f9ff;
+  font-size: clamp(18px, 2vw, 24px);
 }
+.submissions-heatmap-container.light h2 { color: #16233b; }
+.shm-summary { font-size: 13px; color: #9fb3ce; }
+.submissions-heatmap-container.light .shm-summary { color: #55647a; }
+
+/* Month + weekday labels rendered inside the SVG. */
+.my-heatmap text { fill: #9fb3ce; font-size: 10px; }
+.submissions-heatmap-container.light .my-heatmap text { fill: #55647a; }
+
+.shm-legend {
+  display: flex; align-items: center; gap: 5px; margin-top: 14px;
+  font-size: 12px; color: #9fb3ce;
+}
+.submissions-heatmap-container.light .shm-legend { color: #55647a; }
+.shm-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
 
 
 .heatmap-wrapper {

@@ -22,39 +22,43 @@
 .profile-main .heading {
   width: 100%;
 
-  min-height: 70px;
+  min-height: 0;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
-  padding: 0 40px;
+  padding: 4px 6px 14px;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  gap: 12px;
 
   box-sizing: border-box;
 
-  background: linear-gradient(
-    180deg,
-    #00f2fe,
-    #0b526f
-  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   overflow: hidden;
 }
 
 
 .profile-main .heading h1 {
-  margin: 0 0 10px 0;
+  margin: 0;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Poppins", system-ui, sans-serif;
 
-  font-size: clamp(22px, 2.5vw, 34px);
+  font-size: clamp(22px, 2.5vw, 30px);
 
-  font-weight: 700;
+  font-weight: 800;
 
-  color: #132743;
+  letter-spacing: 2px;
 
-  line-height: 1;
+  /* Bright, high-contrast gradient so the title never blends into the dark bg. */
+  background: linear-gradient(135deg, #67e8f9, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 6px rgba(103, 232, 249, 0.25));
+
+  line-height: 1.1;
 }
 
 
@@ -117,9 +121,23 @@
 
   box-sizing: border-box;
 
-  margin: 0 auto 28px;
+  margin: 0 auto 24px;
+
+  padding: 20px;
+
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(3, 10, 26, 0.35);
 
   overflow: hidden;
+}
+
+.profile-main > .submissions-heatmap-container h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e6f1ff;
 }
 
 
@@ -152,6 +170,13 @@
   box-sizing: border-box;
 
   margin: 0 auto;
+
+  padding: 20px;
+
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(3, 10, 26, 0.35);
 
   overflow: hidden;
 }

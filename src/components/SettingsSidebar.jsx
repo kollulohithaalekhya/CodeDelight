@@ -4,7 +4,6 @@ const SettingsSidebar = ({ active, setActive }) => {
   const items = [
     { id: "account", label: "Account" },
     { id: "appearance", label: "Appearance" },
-    { id: "editor", label: "Editor" },
     { id: "notifications", label: "Notifications" },
     { id: "privacy", label: "Privacy" },
     { id: "security", label: "Security" }

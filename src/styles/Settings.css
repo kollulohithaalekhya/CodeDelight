@@ -1,24 +1,311 @@
-/* Settings page shell: sidebar of sections beside the active panel. */
+/* =========================================================
+   SETTINGS PAGE — themed shell + panels
+   Theme is driven by html[data-theme] (see AppearanceSettings).
+   All rules are scoped under .cd-settings so they win by
+   specificity over the older per-panel stylesheets, and so the
+   theme never leaks out to break the rest of the (dark) app.
+   ========================================================= */
+
+.cd-settings {
+  /* Dark theme (default) */
+  --s-page: radial-gradient(120% 100% at 0% 0%, #12203b 0%, #0a1424 55%, #070f1c 100%);
+  --s-text: #e8eefb;
+  --s-muted: #9fb3c8;
+  --s-panel: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  --s-panel-solid: #0c1e34;
+  --s-border: rgba(255, 255, 255, 0.10);
+  --s-border-strong: rgba(255, 255, 255, 0.18);
+  --s-input: #0a1a2e;
+  --s-accent: #00f2fe;
+  --s-accent-2: #4facfe;
+  --s-shadow: 0 10px 30px rgba(2, 8, 22, 0.45);
+
+  min-height: 100vh;
+  background: var(--s-page);
+  color: var(--s-text);
+}
+
+/* Light theme */
+html[data-theme="light"] .cd-settings {
+  --s-page: radial-gradient(120% 100% at 0% 0%, #eef4ff 0%, #f6f8fc 55%, #eef1f7 100%);
+  --s-text: #0f1e33;
+  --s-muted: #55647a;
+  --s-panel: #ffffff;
+  --s-panel-solid: #ffffff;
+  --s-border: #e3e9f2;
+  --s-border-strong: #cdd7e6;
+  --s-input: #f4f7fc;
+  --s-accent: #2563eb;
+  --s-accent-2: #4f8cff;
+  --s-shadow: 0 10px 26px rgba(30, 50, 90, 0.12);
+}
+
+/* The header is wrapped in .profile-page (to borrow the shared header styles);
+   neutralise the full-page background/height that class carries elsewhere. */
+.cd-settings .profile-page {
+  min-height: 0;
+  background: none;
+}
+
+/* ---------- Layout ---------- */
+.cd-settings-body {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 28px 24px 56px;
+}
+
+.cd-settings-head { margin-bottom: 22px; }
+.cd-settings-head h1 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--s-accent), #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cd-settings-head p { margin: 6px 0 0; color: var(--s-muted); }
 
 .settings-container {
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 32px 24px 64px;
 }
 
-.settings-content {
-  flex: 1 1 auto;
-  min-width: 0;
+.settings-content { flex: 1 1 auto; min-width: 0; }
+
+.cd-panel-title {
+  display: none; /* section already has its own <h2> */
 }
 
+/* ---------- Sidebar ---------- */
+.cd-settings .settings-sidebar {
+  width: 230px;
+  flex: 0 0 230px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--s-panel);
+  border: 1px solid var(--s-border);
+  border-radius: 16px;
+  box-shadow: var(--s-shadow);
+  position: sticky;
+  top: 20px;
+}
+
+.cd-settings .settings-sidebar button {
+  appearance: none;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--s-muted);
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+.cd-settings .settings-sidebar button:hover {
+  background: color-mix(in srgb, var(--s-accent) 12%, transparent);
+  color: var(--s-text);
+}
+.cd-settings .settings-sidebar button.active {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--s-accent) 26%, transparent), color-mix(in srgb, var(--s-accent-2) 20%, transparent));
+  color: var(--s-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--s-accent) 40%, transparent);
+}
+
+/* ---------- Panels (all sections share .settings-section) ---------- */
+.cd-settings .settings-section {
+  background: var(--s-panel);
+  border: 1px solid var(--s-border);
+  border-radius: 18px;
+  padding: 28px;
+  max-width: 620px;
+  margin: 0;
+  color: var(--s-text);
+  box-shadow: var(--s-shadow);
+}
+
+.cd-settings .settings-section h2 {
+  font-size: 20px;
+  margin: 0 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid color-mix(in srgb, var(--s-accent) 60%, transparent);
+  width: fit-content;
+  color: var(--s-text);
+}
+
+/* Form controls */
+.cd-settings .settings-form { display: flex; flex-direction: column; }
+.cd-settings .settings-form label { margin-top: 14px; font-size: 13px; color: var(--s-muted); }
+.cd-settings .settings-form input,
+.cd-settings .settings-form textarea,
+.cd-settings .settings-section select,
+.cd-settings .settings-section input[type="text"] {
+  margin-top: 6px;
+  padding: 11px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--s-border-strong);
+  background: var(--s-input);
+  color: var(--s-text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.cd-settings .settings-form textarea { min-height: 92px; resize: vertical; }
+.cd-settings .settings-form input:focus,
+.cd-settings .settings-form textarea:focus,
+.cd-settings .settings-section select:focus {
+  border-color: var(--s-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--s-accent) 22%, transparent);
+}
+.cd-settings .settings-form input:disabled { opacity: 0.65; cursor: not-allowed; }
+
+/* Primary button (account save / security) */
+.cd-settings .settings-form button,
+.cd-settings .security-btn {
+  margin-top: 22px;
+  padding: 12px 18px;
+  border-radius: 11px;
+  border: none;
+  background: linear-gradient(90deg, var(--s-accent), var(--s-accent-2));
+  color: #04263b;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.cd-settings .settings-form button:hover,
+.cd-settings .security-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--s-accent) 40%, transparent);
+}
+.cd-settings .settings-form button:disabled { opacity: 0.6; transform: none; cursor: default; }
+
+.cd-settings .security-btn { display: block; width: fit-content; }
+.cd-settings .security-btn.danger { background: linear-gradient(90deg, #f43f5e, #e11d48); color: #fff; }
+
+/* Secondary button (e.g. Cancel) inside forms */
+.cd-settings .settings-form button.security-cancel {
+  margin-top: 0;
+  background: transparent;
+  color: var(--s-text);
+  border: 1px solid var(--s-border-strong);
+}
+.cd-settings .settings-form button.security-cancel:hover {
+  box-shadow: none;
+  border-color: var(--s-accent);
+  transform: none;
+}
+.cd-settings .security-form button { margin-top: 0; }
+
+/* Avatar row in Account */
+.cd-settings .avatar-row button {
+  margin: 0;
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--s-border-strong);
+  background: var(--s-input);
+  color: var(--s-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.cd-settings .avatar-row button:hover { border-color: var(--s-accent); }
+
+/* Generic key/value rows (appearance/editor/notification/privacy) */
+.cd-settings .appearance-item,
+.cd-settings .editor-item,
+.cd-settings .notification-item,
+.cd-settings .privacy-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--s-border);
+  max-width: none;
+  margin: 0;
+}
+.cd-settings .appearance-item:last-child,
+.cd-settings .editor-item:last-child,
+.cd-settings .notification-item:last-child,
+.cd-settings .privacy-item:last-child { border-bottom: none; }
+
+.cd-settings .appearance-item span,
+.cd-settings .editor-item span,
+.cd-settings .notification-item span,
+.cd-settings .privacy-item span { font-weight: 600; color: var(--s-text); }
+
+.cd-settings input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--s-accent); cursor: pointer; }
+.cd-settings input[type="range"] { accent-color: var(--s-accent); }
+
+/* Status text */
+.cd-settings .settings-status { font-weight: 600; }
+
+/* Privacy hints + toggle switches */
+.cd-settings .privacy-item { align-items: flex-start; }
+.cd-settings .privacy-hint {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--s-muted);
+  max-width: 42ch;
+}
+.cd-settings .privacy-hint code {
+  background: var(--s-input);
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.cd-settings .switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex: 0 0 auto;
+}
+.cd-settings .switch input { opacity: 0; width: 0; height: 0; }
+.cd-settings .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--s-border-strong);
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+.cd-settings .switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.cd-settings .switch input:checked + .slider {
+  background: linear-gradient(90deg, var(--s-accent), var(--s-accent-2));
+}
+.cd-settings .switch input:checked + .slider::before { transform: translateX(20px); }
+.cd-settings .switch input:disabled + .slider { opacity: 0.5; cursor: not-allowed; }
+
+/* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .settings-container {
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px 16px 48px;
+  .settings-container { flex-direction: column; gap: 14px; }
+  .cd-settings .settings-sidebar {
+    width: 100%;
+    flex: 1 1 auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+  .cd-settings .settings-sidebar button { width: auto; flex: 1 1 auto; text-align: center; }
+  .cd-settings .settings-section { max-width: none; }
 }

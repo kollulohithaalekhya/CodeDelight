@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "../styles/ProfileHeader.css";
 
 const NAV_LINKS = [
@@ -13,6 +14,7 @@ const MOBILE_LINKS = [{ label: "Dashboard", to: "/profile" }, ...NAV_LINKS];
 
 const ProfileHeader = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -64,7 +66,7 @@ const ProfileHeader = () => {
               marginLeft: "2px",
             }}
           >
-            Lakshan
+            {user?.username || "Profile"}
           </Link>
         </div>
       </div>

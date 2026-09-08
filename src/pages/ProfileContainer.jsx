@@ -7,6 +7,7 @@ import ProfileSidebar from "../components/ProfileSidebar";
 import ProfileSidebarRight from "../components/ProfileSidebarRight";
 import ProfileFooter from "../components/ProfileFooter";
 import ProfileMain from "./ProfileMain";
+import { ProfileProvider } from "../context/ProfileContext";
 
 function ProfileContainer() {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
@@ -16,6 +17,7 @@ function ProfileContainer() {
   };
 
   return (
+    <ProfileProvider>
     <div className="profile-page">
 
       {/* Header */}
@@ -71,6 +73,7 @@ function ProfileContainer() {
       <ProfileFooter />
 
     </div>
+    </ProfileProvider>
   );
 }
 

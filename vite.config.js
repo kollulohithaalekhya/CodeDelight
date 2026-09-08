@@ -7,7 +7,16 @@ export default defineConfig({
    server: {
       host: true,          // bind to 0.0.0.0 so LAN devices can reach the dev server
       allowedHosts: [
-        'compiler.jami.ltd'
+        'codedelight.jami.ltd',
+        'compiler.jami.ltd'  // kept for backwards compatibility
       ]
+    },
+    // Used by `npm run preview` to serve the production build (dist/) on the
+    // same port nginx proxies to — no dev server / source / HMR exposed.
+    preview: {
+      host: true,
+      port: 4000,
+      strictPort: true,
+      allowedHosts: ['codedelight.jami.ltd', 'compiler.jami.ltd']
     }
 })

@@ -110,7 +110,7 @@ canvas {
   flex: 0 0 auto;
 }
 
-.head > .search_bar {
+.head > .search_bar_wrap {
   margin: 0 16px;
 }
 

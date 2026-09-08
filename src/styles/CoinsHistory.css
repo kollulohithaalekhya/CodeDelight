@@ -1,0 +1,55 @@
+.coins-history {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 24px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 30px rgba(3, 10, 26, 0.35);
+}
+
+.ch-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+.ch-head h2 { margin: 0; color: #f4f9ff; font-size: clamp(18px, 2vw, 24px); display: flex; align-items: center; gap: 10px; }
+.ch-head h2 i { color: #ffd166; }
+.ch-balances { display: flex; gap: 10px; }
+.ch-bal {
+  display: inline-flex; align-items: center; gap: 7px; font-weight: 800; font-size: 14px; color: #ffd166;
+  padding: 6px 14px; border-radius: 999px; background: rgba(255, 209, 102, 0.12); border: 1px solid rgba(255, 209, 102, 0.3);
+}
+.ch-bal.star { color: #fbbf24; background: rgba(251, 191, 36, 0.12); border-color: rgba(251, 191, 36, 0.3); }
+
+.ch-msg { color: #9fb3ce; font-size: 14px; padding: 10px 0; }
+.ch-msg.error { color: #fca5a5; }
+
+.ch-list { list-style: none; margin: 0; padding: 0; max-height: 420px; overflow-y: auto; }
+.ch-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.ch-item:last-child { border-bottom: none; }
+.ch-icon {
+  flex: 0 0 auto; width: 38px; height: 38px; border-radius: 11px;
+  display: grid; place-items: center; font-size: 15px;
+}
+.ch-icon.pos { color: #86efac; background: rgba(34, 197, 94, 0.14); }
+.ch-icon.neg { color: #fca5a5; background: rgba(239, 68, 68, 0.14); }
+.ch-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ch-reason { color: #e8eefb; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ch-meta { color: #9fb3ce; font-size: 12px; }
+.ch-amount-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.ch-amount { font-weight: 800; font-size: 14px; }
+.ch-amount.pos { color: #86efac; }
+.ch-amount.neg { color: #fca5a5; }
+.ch-after { font-size: 11px; color: #9fb3ce; }
+
+/* Scrollbar */
+.ch-list::-webkit-scrollbar { width: 8px; }
+.ch-list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.14); border-radius: 8px; }
+
+/* Light theme */
+html[data-theme="light"] .coins-history { background: #fff; border-color: #e3e9f2; box-shadow: 0 10px 24px rgba(30, 50, 90, 0.08); }
+html[data-theme="light"] .ch-head h2 { color: #16233b; }
+html[data-theme="light"] .ch-reason { color: #16233b; }
+html[data-theme="light"] .ch-meta, html[data-theme="light"] .ch-msg, html[data-theme="light"] .ch-after { color: #55647a; }
+html[data-theme="light"] .ch-item { border-bottom-color: #eef1f6; }

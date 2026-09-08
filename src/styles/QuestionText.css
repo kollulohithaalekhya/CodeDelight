@@ -1,0 +1,43 @@
+/* Shared rendering for question prompts and options across quizzes and games. */
+.qt { display: block; }
+
+.qt-line {
+  margin: 0 0 6px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+.qt-line:last-child { margin-bottom: 0; }
+
+.qt-gap { display: block; height: 8px; }
+
+/* Inline identifiers and short snippets. */
+.qt-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(127, 127, 127, 0.16);
+  border-radius: 4px;
+  padding: 1px 5px;
+  word-break: break-word;
+}
+
+/* Multi-line code samples the player has to trace. Whitespace matters here,
+   and long lines scroll rather than forcing the page to. */
+.qt-block {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  background: #11151c;
+  color: #e6edf3;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  overflow-x: auto;
+  white-space: pre;
+  text-align: left;
+}
+.qt-block code { background: none; padding: 0; color: inherit; font: inherit; }
+
+/* Options are usually short, so they stay on one line. */
+.qt-inline .qt-line { display: inline; margin: 0; }
+.qt-inline .qt-block { margin: 6px 0 0; }

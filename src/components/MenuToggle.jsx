@@ -1,20 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const MENU_ITEMS = [
+const BASE_ITEMS = [
   { name: "Home", path: "/" },
   { name: "Courses", path: "/course" },
   { name: "Compilers", path: "/compiler" },
   { name: "Fun Zone", path: "/funzone" },
-  { name: "Profile", path: "/profile" },
-  { name: "Sign In", path: "/signin" },
-  { name: "Sign Up", path: "/signup" },
 ];
 
 const MenuToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const containerRef = useRef(null);
+  const { user, logout } = useAuth();
+
+  // Auth-aware items: profile/logout when signed in, sign in/up when not.
+  const menuItems = user
+    ? [...BASE_ITEMS, { name: "Profile", path: "/profile" }, { name: "Logout", action: "logout" }]
+    : [...BASE_ITEMS, { name: "Sign In", path: "/signin" }, { name: "Sign Up", path: "/signup" }];
 
   // Close on outside click and on Escape, so the menu never gets stuck open.
   useEffect(() => {
@@ -37,9 +41,14 @@ const MenuToggle = () => {
     };
   }, [isOpen]);
 
-  const handleNavigate = (path) => {
-    navigate(path);
+  const handleItem = (item) => {
     setIsOpen(false);
+    if (item.action === "logout") {
+      logout();
+      navigate("/");
+    } else {
+      navigate(item.path);
+    }
   };
 
   return (
@@ -64,11 +73,11 @@ const MenuToggle = () => {
 
         {isOpen && (
           <div className="mobile_nav">
-            {MENU_ITEMS.map((item) => (
+            {menuItems.map((item) => (
               <div
-                key={item.path}
+                key={item.path || item.action}
                 className="nav-item"
-                onClick={() => handleNavigate(item.path)}
+                onClick={() => handleItem(item)}
               >
                 {item.name}
               </div>

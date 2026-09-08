@@ -1,0 +1,151 @@
+/* =========================================================
+   TREE TRAVERSAL GAMES (Preorder / Inorder / Postorder)
+   Shared premium styling, scoped to .traversal-page.
+   ========================================================= */
+
+.traversal-page {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: clamp(24px, 5vw, 48px) 16px 60px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(120% 120% at 0% 0%, #1a1442 0%, #12203b 45%, #0a1524 100%);
+  font-family: "Poppins", system-ui, sans-serif;
+}
+.traversal-page::before,
+.traversal-page::after {
+  content: ""; position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1;
+}
+.traversal-page::before { width: 420px; height: 420px; background: #7c3aed; opacity: 0.4; top: -140px; left: -90px; }
+.traversal-page::after { width: 400px; height: 400px; background: #00f2fe; opacity: 0.35; bottom: -160px; right: -80px; }
+
+/* ---------- Card ---------- */
+.traversal-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 38px);
+  border-radius: 24px;
+  text-align: center;
+  color: #e8eefb;
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 60px rgba(3,10,26,0.5);
+  box-sizing: border-box;
+}
+.traversal-container * { box-sizing: border-box; }
+
+/* Back link */
+.tv-back {
+  display: inline-flex; align-items: center; gap: 7px; float: left;
+  padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 700;
+  color: #cdd9ec; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  text-decoration: none; transition: background 0.15s ease;
+}
+.tv-back:hover { background: rgba(0,242,254,0.14); }
+
+.traversal-container h2 {
+  clear: both;
+  margin: 6px 0 26px;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #67e8f9, #c4b5fd);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Tree ---------- */
+.tree-display {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px; margin-bottom: 30px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.20);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.level { display: flex; justify-content: center; gap: clamp(20px, 6vw, 60px); margin: 8px 0; flex-wrap: wrap; }
+
+.tree-node {
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.15rem; color: #04283a;
+  background: radial-gradient(circle at 30% 30%, #7de3ff, #00c1ff 70%);
+  box-shadow: 0 6px 18px rgba(0, 193, 255, 0.45), inset 0 -3px 6px rgba(0,0,0,0.15);
+  cursor: grab; user-select: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.tree-node:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 24px rgba(0,193,255,0.55); }
+.tree-node:active { transform: scale(0.94); cursor: grabbing; }
+.tree-node.hidden { visibility: hidden; pointer-events: none; }
+
+/* ---------- Drop slots ---------- */
+#drop-row {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  padding: 16px; margin-bottom: 22px;
+  border-radius: 16px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px dashed rgba(167,139,250,0.4);
+}
+.drop-zone {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 2px dashed rgba(124, 210, 255, 0.5);
+  color: rgba(255,255,255,0.4); font-weight: 800; font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+.drop-zone.filled {
+  background: radial-gradient(circle at 30% 30%, #34d399, #059669 75%);
+  color: #04231a; border: none;
+  box-shadow: 0 6px 16px rgba(16,185,129,0.4);
+  animation: tvPop 0.2s ease;
+}
+@keyframes tvPop { from { transform: scale(0.7); } to { transform: scale(1); } }
+
+/* ---------- Buttons ---------- */
+.buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.traversal-container button {
+  padding: 11px 24px; font-size: 0.98rem; font-weight: 700;
+  border: none; border-radius: 12px; cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.traversal-container button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); }
+#submit-btn { background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; box-shadow: 0 6px 18px rgba(34,197,94,0.35); }
+#submit-btn:disabled { cursor: not-allowed; opacity: 0.5; }
+#reset-btn { background: rgba(255,255,255,0.08); color: #dfeafc; border: 1px solid rgba(255,255,255,0.15); }
+
+.score {
+  margin-top: 18px; font-size: 0.95rem; color: #9fb3ce;
+  padding: 10px 16px; border-radius: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  display: inline-block;
+}
+
+/* ---------- Light theme ---------- */
+html[data-theme="light"] .traversal-page { background: radial-gradient(120% 120% at 0% 0%, #eef1fb, #e3ecf9 55%, #dbe6f4); }
+html[data-theme="light"] .traversal-container { background: #fff; border-color: #e3e9f2; color: #16233b; box-shadow: 0 20px 44px rgba(30,50,90,0.12); }
+html[data-theme="light"] .tree-display { background: #f4f7fc; border-color: #e3e9f2; }
+html[data-theme="light"] .tv-back { color: #33465f; background: #eef4fd; border-color: #dbe6f5; }
+
+@media (max-width: 480px) {
+  .tree-node, .drop-zone { width: 48px; height: 48px; font-size: 1rem; }
+}
+
+/* Nodes are generated per play, so the row must cope with 2-digit values and
+   wrap gracefully on narrow screens rather than assuming a fixed layout. */
+.tv-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 0 0 14px;
+}
+
+.tree-display .level { flex-wrap: wrap; }
+#drop-row { flex-wrap: wrap; }
+
+/* A filled slot can be tapped to clear it. */
+.drop-zone.filled { cursor: pointer; }

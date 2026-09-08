@@ -1,272 +1,125 @@
 /* =========================================================
-   PROFILE IMAGE CARD
+   PROFILE IDENTITY CARD  (banner + avatar + chips)
    ========================================================= */
 
 .card1 {
-    width: 100%;
-
-    position: relative;
-
-    padding-bottom: 55px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-
-/* =========================================================
-   BANNER
-   ========================================================= */
-
-.photo {
-    width: 100%;
-
-    position: relative;
+/* ---------- Banner ---------- */
+.pf-banner {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  border-radius: 26px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 140% at 0% 0%, #7c3aed 0%, transparent 55%),
+    radial-gradient(120% 160% at 100% 0%, #06b6d4 0%, transparent 50%),
+    linear-gradient(135deg, #1e1b4b 0%, #0e2a47 100%);
+  box-shadow: 0 12px 40px rgba(6, 12, 34, 0.55);
 }
 
-.back-rectangle {
-    width: 100%;
-
-    position: relative;
-
-    padding: 0 10px;
+.pf-banner-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 80% at 50% 120%, rgba(0, 242, 254, 0.28), transparent 60%);
+  mix-blend-mode: screen;
 }
 
-.back-rect-photo {
-    display: block;
-
-    width: 100%;
-
-    height: 170px;
-
-    object-fit: cover;
-
-    border-radius: 40px;
-
-    overflow: hidden;
-
-    margin: 10px 0 0;
-
-    box-shadow:
-        0 4px 15px rgba(
-            0,
-            0,
-            0,
-            0.18
-        );
+/* ---------- Identity block (pulled up to overlap the banner) ---------- */
+.pf-identity {
+  margin-top: -68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-
-/* =========================================================
-   PROFILE IMAGE WRAPPER
-   ========================================================= */
-
-.profile-image-wrapper {
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 0;
-
-    transform: translateX(-50%);
-
-    z-index: 5;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+.pf-avatar-ring {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(from 180deg, #00f2fe, #7c3aed, #f472b6, #00f2fe);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  animation: pf-spin 8s linear infinite;
 }
 
-
-/* =========================================================
-   PROFILE IMAGE
-   ========================================================= */
+@keyframes pf-spin {
+  to { transform: rotate(360deg); }
+}
 
 .profile-photo {
-    display: block;
-
-    width: 130px;
-    height: 120px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 3px solid #132743;
-
-    background: #132743;
-
-    box-shadow:
-        0 5px 18px rgba(
-            0,
-            0,
-            0,
-            0.35
-        );
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0b1e34;
+  background: #0b1e34;
+  animation: pf-spin 8s linear infinite reverse; /* keep image upright */
 }
 
-
-/* =========================================================
-   LARGE DESKTOP
-   ========================================================= */
-
-@media (min-width: 1440px) {
-    .back-rect-photo {
-        height: 190px;
-    }
-
-    .profile-photo {
-        width: 140px;
-        height: 130px;
-    }
-
-    .card1 {
-        padding-bottom: 60px;
-    }
+.pf-name {
+  margin: 12px 0 2px;
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: 0.3px;
 }
 
-
-/* =========================================================
-   LAPTOP
-   ========================================================= */
-
-@media (max-width: 1200px) {
-    .back-rect-photo {
-        height: 165px;
-
-        border-radius: 32px;
-    }
-
-    .profile-photo {
-        width: 125px;
-        height: 115px;
-    }
+.pf-handle {
+  font-size: 13px;
+  color: #94a3b8;
 }
 
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 1024px) {
-    .card1 {
-        padding-bottom: 52px;
-    }
-
-    .back-rectangle {
-        padding: 0 8px;
-    }
-
-    .back-rect-photo {
-        height: 150px;
-
-        border-radius: 28px;
-    }
-
-    .profile-photo {
-        width: 115px;
-        height: 105px;
-    }
+/* ---------- Stat chips ---------- */
+.pf-chips {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.pf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #e6f1ff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+.pf-chip i { font-size: 13px; }
+.pf-chip-coin i { color: #fbbf24; }
+.pf-chip-star i { color: #38bdf8; }
+.pf-chip-fire i { color: #fb7185; }
 
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-    .card1 {
-        padding-bottom: 48px;
-    }
-
-    .back-rectangle {
-        padding: 0 6px;
-    }
-
-    .back-rect-photo {
-        height: 135px;
-
-        margin-top: 8px;
-
-        border-radius: 24px;
-    }
-
-    .profile-photo {
-        width: 105px;
-        height: 95px;
-
-        border-width: 2px;
-    }
+  .pf-banner { height: 150px; border-radius: 22px; }
+  .pf-identity { margin-top: -60px; }
+  .pf-avatar-ring { width: 116px; height: 116px; }
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-    .card1 {
-        padding-bottom: 45px;
-    }
-
-    .back-rectangle {
-        padding: 0 5px;
-    }
-
-    .back-rect-photo {
-        height: 120px;
-
-        border-radius: 20px;
-    }
-
-    .profile-photo {
-        width: 95px;
-        height: 88px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 400px) {
-    .card1 {
-        padding-bottom: 40px;
-    }
-
-    .back-rectangle {
-        padding: 0 4px;
-    }
-
-    .back-rect-photo {
-        height: 105px;
-
-        border-radius: 17px;
-    }
-
-    .profile-photo {
-        width: 85px;
-        height: 78px;
-    }
-}
-
-
-/* =========================================================
-   320PX
-   ========================================================= */
-
-@media (max-width: 320px) {
-    .card1 {
-        padding-bottom: 37px;
-    }
-
-    .back-rect-photo {
-        height: 95px;
-
-        border-radius: 15px;
-    }
-
-    .profile-photo {
-        width: 78px;
-        height: 72px;
-    }
+@media (max-width: 480px) {
+  .pf-banner { height: 128px; }
+  .pf-identity { margin-top: -54px; }
+  .pf-avatar-ring { width: 100px; height: 100px; }
+  .pf-name { font-size: 19px; }
 }

@@ -1,171 +1,125 @@
-/* Stack Math Puzzle, ported from the original game1.css. The old file styled
-   `body` directly; everything here is scoped to .stackgame-page instead. */
+/* =========================================================
+   STACK MATH PUZZLE — premium, scoped to .stackgame-page
+   ========================================================= */
 
 .stackgame-page {
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0b1c2d, #111);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  position: relative;
   min-height: 100vh;
-  padding: 24px 16px;
+  display: grid;
+  place-items: start center;
+  padding: clamp(24px, 5vw, 48px) 16px 60px;
+  overflow: hidden;
+  isolation: isolate;
+  font-family: "Poppins", system-ui, sans-serif;
+  color: #e8eefb;
+  background: radial-gradient(120% 120% at 0% 0%, #1a1442 0%, #12203b 45%, #0a1524 100%);
 }
+.stackgame-page::before,
+.stackgame-page::after {
+  content: ""; position: absolute; border-radius: 50%; filter: blur(90px); z-index: -1;
+}
+.stackgame-page::before { width: 420px; height: 420px; background: #7c3aed; opacity: 0.4; top: -140px; left: -90px; }
+.stackgame-page::after { width: 400px; height: 400px; background: #00f2fe; opacity: 0.35; bottom: -160px; right: -80px; }
 
 .stackgame-page .game-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 620px;
+  padding: clamp(20px, 4vw, 34px);
+  border-radius: 24px;
   text-align: center;
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 60px rgba(3,10,26,0.5);
 }
 
 .stackgame-page h1 {
-  font-size: 1.9rem;
-  margin-bottom: 18px;
-  color: #00e5ff;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  margin: 0 0 18px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #67e8f9, #c4b5fd);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
+.stackgame-page h1 i { -webkit-text-fill-color: #a78bfa; }
 
 .stackgame-page .status-bar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #00e5ff;
-  padding: 0 20px;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 14px;
 }
+.stackgame-page .status-bar p {
+  margin: 0; padding: 8px 16px; border-radius: 12px; font-size: 15px; font-weight: 600;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); color: #cdd9ec;
+}
+.stackgame-page .status-bar span { color: #7de3ff; font-weight: 800; }
+.practice-hint { font-size: 12.5px; color: #9fb3ce; margin: 0 0 14px; }
 
+/* Falling numbers arena */
 .stackgame-page .fall-area {
-  position: relative;
-  height: 200px;
-  background: #1f2d3a;
-  border: 3px dashed #00bcd4;
-  margin: 0 auto 20px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
+  position: relative; height: 200px; width: 100%; max-width: 420px;
+  margin: 0 auto 20px; overflow: hidden;
+  border-radius: 16px;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 24px, transparent 24px 48px), #0b1728;
+  border: 2px dashed rgba(0,242,254,0.35);
 }
-
 .stackgame-page .letter {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 30px;
-  font-weight: bold;
-  background: #00bcd4;
-  padding: 10px 20px;
-  border-radius: 8px;
-  animation: stackDrop 4s linear forwards;
-  cursor: pointer;
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  font-size: 26px; font-weight: 800; color: #04283a;
+  padding: 8px 18px; border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, #7de3ff, #00c1ff 75%);
+  box-shadow: 0 6px 16px rgba(0,193,255,0.5);
+  animation: stackDrop 4s linear forwards; cursor: pointer;
 }
+.stackgame-page .letter:hover { filter: brightness(1.12); }
+@keyframes stackDrop { to { top: 100%; } }
 
-@keyframes stackDrop {
-  to {
-    top: 100%;
-  }
-}
-
+/* Stack box */
 .stackgame-page .stack-box {
-  min-height: 150px;
-  max-height: 200px;
-  overflow-y: auto;
-  background: #222;
-  border: 3px solid #00e5ff;
-  border-radius: 8px;
-  margin: 20px auto;
-  width: 150px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+  min-height: 140px; max-height: 200px; overflow-y: auto;
+  width: 150px; margin: 20px auto; padding: 10px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.25); border: 2px solid rgba(0,242,254,0.35);
+  display: flex; flex-direction: column-reverse; align-items: center;
 }
-
 .stackgame-page .stack-item {
-  background: #00bcd4;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 6px;
-  margin: 5px 0;
-  font-size: 20px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe); color: #04283a;
+  padding: 8px 18px; border-radius: 8px; margin: 5px 0; font-size: 18px; font-weight: 800;
+  width: 100%; box-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
-.stackgame-page .controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
+.stackgame-page .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .stackgame-page .controls button {
-  margin: 5px;
-  padding: 8px 16px;
-  background: #00e5ff;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  padding: 9px 16px; border: none; border-radius: 10px; cursor: pointer;
+  font-weight: 700; font-size: 13.5px; color: #04283a;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
-
-.stackgame-page .controls button:hover {
-  background: #00bcd4;
-}
+.stackgame-page .controls button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.08); }
+.stackgame-page .controls button:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .stackgame-page .result-box {
-  font-size: 20px;
-  color: #00ff99;
-  margin-top: 15px;
+  font-size: 18px; margin-top: 16px; color: #86efac; font-weight: 700;
 }
+.stackgame-page .result-box span { color: #4ade80; }
 
 .game-message {
-  margin: 16px auto 0;
-  max-width: 420px;
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  margin: 16px auto 0; max-width: 440px; padding: 10px 16px; border-radius: 12px; font-size: 0.95rem; font-weight: 600;
 }
-
-.game-message.ok {
-  background: rgba(0, 229, 255, 0.12);
-  border: 1px solid #00e5ff;
-  color: #cffafe;
-}
-
-.game-message.error {
-  background: rgba(248, 113, 113, 0.12);
-  border: 1px solid #f87171;
-  color: #fecaca;
-}
+.game-message.ok { background: rgba(0,229,255,0.12); border: 1px solid rgba(0,229,255,0.4); color: #cffafe; }
+.game-message.error { background: rgba(248,113,113,0.12); border: 1px solid rgba(248,113,113,0.4); color: #fecaca; }
 
 .back-to-funzone {
-  margin-top: 22px;
-  padding: 9px 18px;
-  background: transparent;
-  color: #00e5ff;
-  border: 1px solid #00e5ff;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-top: 22px; padding: 10px 20px; border-radius: 11px; cursor: pointer;
+  background: rgba(255,255,255,0.08); color: #dfeafc; border: 1px solid rgba(255,255,255,0.15);
+  font-weight: 700; transition: background 0.15s ease;
 }
+.back-to-funzone:hover { background: rgba(0,242,254,0.14); }
 
-.back-to-funzone:hover {
-  background: rgba(0, 229, 255, 0.12);
-}
+/* Light theme */
+html[data-theme="light"] .stackgame-page { background: radial-gradient(120% 120% at 0% 0%, #eef1fb, #e3ecf9 55%, #dbe6f4); color: #16233b; }
+html[data-theme="light"] .stackgame-page .game-container { background: #fff; border-color: #e3e9f2; box-shadow: 0 20px 44px rgba(30,50,90,0.12); }
+html[data-theme="light"] .stackgame-page .fall-area { background: #eef4fd; }
+html[data-theme="light"] .stackgame-page .status-bar p { color: #33465f; background: #f4f7fc; border-color: #e3e9f2; }
 
 @media (max-width: 480px) {
-  .stackgame-page h1 {
-    font-size: 1.4rem;
-  }
-  .stackgame-page .status-bar {
-    font-size: 15px;
-    padding: 0;
-  }
-  .stackgame-page .fall-area {
-    height: 160px;
-  }
-  .stackgame-page .letter {
-    font-size: 22px;
-    padding: 8px 14px;
-  }
+  .stackgame-page .fall-area { height: 160px; }
+  .stackgame-page .letter { font-size: 20px; padding: 6px 12px; }
 }

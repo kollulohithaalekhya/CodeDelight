@@ -1,0 +1,140 @@
+/* =========================================================
+   GLOBAL LIGHT THEME
+   Activated by html[data-theme="light"] (toggled in Settings →
+   Appearance, restored on load in main.jsx). Dark is the default
+   design, so this file only holds the light-mode overrides for the
+   main navigable surfaces. Accent gradients are kept in both themes.
+   ========================================================= */
+
+html[data-theme="light"] body {
+  background: #f4f7fc;
+  color: #142033;
+}
+
+/* ---------- Shared chrome ---------- */
+html[data-theme="light"] .head {
+  background: linear-gradient(145deg, #ffffff, #eef3fb);
+  border-bottom: 1px solid #e3e9f2;
+  box-shadow: 0 2px 10px rgba(30, 50, 90, 0.06);
+}
+html[data-theme="light"] .head .nav_bar a,
+html[data-theme="light"] .head .action_name,
+html[data-theme="light"] .head .action_name1 { color: #1e293b; }
+html[data-theme="light"] .head .fa-circle-user { color: #334155 !important; }
+
+/* ---------- Home sections ---------- */
+html[data-theme="light"] .hero {
+  background: radial-gradient(120% 120% at 0% 0%, #eaf1fb 0%, #dde8f7 55%, #d3e0f2 100%);
+}
+html[data-theme="light"] .hero-headline { color: #16233b; }
+html[data-theme="light"] .hero-subheadline { color: #3c4d68; }
+html[data-theme="light"] .hero-badge { color: #0369a1; background: rgba(2, 132, 199, 0.10); border-color: rgba(2, 132, 199, 0.28); }
+html[data-theme="light"] .hero-btn.ghost { color: #1e293b; background: #ffffff; border-color: #d5deec; }
+html[data-theme="light"] .hero-stat span { color: #55647a; }
+
+html[data-theme="light"] .features-section,
+html[data-theme="light"] .reviews-section,
+html[data-theme="light"] .courses__section {
+  background: #f4f7fc;
+  color: #1c2b45;
+}
+html[data-theme="light"] .feature-box,
+html[data-theme="light"] .review-card,
+html[data-theme="light"] .courses__next-card,
+html[data-theme="light"] .course-card,
+html[data-theme="light"] .track-card {
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  color: #1e293b;
+  box-shadow: 0 8px 22px rgba(30, 50, 90, 0.08);
+}
+html[data-theme="light"] .feature-box h3,
+html[data-theme="light"] .feature-box p,
+html[data-theme="light"] .review-text,
+html[data-theme="light"] .review-author,
+html[data-theme="light"] .courses__next-card h4,
+html[data-theme="light"] .courses__next-card p { color: #1e293b; }
+
+/* ---------- Footer ---------- */
+html[data-theme="light"] footer {
+  background: linear-gradient(135deg, #eef2f8, #e2e9f4);
+  border-top: 1px solid #dbe3ef;
+}
+html[data-theme="light"] .footer-logo,
+html[data-theme="light"] .footer-section h4 { color: #16233b; }
+html[data-theme="light"] .footer-section p,
+html[data-theme="light"] .footer-section a { color: #4a5a72; }
+html[data-theme="light"] .footer-bottom { color: #6b7a92; border-top-color: #dbe3ef; }
+
+/* ---------- Profile page ---------- */
+html[data-theme="light"] .profile-page {
+  background:
+    radial-gradient(90% 60% at 8% -5%, rgba(124, 58, 237, 0.10) 0%, transparent 55%),
+    radial-gradient(80% 50% at 100% 0%, rgba(0, 178, 220, 0.10) 0%, transparent 50%),
+    linear-gradient(180deg, #eef3fb 0%, #e7eef8 100%);
+}
+html[data-theme="light"] .rectangle {
+  background: linear-gradient(180deg, #ffffff, #f3f7fd);
+  border-right: 1px solid #e3e9f2;
+  color: #1e293b;
+}
+html[data-theme="light"] .rectangle .sidebar-link { color: #33465f; }
+html[data-theme="light"] .rectangle .sidebar-link i { color: #64748b; }
+html[data-theme="light"] .rectangle .sidebar-link:hover { background: #eef4fd; color: #0f2036; }
+html[data-theme="light"] .rectangle .card h3 { color: #16233b; }
+html[data-theme="light"] .rectangle .card p { color: #55647a; }
+html[data-theme="light"] .sidebar-section h5 { color: #7688a3; }
+
+/* Cards on the profile main + right sidebar */
+html[data-theme="light"] .profile-main > .submissions-heatmap-container,
+html[data-theme="light"] .profile-main > .achievements,
+html[data-theme="light"] .dash-card,
+html[data-theme="light"] .profile-sidebar-right > .extra-heading,
+html[data-theme="light"] .profile-sidebar-right > .coins,
+html[data-theme="light"] .profile-sidebar-right > .badges,
+html[data-theme="light"] .profile-sidebar-right > .interests,
+html[data-theme="light"] .profile-sidebar-right > .waiting-wrapper,
+html[data-theme="light"] .dash-stat {
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  box-shadow: 0 8px 22px rgba(30, 50, 90, 0.08);
+  color: #1e293b;
+}
+html[data-theme="light"] .pf-name { color: #16233b; }
+html[data-theme="light"] .pf-handle { color: #55647a; }
+html[data-theme="light"] .pf-chip { background: #eef4fd; border-color: #dbe6f5; color: #33465f; }
+html[data-theme="light"] .dash-label,
+html[data-theme="light"] .submissions-heatmap-container h2 { color: #33465f; }
+html[data-theme="light"] .dash-value,
+html[data-theme="light"] .achievements > span { color: #16233b; }
+html[data-theme="light"] .extra-heading p,
+html[data-theme="light"] .coin-label,
+html[data-theme="light"] .achievement-name { color: #55647a; }
+
+/* ---------- Dashboard ---------- */
+html[data-theme="light"] .dashboard-wrapper {
+  background:
+    radial-gradient(90% 60% at 8% -5%, rgba(124, 58, 237, 0.10) 0%, transparent 55%),
+    linear-gradient(180deg, #eef3fb 0%, #e7eef8 100%);
+  color: #142033;
+}
+html[data-theme="light"] .dash-hero h1 { color: #16233b; }
+html[data-theme="light"] .dash-hero p,
+html[data-theme="light"] .dash-stat-title,
+html[data-theme="light"] .dash-card-head h3,
+html[data-theme="light"] .dash-stat-value { color: #1e293b; }
+html[data-theme="light"] .dash-leader { background: #f3f7fd; }
+html[data-theme="light"] .dash-leader-name { color: #1e293b; }
+html[data-theme="light"] .dash-snapshot li { border-bottom-color: #e6ecf5; }
+html[data-theme="light"] .dash-snapshot li span { color: #46586f; }
+html[data-theme="light"] .dash-snapshot li strong { color: #16233b; }
+
+/* ---------- Fun Zone ---------- */
+html[data-theme="light"] .funzone-container { background-color: #eef3fb; color: #16233b; }
+html[data-theme="light"] .funzone-subtitle { color: #46586f; }
+html[data-theme="light"] .game-card {
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  color: #1e293b;
+  box-shadow: 0 8px 22px rgba(30, 50, 90, 0.08);
+}

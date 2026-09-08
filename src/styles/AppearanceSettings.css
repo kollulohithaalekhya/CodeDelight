@@ -1,34 +1,46 @@
-.settings-section {
-  padding: 24px;
-}
+/* Appearance panel. NOTE: the old global `[data-theme]` body rules that turned
+   the whole page white were removed — theming now lives in Settings.css, scoped
+   to .cd-settings so it can't break the rest of the app. */
 
-.settings-section h2 {
-  margin-bottom: 20px;
-}
-
-.appearance-item {
+.theme-picker {
   display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.theme-card {
+  position: relative;
+  flex: 1 1 140px;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  max-width: 400px;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  background: transparent;
+  border: 2px solid var(--s-border, rgba(255, 255, 255, 0.12));
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.12s ease;
+}
+.theme-card:hover { transform: translateY(-2px); }
+.theme-card.active { border-color: var(--s-accent, #00f2fe); }
+
+.theme-swatch {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.appearance-item span {
-  font-weight: 500;
-}
+.theme-name { font-weight: 700; font-size: 14px; }
 
-.appearance-item select,
-.appearance-item input[type="range"] {
-  margin-left: 12px;
-}
-
-[data-theme="dark"] {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-[data-theme="light"] {
-  background-color: #ffffff;
-  color: #000000;
+.theme-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--s-accent, #00f2fe);
+  font-size: 16px;
 }

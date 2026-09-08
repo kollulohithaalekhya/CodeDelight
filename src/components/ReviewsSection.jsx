@@ -1,40 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { get } from "../api/client";
 import "../styles/ReviewsSection.css";
 
-const reviews = [
-  {
-    text: "Challenges and quizzes helped me apply what I learned quickly. I enjoyed clarity of each lesson.",
-    author: "K. Lohitha Alekhya",
-    rating: "★★★★★",
-  },
-  {
-    text: "The modules are structured really well. Everything builds up smoothly, and the short format made it easy.",
-    author: "K. Sai Lakshmi Durga",
-    rating: "★★★★☆",
-  },
-  {
-    text: "I liked how visual the platform was. It helped me understand programming concepts that I used to find hard before.",
-    author: "G. Ashrita",
-    rating: "★★★★★",
-  },
-  {
-    text: "Fun, easy, and consistent. Every lesson felt rewarding and pushed me to stay on track without losing interest.",
-    author: "K. Kavya Santhoshi",
-    rating: "★★★★★",
-  },
-  {
-    text: "Clean interface and helpful feedback after each quiz. I improved my understanding and confidence over time.",
-    author: "K. Hema Durga",
-    rating: "★★★★☆",
-  },
-  {
-    text: "A fantastic platform that makes coding exciting. The balance of visuals, theory, and practice kept me engaged!",
-    author: "R. Nikhila",
-    rating: "★★★★★",
-  },
+// Shown when the admin hasn't added testimonials yet.
+const DEFAULT_REVIEWS = [
+  { text: "Challenges and quizzes helped me apply what I learned quickly. I enjoyed clarity of each lesson.", author: "K. Lohitha Alekhya", rating: 5 },
+  { text: "The modules are structured really well. Everything builds up smoothly, and the short format made it easy.", author: "K. Sai Lakshmi Durga", rating: 4 },
+  { text: "I liked how visual the platform was. It helped me understand programming concepts that I used to find hard before.", author: "G. Ashrita", rating: 5 },
+  { text: "Fun, easy, and consistent. Every lesson felt rewarding and pushed me to stay on track without losing interest.", author: "K. Kavya Santhoshi", rating: 5 },
+  { text: "Clean interface and helpful feedback after each quiz. I improved my understanding and confidence over time.", author: "K. Hema Durga", rating: 4 },
+  { text: "A fantastic platform that makes coding exciting. The balance of visuals, theory, and practice kept me engaged!", author: "R. Nikhila", rating: 5 },
 ];
 
+function stars(n) {
+  const full = Math.max(0, Math.min(5, Math.round(n || 0)));
+  return "★★★★★".slice(0, full) + "☆☆☆☆☆".slice(0, 5 - full);
+}
+
 const ReviewsSection = () => {
+  const [reviews, setReviews] = useState(DEFAULT_REVIEWS);
+
+  useEffect(() => {
+    get("/api/home", { auth: false })
+      .then((d) => {
+        // Public API already filters to visible testimonials.
+        const list = d?.home?.testimonials;
+        if (Array.isArray(list) && list.length > 0) {
+          setReviews(list.map((t) => ({ text: t.comment, author: t.name, rating: t.rating })));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <section className="reviews-section">
       <h2 className="reviews-heading">What Our Learners Say</h2>
@@ -45,7 +42,7 @@ const ReviewsSection = () => {
               <div key={index} className="review-card">
                 <p className="review-text">"{review.text}"</p>
                 <div className="review-author">– {review.author}</div>
-                <div className="review-rating">{review.rating}</div>
+                <div className="review-rating">{stars(review.rating)}</div>
               </div>
             ))}
           </div>

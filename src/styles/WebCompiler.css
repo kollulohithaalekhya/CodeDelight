@@ -1,155 +1,98 @@
-/* Web compiler (HTML + CSS + JS + live output).
-   Scoped to .webcompiler-* — the file used to open with a global `*` reset
-   that reset font-family across every route. */
+/* =========================================================
+   WEB COMPILER — premium, responsive
+   ========================================================= */
 
-.webcompiler-container {
-  background: #2c2c2c;
-  color: #00f2fe;
-  font-family: "Poppins", sans-serif;
+.wc {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
-  padding: 10px;
-  gap: 10px;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.editors-section {
-  display: flex;
-  height: 400px;
-  gap: 10px;
-  width: 100%;
-  min-width: 0;
-}
-
-/* min-width:0 is what stops Monaco from forcing the row wider than the
-   viewport: without it each flex item refuses to shrink below its content. */
-.editor-card {
-  flex: 1 1 0;
-  min-width: 0;
-  background: #1f1f1f;
-  border-radius: 6px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: #0a1220;
+  color: #e8eefb;
 }
 
-.editor-card label {
-  display: flex;
-  align-items: center;
-  background: #000;
-  color: #00f2fe;
-  padding: 8px 12px;
-  font-weight: 600;
-  border-bottom: 1px solid #00f2fe;
-  font-size: 14px;
-  gap: 8px;
-  flex: 0 0 auto;
+/* ---------- Toolbar ---------- */
+.wc-toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 10px 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent), #0e1a2c;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+  flex-wrap: wrap;
+}
+.wc-tb-left { display: flex; align-items: center; gap: 12px; }
+.wc-back {
+  width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+  color: #e8eefb; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09);
+  text-decoration: none; transition: background 0.15s ease;
+}
+.wc-back:hover { background: rgba(0,242,254,0.14); }
+.wc-brand { font-weight: 800; font-size: 15px; white-space: nowrap; }
+.wc-brand i { color: #a78bfa; margin-right: 6px; }
+
+.wc-tb-right { display: flex; align-items: center; gap: 10px; }
+.wc-toggle { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: #c3d0e6; cursor: pointer; }
+.wc-toggle input { width: 16px; height: 16px; accent-color: #00f2fe; cursor: pointer; }
+.wc-run {
+  display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border: none; border-radius: 10px;
+  background: linear-gradient(135deg, #22c55e, #16a34a); color: #fff; font-weight: 700; font-size: 13.5px; cursor: pointer;
+  box-shadow: 0 6px 16px rgba(34,197,94,0.35);
+}
+.wc-icon {
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  color: #e8eefb; cursor: pointer; font-size: 15px; transition: all 0.15s ease;
+}
+.wc-icon:hover { background: rgba(0,242,254,0.14); }
+
+.wc-view-switch { display: none; gap: 4px; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 3px; }
+.wc-view-switch button {
+  width: 40px; height: 32px; border: none; border-radius: 8px; background: transparent; color: #93a4c0; cursor: pointer;
+}
+.wc-view-switch button.active { background: #4facfe; color: #04283a; }
+
+/* ---------- Workspace ---------- */
+.wc-workspace { flex: 1; display: flex; min-height: 0; }
+
+.wc-editors {
+  flex: 1 1 50%; min-width: 0; display: flex; flex-direction: column;
+  border-right: 1px solid rgba(255,255,255,0.09);
+}
+.wc-tabs { display: flex; gap: 4px; padding: 8px 8px 0; background: #0e1a2c; }
+.wc-tab {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 16px; border: none; border-radius: 10px 10px 0 0;
+  background: transparent; color: #93a4c0; font-weight: 700; font-size: 13.5px; cursor: pointer;
+  border-bottom: 2px solid transparent; transition: all 0.15s ease;
+}
+.wc-tab:hover { color: #e8eefb; background: rgba(255,255,255,0.04); }
+.wc-tab.active { color: #fff; background: #0a1220; border-bottom-color: var(--tab, #4facfe); }
+.wc-editor-body { flex: 1; min-height: 0; background: #1e1e1e; }
+
+.wc-preview {
+  flex: 1 1 50%; min-width: 0; display: flex; flex-direction: column; background: #0a1220;
+}
+.wc-preview-head {
+  padding: 12px 16px; font-size: 13px; font-weight: 700; color: #93a4c0;
+  border-bottom: 1px solid rgba(255,255,255,0.09);
+}
+.wc-preview-head i { color: #4ade80; margin-right: 7px; }
+.wc-preview-frame { flex: 1; padding: 12px; min-height: 0; }
+.wc-preview-frame iframe {
+  width: 100%; height: 100%; border: none; border-radius: 12px; background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* Gives Monaco a definite box to fill inside the flex column. */
-.editor-body {
-  flex: 1 1 auto;
-  min-height: 0;
-  min-width: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.output-section {
-  background: white;
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 400px;
-  width: 100%;
-  min-width: 0;
-}
-
-.output-section label {
-  background: #000;
-  color: #00f2fe;
-  font-weight: 600;
-  padding: 8px 12px;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.output-section iframe {
-  width: 100%;
-  flex: 1;
-  border: none;
-  background: #fff;
-}
-
-/* Monaco suggestion widget */
-.monaco-editor .suggest-widget {
-  max-width: 420px !important;
-  min-width: 260px !important;
-  width: auto !important;
-  background-color: #1e1e1e !important;
-}
-
-.monaco-editor .suggest-widget .monaco-list-row {
-  padding-right: 8px !important;
-  white-space: nowrap !important;
-}
-
-.monaco-editor .suggest-widget .monaco-list {
-  overflow-x: hidden !important;
-}
-
-.monaco-editor .suggest-widget .details-label {
-  max-width: 220px !important;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.monaco-editor .suggest-widget .monaco-scrollable-element {
-  padding-right: 6px !important;
-}
-
-/* Below ~1024px three side-by-side editors get too narrow to type in, so the
-   row becomes a column with each editor given a real height (not just a
-   min-height on an auto-height parent, which is what collapsed the layout at
-   851px and 958px). */
-@media (max-width: 1024px) {
-  .editors-section {
-    flex-direction: column;
-    height: auto;
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .wc-view-switch { display: flex; }
+  .wc-workspace { position: relative; }
+  .wc-editors, .wc-preview {
+    position: absolute; inset: 0; flex: none; width: 100%; border-right: none;
   }
-
-  .editor-card {
-    flex: 0 0 auto;
-    height: 260px;
-  }
-
-  .output-section {
-    min-height: 340px;
-  }
+  .wc-editors.hide-mobile, .wc-preview.hide-mobile { display: none; }
 }
 
-@media (max-width: 600px) {
-  .webcompiler-container {
-    padding: 8px;
-    gap: 8px;
-  }
-
-  .editor-card {
-    height: 220px;
-  }
-
-  .editor-card label {
-    font-size: 13px;
-  }
-
-  .output-section {
-    min-height: 280px;
-  }
+@media (max-width: 560px) {
+  .wc-toggle span { display: none; }
+  .wc-brand span { display: none; }
 }
