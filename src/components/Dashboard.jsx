@@ -8,6 +8,7 @@ import ProfileSidebar from "./ProfileSidebar";
 import ProfileHeader from "./ProfileHeader";
 import { get } from "../api/client";
 import { useAuth } from "../context/AuthContext";
+import { avatarUrl, onAvatarError } from "../utils/avatar";
 import "../styles/Dashboard.css";
 
 const TYPE_LABEL = {
@@ -185,7 +186,7 @@ function Dashboard() {
                 {leaders.map((l) => (
                   <div className={`dash-leader ${l.isMe ? "me" : ""}`} key={l.rank}>
                     <span className={`dash-rank rank-${l.rank}`}>{l.rank}</span>
-                    <img src={l.profileImage || "/images/user.png"} alt={l.username} className="dash-leader-avatar" />
+                    <img src={avatarUrl(l.profileImage)} onError={onAvatarError} alt={l.username} className="dash-leader-avatar" />
                     <span className="dash-leader-name">{l.username}{l.isMe && <em> (you)</em>}</span>
                     <span className="dash-leader-stat"><FontAwesomeIcon icon={faStar} /> {l.stars}</span>
                     <span className="dash-leader-stat gold"><FontAwesomeIcon icon={faCoins} /> {l.coins}</span>

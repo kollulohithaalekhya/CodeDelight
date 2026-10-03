@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { avatarUrl, onAvatarError } from "../utils/avatar";
 import "../styles/ActionBar.css";
 
 const Action = () => {
@@ -24,7 +25,8 @@ const Action = () => {
           >
             {user.profileImage ? (
               <img
-                src={user.profileImage}
+                src={avatarUrl(user.profileImage)}
+                onError={onAvatarError}
                 alt="Profile"
                 style={{ width: 28, height: 28, borderRadius: "50%", objectFit: "cover" }}
               />

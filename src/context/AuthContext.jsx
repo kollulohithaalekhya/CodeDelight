@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 import { api, post, put, tokenStore } from "../api/client";
+import { avatarUrl } from "../utils/avatar";
 
 const AuthContext = createContext(null);
 
@@ -72,13 +73,13 @@ export function AuthProvider({ children }) {
     return put("/api/auth/password", { currentPassword, newPassword });
   };
 
-  // Uploads an avatar image file (multipart). Returns the new URL.
+  // Uploads an avatar image file (multipart). Returns the new image URL.
   const uploadAvatar = async (file) => {
     const fd = new FormData();
     fd.append("avatar", file);
-    const { url, user } = await post("/api/auth/profile/avatar", fd);
+    const { user } = await post("/api/auth/profile/avatar", fd);
     if (user) setUser(user);
-    return url;
+    return avatarUrl(user?.profileImage);
   };
 
   const logout = () => {

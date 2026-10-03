@@ -1,13 +1,14 @@
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { useProfile } from "../context/ProfileContext";
+import { avatarUrl, onAvatarError } from "../utils/avatar";
 import "../styles/ProfileImage.css";
 
 const ProfileImage = () => {
   const { user } = useAuth();
   const { profile } = useProfile();
 
-  const avatar = user?.profileImage || profile?.profileImage || "/images/user.png";
+  const avatar = avatarUrl(user?.profileImage || profile?.profileImage);
   const name = user?.username || profile?.username || "Learner";
   const coins = profile?.coins ?? user?.coins ?? 0;
   const stars = profile?.stars ?? user?.stars ?? 0;
@@ -23,7 +24,7 @@ const ProfileImage = () => {
       {/* Avatar + identity */}
       <div className="pf-identity">
         <div className="pf-avatar-ring">
-          <img src={avatar} className="profile-photo" alt={`${name}'s profile`} />
+          <img src={avatar} onError={onAvatarError} className="profile-photo" alt={`${name}'s profile`} />
         </div>
         <h2 className="pf-name">{name}</h2>
         {profile?.email && <span className="pf-handle">{profile.email}</span>}

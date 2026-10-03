@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/ProfileSidebar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { avatarUrl, onAvatarError } from "../utils/avatar";
 
 // Only real, working destinations — no dead/static entries.
 const MAIN_MENU = [
@@ -36,7 +37,8 @@ const ProfileSidebar = () => {
       <div className="card">
         <div className="user-wrapper">
           <img
-            src={user?.profileImage || "/images/user.png"}
+            src={avatarUrl(user?.profileImage)}
+            onError={onAvatarError}
             className="user"
             alt="User Profile"
           />

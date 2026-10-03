@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useAuth } from "../context/AuthContext";
+import { avatarUrl, onAvatarError } from "../utils/avatar";
 import { prepareAvatar } from "../utils/image";
 import "../styles/AccountSettings.css";
 
@@ -75,7 +76,8 @@ const AccountSettings = () => {
       {/* Profile picture */}
       <div className="avatar-row" style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
         <img
-          src={user?.profileImage || "/images/user.png"}
+          src={avatarUrl(user?.profileImage)}
+          onError={onAvatarError}
           alt="Profile"
           style={{ width: 72, height: 72, borderRadius: "50%", objectFit: "cover", border: "2px solid #ddd" }}
         />
